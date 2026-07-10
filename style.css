@@ -287,3 +287,72 @@ line-height: 26px; /* 144.444% */
   font-weight: 700;
   line-height: 26px; 
 }
+
+/* 다섯번쨰 페이지 */
+.section__5{
+  width: 1920px;
+  height: 540px;
+  background: #CFE5FF;
+  margin-top: 138px;
+}
+.section__5 .main{
+  display: inline-flex;
+  align-items: center;
+  padding: 143px 405px;
+  gap: 69px;
+
+}
+.section__5 img{
+  display: flex;
+  width: 746px;
+  height: 397px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__5 h3{
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; 
+}
+
+footer{
+  display: flex;
+  width: 1920px;
+  height: 160px;
+  padding: 32px 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--Secondary-900, #111827);
+}
+footer .footer__main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+footer .footer__center{
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+footer h6{
+  color: var(--Secondary-400, #9CA3AF);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
