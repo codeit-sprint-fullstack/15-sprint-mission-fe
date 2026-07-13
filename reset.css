@@ -1,0 +1,23 @@
+/* 모든 요소의 마진과 패딩을 없애고, 크기 계산 방식을 border-box로 통일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 링크의 밑줄과 색상 초기화 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 리스트 스타일 제거 */
+ul, ol, li {
+  list-style: none;
+}
+
+/* 이미지 정렬 방식을 깔끔하게 조정 */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
