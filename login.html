@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panda-Login</title>
+    <link type="stylesheet" href="./login.css">
 </head>
 <body>
-    
+    <div class="mainbody">
+        <head>
+            <img src="./img/판다 얼굴.svg" alt="pandalogo">
+            판다마켓
+        </head>
+        <main>
+            <form>
+                <label for="login-email">이메일</label>
+                <input id="login-email" name="email" type="email">
+                <label for="login-passwd">비밀번호</label>
+                <input id="login-passwd" name="passwd" type="password">
+                <button class="login-button">로그인</button>
+            </form>
+            <div class="simple-login">
+                간편 로그인하기
+                <img src="./img/ic_google.svg" alt="googleicon">
+                <img src="./img/ic_kakao.svg" alt="kakaoicon">
+            </div>
+        </main>
+        <footer>
+            판다마켓이 처음이신가요?
+            <a href="./sigup.html">회원가입</a>
+        </footer>
+    </div>
 </body>
 </html>
