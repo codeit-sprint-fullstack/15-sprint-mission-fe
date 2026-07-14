@@ -68,6 +68,11 @@ html{
   gap: 10px;
   border-radius: 12px;
   background: var(--Cool-Gray-100, #F3F4F6);
+  outline: none;
+}
+
+input:focus {
+  border-color: #3692FF; 
 }
 
 .btn__login{
