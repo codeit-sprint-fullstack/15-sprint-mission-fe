@@ -23,12 +23,13 @@ h4{
   flex-shrink: 0;
 }
 
-.main .main__logo {
+.main__logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 396px;
   height: 132px;
+  text-decoration: none;
 }
 .main__logo .main__logo__img {
   width: 103.529px;
@@ -36,13 +37,14 @@ h4{
   margin: 15px 20px 15px;
 }
 
-.main__logo .main__logo__text {
+.main__logo__text {
   color: var(--brand-blue, #3692ff);
   font-family: "ROKAF Sans";
   font-size: 66.344px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
 }
 
 .main .main__text {
