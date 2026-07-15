@@ -67,7 +67,11 @@ html{
   font-weight: 700;
   line-height: 26px; 
 }
-.main__text input{
+
+
+
+.main__text input[type="email"],
+.main__text input[type="password"] {
   display: flex;
   width: 640px;
   height: 56px;
@@ -81,6 +85,31 @@ html{
 
 input:focus {
   border-color: var(--brand-blue);
+}
+
+.password-wrap {
+  position: relative;  
+}
+.hidden-checkbox { 
+  display: none; 
+}
+
+.toggle-btn {
+  position: absolute;   /* 추가 */
+  right: 20px;
+  top: 50%;
+  transform: translateY(40%);
+  display: inline-block;
+  background-image: url('/img/uneye.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.hidden-checkbox:checked ~ .toggle-btn {
+  background-image: url('/img/eye.png');
 }
 
 .btn__login{

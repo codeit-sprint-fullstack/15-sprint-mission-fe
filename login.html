@@ -11,6 +11,7 @@
           <img class="main__logo__img" src="img/Img_panda_face.svg" alt="판다 로고 그림">
           <div class="main__logo__text">판다마켓</div>        
         </a>
+
         <div class="main__text">
           <div>
             <form>
@@ -18,12 +19,15 @@
              <input id="login-email" name="email" type="email" placeholder="이메일을 입력해주세요"/>
             </form>       
           </div>
-           <div>
-            <form>
-              <label for="login-password">비밀번호</label>
-              <input id="login-password" name="password" type="password" placeholder="비밀번호를 입력해주세요"/>
-            </form>
-          </div>
+           <div> 
+              <form class="password-wrap">       
+                <label for="login-password">비밀번호</label>
+                <input id="login-password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+                <input id ="toggle" type="checkbox" class="hidden-checkbox"> 
+                <label for="toggle" class="toggle-btn"></label>                
+                <!-- <button id="toggle-btn"><img class="eye" src="/img/eye.png"></button> -->
+              </form>          
+          </div>      
            <a class="btn__login" href="#">로그인</a>
     
            <div class="main__link">
