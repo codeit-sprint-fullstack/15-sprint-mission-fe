@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panda-market_회원가입</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <form id="register-form" name="register">
+      <h1 class="register-title">회원가입</h1>
+      <div id="register-id-field">
+        <lable for="id">아이디</lable>
+        <input
+          id="register-id"
+          name="register-id"
+          type="text"
+          placeholder="아이디"
+        />
+        <div class="error-message"></div>
+      </div>
+      <div id="password-field">
+        <lable for="password">비밀번호</lable>
+        <input id="password" name="password" placeholder="비밀번호" />
+        <input
+          id="password-repeat"
+          name="password-repeat"
+          type="password-repeat"
+          placeholder="비밀번호 확인"
+        />
+        <div class="error-message"></div>
+      </div>
+      <button type="submit">가입하기
+        <a href="/login"></a>
+      </button>
+      <div class="login-message">
+        아이디가 있으신가요?
+        <a href="/login">로그인</a>
+      </div>
+    </form>
+    <script src="signup.js"></script>
+  </body>
+</html>
