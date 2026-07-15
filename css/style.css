@@ -1,16 +1,9 @@
+
+@import "/css/reset.css";
+
 * {
   box-sizing: border-box;
 }
-
-@media (max-width: 1920px){
-
-}
-
-
-@media (min-width: 1920px){
-
-}
-
 
 header{
   display: flex;
@@ -41,6 +34,7 @@ nav{
   align-items: center;
   gap: 8.592px;
   text-decoration: none;
+  outline: none;
 }
 .logo img{
   width: 40px;
@@ -55,25 +49,13 @@ nav{
   font-weight: 700;
   line-height: normal;
 }
-
-.btn_small{
-  border-radius: 8px;
-  background: var(--Primary-100, #3692FF);
-  display: flex;
-  width: 128px;
-  height: 48px;
-  padding: 12px 23px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
 body{
   margin:0;
 }
-
+/*생략가능 a 기본값이 포인터*/
+a{
+  cursor: pointer;
+}
 /* 세션스타일 */
 section{
   width: 100%;
@@ -88,25 +70,6 @@ section{
   background: #CFE5FF;
 }
 
-/* h3스타일 */
-
-h3 {
-  color: #374151;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 140%; 
-  white-space: nowrap;
-
-}
-
-.section__2 h3 ,
-.section__3 h3 ,
-.section__4 h3 {
-  letter-spacing: 0.8px;
-}
-
-
 /* main */
 section .main{
   display: flex;
@@ -117,21 +80,20 @@ section .main{
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  padding: 143px 405px;
+  padding: 143px 344px;
   gap: 64px;
   background: #FCFCFC;
 }
-
 .section__1 .main{  
   gap: 7px;
   padding: 200px 0 0;  
   background: #CFE5FF;
 }
-
 .section__5 .main{  
   background: #CFE5FF;
   padding: 143px 0 0;  
 }
+
 /* main__text */
 section .main__text{
   display: flex;
@@ -145,6 +107,7 @@ section .main__text{
   padding-bottom: 60px;
   gap: 32px;
 }
+
 /* img */
 section img{
   display: flex;
@@ -164,79 +127,72 @@ section img{
   height: 397px; 
 }
 
+/* h3스타일 */
 
-.section__1 .btn_large{
-  display: flex;
-  height: 56px;
-  padding: 16px 124px;
+h3 {
+  color: #374151;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; 
+  white-space: pre-line;
+}
+
+.section__2 h3 ,
+.section__3 h3 ,
+.section__4 h3 {
+  letter-spacing: 0.8px;
+}
+
+/* h5스타일 */
+section h5{
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+.section__3 h5{
+  text-align: right;
+}
+
+/* h6스타일 */
+section h6{
+  color: var(--Primary-100, #3692FF);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; 
+}
+.section__3 h6{
+  text-align: right;
+}
+
+/* 버튼  */
+.btn{
+  display: flex;  
+  background: #3692FF;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 40px;
-  background: var(--brand-blue, #3692FF);
   text-decoration: none;
   white-space: nowrap;
 }
-
-.section__2 h5{
-  color: var(--Secondary-700, #374151);
-  font-family: Pretendard;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
+.btn_login{
+  border-radius: 8px;
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  gap: 10px;
 }
+.btn_item{
+  border-radius: 40px;
+  height: 56px;
+  padding: 16px 124px;
+  gap: 10px;  
 
-.section__2 h6{
-  color: var(--Primary-100, #3692FF);
-  font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px; 
 }
-
-
-.section__3 h5{
-  color: var(--Secondary-700, #374151);
-  text-align: right;
-  font-family: Pretendard;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px; 
-}
-
-.section__3 h6{
-  color: var(--Primary-100, #3692FF);
-  text-align: right;
-  font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px; /* 144.444% */
-}
-
-
-.section__4 h5{
-  color: var(--Secondary-700, #374151);
-  font-family: Pretendard;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-}
-
-.section__4 h6{
-  color: var(--Primary-100, #3692FF);
-  font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px; 
-}
-
-
 
 footer{
   display: flex;
@@ -246,7 +202,7 @@ footer{
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  background: var(--Secondary-900, #111827);
+  background: #111827;
 }
 footer .footer__main{
   display: flex;
@@ -261,7 +217,7 @@ footer .footer__center{
   align-items: center;
 }
 footer a, h6{
-  color: var(--Secondary-400, #9CA3AF);
+  color: #9CA3AF;
   text-align: center;
   font-family: Pretendard;
   font-size: 16px;
