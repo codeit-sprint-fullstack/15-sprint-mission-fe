@@ -89,6 +89,18 @@ main .login-button {
   background: var(--Secondary-400, #9ca3af);
   margin-bottom: 1.5rem;
   border: none;
+  color: var(--Cool-Gray-100, #f3f4f6);
+  text-align: center;
+  /* pretendard/xl-20px-semibold */
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 160% */
+}
+
+main .login-button:focus {
+  background: var(--Primary-100, #3692FF);
 }
 
 .simple-login {
@@ -100,6 +112,12 @@ main .login-button {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.5rem;
+  /* pretendard/lg-16px-medium */
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.625rem; /* 162.5% */
 }
 
 .login-icon {
