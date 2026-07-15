@@ -72,9 +72,8 @@ html{
 }
 
 input:focus {
-  border-color: #3692FF; 
+  border-color: #3692FF;
 }
-
 .btn__login{
   display: flex;
   width: 640px;

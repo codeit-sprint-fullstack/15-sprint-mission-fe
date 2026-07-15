@@ -31,7 +31,7 @@ h4{
   height: 132px;
   text-decoration: none;
 }
-.main__logo .main__logo__img {
+.main__logo__img {
   width: 103.529px;
   height: 103.88px;
   margin: 15px 20px 15px;
@@ -77,6 +77,11 @@ h4{
   gap: 10px;
   border-radius: 12px;
   background: var(--Cool-Gray-100, #f3f4f6);
+  outline: none;
+}
+
+input:focus {
+  border-color: #3692FF;
 }
 
 .btn__login {
