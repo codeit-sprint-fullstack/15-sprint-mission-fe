@@ -11,6 +11,7 @@
 
 }
 
+
 header{
   display: flex;
   padding: 9px 200px;
@@ -69,6 +70,10 @@ nav{
   white-space: nowrap;
 }
 
+body{
+  margin:0;
+}
+
 /* 세션스타일 */
 section{
   width: 100%;
@@ -91,6 +96,7 @@ h3 {
   font-style: normal;
   font-weight: 700;
   line-height: 140%;  
+  white-space: nowrap;
 }
 
 .section__2 h3 ,
@@ -99,24 +105,30 @@ h3 {
   letter-spacing: 0.8px;
 }
 
-.section__1 h3{
-  width: 295px;
-  height: 112px;
-}
-
-
-
-.section__1 .main{  
+section .main{
+  display: flex;
   width: 100%;
   max-width: 1920px;
-  min-width: 0; 
-  display: flex;
+  min-width: 0;
+  margin: 0 auto; 
   flex-shrink: 0;
-  gap: 7px;
-  padding: 200px 0 0;    
-  margin: 0 auto;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center;
+  padding: 143px 405px;
+  gap: 64px;
+  background: #FCFCFC;
 }
+
+.section__1 .main{  
+  gap: 7px;
+  padding: 200px 0 0;  
+  background: #CFE5FF;
+}
+
+.section__5 .main{  
+  background: #CFE5FF;
+}
+
 .section__1 .main__text{
   display: flex;
   padding-bottom: 60px;
@@ -152,14 +164,6 @@ h3 {
   white-space: nowrap;
 }
 /* 두번쨰 페이지 */
-.section__2 .main{
-  display: flex;
-  width: 988px;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
-  background: #FCFCFC;
-}
 .section__2 .main__text{
   display: flex;
   flex-direction: column;
@@ -194,13 +198,7 @@ h3 {
 }
 
 /* 세번쨰 페이지 */
-.section__3 .main{
-  display: flex;
-  width: 988px;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
-}
+
 .section__3 .main__text{
 color: var(--Primary-100, #3692FF);
 
@@ -238,14 +236,7 @@ line-height: 26px; /* 144.444% */
 }
 
 /* 네번쨰 페이지 */
-.section__4 .main{
-  display: flex;
-  width: 988px;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
-  background: #FCFCFC;
-}
+
 .section__4 .main__text{
   display: flex;
   flex-direction: column;
@@ -280,13 +271,7 @@ line-height: 26px; /* 144.444% */
 }
 
 /* 다섯번쨰 페이지 */
-.section__5 .main{
-  display: inline-flex;
-  align-items: center;
-  padding: 143px 405px;
-  gap: 69px;
 
-}
 .section__5 img{
   display: flex;
   width: 746px;
