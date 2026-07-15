@@ -86,30 +86,27 @@ html{
 input:focus {
   border-color: var(--brand-blue);
 }
-
-.password-wrap {
+.password__input {
   position: relative;  
 }
 .hidden-checkbox { 
   display: none; 
 }
-
 .toggle-btn {
-  position: absolute;   /* 추가 */
+  position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(40%);
+  transform: translateY(-50%);
   display: inline-block;
-  background-image: url('/img/uneye.png');
+  background-image: url('/img/ic_uneye.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
-
 .hidden-checkbox:checked ~ .toggle-btn {
-  background-image: url('/img/eye.png');
+  background-image: url('/img/ic_eye.svg');
 }
 
 .btn__login{
