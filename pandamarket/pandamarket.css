@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 200px;
+}
+
+section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 610px;
+}
+
+.home-section {
+  background-color: #cfe5ff;
+  height: 540px;
+}
+
+.message-button-div {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+}
+
+.section-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfcfc;
+  padding: 0 40px;
+  border-radius: 15px;
+}
+
+.hot-item-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.serach-section .section-img-div {
+  flex-direction: row-reverse;
+}
