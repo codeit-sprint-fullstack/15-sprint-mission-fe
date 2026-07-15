@@ -75,10 +75,12 @@ nav{
   line-height: 140%; /* 56px */
 }
 .section__1 .main{
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content:center;
   gap: 7px;
-  margin: 200px 405px 0px;
+  padding: 200px 0 0;
+  margin: 0 auto ;
 }
 .section__1 .main__text{
   display: flex;
