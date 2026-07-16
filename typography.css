@@ -1,0 +1,61 @@
+/* 이 클래스들은 text-* 크기 클래스와 font-* 굵기 클래스를 조합해서 사용합니다. */
+
+/* Font size + Line height */
+.text-xs {
+  font-family: var(--font-family-base);
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+/* text-xs는 smilbold일 때만 line-height 요구사항이 다름, 피그마 스타일 가이드 기준을 따름 */
+.text-xs.font-semibold {
+  line-height: 1.25rem;
+}
+.text-sm {
+  font-family: var(--font-family-base);
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+}
+.text-md {
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+.text-2lg {
+  font-family: var(--font-family-base);
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+.text-xl {
+  font-family: var(--font-family-base);
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+.text-2xl {
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-family: var(--font-family-base);
+  font-size: 2rem;
+  line-height: 2.625rem;
+}
+
+/* Font weight */
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
