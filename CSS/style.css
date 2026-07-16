@@ -105,8 +105,13 @@
   width: 100%;
 }
 
-.con2.container {
+.con2 > .container {
   flex-direction: row-reverse;
+}
+
+.con2 .con-text {
+  text-align: right;
+  padding: 0 64px 0 0;
 }
 
 .con-text {
