@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  margin-top: 70px;
+  background-color: #ffffff;
+  font-family: "Pretendard", sans-serif;
+}
+
+.top-nav-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.top-nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1520px;
+  height: 51px;
+}
+
+@media (max-width: 1919px) {
+  .top-nav-div {
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.button-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.button-container a {
+  position: absolute;
+  left: 20.83%;
+  top: 69.44%;
+  width: 18.23%;
+  height: 12.96%;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+.bestseller-section,
+.search-section,
+.register-section {
+  padding: 8.625rem 21.5rem;
+}
+
+.trade-section,
+.ad-section {
+  background-color: #cfe5ff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ad img,
+.bottom-nav img {
+  display: block;
+  margin: 0 auto;
+}
+
+.bottom-nav {
+  width: 100%;
+  height: 160px;
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.bottom-nav-texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1920px;
+  min-height: 20px;
+  padding: 32px 200px;
+  gap: 20px;
+}
+
+@media (max-width: 1919px) {
+  .bottom-nav-texts {
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 200px;
+    justify-content: space-between;
+  }
+}
+
+.codeit-text {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.bottom-nav-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.bottom-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.information-links {
+  display: flex;
+  gap: 30px;
+}
+
+.button-container {
+  position: relative;
+  width: 1920px;
+  flex-shrink: 0;
+}
+
+footer {
+  width: 100%;
+}
