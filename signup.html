@@ -1,8 +1,8 @@
 <!DOCTYPE html>
   <html>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/signup.css">
-    <title>로그인</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <title>회원가입</title>
     <head>       
     </head>
     <body>
@@ -20,22 +20,31 @@
           </div>
            <div>
             <form>
-              <label for="login-password">닉네임</label>
-              <input id="login-password" name="password" type="text" placeholder="닉네임을 입력해주세요"/>
+              <label for="login-name">닉네임</label>
+              <input id="login-name" name="name" type="text" placeholder="닉네임을 입력해주세요"/>
             </form>
           </div>
-           <div>
-            <form>
-              <label for="login-password">비밀번호</label>
-              <input id="login-password" name="password" type="password" placeholder="비밀번호를 입력해주세요"/>
-            </form>
-          </div>
-           <div>
-            <form>
-              <label for="login-password">비밀번호 확인</label>
-              <input id="login-password" name="password" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
-            </form>
-          </div>
+          <div> 
+              <form class="password">       
+                <label for="login-password">비밀번호</label>                
+                <div class="password__input">
+                  <input id="login-password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+                  <input id ="toggle" type="checkbox" class="hidden-checkbox"> 
+                  <label for="toggle" class="toggle-btn"></label>
+                </div>   
+              </form>          
+          </div>      
+          <div> 
+              <form class="password">       
+                <label for="login-password">비밀번호 확인</label>                
+                <div class="password__input">
+                  <input id="login-password" name="password" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                  <input id ="toggle" type="checkbox" class="hidden-checkbox"> 
+                  <label for="toggle" class="toggle-btn"></label>
+                </div>   
+              </form>          
+          </div>             
+           
            <a class="btn__login" href="#">회원가입</a>
     
            <div class="main__link">

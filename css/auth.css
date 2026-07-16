@@ -1,4 +1,4 @@
-* {
+*{
   box-sizing: border-box;
 }
 
@@ -12,17 +12,9 @@
 html{
   width: 1920px;
   padding: 231px 640px 284px 640px;
+  margin: 0 auto;
 }
-h4{
-  color: var(--Cool-Gray);
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.main {
+.main{
   display: flex;
   width: 640px;
   flex-direction: column;
@@ -31,7 +23,7 @@ h4{
   flex-shrink: 0;
 }
 
-.main__logo {
+.main__logo{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,44 +31,48 @@ h4{
   height: 132px;
   text-decoration: none;
 }
-.main__logo__img {
+.main__logo__img{
   width: 103.529px;
   height: 103.88px;
   margin: 15px 20px 15px;
 }
 
-.main__logo__text {
+.main__logo__text{
   color: var(--brand-blue);
   font-family: "ROKAF Sans";
   font-size: 66.344px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-decoration: none;
 }
 
-.main .main__text {
+.main .main__text{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
 }
 
-.main__text form {
+.main__text form{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 }
-.main__text label {
+.main__text label{
   color: var(--Cool-Gray);
   font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 26px;
+  line-height: 26px; 
 }
-.main__text input {
+
+
+
+.main__text input[type="email"],
+.main__text input[type="password"],
+.main__text input[type="text"] {
   display: flex;
   width: 640px;
   height: 56px;
@@ -91,8 +87,30 @@ h4{
 input:focus {
   border-color: var(--brand-blue);
 }
+.password__input {
+  position: relative;  
+}
+.hidden-checkbox { 
+  display: none; 
+}
+.toggle-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  background-image: url('/img/ic_uneye.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.hidden-checkbox:checked ~ .toggle-btn {
+  background-image: url('/img/ic_eye.svg');
+}
 
-.btn__login {
+.btn__login{
   display: flex;
   width: 640px;
   height: 56px;
@@ -108,10 +126,11 @@ input:focus {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px;
+  line-height: 32px; 
   text-decoration: none;
 }
-.main__link {
+
+.main__link{
   display: flex;
   width: 640px;
   height: 74px;
@@ -124,25 +143,35 @@ input:focus {
   justify-content: space-between;
   align-items: center;
 }
-.main__link__content {
+.main__link__content{
   display: flex;
   width: 594px;
   justify-content: space-between;
   align-items: center;
 }
-.google__ic {
+.main__link h4{
+  color: var(--Cool-Gray);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; 
+}
+
+.google__ic{
   display: inline-block;
-  background-image: url("/img/google/ic_google.png");
+  background-image: url('/img/google/ic_google.png');
   width: 42px;
   height: 42px;
 }
-.kakao__ic {
+.kakao__ic{
   display: inline-block;
-  background-image: url("/img/kakao/ic_kakao.png");
+  background-image: url('/img/kakao/ic_kakao.png');
   width: 42px;
   height: 42px;
 }
-.bottom {
+
+.bottom{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +179,7 @@ input:focus {
   width: 100%;
 }
 
-.login__link{
+.signup__link{
   color: var(--brand-blue);
   font-family: Pretendard;
   font-size: 15px;
