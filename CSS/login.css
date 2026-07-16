@@ -1,0 +1,132 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  width: 640px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+label {
+  color: var(--gray-800);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+input {
+  display: flex;
+  width: 640px;
+  height: 56px;
+  padding: 16px 24px;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--gray-100);
+  color: var(--gray-400);
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid transparent;
+  outline: none;
+  margin: 16px 0 24px;
+}
+
+input:focus {
+  border-color: var(--primary-100);
+}
+
+.pw-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pw-toggle {
+  position: absolute;
+  right: 24px;
+  top: 60%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.login-btn,
+.signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 40px;
+  background: var(--gray-400);
+  color: var(--gray-100);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+  height: 74px;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background: #e6f2ff;
+  margin: 24px 0;
+}
+
+.social-login p {
+  color: var(--gray-800);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icons a:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.social-icons a:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background-color: #f5e14b;
+  border-radius: 50%;
+}
+.social-icons img {
+  width: 26px;
+  height: 24px;
+}
+
+.signup {
+  text-align: center;
+}
+
+.signup a {
+  text-decoration: underline;
+  color: #3182f6;
+}

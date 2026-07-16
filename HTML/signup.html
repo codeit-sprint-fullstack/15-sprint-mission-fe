@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/reset.css" />
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <title>판다마켓 회원가입</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="wrap">
+        <!--로고-->
+        <div class="logo">
+          <a href="../HTML/home.html">
+            <img src="../IMGS/Property 1=lg.png" alt="마켓 로고" />
+          </a>
+        </div>
+        <form class="form">
+          <!--이메일-->
+          <div class="ip-box">
+            <label for="email">이메일</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="이메일을 입력해주세요"
+            />
+          </div>
+          <!--닉네임-->
+          <div class="ip-box">
+            <label for="nickname">닉네임</label>
+            <input
+              type="text"
+              id="nickname"
+              placeholder="닉네임을 입력해주세요"
+            />
+          </div>
+          <!--비밀번호-->
+          <div class="pw-box">
+            <label for="pw">비밀번호</label>
+            <input
+              type="password"
+              id="pw"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <!--비밀번호 아이콘-->
+            <button type="button" class="pw-toggle">
+              <img src="../IMGS/Property 1=Variant2.png" alt="" />
+            </button>
+          </div>
+          <!--비밀번호확인-->
+          <div class="pw-box">
+            <label for="pw-check">비밀번호 확인</label>
+            <input
+              type="pw"
+              id="pw-check"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+            />
+            <!--비밀번호확인 아이콘-->
+            <button type="button" class="pw-toggle">
+              <img src="../IMGS/Property 1=Variant2.png" alt="" />
+            </button>
+          </div>
+          <button type="submit" class="login-btn">로그인</button>
+        </form>
+        <!--간편로그인-->
+        <div class="social-login">
+          <p>간편 로그인하기</p>
+          <div class="social-icons">
+            <a href="https://www.google.com/">
+              <img src="../IMGS/google.png" alt="Google" />
+            </a>
+            <a href="https://www.kakaocorp.com/page/">
+              <img src="../IMGS/카톡.svg" alt="Kakao" />
+            </a>
+          </div>
+        </div>
+        <!--로그인-->
+        <p class="signup">
+          이미 회원이신가요?
+          <a href="../HTML/login.html">로그인</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
