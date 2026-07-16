@@ -1,3 +1,6 @@
+/* Josh Comeau의 블로그 참고 */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
 /* 1. 박스 크기 모델 */
 /* Universal Selector = 전체 선택자 */
 /* 페이지에 있는 모든 실제 요소와, 모든 요소가 가질 수 있는 가상요소까지 전부 box-sizing: border-box 속성을 적용합니다. */
@@ -96,6 +99,10 @@ h6 {
   text-wrap: balance;
 }
 
+/* 여기서부터는 내가 직접 추가한 속성들 */
+html {
+  font-size: 62.5%;
+}
 a {
   text-decoration: none;
 }
