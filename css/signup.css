@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #3692ff;
+  --secondary-color: #1f2937;
+  --text-or-bgc-color: #f3f4f6;
+  --deactive-color: #9ca3af;
+  --bgc-color-02: #e6f2ff;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard";
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+button,
+input {
+  font-family: "Pretendard";
+}
+.signupformat {
+  /* border: 1px solid #000; */
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signupformat .rootbtn {
+  margin-bottom: 40px;
+}
+.signupformat a .logo {
+  width: 396px;
+  height: 132px;
+}
+.signupformat .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #000; */
+}
+.signupformat .content label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+}
+.signupformat .content .wrap-password {
+  /* border: 1px solid #000; */
+  margin-bottom: 24px;
+  position: relative;
+}
+.signupformat .content .wrap-password .hideicon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.signupformat .content input {
+  width: 100%;
+  background-color: var(--text-or-bgc-color);
+  height: 56px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.signupformat .content input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--deactive-color);
+}
+.signupformat .content input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+.signupformat .content .userPassword {
+  margin-bottom: 0;
+}
+.signupformat .content .btn-register,
+.login-easy {
+  width: 100%;
+  margin-bottom: 24px;
+}
+.signupformat .content .btn-register {
+  border: none;
+  height: 56px;
+  background-color: var(--deactive-color);
+  border-radius: 40px;
+  color: var(--text-or-bgc-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+.signupformat .content .login-easy {
+  height: 74px;
+  background-color: var(--bgc-color-02);
+  border-radius: 8px;
+  padding: 16px 23px;
+}
+.signupformat .content .login-easy .login-content {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.signupformat .content .login-easy .login-content p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+.login-content .login-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+}
+.login-content .login-icons a img {
+  width: 42px;
+  height: auto;
+}
+.wrap-login {
+  width: 100%;
+  /* border: 1px solid #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+.wrap-login .gologin {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 3.5px 0;
+}
