@@ -3,7 +3,7 @@
 }
 
 body {
-  color: rgb(19, 68, 142);
+  color: black;
   font-family: Roboto, "Noto Sans KR", sans-serif;
   font-size: 16px;
 }
@@ -24,8 +24,8 @@ input::placeholder {
 }
 
 button {
-  background-color: rgb(81, 142, 234);
-  border-radius: 6px;
+  background-color: rgb(133, 139, 148);
+  border-radius: 20px;
   border: none;
   color: #ffffff;
   font-size: 16px;
@@ -39,8 +39,7 @@ button {
 }
 
 .register-title {
-  font-size: 30px;
-  text-align: center;
+  width: 300px;
 }
 
 #register-form label {
@@ -80,7 +79,21 @@ button {
 }
 
 .login-message {
-  color: #ababab;
+  color: black;
   margin: 24px 0;
   text-align: center;
+}
+
+.easy-tool {
+  padding: 7px;
+  width: 100%;
+  background-color: #bbd7f94d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sns-logo {
+  display: flex;
+  align-items: center;
 }

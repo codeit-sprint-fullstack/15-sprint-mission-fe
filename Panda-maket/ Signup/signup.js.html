@@ -8,33 +8,53 @@
   </head>
   <body>
     <form id="register-form" name="register">
-      <h1 class="register-title">회원가입</h1>
+      <img src="./head-logo.png" class="register-title" />
+      <div id="email-feild">
+        <label for="email">이메일</label>
+        <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요." />
+        <div class="error-message"></div>
+      </div>
       <div id="register-id-field">
-        <lable for="id">아이디</lable>
+        <lable for="user-name">닉네임</lable>
         <input
-          id="register-id"
-          name="register-id"
+          id="user-name"
+          name="user-name"
           type="text"
-          placeholder="아이디"
+          placeholder="닉네임을 입력해주세요."
         />
         <div class="error-message"></div>
       </div>
       <div id="password-field">
         <lable for="password">비밀번호</lable>
-        <input id="password" name="password" placeholder="비밀번호" />
+        <input
+          id="password"
+          name="password"
+          placeholder="비밀번호를 입력해주세요."
+        />
+        <div class="error-message"></div>
+        <lable for="password-repeat">비밀번호 확인</lable>
         <input
           id="password-repeat"
           name="password-repeat"
           type="password-repeat"
-          placeholder="비밀번호 확인"
+          placeholder="비밀번호를 다시 한 번 입력해주세요."
         />
         <div class="error-message"></div>
       </div>
-      <button type="submit">가입하기
-        <a href="/login"></a>
-      </button>
+      <button id="register-btn " type="submit" disabled>회원가입</button>
+      <div class="easy-tool">
+        <div>간편 로그인하기</div>
+        <div class="sns-login">
+          <a href="https://www.gogle.com/">
+            <img src="./icon-google.png" alt="구글 로고" />
+          </a>
+          <a href="https://www.kakaocorp.com/page/">
+            <img src="./icon-kakaotalk.png" alt="카카오톡 로고" />
+          </a>
+        </div>
+      </div>
       <div class="login-message">
-        아이디가 있으신가요?
+        이미 회원이신가요??
         <a href="/login">로그인</a>
       </div>
     </form>

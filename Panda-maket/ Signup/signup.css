@@ -3,7 +3,7 @@
 }
 
 body {
-  color: rgb(19, 68, 142);
+  color: black;
   font-family: Roboto, "Noto Sans KR", sans-serif;
   font-size: 16px;
 }
@@ -13,24 +13,41 @@ a {
 }
 
 input {
-  border-radius: 6px;
-  border: 1px solid #e5e5e5;
+  border: none;
+  border-radius: 12px;
   font-size: 14px;
-  padding: 11px 15px;
+  padding: 16px;
+  background-color: #f3f4f6;
 }
 
 input::placeholder {
   color: #ababab;
 }
 
+input:focus {
+  border: 1px solid #3692ff;
+  outline: none;
+}
+
 button {
-  background-color: rgb(81, 142, 234);
+  background-color: rgb(133, 139, 148);
   border-radius: 6px;
   border: none;
   color: #ffffff;
   font-size: 16px;
   padding: 10px;
   text-align: center;
+  border-radius: 20px;
+}
+
+button:disabled {
+  background-color: #ababab;
+  cursor: not-allowed;
+}
+
+button:not(:disabled) {
+  background-color: #3692ff;
+  cursor: not-pointer;
 }
 
 #register-form {
@@ -39,8 +56,7 @@ button {
 }
 
 .register-title {
-  font-size: 30px;
-  text-align: center;
+  width: 300px;
 }
 
 #register-form label {
@@ -69,6 +85,10 @@ button {
   color: #da382b;
 }
 
+.sns-logo {
+  text-decoration: none;
+}
+
 .error-message {
   display: none;
   font-size: 12px;
@@ -79,8 +99,22 @@ button {
   display: block;
 }
 
+.easy-tool {
+  padding: 7px;
+  width: 100%;
+  background-color: #bbd7f94d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .login-message {
-  color: #ababab;
+  color: black;
   margin: 24px 0;
   text-align: center;
+}
+
+.sns-logo {
+  display: flex;
+  align-items: center;
 }
