@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  height: 70px;
+  padding: 9px 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-left-design {
+  display: flex;
+  align-items: center;
+  gap: 8.592px;
+}
+
+.top-left-design img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.top-left-text {
+  color: #3692ff;
+  font-family: "ROKAF Sans", sans-serif;
+  font-size: 25.633px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.login-button {
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  background: #3692ff;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.login-button {
+  padding: 12px 23px;
+}
