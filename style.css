@@ -178,9 +178,10 @@ body {
 .bottom-banner-inner {
   width: 1110px;
   height: 397px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 69px;
 }
 
 .bottom-banner-image {
@@ -189,7 +190,9 @@ body {
 }
 
 .bottom-banner-title {
+  width: 295px;
   margin: 0;
+
   font-size: 40px;
   font-weight: 700;
   line-height: 56px;
