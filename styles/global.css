@@ -1,0 +1,21 @@
+:root {
+  --primay-color: #3692ff;
+  --secondary-800: #1f2937;
+  --secondary-700: #374151;
+  --secondary-400: #9ca3af;
+  --secondary-200: #e5e7eb;
+  --secondary-color: #111827;
+  --background-color: #cfe5ff;
+  --background-color-100: #e6f2ff;
+  --cool-gray-100: #f3f4f6;
+  --section-item-background-color: #fcfcfc;
+}
+
+body {
+  font-family: Pretendard;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}

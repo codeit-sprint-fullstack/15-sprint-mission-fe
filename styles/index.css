@@ -1,0 +1,196 @@
+/* 페이지 공통요소 */
+.content-wrapper-right {
+  justify-content: end;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--secondary-700);
+}
+
+/* gnb */
+.gnb {
+  display: flex;
+  justify-content: center;
+  padding: 11px 200px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  background-color: white;
+}
+.gnb-wrapper {
+  display: flex;
+  max-width: 1520px;
+  flex-basis: 1520px;
+  align-items: center;
+  justify-content: space-between;
+}
+.gnb__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.gnb__logo {
+  width: 40px;
+}
+.gnb__logo-type {
+  width: 103px;
+}
+.gnb__btn-login {
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--primay-color);
+
+  flex-shrink: 0;
+
+  text-align: center;
+  line-height: 48px;
+  font-size: 16px;
+}
+
+/* main banner */
+.main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 540px;
+  background-color: var(--background-color);
+}
+
+.main-banner-wrapper {
+  display: flex;
+  max-width: 1110px;
+}
+
+.banner__left {
+  margin-bottom: 100px;
+}
+
+.banner__left-desc {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--secondary-700);
+}
+
+.banner__left-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 32px;
+  width: 375px;
+  height: 56px;
+  background-color: var(--primay-color);
+  border-radius: 999px;
+
+  font-size: 20px;
+  color: white;
+}
+
+.banner__right {
+  line-height: 0;
+}
+
+.banner__right > img {
+  width: 746px;
+}
+
+/* section 공통요소 */
+
+.section-title {
+  margin-top: 12px;
+}
+
+.section-desc {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.333333;
+  color: var(--secondary-700);
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primay-color);
+}
+
+.section-container {
+  padding: 138px 0;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  display: flex;
+  gap: 64px;
+
+  max-width: 988px;
+  background-color: var(--section-item-background-color);
+
+  line-height: 0;
+}
+
+.content__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* banner-bottom */
+.banner-bottom {
+  display: flex;
+  align-items: end;
+  height: 540px;
+  background-color: var(--background-color);
+  line-height: 0;
+}
+.banner-bottom-wrapper {
+  display: flex;
+  gap: 69px;
+  margin: 0 auto;
+}
+
+.banner-bottom__desc {
+  margin-bottom: 172px;
+  align-self: end;
+}
+
+.footer {
+  height: 160px;
+  padding: 32px 200px 0;
+  background-color: var(--secondary-color);
+  color: var(--secondary-400);
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-policy-faq-wrapper > a {
+  color: var(--secondary-200);
+  font-weight: 400;
+}
+
+.footer-policy-faq-wrapper > a:first-child {
+  margin-right: 30px;
+}
+
+.footer-sns-wrapper > a {
+  margin-right: 12px;
+}
+
+.footer-sns-wrapper > a:last-child {
+  margin-left: 0;
+}

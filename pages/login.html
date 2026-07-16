@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <title>판다마켓</title>
+  </head>
+  <body>
+    <main class="container">
+      <a class="logo-container" href="../pages/index.html">
+        <img class="logo" src="../assets/logo.png" />
+        <img class="logo-type" src="../assets/logo-type.png" />
+      </a>
+      <section class="from-container">
+        <form class="login-form">
+          <label for="email" class="label-email">이메일</label>
+          <input
+            id="email"
+            class="input-email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+            onkeyup="loginBtnHandler()"
+          />
+          <label for="pw" class="label-pw">비밀번호</label>
+          <div class="pw-wrapper">
+            <input
+              id="pw"
+              class="input-pw"
+              type="password"
+              onkeyup="loginBtnHandler()"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img src="../assets/btn_visibility_off_24px.svg" />
+          </div>
+        </form>
+        <a id="btn-login" class="btn-login">로그인</a>
+        <div class="easy-login-container">
+          <span class="easy-login-label">간편 로그인하기</span>
+          <div class="easy-login-btns">
+            <a href="https://www.google.com">
+              <img src="../assets/login_ic_google.png" />
+            </a>
+            <a href="https://www.kakaocorp.com/page">
+              <img src="../assets/login_ic_kakao.png" />
+            </a>
+          </div>
+        </div>
+        <div class="signup-container">
+          <span>판다마켓이 처음이신가요?</span>
+          <a href="./signup.html">회원가입</a>
+        </div>
+      </section>
+    </main>
+    <script>
+      const loginBtnHandler = () => {
+        const email = document.getElementById("email")?.value.trim()
+        const pw = document.getElementById("pw")?.value.trim()
+        const loginBtn = document.getElementById("btn-login")
+
+        if (!loginBtn) return
+
+        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+        const isActive = Boolean(email && pw)
+        loginBtn.classList.toggle("active", isActive)
+      }
+    </script>
+  </body>
+</html>
