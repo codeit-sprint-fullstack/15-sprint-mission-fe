@@ -67,9 +67,6 @@ html{
   font-weight: 700;
   line-height: 26px; 
 }
-
-
-
 .main__text input[type="email"],
 .main__text input[type="password"],
 .main__text input[type="text"] {
@@ -90,10 +87,14 @@ input:focus {
 .password__input {
   position: relative;  
 }
-.hidden-checkbox { 
+.hidden-checkbox,
+.hidden-checkbox2 
+{ 
   display: none; 
 }
-.toggle-btn {
+.toggle-btn,
+.toggle-btn2
+ {
   position: absolute;
   right: 20px;
   top: 50%;
@@ -106,7 +107,9 @@ input:focus {
   height: 24px;
   cursor: pointer;
 }
-.hidden-checkbox:checked ~ .toggle-btn {
+.hidden-checkbox:checked ~ .toggle-btn,
+.hidden-checkbox2:checked ~ .toggle-btn2
+ {
   background-image: url('/img/ic_eye.svg');
 }
 
