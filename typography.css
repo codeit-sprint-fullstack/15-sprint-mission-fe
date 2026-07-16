@@ -3,47 +3,47 @@
 /* Font size + Line height */
 .text-xs {
   font-family: var(--font-family-base);
-  font-size: 0.75rem;
-  line-height: 1.125rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
 }
 /* text-xs는 smilbold일 때만 line-height 요구사항이 다름, 피그마 스타일 가이드 기준을 따름 */
 .text-xs.font-semibold {
-  line-height: 1.25rem;
+  line-height: 2rem;
 }
 .text-sm {
   font-family: var(--font-family-base);
-  font-size: 0.8125rem;
-  line-height: 1.375rem;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
 }
 .text-md {
   font-family: var(--font-family-base);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }
 .text-lg {
   font-family: var(--font-family-base);
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
 .text-2lg {
   font-family: var(--font-family-base);
-  font-size: 1.125rem;
-  line-height: 1.625rem;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
 }
 .text-xl {
   font-family: var(--font-family-base);
-  font-size: 1.25rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 3.2rem;
 }
 .text-2xl {
   font-family: var(--font-family-base);
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
 }
 .text-3xl {
   font-family: var(--font-family-base);
-  font-size: 2rem;
-  line-height: 2.625rem;
+  font-size: 3.2rem;
+  line-height: 4.2rem;
 }
 
 /* Font weight */
