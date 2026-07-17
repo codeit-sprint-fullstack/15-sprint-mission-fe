@@ -63,14 +63,16 @@ header {
   flex: 0 0 auto;
 }
 
-.section1 {
+.section1,
+.section4 {
   display: flex;
   background-color: #cfe5ff;
   justify-content: center;
   align-items: center;
 }
 
-.section1-1 {
+.section1-1,
+.section4-0 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -110,22 +112,24 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 56px */
+  margin: 0 0 24px;
 }
 
 .section1-2 {
   margin-bottom: 40px;
 }
 
-.section2 {
+.section2,
+.section3 {
   padding: 138px 344px;
   background: #ffffff;
 }
 
-.section2-inbox {
+.section2-inbox,
+.section3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FCFCFC;
 }
 
 .section2-inbox img {
@@ -138,6 +142,7 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: 26px; /* 144.444% */
+  margin: 0 0 12px;
 }
 
 .text {
@@ -147,18 +152,33 @@ header {
   line-height: 32px; /* 133.333% */
 }
 
-.hot-item-check {
-  margin: 0 0 24px;
-}
-
-.hot-item-text {
-  margin: 0 0 12px;
-}
-
 .normal-text {
   color: #374151;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 32px; /* 133.333% */
+}
+
+.section3-1 {
+  margin-left: 64px;
+}
+
+.section4-2 {
+  margin-left: 69px;
+}
+
+.section4-2 img {
+  display: block;
+}
+
+.section4-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 60px;
+}
+
+.section4-0 {
+  align-items: center;
 }
