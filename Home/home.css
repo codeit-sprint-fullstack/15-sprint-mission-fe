@@ -113,6 +113,7 @@ header {
   font-weight: 700;
   line-height: 140%; /* 56px */
   margin: 0 0 24px;
+  white-space: nowrap;
 }
 
 .section1-2 {
@@ -143,6 +144,7 @@ header {
   font-weight: 700;
   line-height: 26px; /* 144.444% */
   margin: 0 0 12px;
+  white-space: nowrap;
 }
 
 .text {
@@ -158,6 +160,7 @@ header {
   font-style: normal;
   font-weight: 500;
   line-height: 32px; /* 133.333% */
+  white-space: nowrap;
 }
 
 .section3-1 {
@@ -181,4 +184,37 @@ header {
 
 .section4-0 {
   align-items: center;
+}
+
+footer {
+display: flex;
+justify-content: center;
+
+background: var(--Secondary-900, #111827);
+}
+
+footer p {
+color: var(--Secondary-200, #E5E7EB);
+text-align:start;
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: 0;
+}
+
+.footer1-1 {
+display: flex;
+width: 1920px;
+height: 160px;
+padding: 32px 200px;
+justify-content: space-between;
+align-items: flex-start;
+gap: 10px;
+}
+
+.footer-center-txt {
+  display: flex;
+  gap: 30px;
 }
