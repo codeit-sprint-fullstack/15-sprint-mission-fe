@@ -15,6 +15,9 @@ body {
 .header {
   width: 100%;
   padding: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .top-container {
@@ -24,11 +27,25 @@ body {
   margin: 0 auto;
   max-width: 1505px;
   width: 100%;
+  background-color: white;
+}
+
+.banner {
+  position: relative;
+}
+
+.shop-btn {
+  position: absolute;
+  left: 307px;
+  top: 341px;
+  width: 252px;
+  height: 39px;
+  cursor: pointer;
 }
 
 .main-container {
-  margin: 150px;
-  max-width: 100%;
+  margin: 150px   auto;
+  max-width: 192px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -36,7 +53,17 @@ body {
   gap: 150px;
 }
 
+.bottom-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1505px;
+  width: 100%;
+  background-color: white;
+}
 .bottom-container img {
+  margin: auoto;
   display: block;
 }
 
@@ -87,7 +114,6 @@ footer {
   display: flex;
   gap: 30px;
 }
-
 
 .footer-sns {
   cursor: pointer;
