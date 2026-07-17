@@ -62,6 +62,7 @@ nav{
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  white-space: nowrap;
 }
 body{
   margin:0;
@@ -103,9 +104,12 @@ section .main{
   padding: 12.5rem 0 0;  
   background: #CFE5FF;
 }
+.section--4 .main{  
+  margin: 0 auto 20rem; 
+}
 .section--5 .main{  
   background: #CFE5FF;
-  padding: 9rem 0 0;  
+  padding: 9rem 0 0; 
 }
 
 /* main__text */
@@ -120,8 +124,12 @@ section .main__text{
 .section--2 .main__text,
 .section--3 .main__text,
 .section--4 .main__text{
-  flex: 4 4 40rem;
+  flex: 1 1 0;
   min-width: 0;
+}
+.section--3 .main__text{
+  align-items: flex-end;
+  text-align: end;  
 }
 
 /* img */
@@ -140,7 +148,7 @@ section img{
 .section--2 img,
 .section--3 img,
 .section--4 img{
-  flex: 1 1 40rem;
+  flex: 1 1 0;
   max-width: 40rem;
   height: auto;
   min-width: 0;
