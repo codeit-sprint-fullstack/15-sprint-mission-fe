@@ -7,8 +7,8 @@ body {
 }
 
 header {
-  height: 70px;
-  margin: 9px 200px;
+  height: 4.375rem;
+  margin: 0.5625rem 12.5rem;
 }
 
 .top-left-design-own {
@@ -21,44 +21,45 @@ header {
 .top-left-design {
   display: flex;
   align-items: center;
-  gap: 8.592px;
+  gap: 0.537rem;
   flex: 0 0 auto;
 }
 
 .top-left-design img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: block;
 }
 
 .top-left-text {
   color: #3692ff;
   font-family: "ROKAF Sans", sans-serif;
-  font-size: 25.633px;
+  font-size: 1.602rem;
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
 }
 
 .login-button {
-  width: 128px;
-  height: 48px;
-  border-radius: 8px;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.5rem;
   background: #3692ff;
   color: #f3f4f6;
   border: none;
   white-space: nowrap;
+  text-decoration: none;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .login-button {
-  padding: 12px 23px;
+  padding: 0.75rem 1.4375rem;
   cursor: pointer;
   flex: 0 0 auto;
 }
@@ -76,53 +77,53 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 200px 405px 0;
-  gap: 7px;
+  padding: 12.5rem 25.3125rem 0;
+  gap: 0.4375rem;
 }
 
 .look-around-button {
   display: flex;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   background: #3692ff;
   color: #f9fafb;
   border: none;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
 
   display: flex;
-  height: 56px;
-  padding: 16px 124px;
+  height: 3.5rem;
+  padding: 1rem 7.75rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 32px 0 60px;
+  gap: 0.625rem;
+  margin: 2rem 0 3.75rem;
 
-  /* pretendard/xl-20px-semibold */
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 160% */
+  line-height: 2rem;
 }
 
 .bold-text {
   color: var(--Secondary-700, #374151);
   font-family: Pretendard;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 140%; /* 56px */
-  margin: 0 0 24px;
+  line-height: 140%;
+  margin: 0 0 1.5rem;
   white-space: nowrap;
 }
 
 .section1-2 {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .section2,
 .section3 {
-  padding: 138px 344px;
+  padding: 8.625rem 21.5rem;
   background: #ffffff;
 }
 
@@ -134,41 +135,41 @@ header {
 }
 
 .section2-inbox img {
-  margin-right: 64px;
+  margin-right: 4rem;
 }
 
 .blue-title-text {
   color: #3692ff;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 26px; /* 144.444% */
-  margin: 0 0 12px;
+  line-height: 1.625rem;
+  margin: 0 0 0.75rem;
   white-space: nowrap;
 }
 
 .text {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 32px; /* 133.333% */
+  line-height: 2rem;
 }
 
 .normal-text {
   color: #374151;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 32px; /* 133.333% */
+  line-height: 2rem;
   white-space: nowrap;
 }
 
 .section3-1 {
-  margin-left: 64px;
+  margin-left: 4rem;
 }
 
 .section4-2 {
-  margin-left: 69px;
+  margin-left: 4.3125rem;
 }
 
 .section4-2 img {
@@ -179,7 +180,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 60px;
+  margin: 0 0 3.75rem;
 }
 
 .section4-0 {
@@ -187,34 +188,34 @@ header {
 }
 
 footer {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
-background: var(--Secondary-900, #111827);
+  background: var(--Secondary-900, #111827);
 }
 
 footer p {
-color: var(--Secondary-200, #E5E7EB);
-text-align:start;
-font-family: Pretendard;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-margin: 0;
+  color: var(--Secondary-200, #e5e7eb);
+  text-align: start;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
 }
 
 .footer1-1 {
-display: flex;
-width: 1920px;
-height: 160px;
-padding: 32px 200px;
-justify-content: space-between;
-align-items: flex-start;
-gap: 10px;
+  display: flex;
+  width: 120rem;
+  height: 10rem;
+  padding: 2rem 12.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.625rem;
 }
 
 .footer-center-txt {
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
 }
