@@ -8,10 +8,17 @@ body {
 
 header {
   height: 70px;
-  padding: 9px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-left-design-own {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 9px 200px;
 }
 
 .top-left-design {
@@ -40,7 +47,9 @@ header {
   height: 48px;
   border-radius: 8px;
   background: #3692ff;
-  color: white;
+  color: #F3F4F6;
+  border: none;
+  white-space: nowrap;
 
   display: flex;
   justify-content: center;
@@ -52,4 +61,61 @@ header {
 
 .login-button {
   padding: 12px 23px;
+  cursor: pointer;
+}
+
+
+
+.section1 {
+  display: flex;
+  background-color: #CFE5FF;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1-1 {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 200px 405px 0;
+  gap: 7px;
+}
+
+.look-around-button {
+  display: flex;
+  border-radius: 40px;
+  background: #3692FF;
+  color: #F9FAFB;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  display: flex;
+  height: 56px;
+  padding: 16px 124px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 32px 0 60px;
+
+  /* pretendard/xl-20px-semibold */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 160% */
+}
+
+p {
+  color: var(--Secondary-700, #374151);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+}
+
+.section1-2 {
+  margin-bottom: 40px;
 }
