@@ -27,10 +27,11 @@ html {
   display: flex;
   width: 40rem;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 2.5rem;
   flex-shrink: 0;
-  margin : 14.5rem auto 17.75rem;
+  margin : 3.75rem auto 11.125rem;
 }
 
 .logo{
