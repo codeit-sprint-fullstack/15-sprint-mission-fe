@@ -8,23 +8,21 @@ body {
 
 header {
   height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 9px 200px;
 }
 
 .top-left-design-own {
-  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 9px 200px;
 }
 
 .top-left-design {
   display: flex;
   align-items: center;
   gap: 8.592px;
+  flex: 0 0 auto;
 }
 
 .top-left-design img {
@@ -47,7 +45,7 @@ header {
   height: 48px;
   border-radius: 8px;
   background: #3692ff;
-  color: #F3F4F6;
+  color: #f3f4f6;
   border: none;
   white-space: nowrap;
 
@@ -62,19 +60,17 @@ header {
 .login-button {
   padding: 12px 23px;
   cursor: pointer;
+  flex: 0 0 auto;
 }
-
-
 
 .section1 {
   display: flex;
-  background-color: #CFE5FF;
+  background-color: #cfe5ff;
   justify-content: center;
   align-items: center;
 }
 
 .section1-1 {
-
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -85,8 +81,8 @@ header {
 .look-around-button {
   display: flex;
   border-radius: 40px;
-  background: #3692FF;
-  color: #F9FAFB;
+  background: #3692ff;
+  color: #f9fafb;
   border: none;
   cursor: pointer;
   white-space: nowrap;
@@ -107,7 +103,7 @@ header {
   line-height: 32px; /* 160% */
 }
 
-p {
+.bold-text {
   color: var(--Secondary-700, #374151);
   font-family: Pretendard;
   font-size: 40px;
@@ -118,4 +114,51 @@ p {
 
 .section1-2 {
   margin-bottom: 40px;
+}
+
+.section2 {
+  padding: 138px 344px;
+  background: #ffffff;
+}
+
+.section2-inbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCFCFC;
+}
+
+.section2-inbox img {
+  margin-right: 64px;
+}
+
+.blue-title-text {
+  color: #3692ff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 144.444% */
+}
+
+.text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+}
+
+.hot-item-check {
+  margin: 0 0 24px;
+}
+
+.hot-item-text {
+  margin: 0 0 12px;
+}
+
+.normal-text {
+  color: #374151;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
 }
