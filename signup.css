@@ -137,16 +137,16 @@ form > button:hover {
   height: 42px;
 }
 
-/* 이 아래로 "판다마켓이 처음이신가요?" 메뉴 */
+/* 이 아래로 "이미 회원이신가요?" 메뉴 */
 
-.if_you_are_new {
+.if_already_signed_up {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
 
-.if_you_are_new > p {
+.if_already_signed_up > p {
   display: inline-block;
   font-size: 14px;
   font-weight: 500;
@@ -154,7 +154,7 @@ form > button:hover {
   color: var(--color-secondary-gray800);
 }
 
-.if_you_are_new > a {
+.if_already_signed_up > a {
   font-size: 14px;
   font-weight: 500;
   color: var(--color-primary-blue100);
