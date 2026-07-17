@@ -231,9 +231,12 @@ hr {
   padding: 0 200px;  
   margin: 0 auto;
   background-color: #111827;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-outbox > .footer {
+  width: 100%;
   max-width: 1920px;
   height: 160px;
   padding: 32px 0;
