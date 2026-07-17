@@ -4,6 +4,16 @@
 html {
   font-size: 100%;  
 }
+@media (max-width: 1199px) {
+ html {
+    font-size: 87.5%; 
+  }
+}
+@media (max-width: 743px) {
+  html {
+    font-size: 75%; 
+  } 
+}
 
 * {
   box-sizing: border-box;
