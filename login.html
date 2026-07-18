@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓 로그인</title>
+    <link rel="icon" href="./images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="./fonts.css" />
+    <link rel="stylesheet" href="./loginStyle.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XQMR3MRDWV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-XQMR3MRDWV");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <a href="./">
+          <img src="./images/panda-face.png" alt="판다얼굴" />
+        </a>
+        <a class="logo-text" href="./">판다마켓</a>
+      </div>
+
+      <div class="input-box">
+        <label for="email">이메일</label>
+        <input id="email" type="email" placeholder="이메일을 입력해주세요" />
+      </div>
+      <div class="input-box">
+        <label for="password">비밀번호</label>
+        <div class="input-password">
+          <input
+            id="password"
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+
+          <img src="./images/btn_visibility_on_24px.png" />
+        </div>
+      </div>
+
+      <a class="btn-login" href="">로그인</a>
+
+      <div class="social-login">
+        <p>간편 로그인하기</p>
+        <div class="social-login-btn">
+          <a href="https://www.google.com/">
+            <img
+              href="https://www.google.com/"
+              src="./images/ic_google.png"
+              alt=""
+            />
+          </a>
+          <a href="https://www.kakaocorp.com/page/">
+            <img src="./images/ic_kakaotalk.png" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>
+          판다마켓이 처음이신가요?
+          <a href="./signup.html">회원가입</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
