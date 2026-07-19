@@ -1,0 +1,124 @@
+.section__hero {
+  width: 100%;
+  height: 540px;
+  background: var(--color-skyblue);
+}
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.7rem;
+  height: 100%;
+}
+.hero__header {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+  height: 34rem;
+}
+.hero__title {
+  color: var(--color-gray-700);
+}
+.hero__link {
+  margin-bottom: 6rem;
+  padding: 1.6rem 12.4rem;
+  background: var(--color-primary-100);
+  border-radius: 4rem;
+  color: var(--color-gray-50);
+}
+.hero__img {
+  flex-shrink: 0;
+  width: 74.6rem;
+  height: 34rem;
+}
+
+.section__hot-item,
+.section__search,
+.section__register {
+  background: var(--color-white);
+}
+.hot-item__inner,
+.search__inner,
+.register__inner {
+  display: flex;
+  justify-content: center;
+  padding: 13.8rem 0;
+}
+.hot-item__wrapper,
+.search__wrapper,
+.register__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6.4rem;
+  width: 98.8rem;
+}
+.hot-item__img,
+.search__img,
+.register__img {
+  flex-shrink: 0;
+  width: 58.8rem;
+  height: 44.4rem;
+}
+.hot-item__header,
+.search__header,
+.register__header {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hot-item__tag,
+.search__tag,
+.register__tag {
+  margin-bottom: 1.2rem;
+  color: var(--color-primary-100);
+}
+.hot-item__title,
+.search__title,
+.register__title {
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.08rem;
+  color: var(--color-gray-700);
+}
+.hot-item__text,
+.search__text,
+.register__text {
+  color: var(--color-gray-700);
+}
+
+.section__bottom {
+  padding-top: 13.8rem;
+  background: var(--color-snow);
+}
+.bottom__inner {
+  width: 100%;
+  height: 100%;
+  background: var(--color-skyblue);
+}
+.bottom__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6.9rem;
+  padding-top: 14.3rem;
+  height: 100%;
+}
+.bottom__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: 39.7rem;
+}
+.bottom__title {
+  margin-bottom: 6rem;
+}
+.bottom__img {
+  flex-shrink: 0;
+  width: 74.6rem;
+  height: 39.7rem;
+}
