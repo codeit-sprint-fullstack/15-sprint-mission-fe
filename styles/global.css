@@ -3,3 +3,59 @@ body {
   word-break: keep-all;
   font-family: "Pretendard", sans-serif;
 }
+
+.gnb {
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.gnb-inner {
+  width: calc(100% - 400px);
+  max-width: 1520px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link img {
+  width: 153px;
+}
+
+/* 버튼 링크의 공통 속성 */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #3692ff;
+  color: #ffffff;
+}
+
+/* 공통 버튼 상태 */
+.button:hover {
+  background-color: #1967d6;
+}
+
+.button:focus-visible {
+  background-color: #1251aa;
+}
+
+/* 로그인 버튼 전용 스타일 */
+.login-button {
+  padding: 11.5px 23px;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 내부 콘텐츠 레퍼 */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

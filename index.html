@@ -20,23 +20,25 @@
   </head>
 
   <body>
-    <header>
-      <nav aria-label="주요 메뉴">
-        <a href="/">
+    <header class="gnb">
+      <nav class="gnb-inner" aria-label="주요 메뉴">
+        <a href="/" class="logo-link">
           <img src="images/logo/panda-market-logo.png" alt="판다마켓 홈" />
         </a>
-        <a href="/login">로그인</a>
+        <a href="/login" class="button login-button">로그인</a>
       </nav>
     </header>
 
     <main>
       <section id="hero">
-        <h1>
-          일상의 모든 물건을
-          <br />
-          거래해 보세요
-        </h1>
-        <a href="/items">구경하러 가기</a>
+        <div class="wrapper">
+          <h1>
+            일상의 모든 물건을
+            <br />
+            거래해 보세요
+          </h1>
+          <a href="/items" class="button pill-button">구경하러 가기</a>
+        </div>
       </section>
 
       <section id="features" aria-label="판다마켓 주요 기능">

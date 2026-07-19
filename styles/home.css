@@ -1,0 +1,31 @@
+#hero {
+  height: 540px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #cfe5ff;
+  background-image: url("../images/home/hero-image.png");
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
+}
+
+#hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+}
+
+.pill-button {
+  padding: 16px 124px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 제목과 버튼 사이 간격 */
+#hero .pill-button {
+  margin-top: 32px;
+}
