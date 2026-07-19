@@ -1,9 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
     <title>판다마켓</title>
   </head>
-  <body></body>
+  <body>
+    <div class="market-box">
+      <div class="logo-box"><img src="./loginPageData/panda-market-logo.png" width="396px" height="132px" /></div>
+      <div class="input-box">
+        <label for="email" class="labelName">이메일</label>
+        <input id="email" type="email" placeholder="이메일을 입력해주세요" />
+      </div>
+      <div class="input-box">
+        <label for="password" class="labelName">비밀번호</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="비밀번호를 입력해주세요"
+        />
+      </div>
+      <div><button type="submit">로그인</button></div>
+      <div class="easyLogin">
+        <div><p>간편 로그인하기</p></div>
+        <div class="easyLoginImg">
+          <div>
+            <a href="https://www.kakaocorp.com/page/" rel="noopener noreferrer">
+              <img src="./loginPageData/Component 3.png" alt="카카오톡" />
+            </a>
+          </div>
+          <div>
+            <a href="https://www.google.com/" rel="noopener noreferrer">
+              <img src="./loginPageData/Component 2.png" alt="구글" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>판다마켓이 처음이신가요?</p>
+        <a href="./signUpPage.html">회원가입</a>
+      </div>
+    </div>
+  </body>
 </html>
