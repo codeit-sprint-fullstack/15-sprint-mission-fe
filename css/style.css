@@ -205,6 +205,7 @@ section h6{
   align-items: center;
   text-decoration: none;
   white-space: nowrap;
+  color : #ffffffff;
 }
 .btn--login{
   border-radius: 0.5rem;
