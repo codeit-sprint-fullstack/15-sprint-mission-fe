@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="stylesheet" href="/typography.css" />
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/signup/index.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  </head>
+  <body>
+    <section class="signup">
+      <div class="signup__inner">
+        <a class="signup__logo" href="/">
+          <img src="/images/panda_logo.svg" alt="판다마켓 로고 이미지" />
+        </a>
+        <form class="signup__form" action="">
+          <div class="field">
+            <label class="field__label text-2lg font-bold" for="">이메일</label>
+            <input
+              class="field__input text-lg font-regular"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+            />
+          </div>
+          <div class="field">
+            <label class="field__label text-2lg font-bold" for="">닉네임</label>
+            <input
+              class="field__input text-lg font-regular"
+              type="text"
+              placeholder="닉네임을 입력해주세요"
+            />
+          </div>
+          <div class="field">
+            <label class="field__label text-2lg font-bold" for="">
+              비밀번호
+            </label>
+            <input
+              class="field__input text-lg font-regular"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+          </div>
+          <div class="field">
+            <label class="field__label text-2lg font-bold" for="">
+              비밀번호 확인
+            </label>
+            <input
+              class="field__input text-lg font-regular"
+              type="password"
+              placeholder="비밀번호를 다시 입력해주세요"
+            />
+          </div>
+        </form>
+        <button class="signup__submit text-xl font-semibold">회원가입</button>
+        <div class="signup__social">
+          <div class="social__text text-lg font-medium">간편 로그인하기</div>
+          <div class="social__group">
+            <a class="social__link" href="https://www.google.com/">
+              <img
+                class="social__link--google"
+                src="/images/google_logo.svg"
+                alt="구글 로고 이미지"
+              />
+            </a>
+            <a class="social__link" href="https://www.kakaocorp.com/page/">
+              <img
+                class="social__link--kakao-bg"
+                src="/images/kakao_logo-bg.svg"
+                alt="카카오 로고 배경 이미지"
+              />
+              <img
+                class="social__link--kakao"
+                src="/images/kakao_logo.svg"
+                alt="카카오 로고 이미지"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="login__text text-md font-medium">
+          이미 회원이신가요?
+          <a class="login__link" href="/login/">로그인</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
