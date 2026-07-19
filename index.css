@@ -33,3 +33,43 @@
   width: 74.6rem;
   height: 34rem;
 }
+
+.section__hot-item {
+  background: var(--color-white);
+}
+.hot-item__inner {
+  display: flex;
+  justify-content: center;
+  padding: 13.8rem 0;
+}
+.hot-item__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6.4rem;
+  width: 98.8rem;
+}
+.hot-item__img {
+  flex-shrink: 0;
+  width: 58.8rem;
+  height: 44.4rem;
+}
+.hot-item__header {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hot-item__tag {
+  margin-bottom: 1.2rem;
+  color: var(--color-primary-100);
+}
+.hot-item__title {
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.08rem;
+  color: var(--color-gray-700);
+}
+.hot-item__text {
+  color: var(--color-gray-700);
+}
