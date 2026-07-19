@@ -122,3 +122,38 @@
   width: 74.6rem;
   height: 39.7rem;
 }
+
+.footer {
+  background: var(--color-gray-900);
+}
+.footer__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3.2rem 20rem;
+  height: 16rem;
+}
+.footer__company {
+  flex-shrink: 0;
+  color: var(--color-gray-400);
+}
+.footer__info {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.footer__info a {
+  color: var(--color-gray-200);
+}
+.footer__social {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+}
+.footer__link img {
+  width: 2rem;
+  height: 2rem;
+}
