@@ -122,3 +122,11 @@ gap: 16px;
   gap: 4px;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid #3692FF;
+}
