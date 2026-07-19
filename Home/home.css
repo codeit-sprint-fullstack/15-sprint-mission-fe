@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: "Pretendard", sans-serif;
   margin: 0;
 }
 
@@ -25,16 +26,9 @@ header {
   align-items: center;
 }
 
-.top-left-design {
-  display: flex;
-  align-items: center;
-  gap: 0.537rem;
-  flex: 0 0 auto;
-}
-
 .top-left-design img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 9.5625rem;
+  height: 3.1875rem;
   display: block;
 }
 
@@ -48,8 +42,8 @@ header {
 }
 
 .login-button {
-  width: 8rem;
-  height: 3rem;
+  width: 5.468125rem;
+  height: 2.651875rem;
   border-radius: 0.5rem;
   background: #3692ff;
   color: #f3f4f6;
