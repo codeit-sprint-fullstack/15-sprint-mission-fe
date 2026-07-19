@@ -1,0 +1,35 @@
+.section__hero {
+  width: 100%;
+  height: 540px;
+  background: var(--color-skyblue);
+}
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.7rem;
+  height: 100%;
+}
+.hero__header {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+  height: 34rem;
+}
+.hero__title {
+  color: var(--color-gray-700);
+}
+.hero__link {
+  margin-bottom: 6rem;
+  padding: 1.6rem 12.4rem;
+  background: var(--color-primary-100);
+  border-radius: 4rem;
+  color: var(--color-gray-50);
+}
+.hero__img {
+  flex-shrink: 0;
+  width: 74.6rem;
+  height: 34rem;
+}
