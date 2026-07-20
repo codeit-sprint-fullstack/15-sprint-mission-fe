@@ -5,7 +5,12 @@ body {
 }
 
 .gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   height: 70px;
+  width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
 }

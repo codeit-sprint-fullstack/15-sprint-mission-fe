@@ -11,6 +11,10 @@
   background-size: 55%;
 }
 
+main {
+  padding-top: 70px;
+}
+
 #hero {
   background-image: url("../images/home/hero-image.png");
 }
