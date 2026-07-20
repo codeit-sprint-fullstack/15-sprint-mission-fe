@@ -33,15 +33,15 @@
 
 - [x]  `style.css` L191 `1,125rem` → `1.125rem`
 - [x]  `index.html` L87~90 SNS 링크 뒤 `></a>` 4개 제거
-- [ ]  `signup.html` `id="login-password"` 중복 해소
+- [x]  `signup.html` `id="login-password"` 중복 해소
 - [x]  `z_item/z_policy/z_faq` → `items/privacy/faq` 로 파일명 변경 + 링크 수정
-- [ ]  `auth.css` input 테두리 명시 (focus out 시 테두리 없음 요구사항)
-- [ ]  `z_item.html`의 없는 `css/item.css` 링크 정리
+- [x]  `auth.css` input 테두리 명시 (focus out 시 테두리 없음 요구사항)
+- [x]  `z_item.html`의 없는 `css/item.css` 링크 정리
 - [x]  **README.md 작성** (미션 2 기본 요구사항)
 
 **🟡  구조와 접근성**
 
-- [ ]  `<header>`/`<footer>`를 `<body>` 안으로, `<meta>`/`<title>`을 `<head>` 안으로
+- [x]  `<header>`/`<footer>`를 `<body>` 안으로, `<meta>`/`<title>`을 `<head>` 안으로
 - [ ]  전체 파일 `<html lang="ko">`
 - [ ]  `h1` 추가 + 제목 태그를 의미 기준으로 재정리
 - [ ]  `<a alt="">` → `aria-label`, 빈 SNS 링크에 이름 부여
@@ -50,7 +50,7 @@
 
 **🟢  코드 품질**
 
-- [ ]  `footer a, h6` → `footer a, footer h6`
+- [x]  `footer a, h6` → `footer a, footer h6`
 - [ ]  `style.css`에 `:root` 변수 정의 (심화 요구사항 완성)
 - [ ]  변수명 kebab-case 통일, 공통 파일로 분리
 - [ ]  두 CSS의 미디어쿼리 폰트 크기 통일
