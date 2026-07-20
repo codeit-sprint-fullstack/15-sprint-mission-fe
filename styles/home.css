@@ -52,7 +52,7 @@ main {
 }
 
 .feature > img {
-  width: 588px;
+  width: 600px;
 }
 
 .feature-content {
@@ -78,7 +78,7 @@ main {
 .feature-description {
   font-size: 24px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 120%;
   letter-spacing: 0.08em;
 }
 
