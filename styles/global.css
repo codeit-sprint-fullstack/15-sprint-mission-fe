@@ -59,3 +59,43 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+footer {
+  height: 160px;
+  background-color: #111827;
+  color: #9ca3af;
+}
+
+.footer-inner {
+  width: calc(100% - 400px);
+  max-width: 1520px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 32px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-inner > p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 30px;
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.social-media {
+  display: flex;
+  gap: 12px;
+}
+
+.social-media img {
+  width: 20px;
+  height: 20px;
+}
