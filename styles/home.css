@@ -1,14 +1,5 @@
 #hero {
-  height: 540px;
-
-  display: flex;
-  align-items: center;
-
-  background-color: #cfe5ff;
   background-image: url("../images/home/hero-image.png");
-  background-repeat: no-repeat;
-  background-position: 80% bottom;
-  background-size: 55%;
 }
 
 #hero h1 {
@@ -76,4 +67,27 @@
 
 .feature:nth-child(2) .feature-content {
   text-align: right;
+}
+
+#bottomBanner {
+  background-image: url("../images/home/bottom-banner-image.png");
+}
+
+#bottomBanner h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+}
+
+.banner {
+  height: 540px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #cfe5ff;
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
 }
