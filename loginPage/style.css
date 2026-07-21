@@ -134,3 +134,10 @@ input {
 input:focus {
   border: 1px solid #3692ff;
 }
+
+.group-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 231px 640px 284px;
+}

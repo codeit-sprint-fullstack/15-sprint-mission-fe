@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  position: fixed;
+  position: sticky; /* fixed -> sticky 수정 */
   top: 0;
   left: 0;
   width: 100%;
@@ -32,16 +32,8 @@ header {
   display: block;
 }
 
-.top-left-text {
-  color: #3692ff;
-  font-family: "ROKAF Sans", sans-serif;
-  font-size: 1.602rem;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-}
-
 .login-button {
+  /* 선택자 2번 중복선언한 것 수정완료 */
   width: 5.468125rem;
   height: 2.651875rem;
   border-radius: 0.5rem;
@@ -57,9 +49,7 @@ header {
 
   font-size: 1rem;
   font-weight: 600;
-}
 
-.login-button {
   padding: 0.75rem 1.4375rem;
   cursor: pointer;
   flex: 0 0 auto;
@@ -162,13 +152,6 @@ header {
   white-space: nowrap;
 }
 
-.text {
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem;
-}
-
 .normal-text {
   color: #374151;
   font-size: 1.5rem;
@@ -193,7 +176,6 @@ header {
 .section4-1 {
   margin: 0;
 }
-
 
 footer {
   display: flex;
