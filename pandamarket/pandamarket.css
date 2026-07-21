@@ -10,11 +10,17 @@ header {
   height: 60px;
   background-color: #fcfcfc;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 
 h2 {
   color: #374151;
   font-weight: 700;
   font-size: 40px;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 h4 {
@@ -22,11 +28,15 @@ h4 {
   font-weight: 700;
   font-size: 18px;
   color: #3692ff;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 p {
   font-weight: 500;
   font-size: 24px;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .title {
@@ -57,7 +67,7 @@ section {
   gap: 7px;
 }
 
-.login-button {
+.go-login {
   height: 48px;
   width: 128px;
   padding: 12px 23px;
@@ -65,7 +75,12 @@ section {
   border-radius: 8px;
   background-color: #3692ff;
   font-size: 16px;
+  text-align: center;
+  text-decoration: none;
   color: #f3f4f6;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .message-button-div {
@@ -126,6 +141,7 @@ section {
   font-size: 20px;
   color: #f9fafb;
   /* padding: 16px 124px; */
+  cursor: pointer;
 }
 
 .register-messege {
@@ -171,10 +187,12 @@ footer {
   gap: 30px;
 }
 
-.private-faq > p {
+.private-faq > a {
   font-weight: 400;
   font-size: 16px;
   color: #e5e7eb;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .sns-div {
