@@ -72,7 +72,9 @@ html{
   line-height: 1.625rem;
 }
 
-input {
+.main__text input:not(.password__checkbox) {
+  border: 1px solid transparent;
+  outline: none;
   display: flex;
   width: 40rem;
   height: 3.5rem;
@@ -81,8 +83,6 @@ input {
   gap: 0.625rem;
   border-radius: 0.75rem;
   background: var(--gray-light);
-  border: 1px solid transparent;
-  outline: none;
 }
 input:focus {
   border-color: var(--blue-brand);
@@ -91,9 +91,11 @@ input:focus {
 .password__input {
   position: relative;  
 }
-.password__checkbox
-{ 
-  display: none; 
+.password__checkbox {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 .password__toggle
  {
