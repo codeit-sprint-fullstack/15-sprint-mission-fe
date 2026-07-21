@@ -124,6 +124,7 @@
   font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--primary-color);
+  line-height: normal;
 }
 
 .section-container {
@@ -166,6 +167,7 @@
   align-self: end;
 }
 
+/* footer */
 .footer {
   height: 160px;
   padding: 32px 200px 0;
@@ -193,4 +195,211 @@
 
 .footer-sns-wrapper > a:last-child {
   margin-right: 0;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  /* gnb */
+  .gnb {
+    padding: 11px 24px;
+  }
+
+  /* main banner */
+  .main-banner {
+    height: auto;
+  }
+
+  .main-banner-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .banner__left {
+    margin-top: 84px;
+    margin-bottom: 211px;
+    text-align: center;
+  }
+
+  .banner__right > img {
+    width: 100%;
+  }
+
+  /* section 공통요소 */
+
+  .section-title {
+    margin-top: 12px;
+  }
+
+  .section-desc {
+    margin-top: 24px;
+    font-size: var(--font-size-lg);
+  }
+
+  .label {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .section-container {
+    padding: 0;
+  }
+
+  .content-wrapper {
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+    gap: 28px;
+
+    max-width: 988px;
+  }
+  .content__img-wrapper > img {
+    width: 100%;
+  }
+
+  .content-wrapper-right .text-align-right {
+    order: 1;
+  }
+
+  .content__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* banner-bottom */
+  .banner-bottom {
+    display: flex;
+    margin-top: 24px;
+    align-items: end;
+    height: auto;
+    background-color: var(--background-color);
+    line-height: 0;
+  }
+  .banner-bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin: 0 auto;
+  }
+
+  .banner-bottom__desc {
+    margin-top: 200px;
+    margin-bottom: 217px;
+    align-self: center;
+    text-align: center;
+  }
+
+  .banner-bottom__img > img {
+    width: 100%;
+  }
+
+  /* footer */
+  .footer {
+    padding: 32px 24px 0;
+    background-color: var(--secondary-color);
+  }
+}
+
+/* mobile */
+@media screen and (min-width: 375px) and (max-width: 743px) {
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+
+  /* gnb */
+  .gnb {
+    padding: 11px 16px;
+  }
+
+  .gnb__logo {
+    display: none;
+  }
+
+  /* main banner */
+  .main-banner {
+    height: auto;
+  }
+
+  .main-banner-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .banner__left {
+    margin-top: 48px;
+    margin-bottom: 132px;
+    text-align: center;
+  }
+
+  .banner__left-btn {
+    max-width: 240px;
+  }
+
+  .banner__right > img {
+    width: 100%;
+  }
+
+  /* section 공통요소 */
+
+  .section-title {
+    margin-top: 12px;
+  }
+
+  .section-desc {
+    margin-top: 24px;
+    font-size: var(--font-size-md);
+  }
+
+  .label {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .section-container {
+    padding: 0;
+  }
+
+  .content-wrapper {
+    padding: 20px 16px;
+  }
+
+  .content-wrapper:first-child {
+    padding-top: 52px;
+  }
+
+  /* banner-bottom */
+  .banner-bottom {
+    margin-top: 63px;
+  }
+
+  .banner-bottom__desc {
+    margin-top: 121px;
+    margin-bottom: 131px;
+  }
+
+  /* footer */
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+  .footer-copyright {
+    grid-row-start: 2;
+  }
+
+  .footer-sns-wrapper {
+    text-align: right;
+  }
 }
