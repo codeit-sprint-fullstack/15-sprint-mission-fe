@@ -51,13 +51,13 @@
 **🟢  코드 품질**
 
 - [x]  `footer a, h6` → `footer a, footer h6`
-- [ ]  `style.css`에 `:root` 변수 정의 (심화 요구사항 완성)
+- [x]  `style.css`에 `:root` 변수 정의 (심화 요구사항 완성)
 - [ ]  변수명 kebab-case 통일, 공통 파일로 분리
 - [ ]  두 CSS의 미디어쿼리 폰트 크기 통일
-- [ ]  `.logo img` 등 죽은 코드 제거
-- [ ]  `@import` → `<link>`
-- [ ]  `.gitignore` 추가 + `.DS_Store` 추적 해제
-- [ ]  `alt` 오타(`쨰`→`째`) 및 설명 개선
+- [x]  `.logo img` 등 죽은 코드 제거
+- [x]  `@import` → `<link>`
+- [x]  `.gitignore` 추가 + `.DS_Store` 추적 해제
+- [x]  `alt` 오타(`쨰`→`째`) 및 설명 개선
 - [ ]  GA를 로그인/회원가입에도
 
 ## 🛠️ 구현 과정 및 막혔던 점
