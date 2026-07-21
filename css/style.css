@@ -37,7 +37,6 @@ nav{
   align-self: stretch;
 }
 
-/* logo */
 .logo__link{
   display: flex;
   width: 9.5625rem;
@@ -68,11 +67,6 @@ body{
   margin:0;
 }
 
-a{
-  cursor: pointer;
-}
-
-/* section */
 section{
   width: 100%;
   min-height: 33.75rem;
@@ -85,7 +79,7 @@ section{
   background: var(--blue-lightest);
 }
 
-/* main */
+
 section .main{
   display: flex;
   width: 100%;
@@ -112,7 +106,7 @@ section .main{
   padding: 9rem 0 0; 
 }
 
-/* main__text */
+
 section .main__text{
   display: flex;
   flex-direction: column;
@@ -132,7 +126,7 @@ section .main__text{
   text-align: end;  
 }
 
-/* img */
+
 section img{
   display: flex;
   width: 46.625rem;
@@ -150,8 +144,8 @@ section img{
   min-width: 0;
 }
 
-/* h3스타일 */
-h3{
+
+h1, h2{
   color: var(--gray-dark);
   font-size: 2.5rem;
   font-style: normal;
@@ -159,14 +153,10 @@ h3{
   line-height: 140%; 
   white-space: pre-line;
 }
-.section--2 h3 ,
-.section--3 h3 ,
-.section--4 h3{
+h2{
   letter-spacing: 0.05rem;
 }
-
-/* h5스타일 */
-section h5{
+.section__desc{
   color: var(--gray-dark);
   font-family: Pretendard;
   font-size: 1.5rem;
@@ -174,12 +164,11 @@ section h5{
   font-weight: 500;
   line-height: 2rem;
 }
-.section--3 h5{
+.section--3 .section__desc{
   text-align: right;
 }
 
-/* h6스타일 */
-section h6{
+section p{
   color: var(--blue-brand);
   font-family: Pretendard;
   font-size: 1.125rem;
@@ -187,11 +176,10 @@ section h6{
   font-weight: 700;
   line-height: 1.625rem; 
 }
-.section--3 h6{
+.section--3 p{
   text-align: right;
 }
 
-/* 버튼  */
 .btn{
   display: flex;  
   background: var(--blue-brand);
@@ -215,7 +203,6 @@ section h6{
   gap: 0.625rem;  
 }
 
-/* footer */
 footer{
   display: flex;
   width: 100%;
