@@ -1,16 +1,4 @@
-@font-face {
-  font-family: 'Pretendard';
-  src: url('./Pretendard/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: swap;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {  
   font-family: Pretendard, sans-serif;
@@ -25,7 +13,7 @@ body {
 }
 
 nav {
-  max-width: 1920px;
+  max-width: 1520px;
   height: 70px;
   border-bottom: 1px;
   display: flex;
@@ -38,8 +26,6 @@ nav {
   width: 153px;
   height: 51px;
   padding: 5px auto;
-  justify-content: center;
-  align-items: center;
 }
 
 .login-button {
@@ -49,10 +35,10 @@ nav {
   padding: 12px 23px;
   justify-content: center;
   align-items: center;
-  background-color: #3692ff;
+  background-color: var(--color-primary-blue100);
   border-radius: 8px;
   text-decoration: none;
-  color: #f3f4f6;
+  color: var(--color-secondary-gray100);
   white-space: nowrap;
 }
 
@@ -92,8 +78,7 @@ header {
   font-weight: 700;
   font-style: noraml;
   line-height: 140%;
-  color: #374151;
-  font-family: Pretendard;
+  color: var(--color-secondary-gray700);
   letter-spacing: 0%;
 }
 
@@ -103,8 +88,8 @@ header {
   border-radius: 40px;
   padding: 16px 124px;
   margin: 32px 0 100px;
-  background-color: #3692ff;
-  color: #f9fafb;
+  background-color: var(--color-primary-blue100);
+  color: var(--color-secondary-gray50);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -159,21 +144,21 @@ header {
 }
 
 .card-text > h2,
-p {
+.card-text > p {
   display: inline-block;
 }
 
 .card-text > h2 {
-  color: #3692ff;
+  color: var(--color-primary-blue100);
   font-family: Pretendard;
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
 }
 
-.card-text.p1 {
+.card-text_title {
   margin-top: 12px;
-  color: #374151;
+  color: var(--color-secondary-gray700);
   font-family: Pretendard;
   font-size: 40px;
   font-weight: 700;
@@ -181,9 +166,9 @@ p {
   letter-spacing: 0.8px;
 }
 
-.card-text.p2 {
+.card-text_desc {
   margin-top: 24px;
-  color: #374151;
+  color: var(--color-secondary-gray700);
   font-family: Pretendard;
   font-size: 24px;
   font-weight: 500;
@@ -213,12 +198,13 @@ hr {
 .main-footer-inbox {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 69px;
 }
 
-.main-footer-inbox > h1 {
+.main-footer-inbox > h2 {
   display: inline-block;
-  color: #374151;
+  color: var(--color-secondary-gray700);
   font-family: Pretendard;
   font-size: 40px;
   font-style: normal;
@@ -230,17 +216,17 @@ hr {
   width: 100%;
   padding: 0 200px;  
   margin: 0 auto;
-  background-color: #111827;
+  background-color: var(--color-secondary-gray900);
   display: flex;
   justify-content: center;
 }
 
 .footer-outbox > .footer {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1520px;
   height: 160px;
   padding: 32px 0;
-  background-color: #111827;
+  background-color: var(--color-secondary-gray900);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -248,7 +234,7 @@ hr {
 }
 
 .footer-left {
-  color: #9ca3af;
+  color: var(--color-secondary-gray400);
   text-align: center;
   font-size: 16px;
   font-weight: 400;
@@ -260,7 +246,7 @@ hr {
 }
 
 .footer-center > a {  
-  color: #e5e7eb;
+  color: var(--color-secondary-gray200);
   text-align: center;
   font-size: 16px;
   font-weight: 400;

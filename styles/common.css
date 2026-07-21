@@ -1,5 +1,15 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --color-primary-blue100: #3693ff;
+  --color-primary-blue100: #3692ff;
   --color-primary-blue200: #1967d6;
   --color-primary-blue300: #1251aa;
   --color-secondary-gray900: #111827;
@@ -12,4 +22,14 @@
   --color-secondary-gray100: #f3f4f6;
   --color-secondary-gray50: #f9fafb;
   --color-error-red: #f74747;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
 }

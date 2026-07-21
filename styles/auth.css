@@ -1,30 +1,15 @@
-@font-face {
-  font-family: "Pretendard";
-  src: url("./Pretendard/web/variable/woff2/PretendardVariable.woff2")
-    format("woff2-variations");
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: swap;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
   font-family: Pretendard, sans-serif;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* 전체 요소가 담긴 컨테이너 */
 
 .login_outbox {
   width: 640px;
-  margin: auto auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,14 +24,8 @@ form {
   gap: 24px;
 }
 
-form > div {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 form > .email,
-.password {
+form > .password {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -105,19 +84,14 @@ form > button:hover {
 
 .quick_login_menu {
   width: 640px;
-  height: 74px;
+  height: 74px;  
+  border-radius: 8px;
   background-color: #e6f2ff;
   display: flex;
-  justify-content: space-between;
-  margin: 24px 0;
-}
-
-.quick_login_menu {
-  display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  
   align-items: center;
+  margin: 24px 0;  
   padding: 16px 23px;
-  border-radius: 8px;
 }
 
 .quick_login_menu > p {
@@ -139,14 +113,14 @@ form > button:hover {
 
 /* 이 아래로 "판다마켓이 처음이신가요?" 메뉴 */
 
-.if_you_are_new {
+.auth_switch {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
 
-.if_you_are_new > p {
+.auth_switch > p {
   display: inline-block;
   font-size: 14px;
   font-weight: 500;
@@ -154,7 +128,7 @@ form > button:hover {
   color: var(--color-secondary-gray800);
 }
 
-.if_you_are_new > a {
+.auth_switch > a {
   font-size: 14px;
   font-weight: 500;
   color: var(--color-primary-blue100);
