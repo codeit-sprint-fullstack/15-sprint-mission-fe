@@ -44,7 +44,7 @@
 - [x]  `<header>`/`<footer>`를 `<body>` 안으로, `<meta>`/`<title>`을 `<head>` 안으로
 - [x]  전체 파일 `<html lang="ko">`
 - [ ]  `h1` 추가 + 제목 태그를 의미 기준으로 재정리
-- [ ]  `<a alt="">` → `aria-label`, 빈 SNS 링크에 이름 부여
+- [x]  `<a alt="">` → `aria-label`, 빈 SNS 링크에 이름 부여
 - [x]  입력 칸별 `<form>` → 하나로 통합
 - [x]  `viewport` 메타 중복 제거
 
