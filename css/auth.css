@@ -180,15 +180,22 @@ input:focus {
   width: 2.625rem;
   height: 2.625rem;
 }
-.auth-footer{
+footer{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
   width: 100%;
 }
-
-.auth-footer__link{
+footer p{
+  color: var(--gray-darkest);
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.footer__link{
   color: var(--blue-brand);
   font-family: Pretendard;
   font-size: 1rem;
