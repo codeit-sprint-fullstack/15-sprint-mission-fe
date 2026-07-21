@@ -48,10 +48,13 @@
               placeholder="비밀번호를 입력해주세요"
             />
             <img
+              id="passwordOn"
+              class="isPwActive"
               src="../assets/btn_visibility_off_24px.svg"
               alt="비밀번호 노출 아이콘"
             />
             <img
+              id="passwordOff"
               src="../assets/btn_visibility_on_24px.svg"
               alt="비밀번호 비노출 아이콘"
             />
@@ -65,10 +68,13 @@
               placeholder="비밀번호를 입력해주세요"
             />
             <img
+              id="passwordCheckOn"
+              class="isPwActive"
               src="../assets/btn_visibility_off_24px.svg"
               alt="비밀번호 노출 아이콘"
             />
             <img
+              id="passwordCheckOff"
               src="../assets/btn_visibility_on_24px.svg"
               alt="비밀번호 비노출 아이콘"
             />
@@ -111,6 +117,33 @@
       document
         .querySelector(".login-form")
         .addEventListener("input", signupBtnHandler)
+
+      // 비밀번호 노출/비노출 토글
+      const pwOnBtn = document.querySelector("#passwordOn")
+      const pwOffBtn = document.querySelector("#passwordOff")
+      const pwCheckOnBtn = document.querySelector("#passwordCheckOn")
+      const pwCheckOffBtn = document.querySelector("#passwordCheckOff")
+
+      const togglePasswordVisibility = () => {
+        pwOnBtn.classList.toggle("isPwActive")
+        pwOffBtn.classList.toggle("isPwActive")
+        const $input = document.querySelector("#pw")
+        const isPwVisible = pwOnBtn.classList.contains("isPwActive")
+        $input.type = isPwVisible ? "password" : "text"
+      }
+
+      pwOnBtn.addEventListener("click", togglePasswordVisibility)
+      pwOffBtn.addEventListener("click", togglePasswordVisibility)
+
+      const togglePasswordCheckVisibility = () => {
+        pwCheckOnBtn.classList.toggle("isPwActive")
+        pwCheckOffBtn.classList.toggle("isPwActive")
+        const $input = document.querySelector("#pw-check")
+        const isPwVisible = pwCheckOnBtn.classList.contains("isPwActive")
+        $input.type = isPwVisible ? "password" : "text"
+      }
+      pwCheckOnBtn.addEventListener("click", togglePasswordCheckVisibility)
+      pwCheckOffBtn.addEventListener("click", togglePasswordCheckVisibility)
     </script>
   </body>
 </html>
