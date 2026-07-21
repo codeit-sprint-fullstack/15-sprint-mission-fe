@@ -134,3 +134,23 @@ input::placeholder {
   color: var(--primary-color);
   text-decoration: underline;
 }
+
+/* mobile */
+@media screen and (max-width: 743px) {
+  /* logo */
+  .logo-container {
+    margin-bottom: 31px;
+  }
+
+  .logo {
+    width: 51px;
+  }
+
+  .logo-type {
+    width: 131px;
+  }
+
+  .form-container {
+    padding: 0 16px;
+  }
+}
