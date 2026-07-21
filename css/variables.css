@@ -1,0 +1,21 @@
+:root {
+/* 무채색 - 기본 */
+  --white: #ffffff;
+  --black: #000000;
+
+/* 무채색 - 회색조 (밝은 순 → 어두운 순) */
+  --gray-lightest: #fcfcfc;
+  --gray-light: #f3f4f6;
+  --gray-mid: #dfdfdf;
+  --gray-heavy: #9ca3af;
+  --gray-dark: #374151;
+  --gray-darkest: #1f2937;
+
+/* 브랜드 - 블루 */
+  --blue-lightest: #cfe5ff;
+  --blue-light: #e6f2ff;
+  --blue-brand: #3692ff;
+
+/* 배경/기타 */
+  --navy-dark: #111827;
+}
