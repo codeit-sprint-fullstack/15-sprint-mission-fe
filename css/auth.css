@@ -1,21 +1,23 @@
 @import "/css/reset.css";
 
-html {
+html{
   font-size: 100%;  
 }
-@media (max-width: 1199px) {
- html {
+@media (max-width: 1199px){
+ html{
     font-size: 87.5%; 
   }
 }
-@media (max-width: 743px) {
+@media (max-width: 743px){
   html {
     font-size: 75%; 
   } 
 }
+
 * {
   box-sizing: border-box;
 }
+
 :root {
   --Cool-Gray: #1f2937;  
   --brand-blue: #3692ff;
@@ -23,6 +25,7 @@ html {
   --heavy-Gray: #9ca3af;
   --light-blue: #E6F2FF;
 }
+
 .main{
   display: flex;
   width: 40rem;
@@ -34,6 +37,7 @@ html {
   margin : 3.75rem auto 11.125rem;
 }
 
+/* logo */
 .logo{
   display: flex;
   flex-direction: row;
@@ -47,7 +51,6 @@ html {
   height: 6.5rem;
   margin: 1rem 1.25rem 1rem;
 }
-
 .logo__text{
   color: var(--brand-blue);
   font-family: "ROKAF Sans";
@@ -57,13 +60,13 @@ html {
   line-height: normal;
 }
 
+
 .main .main__text{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem
 }
-
 .main__text form{
   display: flex;
   flex-direction: column;
@@ -91,7 +94,6 @@ input {
   border: 1px solid transparent;
   outline: none;
 }
-
 input:focus {
   border-color: var(--brand-blue);
 }
