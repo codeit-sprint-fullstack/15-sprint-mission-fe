@@ -53,14 +53,19 @@ border-radius: 12px;
 background: var(--Cool-Gray-100, #F3F4F6);
 border: none;
 
-color: var(--Secondary-400, #9CA3AF);
+color: var(--Secondary-400,#1f2937);  /* (수정완료) 입력한 글자 — 진한 색 */
 /* pretendard/lg-16px-regular */
+
 font-family: Pretendard;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 26px; /* 162.5% */
 }
+
+input::placeholder {
+   color: #9ca3af; 
+  } /* (수정완료) 안내 문구만 회색 */
 
 button {
   display: flex;
