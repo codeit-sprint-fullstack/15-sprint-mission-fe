@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: #374151;
   word-break: keep-all;
@@ -9,15 +13,15 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  height: 70px;
+  height: 7rem;
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
 }
 
 .gnb-inner {
-  width: calc(100% - 400px);
-  max-width: 1520px;
+  width: calc(100% - 40rem);
+  max-width: 152rem;
   height: 100%;
   margin: 0 auto;
 
@@ -27,7 +31,7 @@ body {
 }
 
 .logo-link img {
-  width: 153px;
+  width: 15.3rem;
 }
 
 /* 버튼 링크의 공통 속성 */
@@ -51,56 +55,56 @@ body {
 
 /* 로그인 버튼 전용 스타일 */
 .login-button {
-  padding: 11.5px 23px;
-  border-radius: 8px;
+  padding: 1.15rem 2.3rem;
+  border-radius: 0.8rem;
 
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 /* 내부 콘텐츠 레퍼 */
 .wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
 footer {
-  height: 160px;
+  height: 16rem;
   background-color: #111827;
   color: #9ca3af;
 }
 
 .footer-inner {
-  width: calc(100% - 400px);
-  max-width: 1520px;
+  width: calc(100% - 40rem);
+  max-width: 152rem;
   height: 100%;
   margin: 0 auto;
-  padding-top: 32px;
+  padding-top: 3.2rem;
 
   display: flex;
   justify-content: space-between;
 }
 
 .footer-inner > p {
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
 
 .footer-menu {
   display: flex;
-  gap: 30px;
+  gap: 3rem;
   color: #e5e7eb;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
 
 .social-media {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 .social-media img {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
 }
