@@ -42,18 +42,18 @@
 **🟡  구조와 접근성**
 
 - [x]  `<header>`/`<footer>`를 `<body>` 안으로, `<meta>`/`<title>`을 `<head>` 안으로
-- [ ]  전체 파일 `<html lang="ko">`
+- [x]  전체 파일 `<html lang="ko">`
 - [ ]  `h1` 추가 + 제목 태그를 의미 기준으로 재정리
 - [ ]  `<a alt="">` → `aria-label`, 빈 SNS 링크에 이름 부여
-- [ ]  입력 칸별 `<form>` → 하나로 통합
-- [ ]  `viewport` 메타 중복 제거
+- [x]  입력 칸별 `<form>` → 하나로 통합
+- [x]  `viewport` 메타 중복 제거
 
 **🟢  코드 품질**
 
 - [x]  `footer a, h6` → `footer a, footer h6`
 - [x]  `style.css`에 `:root` 변수 정의 (심화 요구사항 완성)
-- [ ]  변수명 kebab-case 통일, 공통 파일로 분리
-- [ ]  두 CSS의 미디어쿼리 폰트 크기 통일
+- [x]  변수명 kebab-case 통일, 공통 파일로 분리
+- [x]  두 CSS의 미디어쿼리 폰트 크기 통일
 - [x]  `.logo img` 등 죽은 코드 제거
 - [x]  `@import` → `<link>`
 - [x]  `.gitignore` 추가 + `.DS_Store` 추적 해제
