@@ -74,9 +74,8 @@ header {
 
 .section4 {
   display: flex;
-  background-color: #cfe5ff;
   justify-content: center;
-  align-items: center;
+  background-color: #cfe5ff;
 }
 
 .section1-1 {
@@ -89,11 +88,11 @@ header {
 }
 
 .section4-0 {
+  width: 120rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 12.5rem 25.3125rem 0;
-  gap: 0.4375rem;
+  align-items: center;
+  padding: 8.9375rem 25.3125rem 0;
 }
 
 .look-around-button {
@@ -192,15 +191,9 @@ header {
 }
 
 .section4-1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 3.75rem;
+  margin: 0;
 }
 
-.section4-0 {
-  align-items: center;
-}
 
 footer {
   display: flex;
@@ -233,4 +226,15 @@ footer p {
 .footer-center-txt {
   display: flex;
   gap: 1.875rem;
+}
+
+.footer-right-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-center-txt a {
+  text-decoration: none;
 }
