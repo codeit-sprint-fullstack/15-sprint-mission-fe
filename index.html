@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CEEF4V3CWK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+
+      gtag("config", "G-CEEF4V3CWK")
+    </script>
     <title>판다마켓</title>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/index.css" />
@@ -19,10 +33,14 @@
     <nav class="gnb">
       <div class="gnb-wrapper">
         <a class="gnb__logo-wrapper" href="./index.html">
-          <img class="gnb__logo" src="./assets/logo.png" />
-          <img class="gnb__logo-type" src="./assets/logo-type.png" />
+          <img class="gnb__logo" src="./assets/logo.png" alt="판다마켓 로고" />
+          <img
+            class="gnb__logo-type"
+            src="./assets/logo-type.png"
+            alt="판다마켓 로고 타입"
+          />
         </a>
-        <a class="gnb__btn-login" href="./login.html">로그인</a>
+        <button id="gnb__btn-login" class="gnb__btn-login">로그인</button>
       </div>
     </nav>
     <!-- content -->
@@ -50,7 +68,10 @@
       <section class="section-container">
         <div class="content-wrapper">
           <div class="content__img-wrapper">
-            <img src="./assets/section_popularity.png" />
+            <img
+              src="./assets/section_popularity.png"
+              alt="인기상품 설명 이미지"
+            />
           </div>
           <div class="content__info">
             <p class="popularity__label label">Hot item</p>
@@ -84,7 +105,7 @@
             </p>
           </div>
           <div class="content__img-wrapper">
-            <img src="./assets/section_search.png" />
+            <img src="./assets/section_search.png" alt="검색 추천 이미지" />
           </div>
         </div>
       </section>
@@ -92,7 +113,10 @@
       <section class="section-container">
         <div class="content-wrapper">
           <div class="content__img-wrapper">
-            <img src="./assets/section_registration.png" />
+            <img
+              src="./assets/section_registration.png"
+              alt="상품 등록 설명 이미지"
+            />
           </div>
           <div class="content__info">
             <p class="popularity__label label">Register</p>
@@ -118,7 +142,7 @@
             판다마켓 중고 거래
           </p>
           <div class="banner-bottom__img">
-            <img src="./assets/Img_home_bottom.png" />
+            <img src="./assets/Img_home_bottom.png" alt="하단 배너 이미지" />
           </div>
         </div>
       </section>
@@ -133,19 +157,24 @@
         </div>
         <div class="footer-sns-wrapper">
           <a href="https://facebook.com" target="_blank">
-            <img src="./assets/ic_facebook.png" />
+            <img src="./assets/ic_facebook.png" alt="페이스북 아이콘" />
           </a>
           <a href="https://twitter.com" target="_blank">
-            <img src="./assets/ic_twitter.png" />
+            <img src="./assets/ic_twitter.png" alt="트위터 아이콘" />
           </a>
           <a href="https://youtube.com" target="_blank">
-            <img src="./assets/ic_youtube.png" />
+            <img src="./assets/ic_youtube.png" alt="유튜브 아이콘" />
           </a>
           <a href="https://instagram.com" target="_blank">
-            <img src="./assets/ic_instagram.png" />
+            <img src="./assets/ic_instagram.png" alt="인스타그램 아이콘" />
           </a>
         </div>
       </div>
     </footer>
+    <script>
+      document.querySelector("#gnb__btn-login").onclick = () => {
+        location.href = "./login.html"
+      }
+    </script>
   </body>
 </html>

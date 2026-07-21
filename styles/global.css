@@ -1,5 +1,5 @@
 :root {
-  --primay-color: #3692ff;
+  --primary-color: #3692ff;
   --secondary-800: #1f2937;
   --secondary-700: #374151;
   --secondary-400: #9ca3af;
@@ -9,6 +9,13 @@
   --background-color-100: #e6f2ff;
   --cool-gray-100: #f3f4f6;
   --section-item-background-color: #fcfcfc;
+  /* --font-size-sx:  */
+  --font-size-sm: 0.875rem; /*14px*/
+  --font-size-md: 1rem; /*16px*/
+  --font-size-lg: 1.125px; /*18px*/
+  --font-size-xl: 1.25px; /*20px*/
+  --font-size-xxl: 1.5px; /*24px*/
+  --font-size-hero-title: 2.5rem /*40px*/;
 }
 
 body {

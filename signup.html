@@ -16,11 +16,15 @@
   </head>
   <body>
     <main class="container">
-      <a class="logo-container" href="../pages/index.html">
-        <img class="logo" src="../assets/logo.png" />
-        <img class="logo-type" src="../assets/logo-type.png" />
+      <a class="logo-container" href="./index.html">
+        <img class="logo" src="../assets/logo.png" alt="판다마켓 로고" />
+        <img
+          class="logo-type"
+          src="../assets/logo-type.png"
+          alt="판다마켓 로고타입"
+        />
       </a>
-      <section class="from-container">
+      <section class="form-container">
         <form class="login-form">
           <label for="email" class="label-email">이메일</label>
           <input
@@ -28,14 +32,12 @@
             class="input-email"
             type="email"
             placeholder="이메일을 입력해주세요"
-            onkeyup="signupBtnHandler()"
           />
           <label for="nickname" class="label-nickname">닉네임</label>
           <input
             id="nickname"
             class="input-nickname"
             placeholder="닉네임을 입력해주세요"
-            onkeyup="signupBtnHandler()"
           />
           <label for="pw" class="label-pw">비밀번호</label>
           <div class="pw-wrapper">
@@ -44,9 +46,11 @@
               class="input-pw"
               type="password"
               placeholder="비밀번호를 입력해주세요"
-              onkeyup="signupBtnHandler()"
             />
-            <img src="../assets/btn_visibility_off_24px.svg" />
+            <img
+              src="../assets/btn_visibility_off_24px.svg"
+              alt="비밀번호 숨김 아이콘"
+            />
           </div>
           <label for="pw-check" class="label-pw">비밀번호 확인</label>
           <div class="pw-wrapper">
@@ -55,20 +59,22 @@
               class="input-pw"
               type="password"
               placeholder="비밀번호를 입력해주세요"
-              onkeyup="signupBtnHandler()"
             />
-            <img src="../assets/btn_visibility_off_24px.svg" />
+            <img
+              src="../assets/btn_visibility_off_24px.svg"
+              alt="비밀번호 숨김 아이콘"
+            />
           </div>
         </form>
-        <a id="btn-login" class="btn-login">회원가입</a>
+        <button id="btn-login" class="btn-login">회원가입</button>
         <div class="easy-login-container">
           <span class="easy-login-label">간편 로그인하기</span>
           <div class="easy-login-btns">
             <a href="https://www.google.com">
-              <img src="../assets/login_ic_google.png" />
+              <img src="../assets/login_ic_google.png" alt="구글 로고" />
             </a>
             <a href="https://www.kakaocorp.com/page">
-              <img src="../assets/login_ic_kakao.png" />
+              <img src="../assets/login_ic_kakao.png" alt="카카오 로고" />
             </a>
           </div>
         </div>
@@ -93,6 +99,10 @@
         const isActive = Boolean(email && pw && nickname && pwCheck)
         loginBtn.classList.toggle("active", isActive)
       }
+
+      document
+        .querySelector(".login-form")
+        .addEventListener("input", signupBtnHandler)
     </script>
   </body>
 </html>
