@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+      integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../fonts/font.css" />
+    <link rel="stylesheet" href="../../color.css">
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <header>
+        <a href="../../index.html" class="logo" />
+          <img src="../../img/판다 얼굴.svg" alt="main-logo"/>
+        </a>
+        <span>판다마켓</span>
+      </header>
+      <main>
+        <div class="email-container">
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력해주세요"
+          />
+        </div>
+        <div class="password-container">
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+          <img
+            src="../../img/btn_visibility_on_24px.png"
+            alt="비밀번호 표시"
+            class="password-look"
+          />
+        </div>
+        <button class="login-btn">로그인</button>
+        <div class="sns-login">
+          <span>간편 로그인하기</span>
+          <div class="sns-logos">
+            <a href="https://www.google.com/" target="_blank">
+              <img src="../../img/google_logo.png" alt="google_logo" />
+            </a>
+            <a href="https://www.kakaocorp.com/page/" target="_blank" >
+              <img src="../../img/kakaotalk_logo.png" alt="kakaotalk_logo" />
+            </a>
+          </div>
+        </div>
+        <div class="signup">
+          <span>판다마켓이 처음이신가요?</span>
+          <a href="../signup/signup.html">회원가입</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
