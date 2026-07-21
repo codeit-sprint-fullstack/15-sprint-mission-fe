@@ -68,10 +68,16 @@ input::placeholder {
 .pw-wrapper {
   position: relative;
 }
-.pw-wrapper > img {
+.pw-wrapper img {
+  display: none;
   position: absolute;
   right: 24px;
   bottom: 12px;
+  cursor: pointer;
+}
+
+img.isPwActive {
+  display: block;
 }
 
 .input-pw {
