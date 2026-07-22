@@ -100,6 +100,11 @@
       ]
 
       // 모달 버튼 기능 구현
+      const $modalButton = document.querySelector(".modal-button")
+      $modalButton.addEventListener("click", () => {
+        const $modal = document.querySelector(".modal-dim")
+        $modal.classList.add("modal-off")
+      })
 
       // 회원 정보 조회
       const requestLogin = (userData) => {
@@ -126,7 +131,6 @@
         if (!res) {
           // 로그인 실패
           const $modal = document.querySelector(".modal-dim")
-          console.log("hi")
           $modal.classList.remove("modal-off")
           return
         }
