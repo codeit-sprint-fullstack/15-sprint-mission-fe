@@ -13,25 +13,14 @@
   font-weight: 700;
   font-style: normal;
 }
-@font-face {
-  font-family: "ROKAF Slab Serif";
-  src: url("./fonts/rokaf-slab-medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ROKAF Slab Serif";
-  src: url("./fonts/rokaf-slab-bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 
 :root {
   --primary-100: #3692ff;
   --primary-200: #1967d6;
   --primary-300: #1251aa;
   --primary-background: #cfe5ff;
+
+  --Secondary-700: #374151;
 
   --error-red: #f74747;
 

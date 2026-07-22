@@ -1,176 +1,23 @@
-* {
-  box-sizing: border-box;
+#password,
+#passwordConfirm {
+  width: 100%;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 640px;
-}
-
-.logo {
-  margin-bottom: 40px;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22.24px;
-  height: 132px;
-  cursor: pointer;
-}
-
-.logo img {
-  width: 103.53px;
-}
-
-.logo-text {
-  color: var(--primary-100);
-  font-family: "ROKAF Sans";
-  font-size: 66.344px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-decoration: none;
-}
-
-label {
-  color: var(--gray-800);
-  font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-}
-
-input {
-  background-color: var(--gray-100);
-  padding: 16px 24px;
-  height: 56px;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  color: var(--gray-800);
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 24px;
-}
-
-input:focus {
-    border-color: var(--primary-100);
-    outline: none;
-}
-
-input::placeholder {
-  color: var(--gray-400);
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px;
-}
-
-.input-box {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 20px;
-  margin: 0;
-}
-
-#password, #passwordConfirm {
-    width: 100%;
-}
-
-.input-password {
-    position: relative;
-}
-
-.input-password img {
-    position: absolute;
-    width: 24px;
-    right: 24px;
-    top: 16px;
-}
 .btn-signup {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 56px;
+
+  border-radius: 40px;
+  background-color: var(--gray-400);
+
   color: var(--gray-100);
   text-decoration: none;
-  background-color: var(--gray-400);
-  padding: 16px 124px;
-  text-align: center;
-  border-radius: 40px;
+
   font-family: Pretendard;
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: 32px;
-  height: 56px;
-}
-
-.social-login {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e6f2ff;
-  padding: 16px 23px;
-  border-radius: 8px;
-  margin: 24px 0;
-  height: 74px;
-  color: var(--gray-800);
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 26px;
-}
-
-.social-login-btn {
-  display: flex;
-  gap: 16px;
-}
-
-.social-login-btn img {
-  display: flex;
-  width: 42px;
-}
-
-.question {
-  display: flex;
-  justify-content: center;
-}
-
-.question > p {
-  margin: 0;
-  text-align: center;
-  font-family: Pretendard;
-  color: var(--gray-800);
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px;
-}
-
-.question > p > a {
-    color: var(--primary-100);
-    line-height: normal;
-    text-decoration-line: underline;
-text-decoration-style: solid;
-text-decoration-skip-ink: none;
-text-decoration-thickness: auto;
-text-underline-offset: auto;
-text-underline-position: from-font;
 }

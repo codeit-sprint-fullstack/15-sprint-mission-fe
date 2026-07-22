@@ -18,13 +18,22 @@ h1 {
 }
 
 h2 {
-  color: var(--gray-700);
+  color: var(--Secondary-700);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  margin: 0;
+}
+
+p {
+  color: var(--Secondary-700, #374151);
   font-family: Pretendard;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 32px;
-  margin: 0;
 }
 
 header {
