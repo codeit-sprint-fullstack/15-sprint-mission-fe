@@ -98,7 +98,7 @@
             <p class="input__message--invalid"></p>
           </div>
         </form>
-        <button id="btn-login" class="btn-login">회원가입</button>
+        <button id="btn-signup" class="btn-signup">회원가입</button>
         <div class="easy-login-container">
           <span class="easy-login-label">간편 로그인하기</span>
           <div class="easy-login-btns">
@@ -115,7 +115,13 @@
           <a href="./login.html">로그인</a>
         </div>
       </section>
-      <!-- 모달 생성 -->
+      <!-- 모달 영역 -->
+      <section class="modal-dim modal-off">
+        <div class="modal">
+          <p class="modal-message">사용 중인 이메일입니다.</p>
+          <button class="modal-button">확인</button>
+        </div>
+      </section>
     </main>
 
     <script>
@@ -128,7 +134,35 @@
         { email: "codeit6@codeit.com", password: "codeit606!" },
       ]
 
-      //TODO: 회원가입 버튼 기능 구현
+      // 모달 버튼 기능 구현
+      const $modalButton = document.querySelector(".modal-button")
+      $modalButton.addEventListener("click", () => {
+        const $modal = document.querySelector(".modal-dim")
+        $modal.classList.add("modal-off")
+      })
+
+      // 회원 정보 조회
+      const requestSignup = (email) => {
+        const result = USER_DATA.find((e) => e.email === email)
+        if (!result) return true
+        return false
+      }
+
+      //회원가입 버튼 기능 구현
+      const $signupBtn = document.querySelector("#btn-signup")
+      $signupBtn.onclick = () => {
+        const email = document.querySelector("#email").value
+        const res = requestSignup(email)
+        // 회원가입 실패
+        if (!res) {
+          // 로그인 실패
+          const $modal = document.querySelector(".modal-dim")
+          $modal.classList.remove("modal-off")
+          return
+        }
+
+        location.href = "./login.html"
+      }
 
       // 회원가입 버튼 validation 체크
       const isSignUpValidate = {
@@ -138,7 +172,7 @@
         passwordCheckValid: false,
       }
       const signupBtnHandler = () => {
-        const loginBtn = document.getElementById("btn-login")
+        const loginBtn = document.getElementById("btn-signup")
 
         if (!loginBtn) return
 
