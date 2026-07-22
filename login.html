@@ -27,34 +27,40 @@
       <section class="form-container">
         <form class="login-form">
           <label for="email" class="label-email">이메일</label>
-          <input
-            id="email"
-            class="input-email"
-            type="email"
-            placeholder="이메일을 입력해주세요"
-          />
-          <label for="pw" class="label-pw">비밀번호</label>
-          <div class="pw-wrapper">
+          <div class="email-wrapper">
             <input
-              id="pw"
-              class="input-pw"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
+              id="email"
+              class="input-email input-invalid"
+              type="email"
+              placeholder="이메일을 입력해주세요"
             />
-            <img
-              id="passwordOn"
-              data-target="#pw"
-              class="btn-pw-toggle isPwActive"
-              src="./assets/btn_visibility_off_24px.svg"
-              alt="비밀번호 노출 아이콘"
-            />
-            <img
-              id="passwordOff"
-              data-target="#pw"
-              class="btn-pw-toggle"
-              src="./assets/btn_visibility_on_24px.svg"
-              alt="비밀번호 비노출 아이콘"
-            />
+            <p class="input__message--invalid">잘못된 이메일 형식입니다.</p>
+          </div>
+          <div class="pw-wrapper">
+            <label for="pw" class="label-pw">비밀번호</label>
+            <div class="pw-input-wrapper">
+              <input
+                id="pw"
+                class="input-pw"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <img
+                id="passwordOn"
+                data-target="#pw"
+                class="btn-pw-toggle isPwActive"
+                src="./assets/btn_visibility_off_24px.svg"
+                alt="비밀번호 노출 아이콘"
+              />
+              <img
+                id="passwordOff"
+                data-target="#pw"
+                class="btn-pw-toggle"
+                src="./assets/btn_visibility_on_24px.svg"
+                alt="비밀번호 비노출 아이콘"
+              />
+            </div>
+            <p class="input__message--invalid input__message--valid"></p>
           </div>
         </form>
         <button id="btn-login" class="btn-login">로그인</button>
@@ -76,24 +82,63 @@
       </section>
     </main>
     <script>
-      const loginBtnHandler = () => {
-        const email = document.getElementById("email")?.value.trim()
-        const pw = document.getElementById("pw")?.value.trim()
-        const loginBtn = document.getElementById("btn-login")
+      // const loginBtnHandler = () => {
+      //   const email = document.getElementById("email")?.value.trim()
+      //   const pw = document.getElementById("pw")?.value.trim()
+      //   const loginBtn = document.getElementById("btn-login")
 
-        if (!loginBtn) return
+      //   if (!loginBtn) return
 
-        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
-        const isActive = Boolean(email && pw)
-        loginBtn.classList.toggle("active", isActive)
+      //   // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+      //   const isActive = Boolean(email && pw)
+      //   loginBtn.classList.toggle("active", isActive)
+      // }
+
+      // document
+      //   .querySelector(".login-form")
+      //   .addEventListener("input", loginBtnHandler)
+
+      // 비밀번호 예외 처리
+      const validatePassword = (value) => {
+        if (!value) {
+          return { isValid: false, message: "비밀번호를 입력해주세요." }
+        }
+        if (value.length < 8) {
+          return {
+            isValid: false,
+            message: "비밀번호를 8자 이상 입력해주세요.",
+          }
+        }
+        return { isValid: true, message: "" }
       }
 
-      document
-        .querySelector(".login-form")
-        .addEventListener("input", loginBtnHandler)
+      const $pwInput = document.querySelector("#pw")
+      const $pwWrapper = document.querySelector(".pw-wrapper")
+      const $pwInputMessage = $pwWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      // UI 상태 렌더링 전담 함수
+      const renderPasswordValidation = (value) => {
+        const { isValid, message } = validatePassword(value)
+
+        // 1. 에러 메시지 텍스트 업데이트
+        $pwInputMessage.innerText = message
+
+        // 2. Class 상태 토글 (classList.toggle 활용으로 코드 단축!)
+        $pwInput.classList.toggle("input-invalid", !isValid)
+        $pwInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $pwInput.addEventListener("blur", (e) =>
+        renderPasswordValidation(e.target.value),
+      )
+      $pwInput.addEventListener("input", (e) =>
+        validatePassword(e.target.value),
+      )
 
       // 비밀번호 노출/비노출 토글
-      const $pwWrapper = document.querySelector(".pw-wrapper")
+      const $pwInputWrapper = document.querySelector(".pw-input-wrapper")
 
       $pwWrapper.addEventListener("click", (e) => {
         const $btn = e.target.closest(".btn-pw-toggle")
@@ -106,7 +151,7 @@
         $offBtn.classList.toggle("isPwActive")
 
         const targetId = $btn.dataset.target
-        const $input = $pwWrapper.querySelector(targetId)
+        const $input = $pwInputWrapper.querySelector(targetId)
 
         const isPwVisible = $onBtn.classList.contains("isPwActive")
         $input.type = isPwVisible ? "password" : "text"
