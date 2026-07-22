@@ -156,6 +156,56 @@ img.isPwActive {
   text-decoration: underline;
 }
 
+/* 모달 */
+.modal-dim {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal-off {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: calc(50% - 125px);
+  left: calc(50% - 270px);
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  width: 540px;
+  height: 250px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.modal-button {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+
+  width: 120px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 48px;
+  color: white;
+}
+
 /* mobile */
 @media screen and (max-width: 743px) {
   /* logo */
