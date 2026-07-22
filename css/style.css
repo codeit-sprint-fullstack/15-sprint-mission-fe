@@ -23,7 +23,7 @@ header{
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  border-bottom: 0.0625rem solid var(--gray-heavy);
+  border-bottom: 0.0625rem solid var(--gray-mid);
   background: var(--white);
   position: sticky;
   top:0;

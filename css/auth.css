@@ -125,6 +125,9 @@ input:focus {
   align-items: center;
   gap: 0.625rem;
   border-radius: 2.5rem;
+  border: none;       
+  outline: none;        
+  cursor: pointer; 
   background: var(--gray-heavy);
   color: var(--gray-light);
   text-align: center;
