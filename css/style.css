@@ -80,7 +80,7 @@ section{
 }
 
 
-section .main{
+.container{
   display: flex;
   width: 100%;
   max-width: 120rem;
@@ -93,21 +93,21 @@ section .main{
   gap: 4rem;
   background: var(--gray-lightest);
 }
-.section--1 .main{  
+.section--1 .container{  
   gap: 0.5rem;
   padding: 12.5rem 0 0;  
   background: var(--blue-lightest);
 }
-.section--4 .main{  
+.section--4 .container{  
   margin: 0 auto 20rem; 
 }
-.section--5 .main{  
+.section--5 .container{  
   background: var(--blue-lightest);
   padding: 9rem 0 0; 
 }
 
 
-section .main__text{
+.container__text{
   display: flex;
   flex-direction: column;
   align-items: flex-start;  
@@ -115,13 +115,13 @@ section .main__text{
   min-width: 0;            
   max-width: 100%;  
 }
-.section--2 .main__text,
-.section--3 .main__text,
-.section--4 .main__text{
+.section--2 .container__text,
+.section--3 .container__text,
+.section--4 .container__text{
   flex: 3 1 20rem;
   min-width: 0;
 }
-.section--3 .main__text{
+.section--3 .container__text{
   align-items: flex-end;
   text-align: end;  
 }
@@ -213,7 +213,7 @@ footer{
   gap: 0.625rem;
   background: var(--navy-dark);
 }
-footer .footer__main{
+footer .footer__container{
   display: flex;
   justify-content: space-between;
   align-items: center;

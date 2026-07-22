@@ -51,19 +51,19 @@ main{
 }
 
 
-main .main__text{
+main .container__text{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem
 }
-.main__text form{
+.container__text form{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
 }
-.main__text label{
+.container__text label{
   color: var(--gray-darkest);
   font-family: Pretendard;
   font-size: 1rem;
@@ -72,7 +72,7 @@ main .main__text{
   line-height: 1.625rem;
 }
 
-.main__text input:not(.password__checkbox) {
+.container__text input:not(.password__checkbox) {
   border: 1px solid transparent;
   outline: none;
   display: flex;
