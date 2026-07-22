@@ -118,23 +118,30 @@
     </main>
 
     <script>
-      // const signupBtnHandler = () => {
-      //   const email = document.getElementById("email")?.value.trim()
-      //   const nickname = document.getElementById("nickname")?.value.trim()
-      //   const pw = document.getElementById("pw")?.value.trim()
-      //   const pwCheck = document.getElementById("pw-check")?.value.trim()
-      //   const loginBtn = document.getElementById("btn-login")
+      // 회원가입 버튼 validation 체크
+      const isSignUpValidate = {
+        emailValid: false,
+        nicknameValid: false,
+        paswordValid: false,
+        passwordCheckValid: false,
+      }
+      const signupBtnHandler = () => {
+        const loginBtn = document.getElementById("btn-login")
 
-      //   if (!loginBtn) return
+        if (!loginBtn) return
 
-      //   // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
-      //   const isActive = Boolean(email && pw && nickname && pwCheck)
-      //   loginBtn.classList.toggle("active", isActive)
-      // }
+        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+        const isActive =
+          isSignUpValidate.emailValid &&
+          isSignUpValidate.nicknameValid &&
+          isSignUpValidate.paswordValid &&
+          isSignUpValidate.passwordCheckValid
+        loginBtn.classList.toggle("active", isActive)
+      }
 
-      // document
-      //   .querySelector(".login-form")
-      //   .addEventListener("input", signupBtnHandler)
+      document
+        .querySelector(".login-form")
+        .addEventListener("input", signupBtnHandler)
 
       // 이메일 예외처리
       const validateEmail = (value) => {
@@ -158,6 +165,9 @@
 
       const renderEmailValidation = (value) => {
         const { isValid, message } = validateEmail(value)
+
+        isSignUpValidate.emailValid = isValid
+
         // 메시지 관리
         $emailInputMessage.innerText = message
 
@@ -188,6 +198,9 @@
 
       const renderNicknameValidation = (value) => {
         const { isValid, message } = validateNicname(value)
+
+        isSignUpValidate.nicknameValid = isValid
+
         // 메시지 관리
         $nicknameInputMessage.innerText = message
 
@@ -246,6 +259,9 @@
         const checkValue = $pwCheckInput.value
         const orgValue = $pwInput.value
         const { isValid, message } = validatePasswordCheck(checkValue, orgValue)
+
+        isSignUpValidate.passwordCheckValid = isValid
+
         $pwCheckMessage.innerText = message
 
         $pwCheckInput.classList.toggle("input-invalid", !isValid)
@@ -255,6 +271,8 @@
       // 5. 비밀번호 렌더링 함수
       const renderPasswordValidation = (value) => {
         const { isValid, message } = validatePassword(value)
+
+        isSignUpValidate.paswordValid = isValid
 
         $pwInputMessage.innerText = message
 
