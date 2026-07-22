@@ -1,6 +1,9 @@
 <!DOCTYPE html>
   <html lang="ko">
-    <head>    <!-- 구글 애널리틱스로 방문자 수 확인 -->
+    <head> 
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 구글 애널리틱스로 방문자 수 확인 -->
      <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSDGWH1Y1F"></script>
      <script>
        window.dataLayer = window.dataLayer || [];
@@ -8,9 +11,7 @@
        gtag('js', new Date());
  
        gtag('config', 'G-GSDGWH1Y1F');
-     </script>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     </script>      
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/variables.css" />
       <link rel="stylesheet" href="/css/auth.css" />    
@@ -35,16 +36,15 @@
               <button class="btn btn--login">로그인</button>    
             </form>          
           </div>            
-           <div class="auth-link">
-            <div class="auth-link__content">
-              <p class="auth-link__title">간편 로그인하기</p> 
-              <div class="sns">
-                <a href="https://www.google.com/" class="sns__icon--google" aria-label="구글로 로그인"></a>
-                <a href="https://www.kakaocorp.com/page/" class="sns__icon--kakao" aria-label="카카오로 로그인"></a>
-              </div> 
-            </div>  
-          </div>          
-        </div>
+          <div class="auth-link">
+          <div class="auth-link__content">
+            <p class="auth-link__title">간편 로그인하기</p> 
+            <div class="sns">
+              <a href="https://www.google.com/" class="sns__icon--google" aria-label="구글로 로그인"></a>
+              <a href="https://www.kakaocorp.com/page/" class="sns__icon--kakao" aria-label="카카오로 로그인"></a>
+            </div> 
+          </div>  
+        </div>      
         <div class="auth-footer">
           <p>판다마켓이 처음이신가요?</p>
           <a class="auth-footer__link" href="/pages/signup.html">회원가입</a>
