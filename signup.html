@@ -119,10 +119,9 @@
         .addEventListener("input", signupBtnHandler)
 
       // 비밀번호 노출/비노출 토글
+      // 비밀번호 입력
       const pwOnBtn = document.querySelector("#passwordOn")
       const pwOffBtn = document.querySelector("#passwordOff")
-      const pwCheckOnBtn = document.querySelector("#passwordCheckOn")
-      const pwCheckOffBtn = document.querySelector("#passwordCheckOff")
 
       const togglePasswordVisibility = () => {
         pwOnBtn.classList.toggle("isPwActive")
@@ -134,6 +133,10 @@
 
       pwOnBtn.addEventListener("click", togglePasswordVisibility)
       pwOffBtn.addEventListener("click", togglePasswordVisibility)
+
+      // 비밀번호 체크
+      const pwCheckOnBtn = document.querySelector("#passwordCheckOn")
+      const pwCheckOffBtn = document.querySelector("#passwordCheckOff")
 
       const togglePasswordCheckVisibility = () => {
         pwCheckOnBtn.classList.toggle("isPwActive")
