@@ -30,11 +30,11 @@
           <div class="email-wrapper">
             <input
               id="email"
-              class="input-email input-invalid"
+              class="input-email"
               type="email"
               placeholder="이메일을 입력해주세요"
             />
-            <p class="input__message--invalid">잘못된 이메일 형식입니다.</p>
+            <p class="input__message--invalid"></p>
           </div>
           <div class="pw-wrapper">
             <label for="pw" class="label-pw">비밀번호</label>
@@ -82,21 +82,72 @@
       </section>
     </main>
     <script>
-      // const loginBtnHandler = () => {
-      //   const email = document.getElementById("email")?.value.trim()
-      //   const pw = document.getElementById("pw")?.value.trim()
-      //   const loginBtn = document.getElementById("btn-login")
+      // 로그인 버튼 이동 기능
+      const $loginBtn = document.querySelector("#btn-login")
+      $loginBtn.onclick = () => {
+        location.href = "./items.html"
+      }
 
-      //   if (!loginBtn) return
+      // 로그인 버튼 validation 체크
+      const isLoginValidate = {
+        emailValid: false,
+        paswordValid: false,
+      }
 
-      //   // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
-      //   const isActive = Boolean(email && pw)
-      //   loginBtn.classList.toggle("active", isActive)
-      // }
+      const loginBtnHandler = () => {
+        const loginBtn = document.getElementById("btn-login")
 
-      // document
-      //   .querySelector(".login-form")
-      //   .addEventListener("input", loginBtnHandler)
+        if (!loginBtn) return
+
+        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+        const isActive =
+          isLoginValidate.emailValid && isLoginValidate.paswordValid
+
+        loginBtn.classList.toggle("active", isActive)
+      }
+
+      document
+        .querySelector(".login-form")
+        .addEventListener("input", loginBtnHandler)
+
+      // 이메일 예외 처리
+      const validateEmail = (value) => {
+        const emailRegex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+        const isValid = emailRegex.test(value)
+        if (!value) {
+          return { isValid: false, message: "이메일을 입력해주세요." }
+        }
+
+        if (!isValid) {
+          return { isValid: false, message: "잘못된 이메일 형식입니다." }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      const $emailInput = document.querySelector("#email")
+      const $emailWrapper = document.querySelector(".email-wrapper")
+      const $emailInputMessage = $emailWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      const renderEmailValidation = (value) => {
+        const { isValid, message } = validateEmail(value)
+        // 로그인 버튼 상태 관리
+        isLoginValidate.emailValid = isValid
+
+        // 메시지 관리
+        $emailInputMessage.innerText = message
+
+        $emailInput.classList.toggle("input-invalid", !isValid)
+        $emailInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $emailInput.addEventListener("blur", (e) =>
+        renderEmailValidation(e.target.value),
+      )
+      $emailInput.addEventListener("input", (e) =>
+        renderEmailValidation(e.target.value),
+      )
 
       // 비밀번호 예외 처리
       const validatePassword = (value) => {
@@ -122,6 +173,9 @@
       const renderPasswordValidation = (value) => {
         const { isValid, message } = validatePassword(value)
 
+        // 로그인 버튼 상태관리
+        isLoginValidate.paswordValid = isValid
+
         // 1. 에러 메시지 텍스트 업데이트
         $pwInputMessage.innerText = message
 
@@ -134,7 +188,7 @@
         renderPasswordValidation(e.target.value),
       )
       $pwInput.addEventListener("input", (e) =>
-        validatePassword(e.target.value),
+        renderPasswordValidation(e.target.value),
       )
 
       // 비밀번호 노출/비노출 토글

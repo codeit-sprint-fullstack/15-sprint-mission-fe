@@ -22,6 +22,10 @@ input:focus-visible {
   outline: 1px solid var(--primary-color);
 }
 
+.input-invalid {
+  outline: 1px solid var(--error-red);
+}
+
 input::placeholder {
   font-size: var(--font-size-md);
   font-weight: 400;
@@ -61,8 +65,10 @@ input::placeholder {
   flex-direction: column;
 }
 
-.label-pw,
-.label-nickname {
+.email-wrapper,
+.nickname-wrapper,
+.pw-wrapper,
+.pw-check-wrapper {
   margin-top: 24px;
 }
 
@@ -85,10 +91,10 @@ input::placeholder {
   background-color: var(--primary-color);
 }
 
-.pw-wrapper {
+.pw-input-wrapper {
   position: relative;
 }
-.pw-wrapper img {
+.pw-input-wrapper img {
   display: none;
   position: absolute;
   right: 24px;
@@ -102,6 +108,17 @@ img.isPwActive {
 
 .input-pw {
   padding-right: 60px;
+}
+
+.input__message--invalid {
+  margin-top: 8px;
+  margin-left: 16px;
+  font-size: 0.9375rem;
+  color: var(--error-red);
+}
+
+.input__message--valid {
+  display: none;
 }
 
 /* easy-login */

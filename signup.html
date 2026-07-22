@@ -26,64 +26,76 @@
       </a>
       <section class="form-container">
         <form class="login-form">
-          <label for="email" class="label-email">이메일</label>
-          <input
-            id="email"
-            class="input-email"
-            type="email"
-            placeholder="이메일을 입력해주세요"
-          />
-          <label for="nickname" class="label-nickname">닉네임</label>
-          <input
-            id="nickname"
-            class="input-nickname"
-            placeholder="닉네임을 입력해주세요"
-          />
-          <label for="pw" class="label-pw">비밀번호</label>
-          <div class="pw-wrapper">
+          <div class="email-wrapper">
+            <label for="email" class="label-email">이메일</label>
             <input
-              id="pw"
-              class="input-pw"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
+              id="email"
+              class="input-email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
             />
-            <img
-              id="passwordOn"
-              class="btn-pw-toggle isPwActive"
-              data-target="#pw"
-              src="../assets/btn_visibility_off_24px.svg"
-              alt="비밀번호 노출 아이콘"
-            />
-            <img
-              id="passwordOff"
-              class="btn-pw-toggle"
-              data-target="#pw"
-              src="../assets/btn_visibility_on_24px.svg"
-              alt="비밀번호 비노출 아이콘"
-            />
+            <p class="input__message--invalid"></p>
           </div>
-          <label for="pw-check" class="label-pw">비밀번호 확인</label>
-          <div class="pw-wrapper pw-check-wrapper">
+          <div class="nickname-wrapper">
+            <label for="nickname" class="label-nickname">닉네임</label>
             <input
-              id="pw-check"
-              class="input-pw"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
+              id="nickname"
+              class="input-nickname"
+              placeholder="닉네임을 입력해주세요"
             />
-            <img
-              id="passwordCheckOn"
-              class="btn-pw-toggle isPwActive"
-              data-target="#pw-check"
-              src="../assets/btn_visibility_off_24px.svg"
-              alt="비밀번호 노출 아이콘"
-            />
-            <img
-              id="passwordCheckOff"
-              class="btn-pw-toggle"
-              data-target="#pw-check"
-              src="../assets/btn_visibility_on_24px.svg"
-              alt="비밀번호 비노출 아이콘"
-            />
+            <p class="input__message--invalid"></p>
+          </div>
+          <div class="pw-wrapper">
+            <label for="pw" class="label-pw">비밀번호</label>
+            <div class="pw-input-wrapper">
+              <input
+                id="pw"
+                class="input-pw"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <img
+                id="passwordOn"
+                class="btn-pw-toggle isPwActive"
+                data-target="#pw"
+                src="../assets/btn_visibility_off_24px.svg"
+                alt="비밀번호 노출 아이콘"
+              />
+              <img
+                id="passwordOff"
+                class="btn-pw-toggle"
+                data-target="#pw"
+                src="../assets/btn_visibility_on_24px.svg"
+                alt="비밀번호 비노출 아이콘"
+              />
+            </div>
+            <p class="input__message--invalid"></p>
+          </div>
+          <div class="pw-check-wrapper">
+            <label for="pw-check" class="label-pw">비밀번호 확인</label>
+            <div class="pw-input-wrapper pw-check-input-wrapper">
+              <input
+                id="pw-check"
+                class="input-pw"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <img
+                id="passwordCheckOn"
+                class="btn-pw-toggle isPwActive"
+                data-target="#pw-check"
+                src="../assets/btn_visibility_off_24px.svg"
+                alt="비밀번호 노출 아이콘"
+              />
+              <img
+                id="passwordCheckOff"
+                class="btn-pw-toggle"
+                data-target="#pw-check"
+                src="../assets/btn_visibility_on_24px.svg"
+                alt="비밀번호 비노출 아이콘"
+              />
+            </div>
+            <p class="input__message--invalid"></p>
           </div>
         </form>
         <button id="btn-login" class="btn-login">회원가입</button>
@@ -126,7 +138,7 @@
 
       // 비밀번호 노출/비노출 토글
       // 비밀번호 입력
-      const $pwWrapper = document.querySelector(".pw-wrapper")
+      const $pwWrapper = document.querySelector(".pw-input-wrapper")
 
       $pwWrapper.addEventListener("click", (e) => {
         const $btn = e.target.closest(".btn-pw-toggle")
