@@ -118,29 +118,177 @@
     </main>
 
     <script>
-      const signupBtnHandler = () => {
-        const email = document.getElementById("email")?.value.trim()
-        const nickname = document.getElementById("nickname")?.value.trim()
-        const pw = document.getElementById("pw")?.value.trim()
-        const pwCheck = document.getElementById("pw-check")?.value.trim()
-        const loginBtn = document.getElementById("btn-login")
+      // const signupBtnHandler = () => {
+      //   const email = document.getElementById("email")?.value.trim()
+      //   const nickname = document.getElementById("nickname")?.value.trim()
+      //   const pw = document.getElementById("pw")?.value.trim()
+      //   const pwCheck = document.getElementById("pw-check")?.value.trim()
+      //   const loginBtn = document.getElementById("btn-login")
 
-        if (!loginBtn) return
+      //   if (!loginBtn) return
 
-        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
-        const isActive = Boolean(email && pw && nickname && pwCheck)
-        loginBtn.classList.toggle("active", isActive)
+      //   // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+      //   const isActive = Boolean(email && pw && nickname && pwCheck)
+      //   loginBtn.classList.toggle("active", isActive)
+      // }
+
+      // document
+      //   .querySelector(".login-form")
+      //   .addEventListener("input", signupBtnHandler)
+
+      // 이메일 예외처리
+      const validateEmail = (value) => {
+        const emailRegex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+        const isValid = emailRegex.test(value)
+        if (!value) {
+          return { isValid: false, message: "이메일을 입력해주세요." }
+        }
+
+        if (!isValid) {
+          return { isValid: false, message: "잘못된 이메일 형식입니다." }
+        }
+        return { isValid: true, message: "" }
       }
 
-      document
-        .querySelector(".login-form")
-        .addEventListener("input", signupBtnHandler)
+      const $emailInput = document.querySelector("#email")
+      const $emailWrapper = document.querySelector(".email-wrapper")
+      const $emailInputMessage = $emailWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      const renderEmailValidation = (value) => {
+        const { isValid, message } = validateEmail(value)
+        // 메시지 관리
+        $emailInputMessage.innerText = message
+
+        $emailInput.classList.toggle("input-invalid", !isValid)
+        $emailInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $emailInput.addEventListener("blur", (e) =>
+        renderEmailValidation(e.target.value),
+      )
+      $emailInput.addEventListener("input", (e) =>
+        renderEmailValidation(e.target.value),
+      )
+
+      // 닉네임 예외처리
+      const validateNicname = (value) => {
+        if (!value) {
+          return { isValid: false, message: "닉네임을 입력해주세요." }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      const $nicknameInput = document.querySelector("#nickname")
+      const $nicknameWrapper = document.querySelector(".nickname-wrapper")
+      const $nicknameInputMessage = $nicknameWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      const renderNicknameValidation = (value) => {
+        const { isValid, message } = validateNicname(value)
+        // 메시지 관리
+        $nicknameInputMessage.innerText = message
+
+        $nicknameInput.classList.toggle("input-invalid", !isValid)
+        $nicknameInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $nicknameInput.addEventListener("blur", (e) =>
+        renderNicknameValidation(e.target.value),
+      )
+      $nicknameInput.addEventListener("input", (e) =>
+        renderNicknameValidation(e.target.value),
+      )
+
+      // 비밀번호 예외처리
+      // 1. 비밀번호 검증
+      const validatePassword = (value) => {
+        if (!value) {
+          return { isValid: false, message: "비밀번호를 입력해주세요." }
+        }
+        if (value.length < 8) {
+          return {
+            isValid: false,
+            message: "비밀번호를 8자 이상 입력해주세요.",
+          }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      // 2. 비밀번호 확인 검증
+      const validatePasswordCheck = (value, orgValue) => {
+        if (!value) {
+          return { isValid: false, message: "비밀번호를 입력해주세요." }
+        }
+        if (orgValue !== value) {
+          return { isValid: false, message: "비밀번호가 일치하지 않습니다." }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      // 3. 선택자
+      const $pwInput = document.querySelector("#pw")
+      const $pwWrapper = document.querySelector(".pw-wrapper")
+      const $pwInputMessage = $pwWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      const $pwCheckWrapper = document.querySelector(".pw-check-wrapper")
+      const $pwCheckInput = document.querySelector("#pw-check")
+      const $pwCheckMessage = $pwCheckWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      // 4. 비밀번호 확인 렌더링 함수
+      const renderPasswordCheckValidation = (value) => {
+        const checkValue = $pwCheckInput.value
+        const orgValue = $pwInput.value
+        const { isValid, message } = validatePasswordCheck(checkValue, orgValue)
+        $pwCheckMessage.innerText = message
+
+        $pwCheckInput.classList.toggle("input-invalid", !isValid)
+        $pwCheckMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      // 5. 비밀번호 렌더링 함수
+      const renderPasswordValidation = (value) => {
+        const { isValid, message } = validatePassword(value)
+
+        $pwInputMessage.innerText = message
+
+        $pwInput.classList.toggle("input-invalid", !isValid)
+        $pwInputMessage.classList.toggle("input__message--valid", isValid)
+
+        if ($pwCheckInput.value) {
+          renderPasswordCheckValidation()
+        }
+      }
+
+      // 비밀번호 이벤트 바인딩
+      $pwInput.addEventListener("blur", (e) =>
+        renderPasswordValidation(e.target.value),
+      )
+      $pwInput.addEventListener("input", (e) =>
+        renderPasswordValidation(e.target.value),
+      )
+
+      // 비밀번호 확인 이벤트 바인딩
+      $pwCheckInput.addEventListener("blur", (e) =>
+        renderPasswordCheckValidation(e.target.value),
+      )
+      $pwCheckInput.addEventListener("input", (e) =>
+        renderPasswordCheckValidation(e.target.value),
+      )
+
+      // TODO:회원가입 버튼 활성화 처리
 
       // 비밀번호 노출/비노출 토글
       // 비밀번호 입력
-      const $pwWrapper = document.querySelector(".pw-input-wrapper")
+      const $pwInputWrapper = document.querySelector(".pw-input-wrapper")
 
-      $pwWrapper.addEventListener("click", (e) => {
+      $pwInputWrapper.addEventListener("click", (e) => {
         const $btn = e.target.closest(".btn-pw-toggle")
 
         if (!$btn) return
@@ -151,16 +299,16 @@
         $offBtn.classList.toggle("isPwActive")
 
         const targetId = $btn.dataset.target
-        const $input = $pwWrapper.querySelector(targetId)
+        const $input = $pwInputWrapper.querySelector(targetId)
 
         const isPwVisible = $onBtn.classList.contains("isPwActive")
         $input.type = isPwVisible ? "password" : "text"
       })
 
       // 비밀번호 체크
-      const $pwCheckWrapper = document.querySelector(".pw-check-wrapper")
+      const $pwCheckInputWrapper = document.querySelector(".pw-check-wrapper")
 
-      $pwCheckWrapper.addEventListener("click", (e) => {
+      $pwCheckInputWrapper.addEventListener("click", (e) => {
         const $btn = e.target.closest(".btn-pw-toggle")
         if (!$btn) return
 
@@ -170,7 +318,7 @@
         $offBtn.classList.toggle("isPwActive")
 
         const targetId = $btn.dataset.target
-        const $input = $pwCheckWrapper.querySelector(targetId)
+        const $input = $pwCheckInputWrapper.querySelector(targetId)
 
         const isPwVisible = $onBtn.classList.contains("isPwActive")
         $input.type = isPwVisible ? "password" : "text"
