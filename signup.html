@@ -49,18 +49,21 @@
             />
             <img
               id="passwordOn"
-              class="isPwActive"
+              class="btn-pw-toggle isPwActive"
+              data-target="#pw"
               src="../assets/btn_visibility_off_24px.svg"
               alt="비밀번호 노출 아이콘"
             />
             <img
               id="passwordOff"
+              class="btn-pw-toggle"
+              data-target="#pw"
               src="../assets/btn_visibility_on_24px.svg"
               alt="비밀번호 비노출 아이콘"
             />
           </div>
           <label for="pw-check" class="label-pw">비밀번호 확인</label>
-          <div class="pw-wrapper">
+          <div class="pw-wrapper pw-check-wrapper">
             <input
               id="pw-check"
               class="input-pw"
@@ -69,12 +72,15 @@
             />
             <img
               id="passwordCheckOn"
-              class="isPwActive"
+              class="btn-pw-toggle isPwActive"
+              data-target="#pw-check"
               src="../assets/btn_visibility_off_24px.svg"
               alt="비밀번호 노출 아이콘"
             />
             <img
               id="passwordCheckOff"
+              class="btn-pw-toggle"
+              data-target="#pw-check"
               src="../assets/btn_visibility_on_24px.svg"
               alt="비밀번호 비노출 아이콘"
             />
@@ -120,33 +126,43 @@
 
       // 비밀번호 노출/비노출 토글
       // 비밀번호 입력
-      const pwOnBtn = document.querySelector("#passwordOn")
-      const pwOffBtn = document.querySelector("#passwordOff")
+      const $pwWrapper = document.querySelector(".pw-wrapper")
 
-      const togglePasswordVisibility = () => {
-        pwOnBtn.classList.toggle("isPwActive")
-        pwOffBtn.classList.toggle("isPwActive")
-        const $input = document.querySelector("#pw")
-        const isPwVisible = pwOnBtn.classList.contains("isPwActive")
+      $pwWrapper.addEventListener("click", (e) => {
+        const $btn = e.target.closest(".btn-pw-toggle")
+
+        if (!$btn) return
+
+        const $onBtn = document.querySelector("#passwordOn")
+        const $offBtn = document.querySelector("#passwordOff")
+        $onBtn.classList.toggle("isPwActive")
+        $offBtn.classList.toggle("isPwActive")
+
+        const targetId = $btn.dataset.target
+        const $input = $pwWrapper.querySelector(targetId)
+
+        const isPwVisible = $onBtn.classList.contains("isPwActive")
         $input.type = isPwVisible ? "password" : "text"
-      }
-
-      pwOnBtn.addEventListener("click", togglePasswordVisibility)
-      pwOffBtn.addEventListener("click", togglePasswordVisibility)
+      })
 
       // 비밀번호 체크
-      const pwCheckOnBtn = document.querySelector("#passwordCheckOn")
-      const pwCheckOffBtn = document.querySelector("#passwordCheckOff")
+      const $pwCheckWrapper = document.querySelector(".pw-check-wrapper")
 
-      const togglePasswordCheckVisibility = () => {
-        pwCheckOnBtn.classList.toggle("isPwActive")
-        pwCheckOffBtn.classList.toggle("isPwActive")
-        const $input = document.querySelector("#pw-check")
-        const isPwVisible = pwCheckOnBtn.classList.contains("isPwActive")
+      $pwCheckWrapper.addEventListener("click", (e) => {
+        const $btn = e.target.closest(".btn-pw-toggle")
+        if (!$btn) return
+
+        const $onBtn = document.querySelector("#passwordCheckOn")
+        const $offBtn = document.querySelector("#passwordCheckOff")
+        $onBtn.classList.toggle("isPwActive")
+        $offBtn.classList.toggle("isPwActive")
+
+        const targetId = $btn.dataset.target
+        const $input = $pwCheckWrapper.querySelector(targetId)
+
+        const isPwVisible = $onBtn.classList.contains("isPwActive")
         $input.type = isPwVisible ? "password" : "text"
-      }
-      pwCheckOnBtn.addEventListener("click", togglePasswordCheckVisibility)
-      pwCheckOffBtn.addEventListener("click", togglePasswordCheckVisibility)
+      })
     </script>
   </body>
 </html>
