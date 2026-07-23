@@ -1,0 +1,76 @@
+/* 헤더 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rem;
+  width: 100%;
+  height: 7rem;
+  background-color: #ffffff;
+  border-bottom: 0.1rem solid #dfdfdf;
+}
+
+.homeBtn {
+  width: 153px;
+}
+
+#loginBtn {
+  background-color: #3692ff;
+  font-size: 16px;
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px 23px;
+}
+
+/* 메인 */
+.pandaContentBox {
+  background-color: #cfe5ff;
+  background-image: url("../src/images/Img_home_top.png");
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  background-size: 55%;
+}
+
+.pandaContentBox .pillBtn {
+  margin-top: 32px;
+}
+
+/* 섹션 */
+section {
+  margin-bottom: 138px;
+}
+
+.feature {
+  padding: 138px 0;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.feature:nth-child(2) {
+  text-align: right;
+}
+
+.featureContent {
+  flex: 1;
+}
+
+.featureTag {
+  color: #3692ff;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.featureDescription {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  margin-top: 24px;
+}

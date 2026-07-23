@@ -1,0 +1,99 @@
+/* 전체 적용*/
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  color: #374151;
+  word-break: keep-all;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  letter-spacing: 0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer {
+  background-color: #111827;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.2rem 20rem 10.8rem 20rem;
+  font-size: 1.6rem;
+}
+
+#footerMenu {
+  display: flex;
+  gap: 3rem;
+  color: #e5e7eb;
+}
+
+#socialMedia {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 버튼 */
+.button {
+  background-color: #3692ff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillBtn {
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 99.9rem;
+  padding: 1.6rem 12.4rem;
+}
+
+.button:hover {
+  background-color: #1967d6;
+}
+
+.button:focus {
+  background-color: #1251aa;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* 마지막 배너 */
+#bottomContainer {
+  background-image: url("../src/images/bottom-container-image.png");
+}
