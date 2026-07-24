@@ -69,14 +69,14 @@ body{
 
 section{
   width: 100%;
-  min-height: 33.75rem;
+  min-height: auto;
   display: flex;
   justify-content: center;   
   align-items: center;
 }
 .section--1,
 .section--5{
-  background: var(--blue-lightest);
+  background: var(--blue-lightest);  
 }
 
 
