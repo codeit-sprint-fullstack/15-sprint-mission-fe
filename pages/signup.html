@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <html lang="ko">
+    <head>     
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <!-- 구글 애널리틱스로 방문자 수 확인 -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSDGWH1Y1F"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+ 
+       gtag('config', 'G-GSDGWH1Y1F');
+     </script>            
+      <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="/css/variables.css" />
+      <link rel="stylesheet" href="/css/auth.css" />
+      <title>회원가입</title>
+    </head>
+    <body>
+      <main>
+        <a class="logo" href="/">
+          <img class="logo__img" src="/img/img_panda_face.svg" alt="판다 로고 이미지" />
+          <div class="logo__text">판다마켓</div>        
+        </a>
+        <div class="container__text">
+          <form>            
+            <div>            
+             <label for="signup-email">이메일</label>
+             <input id="signup-email" name="email" type="email" placeholder="이메일을 입력해주세요"/>                   
+            </div>
+            <div>            
+              <label for="signup-name">닉네임</label>
+              <input id="signup-name" name="name" type="text" placeholder="닉네임을 입력해주세요"/>         
+            </div>
+            <div>                     
+                <label for="password">비밀번호</label>                
+                <div class="password__input">
+                  <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요"/>
+                  <input id="toggle" type="checkbox" class="password__checkbox"/> 
+                  <label for="toggle" class="password__toggle"></label>
+                </div>                    
+            </div>      
+            <div>              
+                <label for="password-confirm">비밀번호 확인</label>                
+                <div class="password__input">
+                  <input id="password-confirm" name="password-confirm" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요"/>
+                  <input id="toggle2" type="checkbox" class="password__checkbox"/> 
+                  <label for="toggle2" class="password__toggle"></label>
+                </div>   
+             </div>
+             <button class="btn btn--signup">회원가입</button>
+          </form>            
+    
+           <div class="auth-link">
+            <div class="auth-link__content">
+              <p class="auth-link__title">간편 로그인하기</p> 
+              <div class="sns">
+                <a href="https://www.google.com/" class="sns__icon--google" aria-label="구글로 로그인"></a>
+                <a href="https://www.kakaocorp.com/page/" class="sns__icon--kakao" aria-label="카카오로 로그인"></a>
+              </div> 
+            </div>  
+          </div>          
+        </div>
+        <div class="auth-footer">
+          <p>이미 회원이신가요?</p>
+          <a class="auth-footer__link" href="/pages/login.html" >로그인</a>
+        </div>
+      </main>
+    </body>
+  </html>
