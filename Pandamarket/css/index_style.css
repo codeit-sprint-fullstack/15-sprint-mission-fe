@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  margin-top: 4.375rem;
+  background-color: #ffffff;
+  font-family: "Pretendard", sans-serif;
+}
+
+.top-nav-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.top-nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95rem;
+  height: 3.1875rem;
+}
+
+@media (max-width: 1919px) {
+  .top-nav-div {
+    width: 100%;
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+  }
+}
+
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.button-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.button-container a {
+  position: absolute;
+  left: 20.83%;
+  top: 69.44%;
+  width: 18.23%;
+  height: 12.96%;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+.bestseller-section,
+.search-section,
+.register-section {
+  padding: 8.625rem 21.5rem;
+}
+
+.trade-section,
+.ad-section {
+  background-color: #cfe5ff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ad img,
+.bottom-nav img {
+  display: block;
+  margin: 0 auto;
+}
+
+.bottom-nav {
+  width: 100%;
+  height: 10rem;
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1.25rem;
+  margin: 0 auto;
+}
+
+.bottom-nav-texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120rem;
+  min-height: 1.25rem;
+  padding: 2rem 12.5rem;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1919px) {
+  .bottom-nav-texts {
+    width: 100%;
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+    justify-content: space-between;
+  }
+}
+
+.codeit-text {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.bottom-nav-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.25rem;
+  height: 1.25rem;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.bottom-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.information-links {
+  display: flex;
+  gap: 1.875rem;
+}
+
+.button-container {
+  position: relative;
+  width: 120rem;
+  flex-shrink: 0;
+}
+
+footer {
+  width: 100%;
+}
