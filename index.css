@@ -16,6 +16,14 @@ body {
   padding: 0;
 }
 
+h1 {
+  color: var(--color-gray700);
+  font-weight: 700;
+  font-size: 40px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
 h2 {
   color: var(--color-gray700);
   font-weight: 700;
@@ -24,7 +32,7 @@ h2 {
   display: inline-block;
 }
 
-h4 {
+.label {
   font-family: ROKAF Sans;
   font-weight: 700;
   font-size: 18px;

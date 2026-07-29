@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="ko">
+  <head>
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="login.css" />
+    <title>판다마켓</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="login-section">
+        <a class="home-page" href="../index.html">
+          <img
+            class="pandamarket.logo"
+            src="../../pandaImg/Property 1=lg.png"
+            alt="판다마켓로고"
+          />
+        </a>
+
+        <div class="input-div">
+          <label class="input-label" for="email">이메일</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+          />
+
+          <label class="input-label" for="password">비밀번호</label>
+          <div class="password-div">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img
+              class="password-check-icon"
+              src="/pandaImg/ic_eye.svg"
+              alt="비밀번호체크이미지"
+            />
+          </div>
+          <button class="login-button">로그인</button>
+        </div>
+
+        <div class="fast-login">
+          <p>간편 로그인하기</p>
+          <div class="sns-login">
+            <a class="item" href="https://www.google.com/?hl=ko">
+              <img
+                class="google-login"
+                src="../loginpageimg/goolgleComponent.png"
+                alt="구글"
+              />
+            </a>
+
+            <a class="item" href="https://www.kakaocorp.com/page/">
+              <img
+                class="kakaotalk-login"
+                src="../loginpageimg/kakaoTalkComponent.png"
+                alt="카카오톡"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="sign-up-div">
+          <p class="sign-up">판다마켓이 처음이신가요?</p>
+          <a class="go-sign-up" href="../signup">회원가입</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
