@@ -212,3 +212,21 @@ input:focus {
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
+
+/*
+ 로그인 유효성검사
+*/
+.container__text input.input-error {
+  border: 1px solid var(--red-error)
+}
+
+#emailError{
+  display: none;
+}
+
+.container__text p{
+  color:var(--red-error);
+  font-family: Pretendard;
+  font-size: 1rem;
+}
