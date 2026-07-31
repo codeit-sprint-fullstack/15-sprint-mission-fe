@@ -73,7 +73,7 @@ form input {
 }
 
 form input:focus {
-  outline: solid 0.25rem #3692ff;
+  outline: solid 0.0625rem #3692ff;
 }
 
 main .login-button {
