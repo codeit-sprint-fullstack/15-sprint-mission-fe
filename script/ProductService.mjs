@@ -1,11 +1,13 @@
 const BASE_URL = "https://panda-market-api-crud.vercel.app/products";
+
 async function getProductList(page = 1, pagesize = 10, keyword) {
-  console.log(page, pagesize, keyword);
+  // console.log(page, pagesize, keyword);
   const url = new URL(`${BASE_URL}`);
   url.searchParams.set("page", page);
   url.searchParams.set("pageSize", pagesize);
   if (keyword) url.searchParams.set("keyword", keyword);
-  console.log(url);
+  // const {href} = url;
+  // console.log(href);
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -16,11 +18,12 @@ async function getProductList(page = 1, pagesize = 10, keyword) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("getProductList 수행완료!");
   return response.json();
 }
 
 async function getProduct(id) {
-  console.log(id);
+  // console.log(id);
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "GET",
     headers: {
@@ -31,11 +34,12 @@ async function getProduct(id) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("getProduct 수행완료!");
   return response.json();
 }
 
 async function createProduct(name, description, price, tags, images) {
-  console.log(name, description, price, tags, images);
+  // console.log(name, description, price, tags, images);
   const response = await fetch(`${BASE_URL}`, {
     method: "POST",
     headers: {
@@ -53,11 +57,12 @@ async function createProduct(name, description, price, tags, images) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("createProduct 수행완료!");
   return response.json();
 }
 
 async function patchProduct({ id, name, description, price, tags, images }) {
-  console.log({ id, name, description, price, tags, images });
+  // console.log({ id, name, description, price, tags, images });
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "PATCH",
     headers: {
@@ -75,11 +80,12 @@ async function patchProduct({ id, name, description, price, tags, images }) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("patchProduct 수행완료!");
   return response.json();
 }
 
 async function deleteProduct(id) {
-  console.log(id);
+  // console.log(id);
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "DELETE",
     headers: {
@@ -90,6 +96,7 @@ async function deleteProduct(id) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("deleteProduct 수행완료!");
   return response.json();
 }
 
@@ -107,11 +114,11 @@ async function deleteProduct(id) {
 //console.log(await deleteProduct(4095));
 
 const ProductService = {
-    getProduct,
-    getProductList,
-    createProduct,
-    patchProduct,
-    deleteProduct,
-}
+  getProduct,
+  getProductList,
+  createProduct,
+  patchProduct,
+  deleteProduct,
+};
 
 export default ProductService;

@@ -1,11 +1,12 @@
 const BASE_URL = "https://panda-market-api-crud.vercel.app/articles";
 async function getArticleList(page = 1, pagesize = 10, keyword) {
-  console.log(page, pagesize, keyword);
+  // console.log(page, pagesize, keyword);
   const url = new URL(`${BASE_URL}`);
   url.searchParams.set("page", page);
   url.searchParams.set("pageSize", pagesize);
   if (keyword) url.searchParams.set("keyword", keyword);
-  console.log(url);
+  // const {href} = url;
+  // console.log(href);
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -16,11 +17,12 @@ async function getArticleList(page = 1, pagesize = 10, keyword) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("getArticleList 수행완료!");
   return response.json();
 }
 
 async function getArticle(id) {
-  console.log(id);
+  // console.log(id);
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "GET",
     headers: {
@@ -31,11 +33,12 @@ async function getArticle(id) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("getArticle 수행완료!");
   return response.json();
 }
 
 async function createArticle(title, content, image) {
-  console.log(title, content, image);
+  // console.log(title, content, image);
   const response = await fetch(`${BASE_URL}`, {
     method: "POST",
     headers: {
@@ -51,11 +54,12 @@ async function createArticle(title, content, image) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("createArticle 수행완료!");
   return response.json();
 }
 
 async function patchArticle({ id, title, content, image }) {
-  console.log({ id, title, content, image });
+  // console.log({ id, title, content, image });
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "PATCH",
     headers: {
@@ -71,11 +75,12 @@ async function patchArticle({ id, title, content, image }) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("patchArticle 수행완료!");
   return response.json();
 }
 
 async function deleteArticle(id) {
-  console.log(id);
+  // console.log(id);
   const response = await fetch(`${BASE_URL}/${id}`, {
     method: "DELETE",
     headers: {
@@ -86,6 +91,7 @@ async function deleteArticle(id) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
+  // console.log("deleteArticle 수행완료!");
   return response.json();
 }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panda-Login</title>
+    <script src="../script/login.js" defer></script>
     <link rel="stylesheet" href="../style/reset.css" />
     <link rel="stylesheet" href="../style/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,17 +32,17 @@
             type="email"
             placeholder="이메일을 입력해주세요"
           />
-          <div class="email error" style="display: none;">
+          <div class="email error" style="display: none">
             <span class="error-text">error text</span>
           </div>
-          <label for="login-passwd" style="margin-top: 1.5rem;">비밀번호</label>
+          <label for="login-passwd" style="margin-top: 1.5rem">비밀번호</label>
           <input
             id="login-passwd"
             name="passwd"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
-          <div class="passwd error" style="display: none;">
+          <div class="passwd error" style="display: none">
             <span class="error-text">error text</span>
           </div>
           <button class="login-button">로그인</button>
@@ -63,6 +64,5 @@
         <a href="./signup.html">회원가입</a>
       </footer>
     </div>
-    <script src="../script/login.js" defer></script>
   </body>
 </html>
