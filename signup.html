@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="css/signup.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
+  <body>
+    <form action="#none" class="signupformat">
+      <a class="rootbtn" href="index.html">
+        <img class="logo" src="Images/logo.png" alt="" />
+      </a>
+
+      <div class="content">
+        <label for="userEmail">이메일</label>
+        <input
+          class="userEmail"
+          type="email"
+          placeholder="이메일을 입력해주세요"
+          autocomplete="off"
+        />
+        <label for="userEmail">닉네임</label>
+        <input
+          class="userNickname"
+          type="text"
+          placeholder="닉네임을 입력해주세요"
+        />
+        <label for="userPassword">비밀번호</label>
+        <div class="wrap-password">
+          <input
+            class="userPassword"
+            type="password"
+            placeholder="비밀번호을 입력해주세요"
+          />
+          <img class="hideicon" src="Images/hidePW.svg" alt="" />
+        </div>
+        <label for="userPassword">비밀번호 확인</label>
+        <div class="wrap-password">
+          <input
+            class="userPassword"
+            type="password"
+            placeholder="비밀번호을 다시 한 번 입력해주세요"
+          />
+          <img class="hideicon" src="Images/hidePW.svg" alt="" />
+        </div>
+        <button class="btn-register">회원가입</button>
+        <div class="login-easy">
+          <div class="login-content">
+            <p>간편 로그인하기</p>
+            <div class="login-icons">
+              <a href="https://www.google.com/" class="google">
+                <img src="Images/Component 2.svg" alt="" />
+              </a>
+              <a href="https://www.kakaocorp.com/page/" class="kakao">
+                <img src="Images/Component 3.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-login">
+          <p>이미 회원이신가요?</p>
+          <a class="gologin" href="login.html">로그인</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

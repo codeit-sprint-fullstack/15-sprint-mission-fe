@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
+  <body>
+    <form action="#none" class="loginformat">
+      <a class="rootbtn" href="index.html">
+        <img class="logo" src="Images/logo.png" alt="" />
+      </a>
+
+      <div class="content">
+        <label for="userEmail">이메일</label>
+        <input
+          class="userEmail"
+          type="email"
+          placeholder="이메일을 입력해주세요"
+          autocomplete="off"
+        />
+        <label for="userPassword">비밀번호</label>
+        <div class="wrap-password">
+          <input
+            class="userPassword"
+            type="password"
+            placeholder="비밀번호을 입력해주세요"
+          />
+          <img class="hideicon" src="Images/hidePW.svg" alt="" />
+        </div>
+        <button class="login">로그인</button>
+        <div class="login-easy">
+          <div class="login-content">
+            <p>간편 로그인하기</p>
+            <div class="login-icons">
+              <a href="https://www.google.com/?hl=ko" class="google">
+                <img src="Images/Component 2.svg" alt="" />
+              </a>
+              <a href="https://www.kakaocorp.com/page/" class="kakao">
+                <img src="Images/Component 3.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="register">
+          <p>판다마켓이 처음이신가요?</p>
+          <a class="goregister" href="signup.html">회원가입</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
