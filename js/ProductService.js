@@ -26,13 +26,13 @@ export async function getProductList({page = 1, pageSize = 10, keyword=""} = {})
 }
 
 //생성
-export async function createProduct({image, tags, price,description,name}){
+export async function createProduct({images, tags, price,description,name}){
     try{
     const response = await fetch(`${BASE_URL}/products`,{
       method : "POST",
       headers : {"Content-Type" : "application/json"},
       body : JSON.stringify({
-        image,
+        images,
         tags,
         price,
         description,
