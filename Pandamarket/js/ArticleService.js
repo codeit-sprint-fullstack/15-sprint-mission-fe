@@ -1,6 +1,6 @@
 const ARTICLE_URL = "https://panda-market-api-crud.vercel.app/articles";
 
-function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
+export function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
   return fetch(
     `${ARTICLE_URL}?page=${page}&pageSize=${pageSize}&keyword=${keyword}`,
     {
@@ -22,7 +22,7 @@ function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
     });
 }
 
-function getArticle(id) {
+export function getArticle(id) {
   return fetch(`${ARTICLE_URL}/${id}`, {
     method: "GET",
   })
@@ -41,7 +41,7 @@ function getArticle(id) {
     });
 }
 
-function createArticle({ title, content, image } = {}) {
+export function createArticle({ title, content, image } = {}) {
   return fetch(ARTICLE_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ function createArticle({ title, content, image } = {}) {
     });
 }
 
-function deleteArticle(id) {
+export function deleteArticle(id) {
   return fetch(`${ARTICLE_URL}/${id}`, {
     method: "DELETE",
   })
@@ -81,7 +81,7 @@ function deleteArticle(id) {
     .catch((error) => console.log(error.message));
 }
 
-function patchArticle(id, { title, content, image } = {}) {
+export function patchArticle(id, { title, content, image } = {}) {
   return fetch(`${ARTICLE_URL}/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
@@ -99,10 +99,4 @@ function patchArticle(id, { title, content, image } = {}) {
     .catch((error) => console.log(error.message));
 }
 
-const testArticle = {
-  title: "제목",
-  content: "내용",
-  image: "https://example.com/test.jpg",
-};
 
-getArticle(6776);
