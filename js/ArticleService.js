@@ -61,7 +61,7 @@ export function patchArticle(id, data){
     })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`게시글 목록 생성 실패: ${response.status}`);
+        throw new Error(`게시글 목록 수정 실패: ${response.status}`);
       }
       return response.json();
     })
@@ -69,13 +69,13 @@ export function patchArticle(id, data){
       console.error(error.message);
     });
 }
-
+//삭제
 export function deleteArticle(id){
 
     return fetch(`${BASE_URL}/articles?${id}`,{ method : "DELETE", })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`게시글 목록 생성 실패: ${response.status}`);
+        throw new Error(`게시글 목록 삭제 실패: ${response.status}`);
       }
       return response.json();
     })
