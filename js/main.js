@@ -1,10 +1,13 @@
-import { getArticleList, createArticle } from "./ArticleService.js";
-import { getProductList, createProduct } from "./ProductService.js";
+// getArticle, getArticleList, createArticle, patchArticle, deleteArticle 
+import * as ArticleService from "./ArticleService.js";
+//
+// getProduct, getProductList, createProduct ,patchProduct, deleteProduct
+import * as ProductService from "./ProductService.js";
 
-getArticleList({ page: 1, pageSize: 5 }).then((data) => console.log(data));
-getProductList({ page: 1, pageSize: 5 }).then((data) => console.log(data));
+ArticleService.etArticleList({ page: 1, pageSize: 5 }).then((data) => console.log(data));
+ProductService.getProductList({ page: 1, pageSize: 5 }).then((data) => console.log(data));
 
-//싫패 데이터
-getArticle(999999999).then(console.log);
+//실패 데이터
+ArticleService.getArticle(999999999).then(console.log);
 
 

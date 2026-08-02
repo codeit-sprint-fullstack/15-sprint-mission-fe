@@ -87,11 +87,34 @@
 아직 시맨틱 태그와 BEM 방식이 익숙하지 않아서 여러 가지 시행착오를 겪고 수정하고 또 수정했습니다. `<h1~h6>`, `<main>`, `<footer>` 태그의 올바른 사용법을 특히 많이 고민했습니다.
 
 ---
-### 미션 3
+### 미션 3 — 유효성 검사
 - 공통 로직 모듈화
 - 유효성 검사 (login.html, signup.html)
 - 로그인/회원가입 실패 팝업
 - 비밀번호 표시/숨기기
 - SNS 공유 메타 태그
+
 ---
+### 미션 3 — 판다마켓 API 연동
+
+**Article API (`ArticleService.js`, then/catch)**
+- [x] `getArticleList()` - GET, page/pageSize/keyword 쿼리 파라미터
+- [x] `getArticle()` 
+- [x] `createArticle()` - POST, title/content/image body
+- [x] `patchArticle()` 
+- [x] `deleteArticle()` 
+
+**Product API (`ProductService.js`, async/await)**
+- [x] `getProductList()` - GET, page/pageSize/keyword 쿼리 파라미터
+- [x] `getProduct()` 
+- [x] `createProduct()` - POST, name/description/price/tags/images body
+- [x] `patchProduct()` 
+- [x] `deleteProduct()` 
+
+**공통**
+- [x] 응답 상태 코드 2XX 아닐 시 에러 throw 처리
+- [x] Article: `.then()` / `.catch()` 비동기 처리
+- [x] Product: `async/await` + `try/catch` 비동기 처리
+- [x] `export`/`import`로 파일 분리 (`ArticleService.js`, `ProductService.js`, `main.js`)
+
 본 프로젝트는 [코드잇](https://www.codeit.kr)의 소유이며, 교육 목적으로만 사용됩니다. © 2026 Codeit. All rights reserved.
