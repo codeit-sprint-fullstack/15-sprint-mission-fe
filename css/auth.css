@@ -221,7 +221,7 @@ input:focus {
   border: 1px solid var(--red-error)
 }
 
-#emailError{
+#login-emailError{
   display: none;
 }
 

@@ -1,9 +1,11 @@
 const emailInput    = document.getElementById('login-email') ;
 const emailError    = document.getElementById('login-emailError');
+const passwordInput    = document.getElementById('login-password') ;
+const passwordError    = document.getElementById('login-passwordError');
+
 
 //이메일
 emailInput.addEventListener('blur', () => {
-
   if(emailInput.value.trim()===''){
     emailInput.classList.add('input-error');
 
@@ -15,5 +17,19 @@ emailInput.addEventListener('blur', () => {
     emailInput.classList.remove('input-error');
     emailError.style.display = "none";
   }
+});
 
+//비밀번호
+passwordInput.addEventListener('blur', () => {
+  if(passwordInput.value.trim()===''){
+    passwordInput.classList.add('input-error');
+
+  }else if(passwordInput.value.length<8){
+    passwordInput.classList.add('input-error');
+    passwordError.style.display = "block";
+
+  }else {
+    passwordInput.classList.remove('input-error');
+    passwordError.style.display = "none";
+  }
 });

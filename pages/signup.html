@@ -28,7 +28,8 @@
           <form>            
             <div>            
              <label for="signup-email">이메일</label>
-             <input id="signup-email" name="email" type="email" placeholder="이메일을 입력해주세요"/>                   
+             <input id="signup-email" name="email" type="email" placeholder="이메일을 입력해주세요"/>
+              <p id="signup-emailError"> 잘못된 이메일 형식입니다.</p>                   
             </div>
             <div>            
               <label for="signup-name">닉네임</label>
@@ -38,6 +39,7 @@
                 <label for="password">비밀번호</label>                
                 <div class="password__input">
                   <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요"/>
+                  <p id="passwordError"> 비밀번호를 8자 이상 입력해주세요.</p>
                   <input id="toggle" type="checkbox" class="password__checkbox"/> 
                   <label for="toggle" class="password__toggle"></label>
                 </div>                    
