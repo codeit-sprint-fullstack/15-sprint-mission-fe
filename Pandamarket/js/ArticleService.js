@@ -1,15 +1,12 @@
 const ARTICLE_URL = "https://panda-market-api-crud.vercel.app/articles";
 
-export function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
-  return fetch(
-    `${ARTICLE_URL}?page=${page}&pageSize=${pageSize}&keyword=${keyword}`,
-    {
-      method: "GET",
-    },
-  )
+export function getArticle(id) {
+  return fetch(`${ARTICLE_URL}/${id}`, {
+    method: "GET",
+  })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`게시글 목록 조회 실패: ${response.status}`);
+        throw new Error(`게시글 조회 실패! ${response.status}`);
       }
       return response.json();
     })
@@ -22,13 +19,16 @@ export function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
     });
 }
 
-export function getArticle(id) {
-  return fetch(`${ARTICLE_URL}/${id}`, {
-    method: "GET",
-  })
+export function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
+  return fetch(
+    `${ARTICLE_URL}?page=${page}&pageSize=${pageSize}&keyword=${keyword}`,
+    {
+      method: "GET",
+    },
+  )
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`게시글 조회 실패! ${response.status}`);
+        throw new Error(`게시글 목록 조회 실패: ${response.status}`);
       }
       return response.json();
     })
@@ -98,5 +98,3 @@ export function patchArticle(id, { title, content, image } = {}) {
     })
     .catch((error) => console.log(error.message));
 }
-
-
