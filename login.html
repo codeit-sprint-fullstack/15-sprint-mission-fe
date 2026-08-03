@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <title>판다마켓</title>
+  </head>
+  <body>
+    <main class="container">
+      <a class="logo-container" href="./index.html">
+        <img class="logo" src="./assets/logo.png" alt="판다마켓 로고" />
+        <img
+          class="logo-type"
+          src="./assets/logo-type.png"
+          alt="판다마켓 로고 타입"
+        />
+      </a>
+      <section class="form-container">
+        <form class="login-form">
+          <label for="email" class="label-email">이메일</label>
+          <div class="email-wrapper">
+            <input
+              id="email"
+              class="input-email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+            />
+            <p class="input__message--invalid"></p>
+          </div>
+          <div class="pw-wrapper">
+            <label for="pw" class="label-pw">비밀번호</label>
+            <div class="pw-input-wrapper">
+              <input
+                id="pw"
+                class="input-pw"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <img
+                id="passwordOn"
+                data-target="#pw"
+                class="btn-pw-toggle isPwActive"
+                src="./assets/btn_visibility_off_24px.svg"
+                alt="비밀번호 노출 아이콘"
+              />
+              <img
+                id="passwordOff"
+                data-target="#pw"
+                class="btn-pw-toggle"
+                src="./assets/btn_visibility_on_24px.svg"
+                alt="비밀번호 비노출 아이콘"
+              />
+            </div>
+            <p class="input__message--invalid input__message--valid"></p>
+          </div>
+        </form>
+        <button id="btn-login" class="btn-login">로그인</button>
+        <div class="easy-login-container">
+          <span class="easy-login-label">간편 로그인하기</span>
+          <div class="easy-login-btns">
+            <a href="https://www.google.com">
+              <img src="./assets/login_ic_google.png" alt="구글 로고" />
+            </a>
+            <a href="https://www.kakaocorp.com/page">
+              <img src="./assets/login_ic_kakao.png" alt=" 카카오 로고" />
+            </a>
+          </div>
+        </div>
+        <div class="signup-container">
+          <span>판다마켓이 처음이신가요?</span>
+          <a href="./signup.html">회원가입</a>
+        </div>
+      </section>
+      <!-- 모달 영역 -->
+      <section class="modal-dim modal-off">
+        <div class="modal">
+          <p class="modal-message">비밀번호가 일치하지 않습니다.</p>
+          <button class="modal-button">확인</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const USER_DATA = [
+        { email: "codeit1@codeit.com", password: "codeit101!" },
+        { email: "codeit2@codeit.com", password: "codeit202!" },
+        { email: "codeit3@codeit.com", password: "codeit303!" },
+        { email: "codeit4@codeit.com", password: "codeit404!" },
+        { email: "codeit5@codeit.com", password: "codeit505!" },
+        { email: "codeit6@codeit.com", password: "codeit606!" },
+      ]
+
+      // 모달 버튼 기능 구현
+      const $modalButton = document.querySelector(".modal-button")
+      $modalButton.addEventListener("click", () => {
+        const $modal = document.querySelector(".modal-dim")
+        $modal.classList.add("modal-off")
+      })
+
+      // 회원 정보 조회
+      const requestLogin = (userData) => {
+        const { email, password } = userData
+        const result = USER_DATA.find((e) => e.email === email)
+        if (!result) return false
+
+        if (result.password === password) {
+          return true
+        } else {
+          return false
+        }
+      }
+
+      // 로그인 버튼 기능 구현
+      const $loginBtn = document.querySelector("#btn-login")
+
+      $loginBtn.onclick = () => {
+        const email = document.querySelector("#email").value
+        const password = document.querySelector("#pw").value
+        const res = requestLogin({ email, password })
+
+        // 로그인 실패
+        if (!res) {
+          const $modal = document.querySelector(".modal-dim")
+          $modal.classList.remove("modal-off")
+          return
+        }
+
+        location.href = "./items.html"
+      }
+
+      // 로그인 버튼 validation 체크
+      const isLoginValidate = {
+        emailValid: false,
+        paswordValid: false,
+      }
+
+      const loginBtnHandler = () => {
+        const loginBtn = document.getElementById("btn-login")
+
+        if (!loginBtn) return
+
+        // 이메일과 패스워드가 모두 존재하면 active 추가, 하나라도 없으면 제거
+        const isActive =
+          isLoginValidate.emailValid && isLoginValidate.paswordValid
+
+        loginBtn.classList.toggle("active", isActive)
+      }
+
+      document
+        .querySelector(".login-form")
+        .addEventListener("input", loginBtnHandler)
+
+      // 이메일 예외 처리
+      const validateEmail = (value) => {
+        const emailRegex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+        const isValid = emailRegex.test(value)
+        if (!value) {
+          return { isValid: false, message: "이메일을 입력해주세요." }
+        }
+
+        if (!isValid) {
+          return { isValid: false, message: "잘못된 이메일 형식입니다." }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      const $emailInput = document.querySelector("#email")
+      const $emailWrapper = document.querySelector(".email-wrapper")
+      const $emailInputMessage = $emailWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      const renderEmailValidation = (value) => {
+        const { isValid, message } = validateEmail(value)
+        // 로그인 버튼 상태 관리
+        isLoginValidate.emailValid = isValid
+
+        // 메시지 관리
+        $emailInputMessage.innerText = message
+
+        $emailInput.classList.toggle("input-invalid", !isValid)
+        $emailInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $emailInput.addEventListener("blur", (e) =>
+        renderEmailValidation(e.target.value),
+      )
+      $emailInput.addEventListener("input", (e) =>
+        renderEmailValidation(e.target.value),
+      )
+
+      // 비밀번호 예외 처리
+      const validatePassword = (value) => {
+        if (!value) {
+          return { isValid: false, message: "비밀번호를 입력해주세요." }
+        }
+        if (value.length < 8) {
+          return {
+            isValid: false,
+            message: "비밀번호를 8자 이상 입력해주세요.",
+          }
+        }
+        return { isValid: true, message: "" }
+      }
+
+      const $pwInput = document.querySelector("#pw")
+      const $pwWrapper = document.querySelector(".pw-wrapper")
+      const $pwInputMessage = $pwWrapper.querySelector(
+        ".input__message--invalid",
+      )
+
+      // UI 상태 렌더링 전담 함수
+      const renderPasswordValidation = (value) => {
+        const { isValid, message } = validatePassword(value)
+
+        // 로그인 버튼 상태관리
+        isLoginValidate.paswordValid = isValid
+
+        // 1. 에러 메시지 텍스트 업데이트
+        $pwInputMessage.innerText = message
+
+        // 2. Class 상태 토글 (classList.toggle 활용으로 코드 단축!)
+        $pwInput.classList.toggle("input-invalid", !isValid)
+        $pwInputMessage.classList.toggle("input__message--valid", isValid)
+      }
+
+      $pwInput.addEventListener("blur", (e) =>
+        renderPasswordValidation(e.target.value),
+      )
+      $pwInput.addEventListener("input", (e) =>
+        renderPasswordValidation(e.target.value),
+      )
+
+      // 비밀번호 노출/비노출 토글
+      const $pwInputWrapper = document.querySelector(".pw-input-wrapper")
+
+      $pwWrapper.addEventListener("click", (e) => {
+        const $btn = e.target.closest(".btn-pw-toggle")
+
+        if (!$btn) return
+
+        const $onBtn = document.querySelector("#passwordOn")
+        const $offBtn = document.querySelector("#passwordOff")
+        $onBtn.classList.toggle("isPwActive")
+        $offBtn.classList.toggle("isPwActive")
+
+        const targetId = $btn.dataset.target
+        const $input = $pwInputWrapper.querySelector(targetId)
+
+        const isPwVisible = $onBtn.classList.contains("isPwActive")
+        $input.type = isPwVisible ? "password" : "text"
+      })
+    </script>
+  </body>
+</html>
