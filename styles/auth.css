@@ -1,0 +1,135 @@
+
+body {
+  font-family: Pretendard, sans-serif;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 전체 요소가 담긴 컨테이너 */
+
+.login_outbox {
+  width: 640px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 이 아래로 폼 */
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form > .email,
+form > .password {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--color-secondary-gray800);
+}
+
+form input {
+  width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  padding: 16px 24px;
+  background-color: var(--color-secondary-gray100);
+  border: 0;
+}
+
+form input:focus-visible {
+  outline: none;
+  border: 1px solid var(--color-primary-blue100);
+}
+
+form input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-secondary-gray400);
+}
+
+form > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 640px;
+  height: 56px;
+  border: 0;
+  border-radius: 40px;
+  padding: 16px 124px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--color-secondary-gray100);
+  background-color: var(--color-secondary-gray400);
+}
+
+form > button:hover {
+  background-color: var(--color-primary-blue100);
+  cursor: pointer;
+}
+
+/* 이 아래로 간편 로그인하기 메뉴 */
+
+.quick_login_menu {
+  width: 640px;
+  height: 74px;  
+  border-radius: 8px;
+  background-color: #e6f2ff;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  margin: 24px 0;  
+  padding: 16px 23px;
+}
+
+.quick_login_menu > p {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.quick_login_menu > .sns_login {
+  display: flex;
+  gap: 16px;
+}
+
+.quick_login_menu > .sns_login > a {
+  width: 42px;
+  height: 42px;
+}
+
+/* 이 아래로 "판다마켓이 처음이신가요?" 메뉴 */
+
+.auth_switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.auth_switch > p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-secondary-gray800);
+}
+
+.auth_switch > a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary-blue100);
+}
