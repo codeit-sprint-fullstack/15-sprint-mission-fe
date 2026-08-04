@@ -25,7 +25,6 @@ nav {
 .nav-logo > img {
   width: 153px;
   height: 51px;
-  padding: 5px auto;
 }
 
 .login-button {
@@ -76,10 +75,10 @@ header {
   font-family: Pretendard;
   font-size: 40px;
   font-weight: 700;
-  font-style: noraml;
+  font-style: normal;
   line-height: 140%;
   color: var(--color-secondary-gray700);
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .header-text_and_button > .header-button {
