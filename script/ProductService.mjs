@@ -38,8 +38,8 @@ async function getProduct(id) {
   return response.json();
 }
 
-async function createProduct(name, description, price, tags, images) {
-  // console.log(name, description, price, tags, images);
+async function createProduct({ name, description, price, tags, images }) {
+  console.log({ name, description, price, tags, images });
   const response = await fetch(`${BASE_URL}`, {
     method: "POST",
     headers: {
@@ -57,7 +57,7 @@ async function createProduct(name, description, price, tags, images) {
   if (!response.ok) {
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
-  // console.log("createProduct 수행완료!");
+  console.log("createProduct 수행완료!");
   return response.json();
 }
 
