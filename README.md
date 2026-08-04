@@ -110,10 +110,10 @@ _위 이미지는 판다마켓의 대표 이미지입니다._ 📸
   - [x] Github에 스프린트 미션 PR을 만들어 주세요.
   - [x] 'https://panda-market-api-crud.vercel.app/docs/#/Article' API를 이용하여 아래 함수들을 구현해 주세요.
     - [x] getArticleList() : GET 메서드를 사용해 주세요.
-    - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
+      - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
     - [x] getArticle() : GET 메서드를 사용해 주세요.
     - [x] createArticle() : POST 메서드를 사용해 주세요.
-    - [x] request body에 title, content, image 를 포함해 주세요.
+      - [x] request body에 title, content, image 를 포함해 주세요.
     - [x] patchArticle() : PATCH 메서드를 사용해 주세요.
     - [x] deleteArticle() : DELETE 메서드를 사용해 주세요.
     - [x] fetch 혹은 axios 를 이용해 주세요.
@@ -122,10 +122,10 @@ _위 이미지는 판다마켓의 대표 이미지입니다._ 📸
   - [ ] .catch() 를 이용하여 오류 처리를 해주세요.
   - [x] 'https://panda-market-api-crud.vercel.app/docs/#/Product' API를 이용하여 아래 함수들을 구현해 주세요.
     - [x] getProductList() : GET 메서드를 사용해 주세요.
-    - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
+      - [x] page, pageSize, keyword 쿼리 파라미터를 이용해 주세요.
     - [x] getProduct() : GET 메서드를 사용해 주세요.
     - [x] createProduct() : POST 메서드를 사용해 주세요.
-    - [x] request body에 name, description, price, tags, images 를 포함해 주세요.
+      - [x] request body에 name, description, price, tags, images 를 포함해 주세요.
     - [x] patchProduct() : PATCH 메서드를 사용해 주세요.
     - [x] deleteProduct() : DELETE 메서드를 사용해 주세요.
     - [x] async/await 을 이용하여 비동기 처리를 해주세요.
