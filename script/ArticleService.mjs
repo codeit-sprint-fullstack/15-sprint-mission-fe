@@ -37,8 +37,8 @@ async function getArticle(id) {
   return response.json();
 }
 
-async function createArticle(title, content, image) {
-  // console.log(title, content, image);
+async function createArticle({title, content, image}) {
+  // console.log({title, content, image});
   const response = await fetch(`${BASE_URL}`, {
     method: "POST",
     headers: {
