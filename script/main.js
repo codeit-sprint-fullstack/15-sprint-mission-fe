@@ -2,12 +2,11 @@ import ArticleService from "./ArticleService.mjs";
 import ProductService from "./ProductService.mjs";
 import * as readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
+const rl = readline.createInterface({ input, output });
 
 async function consoleInput(question) {
-  const rl = readline.createInterface({ input, output });
   const answer = await rl.question(`${question}`);
   console.log(`입력받은 값: ${answer}`);
-  rl.close();
   return answer;
 }
 
@@ -32,22 +31,30 @@ async function inputProductData() {
 }
 
 async function inputArticleData() {
-  let ArticleData = {
+  let articleData = {
     title: "",
     content: "",
     image: "",
   };
-  ArticleData.title = await consoleInput("게시글 제목은 무엇인가요? : ");
-  ArticleData.content = await consoleInput("게시글 내용은 무엇인가요? : ");
-  ArticleData.image = await consoleInput("이미지 링크는 무엇인가요? : ");
-  for (const key in ArticleData) {
-    if (ArticleData[key] === "") ArticleData[key] = undefined;
+  articleData.title = await consoleInput("게시글 제목은 무엇인가요? : ");
+  articleData.content = await consoleInput("게시글 내용은 무엇인가요? : ");
+  articleData.image = await consoleInput("이미지 링크는 무엇인가요? : ");
+  for (const key in articleData) {
+    if (articleData[key] === "") articleData[key] = undefined;
   }
-  console.log("지금까지 입력받은 내용입니다 : ", ArticleData);
-  return ArticleData;
+  console.log("지금까지 입력받은 내용입니다 : ", articleData);
+  return articleData;
 }
 
 async function ProductServiceTest() {
+  const COMMAND = {
+    EXIT: "0",
+    LIST: "1",
+    FIND: "2",
+    CREATE: "3",
+    UPDATE: "4",
+    DELETE: "5",
+  };
   let selectCommand = null;
   while (selectCommand !== "0") {
     try {
@@ -62,12 +69,16 @@ async function ProductServiceTest() {
 무엇을 실행하고 싶으신가요? : `);
 
       switch (selectCommand) {
-        case "1":
+        case COMMAND.LIST: {
           console.log(
             "1. 게시글을 불러옵니다. 아래 불러올 리스트의 크기를 입력해주세요.",
           );
-          const page = await consoleInput("페이지 갯수는 얼마인가요? : ");
-          const pageSize = await consoleInput("페이지 크기는 얼마인가요? : ");
+          const page = Number(
+            await consoleInput("페이지 갯수는 얼마인가요? : "),
+          );
+          const pageSize = Number(
+            await consoleInput("페이지 크기는 얼마인가요? : "),
+          );
           let keyword = await consoleInput(
             "검색할 키워드는 무엇인가요?(없으면 x를 입력해 주세요.) : ",
           );
@@ -77,7 +88,8 @@ async function ProductServiceTest() {
             await ProductService.getProductList(page, pageSize, keyword),
           );
           break;
-        case "2":
+        }
+        case COMMAND.FIND: {
           console.log("2. 원하는 게시글 찾습니다.");
           console.log(
             "해당 게시글을 출력합니다.",
@@ -90,11 +102,13 @@ async function ProductServiceTest() {
             ),
           );
           break;
-        case "3":
+        }
+        case COMMAND.CREATE: {
           console.log("3. 게시글을 생성합니다.");
           await ProductService.createProduct(await inputProductData());
           break;
-        case "4":
+        }
+        case COMMAND.UPDATE: {
           console.log("4. 원하는 게시글의 내용을 바꿉니다.");
           const id = await consoleInput(
             "업데이트를 원하는 게시글의 ID는 무엇인가요? : ",
@@ -102,7 +116,8 @@ async function ProductServiceTest() {
           const data = await inputProductData();
           await ProductService.patchProduct({ id, ...data });
           break;
-        case "5":
+        }
+        case COMMAND.DELETE: {
           console.log("5. 원하는 게시글을 삭제합니다.");
           console.log(
             "해당 게시글을 삭제합니다.",
@@ -115,9 +130,11 @@ async function ProductServiceTest() {
             ),
           );
           break;
-        case "0":
+        }
+        case COMMAND.EXIT: {
           console.log("ProductService 모듈에 대한 CRUD 시나리오를 종료합니다.");
           break;
+        }
         default:
           console.log("잘못된 입력입니다. 다시 입력하세요.");
       }
@@ -132,6 +149,14 @@ async function ProductServiceTest() {
 
 async function ArticleServiceTest() {
   let selectCommand = null;
+  const COMMAND = {
+    EXIT: "0",
+    LIST: "1",
+    FIND: "2",
+    CREATE: "3",
+    UPDATE: "4",
+    DELETE: "5",
+  };
   while (selectCommand !== "0") {
     try {
       console.log("② ArticleService 모듈에 대한 CRUD 시나리오를 수행합니다.");
@@ -145,12 +170,16 @@ async function ArticleServiceTest() {
 무엇을 실행하고 싶으신가요? : `);
 
       switch (selectCommand) {
-        case "1":
+        case COMMAND.LIST: {
           console.log(
             "1. 게시글을 불러옵니다. 아래 불러올 리스트의 크기를 입력해주세요.",
           );
-          const page = await consoleInput("페이지 갯수는 얼마인가요? : ");
-          const pageSize = await consoleInput("페이지 크기는 얼마인가요? : ");
+          const page = Number(
+            await consoleInput("페이지 갯수는 얼마인가요? : "),
+          );
+          const pageSize = Number(
+            await consoleInput("페이지 크기는 얼마인가요? : "),
+          );
           let keyword = await consoleInput(
             "검색할 키워드는 무엇인가요?(없으면 x를 입력해 주세요.) : ",
           );
@@ -160,7 +189,8 @@ async function ArticleServiceTest() {
             await ArticleService.getArticleList(page, pageSize, keyword),
           );
           break;
-        case "2":
+        }
+        case COMMAND.FIND: {
           console.log("2. 원하는 게시글 찾습니다.");
           console.log(
             "해당 게시글을 출력합니다.",
@@ -173,11 +203,13 @@ async function ArticleServiceTest() {
             ),
           );
           break;
-        case "3":
+        }
+        case COMMAND.CREATE: {
           console.log("3. 게시글을 생성합니다.");
           await ArticleService.createArticle(await inputArticleData());
           break;
-        case "4":
+        }
+        case COMMAND.UPDATE: {
           console.log("4. 원하는 게시글의 내용을 바꿉니다.");
           const id = await consoleInput(
             "업데이트를 원하는 게시글의 ID는 무엇인가요? : ",
@@ -185,7 +217,8 @@ async function ArticleServiceTest() {
           const data = await inputArticleData();
           await ArticleService.patchArticle({ id, ...data });
           break;
-        case "5":
+        }
+        case COMMAND.DELETE: {
           console.log("5. 원하는 게시글을 삭제합니다.");
           console.log(
             "해당 게시글을 삭제합니다.",
@@ -198,9 +231,11 @@ async function ArticleServiceTest() {
             ),
           );
           break;
-        case "0":
+        }
+        case COMMAND.EXIT: {
           console.log("ArticleService 모듈에 대한 CRUD 시나리오를 종료합니다.");
           break;
+        }
         default:
           console.log("잘못된 입력입니다. 다시 입력하세요.");
       }
@@ -225,16 +260,20 @@ while (selectCommand !== "0") {
 2. ArticlrService 모듈
 무엇을 실행하고 싶으신가요? : `);
   switch (selectCommand) {
-    case "1":
+    case "1": {
       await ProductServiceTest();
       break;
-    case "2":
+    }
+    case "2": {
       await ArticleServiceTest();
       break;
-    case "0":
+    }
+    case "0": {
       console.log("테스트를 종료합니다.");
       break;
+    }
     default:
       console.log("잘못된 입력입니다. 다시 입력하세요.");
   }
 }
+rl.close();
