@@ -44,7 +44,7 @@ form input {
   border-radius: 12px;
   padding: 16px 24px;
   background-color: var(--color-secondary-gray100);
-  border: 0;
+  border: 1px solid transparent;
 }
 
 form input:focus-visible {
