@@ -1,0 +1,21 @@
+{
+  "name": "15-sprint-mission-kimjaeyoung",
+  "version": "1.0.0",
+  "description": "a#README.MD 작성",
+  "keywords": [],
+  "homepage": "https://github.com/yangpahub/15-sprint-mission--#readme",
+  "bugs": {
+    "url": "https://github.com/yangpahub/15-sprint-mission--/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangpahub/15-sprint-mission--.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

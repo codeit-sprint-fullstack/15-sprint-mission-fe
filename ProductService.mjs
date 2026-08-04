@@ -1,37 +1,45 @@
 const BASE_URL = "https://panda-market-api-crud.vercel.app";
 // /products
 
-async function getProductList() {
+export async function getProductList({
+  page = 1,
+  pageSize = 10,
+  keyword = "",
+} = {}) {
   try {
-    const response = await fetch(`${BASE_URL}/products`, {
+    const params = new URLSearchParams({
+      page: String(page),
+      pageSize: String(pageSize),
+    });
+    if (keyword) {
+      params.append("keyword", keyword);
+    }
+
+    const requestUrl = `${BASE_URL}/products?${params.toString()}`;
+
+    const response = await fetch(requestUrl, {
       method: "GET",
     });
     if (!response.ok) {
-      throw new Error(`HTTP: ${response.status}`);
+      throw new Error(`HTTP 에러가 발생했습니다.${response.status}`);
     }
     const getProductDataList = await response.json();
     return getProductDataList;
   } catch (error) {
-    console.log("제품 정보를 가져오는데에 실패했습니다.", error.message);
+    console.log("리스트를 가져오는데에 실패했습니다.", error.message);
     return null;
   }
 }
 
-//getProductList().then((data) => console.log(data));
 
-async function getProduct({ id }) {
+
+export async function getProduct(id) {
   try {
     const response = await fetch(`${BASE_URL}/products/${id}`, {
       method: "GET",
-      body: JSON.stringify({
-        id,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
     if (!response.ok) {
-      throw new Error(`HTTP:${response.statusText}`);
+      throw new Error(`HTTP 에러가 발생했습니다.${response.statusText}`);
     }
     const getProduct = await response.json();
     return getProduct;
@@ -41,11 +49,15 @@ async function getProduct({ id }) {
   }
 }
 
-// getProduct({
-//   id: 4091,
-// }).then((data) => console.log(data));
 
-async function createProduct({ images, tags, price, description, name }) {
+
+export async function createProduct({
+  images,
+  tags,
+  price,
+  description,
+  name,
+}) {
   try {
     const response = await fetch(`${BASE_URL}/products`, {
       method: "POST",
@@ -61,7 +73,7 @@ async function createProduct({ images, tags, price, description, name }) {
       },
     });
     if (!response.ok) {
-      throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
+      throw new Error(`HTTP 에러가 발생했습니다.${response.statusText}`);
     }
     const createProductData = await response.json();
     return createProductData;
@@ -71,15 +83,16 @@ async function createProduct({ images, tags, price, description, name }) {
   }
 }
 
-// createProduct({
-//   images: ["https://example.com/product.jpg"],
-//   tags: ["신상품"],
-//   price: 9999,
-//   description: "신상품입니다.",
-//   name: "신상품",
-// }).then((data) => console.log(data));
 
-async function patchProduct({ images, tags, price, description, name, id }) {
+
+export async function patchProduct({
+  images,
+  tags,
+  price,
+  description,
+  name,
+  id,
+}) {
   try {
     const response = await fetch(`${BASE_URL}/products/${id}`, {
       method: "PATCH",
@@ -95,7 +108,7 @@ async function patchProduct({ images, tags, price, description, name, id }) {
       },
     });
     if (!response.ok) {
-      throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
+      throw new Error(`HTTP 에러가 발생했습니다.${response.statusText}`);
     }
     const patchProductData = await response.json();
     return patchProductData;
@@ -105,28 +118,14 @@ async function patchProduct({ images, tags, price, description, name, id }) {
   }
 }
 
-// patchProduct({
-//   images: ["https://example.com/product.jpg"],
-//   tags: ["수정된 상품"],
-//   price: 99999,
-//   description: "수정된 상품",
-//   name: "patch",
-//   id: 4094,
-// }).then((data) => console.log(data));
 
-async function deleteProduct({ id }) {
+export async function deleteProduct(id) {
   try {
     const response = await fetch(`${BASE_URL}/products/${id}`, {
-      method: "Delete",
-      body: JSON.stringify({
-        id,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      method: "DELETE",
     });
     if (!response.ok) {
-      throw new Error(`HTTP:${response.status}`);
+      throw new Error(`HTTP 에러가 발생했습니다.${response.status}`);
     }
     const deleteProductData = await response.json();
     return deleteProductData;
@@ -136,6 +135,3 @@ async function deleteProduct({ id }) {
   }
 }
 
-// deleteProduct({
-//   id: 4091,
-// }).then((data) => console.log(data));
