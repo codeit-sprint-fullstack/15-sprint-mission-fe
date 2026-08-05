@@ -228,5 +228,5 @@ input:focus {
 .container__text p{
   color:var(--red-error);
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }

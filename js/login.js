@@ -3,6 +3,17 @@ const emailError    = document.getElementById('login-emailError');
 const passwordInput    = document.getElementById('login-password') ;
 const passwordError    = document.getElementById('login-passwordError');
 
+const toggle = document.getElementById('toggle');
+
+
+toggle.addEventListener('change',() => {
+  if(toggle.checked === true){
+    passwordInput.type = 'text'
+
+  }else{
+    passwordInput.type ='password'
+  }
+});
 
 //이메일
 emailInput.addEventListener('blur', () => {
