@@ -225,7 +225,7 @@ input:focus {
   display: none;
 }
 
-.container__text p{
+.container__text p:not(.auth-link__title){
   color:var(--red-error);
   font-family: Pretendard;
   font-size: 0.75rem;

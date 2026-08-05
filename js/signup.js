@@ -1,15 +1,19 @@
-const emailInput      = document.getElementById('signup-email') ;
-const emailError      = document.getElementById('signup-emailError');
-const passwordInput   = document.getElementById('signup-password') ;
-const passwordError   = document.getElementById('signup-passwordError');
-const toggle          = document.getElementById('toggle');
-const btnLogin        = document.getElementById('signup-btn');
+const emailInput              = document.getElementById('signup-email') ;
+const emailError              = document.getElementById('signup-emailError');
+const passwordInput           = document.getElementById('signup-password') ;
+const passwordError           = document.getElementById('signup-passwordError');
+const passwordConfirmInput    = document.getElementById('signup-password-confirm') ;
+const passwordConfirmError    = document.getElementById('signup-passwordError-confirm');
+const toggle                  = document.getElementById('toggle');
+const toggle2                 = document.getElementById('toggle2');
+const btnLogin                = document.getElementById('signup-btn');
 
 let emailIsBn = false;
 let passwordIsBn = false;
+let passwordConfirmIsBn = false;
 
 function updateButtonState(){
-    if(emailIsBn&&passwordIsBn){ 
+    if(emailIsBn&&passwordIsBn&&passwordConfirmIsBn){ 
      btnLogin.classList.add('btn--active');  
   }else{
     btnLogin.classList.remove('btn--active');
@@ -23,6 +27,15 @@ toggle.addEventListener('change',() => {
     passwordInput.type ='password'
   }
 });
+
+toggle2.addEventListener('change',() => {
+  if(toggle2.checked === true){
+    passwordConfirmInput.type = 'text'
+  }else{
+    passwordConfirmInput.type ='password'
+  }
+});
+
 
 //이메일
 emailInput.addEventListener('blur', () => {
@@ -59,6 +72,26 @@ passwordInput.addEventListener('blur', () => {
     passwordInput.classList.remove('input-error');
     passwordError.style.display = "none";
     passwordIsBn = true;
+  }
+
+  updateButtonState();
+});
+
+
+//비밀번호 확인
+passwordConfirmInput.addEventListener('blur', () => {
+  if(passwordConfirmInput.value.trim()===''){
+    passwordConfirmInput.classList.add('input-error');
+    passwordConfirmIsBn = false;
+
+  }else if(passwordInput.value != passwordConfirmInput.value){
+    passwordConfirmInput.classList.add('input-error');
+    passwordConfirmError.style.display = "block";
+    passwordConfirmIsBn = false;
+  }else {
+    passwordConfirmInput.classList.remove('input-error');
+    passwordConfirmError.style.display = "none";
+    passwordConfirmIsBn = true;
   }
 
   updateButtonState();
