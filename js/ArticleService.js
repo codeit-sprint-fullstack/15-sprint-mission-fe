@@ -12,6 +12,7 @@ export function getArticle(id){
     })
     .catch((error) => {
       console.error(error.message);
+      throw error;
     });
 }
 
@@ -28,6 +29,7 @@ export function getArticleList({ page = 1, pageSize = 10, keyword = "" } = {}) {
     })
     .catch((error) => {
       console.error(error.message);
+      throw error;
     });
 }
 
@@ -51,6 +53,7 @@ export function createArticle({title, content, image}){
     })
     .catch((error) => {
       console.error(error.message);
+      throw error;
     });
 }
 //수정
@@ -69,6 +72,7 @@ export function patchArticle(id, data){
     })
     .catch((error) => {
       console.error(error.message);
+      throw error;
     });
 }
 //삭제
@@ -83,5 +87,6 @@ export function deleteArticle(id){
     })
     .catch((error) => {
       console.error(error.message);
+      throw error;
     });
 }

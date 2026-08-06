@@ -9,6 +9,7 @@ export async function getProduct(id){
     return await response.json();
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
@@ -22,6 +23,7 @@ export async function getProductList({page = 1, pageSize = 10, keyword=""} = {})
     return await response.json();
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
@@ -43,6 +45,7 @@ export async function createProduct({images, tags, price,description,name}){
     return await response.json();
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
@@ -59,6 +62,7 @@ export async function patchProduct(id,data){
     return await response.json();
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
@@ -70,6 +74,7 @@ export async function deleteProduct(id){
     return await response.json();
   } catch (error) {
     console.log(error.message);
+    throw error;
   }
 }
 
