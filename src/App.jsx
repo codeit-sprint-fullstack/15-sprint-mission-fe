@@ -1,13 +1,7 @@
-
-import './App.css'
+import MarketPage from './pages/MarketPage';
 
 function App() {
-
-  return (
-    <>
-      <h1>스프린트미션4</h1> 
-    </>
-  )
+  return <MarketPage />;
 }
 
-export default App
+export default App;

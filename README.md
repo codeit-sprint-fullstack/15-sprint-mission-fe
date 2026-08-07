@@ -1,7 +1,6 @@
 # 🐼 판다마켓 프로젝트 \[react\] - 박수환
 
-
-<img width="631" height="652" alt="스크린샷 2026-08-07 181916" src="https://github.com/user-attachments/assets/27a90bd4-7fb9-4b97-b83b-1800d4fb1da3" />
+<img width="869" height="895" alt="sprint4" src="https://github.com/user-attachments/assets/67d4c587-73c6-4aa8-b6e0-4548a181642a" />
 
 
 안녕하세요! 판다마켓 프로젝트에 오신 것을 환영합니다! 🥳  
