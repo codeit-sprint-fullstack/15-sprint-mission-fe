@@ -1,3 +1,92 @@
+import axios from "axios";
+
+// axios 기반 Product API 구현
+const instance = axios.create({
+  baseURL: "https://panda-market-api-crud.vercel.app",
+  timeout: 5000,
+});
+
+async function getProductList(params = {}) {
+  try {
+    const response = await instance.get(`/products`, { params });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      // 서버가 응답은 하는 경우
+      console.error(error.response.status); // 400번대, 500번대 상태 메시지
+      console.error(error.response.data); // 서버가 보낸 에러 메시지 내용
+    } else {
+      // 서버가 응답 자체를 받지 못하는 경우
+      console.error("리퀘스트가 실패했습니다."); // 네트워크 끊김, timeout(5초 초과), 잘못된 URL 요청
+    }
+  }
+}
+
+async function getProduct(productId) {
+  try {
+    const response = await instance.get(`/products/${productId}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response.status);
+      console.error(error.response.data);
+    } else {
+      console.error("리퀘스트가 실패했습니다.");
+    }
+  }
+}
+
+async function createProduct(name, description, price, tags, images) {
+  try {
+    const response = await instance.post(`/products`, { name, description, price, tags, images });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response.status);
+      console.error(error.response.data);
+    } else {
+      console.error("리퀘스트가 실패했습니다.");
+    }
+  }
+}
+
+async function patchProduct(productId, name, description, price, tags, images) {
+  try {
+    const response = await instance.patch(`/products/${productId}`, { name, description, price, tags, images });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response.status);
+      console.error(error.response.data);
+    } else {
+      console.error("리퀘스트가 실패했습니다.");
+    }
+  }
+}
+
+async function deleteProduct(productId) {
+  try {
+    const response = await instance.delete(`/products/${productId}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response.status);
+      console.error(error.response.data);
+    } else {
+      console.error("리퀘스트가 실패했습니다.");
+    }
+  }
+}
+
+export { getProductList, getProduct, createProduct, patchProduct, deleteProduct };
+
+/* fetch() 기반 Product API 코드
+
 const BASE_URL = "https://panda-market-api-crud.vercel.app";
 
 async function getProductList(params = {}) {
@@ -86,5 +175,4 @@ async function deleteProduct(productId) {
     console.error(`네트워크 요청 오류: ${error}`);
   }
 }
-
-export { getProductList, getProduct, createProduct, patchProduct, deleteProduct };
+*/
