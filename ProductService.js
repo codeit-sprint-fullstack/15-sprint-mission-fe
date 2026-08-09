@@ -145,7 +145,7 @@ export async function deleteProduct(producId) {
   }
 }
 
-deleteProduct(4247)
-  .then((data) => {
-    console.log(data)
-  })
+// deleteProduct(4247)
+//   .then((data) => {
+//     console.log(data)
+//   })
