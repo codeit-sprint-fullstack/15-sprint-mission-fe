@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --Secondary-900: #111827;
+  --Secondary-800: #1f2937;
+  --Secondary-700: #374151;
+  --Secondary-400: #9ca3af;
+  --Secondary-200: #e5e7eb;
+  --Cool-Gray-100: #f3f4f6;
+}
+
 html {
   font-size: 100%;
 }
