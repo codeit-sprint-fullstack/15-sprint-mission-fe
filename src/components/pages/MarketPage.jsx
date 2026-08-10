@@ -2,18 +2,17 @@
 // pages/MarketPage.jsx
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
-// import BestProductList from '../product/BestProductList';
-// import ProductListHeader from '../product/ProductListHeader';
-// import ProductList from '../product/ProductList';
-
+import BestProductList from '../product/BestProductList';
+import ProductListHeader from '../product/ProductListHeader';
+import ProductList from '../product/ProductList';
 
 export default function MarketPage() {
   return (
     <div>
-       <Navbar />
-      {/*<BestProductList />
+      <Navbar />
+      <BestProductList />
       <ProductListHeader />
-      <ProductList /> */}
+      <ProductList />
       <Footer />
     </div>
   );
