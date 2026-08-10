@@ -1,4 +1,5 @@
-import MarketPage from './pages/MarketPage';
+import MarketPage from './components/pages/MarketPage';
+import './App.css'
 
 function App() {
   return <MarketPage />;
