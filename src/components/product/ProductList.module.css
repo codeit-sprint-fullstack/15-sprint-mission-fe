@@ -1,0 +1,19 @@
+.section{
+  padding: 2rem 12.5rem;
+}
+
+.title{
+  color: var(--gray-darkest);
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem; 
+}
+
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:1.5rem
+}

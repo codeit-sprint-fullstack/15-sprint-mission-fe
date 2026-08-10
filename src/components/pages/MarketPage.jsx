@@ -11,7 +11,7 @@ export default function MarketPage() {
     <div>
       <Navbar />
       <BestProductList />
-      <ProductListHeader />
+      <ProductListHeader /> 
       <ProductList />
       <Footer />
     </div>

@@ -1,1 +1,8 @@
 //# 검색창 + 정렬 드롭다운 + 등록 버튼 묶음
+export default function ProductListHeader(){
+  return (
+    <section>
+
+    </section>
+  );
+}

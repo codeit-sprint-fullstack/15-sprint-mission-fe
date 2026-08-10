@@ -1,7 +1,7 @@
 //# 상품 카드 (베스트/전체 공통 재사용)
 import styles from './ProductCard.module.css';
 
-export default function ProductCard(imageUrl,name,price,favoriteCount){
+export default function ProductCard({imageUrl,name,price,favoriteCount}){
   return (
     <div className={styles.card}>
       <img className={styles.image} src={imageUrl} alt={name}/>
