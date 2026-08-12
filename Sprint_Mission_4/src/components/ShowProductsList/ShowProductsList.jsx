@@ -3,9 +3,12 @@ export function ShowProductsList({ posts }) {
     <div>
       <h1>ShowProductsList</h1>
       <ul>
-        {posts.map(({ id, name, price, favoriteCount }) => (
+        {posts.map(({ id, name, price, favoriteCount, images }) => (
           <li key={id}>
-            제목:{name} / 가격:{price} / 좋아요:{favoriteCount}
+            <div>
+              제목:{name} / 가격:{price} / 좋아요:{favoriteCount}
+              <img src={images} width={16} height={16} loading="lazy" />
+            </div>
           </li>
         ))}
       </ul>
