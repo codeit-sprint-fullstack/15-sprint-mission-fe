@@ -4,7 +4,12 @@ import { fetchPosts } from '../../api/posts';
 const INITIAL_TOTAL_COUNT = 0;
 const INITIAL_PAGE = 1;
 
-export function ShowProductsList({page = 1, pageSize = 10, orderBy = 'recent', keyWord = undefined}) {
+export function ShowProductsList({
+  page = 1,
+  pageSize = 10,
+  orderBy = 'recent',
+  keyword = undefined,
+}) {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -19,7 +24,7 @@ export function ShowProductsList({page = 1, pageSize = 10, orderBy = 'recent', k
           currentPage,
           pageSize,
           orderBy,
-          keyWord,
+          keyword,
         );
         setPosts(list);
         setTotalCount(totalCount);
@@ -29,24 +34,16 @@ export function ShowProductsList({page = 1, pageSize = 10, orderBy = 'recent', k
       }
     };
     getPosts();
-  }, [currentPage]);
-
-  function trigger() {
-    setCurrentPage((prev) => prev + 1);
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
+  }, [currentPage, pageSize, orderBy, keyword]);
 
   return (
     <div>
       <h1>ShowProductsList</h1>
-      <p>전체 게시물 숫자: {totalCount}</p>
-      <p>페이지 숫자: {totalPages}</p>
-      <p>현재 페이지: {currentPage}</p>
-      <ul>{posts.map(({id, name}) => (<li key={id}>{name}</li>))}</ul>
-      <button onClick={trigger}>trigger</button>
+      <ul>
+        {posts.map(({ id, name, price, favoriteCount}) => (
+          <li key={id}>제목:{name} / 가격:{price} / 좋아요:{favoriteCount}</li>
+        ))}
+      </ul>
     </div>
   );
 }
