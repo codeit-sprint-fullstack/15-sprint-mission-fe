@@ -5,13 +5,14 @@ import { ShowProductsList } from '../ShowProductsList';
 import { SortProducts } from '../SortProducts';
 import { usePost } from '../../hooks/usePost';
 
-
-
 export function SaleProducts() {
-
   const [orderBy, setOrderBy] = useState('recent');
   const [keyword, setKeyword] = useState('');
-  const { posts, totalPages, currentPage, handleCurrentPage } = usePost(10, orderBy, keyword);
+  const { posts, totalPages, currentPage, handleCurrentPage } = usePost(
+    10,
+    orderBy,
+    keyword,
+  );
 
   const handleSort = (sortValue) => {
     setOrderBy(sortValue);
@@ -19,7 +20,6 @@ export function SaleProducts() {
   const handleSearch = (searchValue) => {
     setKeyword(searchValue);
   };
-  
 
   return (
     <div>
