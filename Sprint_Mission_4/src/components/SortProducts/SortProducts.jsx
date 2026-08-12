@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function SortProducts({sort}) {
+export function SortProducts({ sort }) {
   const [selected, setSelected] = useState('recent');
   const options = [
     { name: '최신순', value: 'recent' },

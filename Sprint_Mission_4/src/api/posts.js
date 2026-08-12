@@ -6,7 +6,7 @@ export const fetchPosts = async (
   orderBy = 'recent',
   keyword,
 ) => {
-    console.log('[fetchPosts]실행');
+  console.log('[fetchPosts]실행');
   const url = new URL(`${API_BASE_URL}`);
   url.searchParams.set('page', page);
   url.searchParams.set('pageSize', pagesize);
@@ -27,7 +27,6 @@ export const fetchPosts = async (
   const data = await response.json();
   const list = data.list;
   const totalCount = data.totalCount;
-  
 
   console.log('[fetchPosts]totalCount: ', totalCount);
   console.log('[fetchPosts]data: ', list);
