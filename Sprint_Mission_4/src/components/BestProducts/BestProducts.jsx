@@ -2,7 +2,7 @@ import { ShowProductsList } from '../ShowProductsList';
 import { usePost } from '../../hooks/usePost';
 
 export function BestProducts() {
-  const { posts } = usePost(1, 4, 'favorite');
+  const { posts } = usePost(4, 'favorite');
 
   return (
     <div>

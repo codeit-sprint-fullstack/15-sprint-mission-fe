@@ -6,6 +6,7 @@ export function SearchProducts({ search }) {
     event.preventDefault();
     console.log('입력값: ', inputData);
     search(inputData);
+    setInputData('');
   };
   return (
     <form onSubmit={handleSubmit}>

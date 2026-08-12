@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { fetchPosts } from '../api/posts';
 
 const INITIAL_TOTAL_COUNT = 0;
+const INITIAL_PAGE = 1;
 
-export function usePost(currentPage = 1, pageSize, orderBy, keyword) {
+export function usePost(pageSize, orderBy, keyword) {
+  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
   const [posts, setPosts] = useState([]);
   const [totalCount, setTotalCount] = useState(INITIAL_TOTAL_COUNT);
   const totalPages = Math.ceil(totalCount / pageSize);
@@ -26,10 +28,20 @@ export function usePost(currentPage = 1, pageSize, orderBy, keyword) {
     getPosts();
   }, [currentPage, pageSize, orderBy, keyword]);
 
+  const handleCurrentPage = (selectedPage) => {
+    if (selectedPage < 1 || selectedPage > totalPages) {
+      console.log('페이지 선택이 잘못되었습니다.');
+      return;
+    }
+    setCurrentPage(selectedPage);
+  };
+
   const value = {
     posts,
-    totalPages
-  }
+    totalPages,
+    currentPage,
+    handleCurrentPage,
+  };
 
   return value;
 }
