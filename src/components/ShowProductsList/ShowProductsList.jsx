@@ -1,12 +1,16 @@
-export function ShowProductsList({ posts }) {
+import styles from './ShowProductsList.module.css';
+
+export function ShowProductsList({ posts, gridStyle, imageSize }) {
   return (
     <div>
-      <ul>
+      <ul className={`${styles.listGrid} ${gridStyle || ''}`}>
         {posts.map(({ id, name, price, favoriteCount, images }) => (
           <li key={id}>
             <div>
-              제목:{name} / 가격:{price} / 좋아요:{favoriteCount}
-              <img src={images} width={16} height={16} loading="lazy" />
+              <img src={images} className={`${styles.imageSize} ${imageSize || ''}`} loading="lazy" />
+              <p className={styles.name}>{name}</p>
+              <p className={styles.price}>{price}원</p>
+              <p className={styles.favorite}><img src='ic_heart.svg' alt = '하트'/>{favoriteCount}</p>
             </div>
           </li>
         ))}

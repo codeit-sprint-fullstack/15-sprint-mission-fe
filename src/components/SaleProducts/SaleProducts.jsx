@@ -4,12 +4,17 @@ import { SearchProducts } from '../SearchProducts';
 import { ShowProductsList } from '../ShowProductsList';
 import { SortProducts } from '../SortProducts';
 import { usePost } from '../../hooks/usePost';
+import styles from './SaleProducts.module.css';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 export function SaleProducts() {
   const [orderBy, setOrderBy] = useState('recent');
   const [keyword, setKeyword] = useState('');
+  const windowWidth = useWindowSize();
+  const pageSize = windowWidth <= 480 ? 4 : windowWidth <= 768 ? 6 : 10;
+
   const { posts, totalPages, currentPage, handleCurrentPage } = usePost(
-    10,
+    pageSize,
     orderBy,
     keyword,
   );
@@ -22,12 +27,23 @@ export function SaleProducts() {
   };
 
   return (
-    <div>
-      <h1>판매중인 상품</h1>
-      <SearchProducts search={handleSearch} />
-      <button>상품등록</button>
-      <SortProducts sort={handleSort} />
-      <ShowProductsList posts={posts} />
+    <div className={styles.body}>
+      <div className={styles.nav}>
+        <h1 className={styles.title}>판매중인 상품</h1>
+        <div className={styles.search}>
+          <SearchProducts search={handleSearch} />
+        </div>
+        <button className={styles.resistButton}>상품등록</button>
+        <div className={styles.sort}>
+          <SortProducts sort={handleSort} />
+        </div>
+      </div>
+
+      <ShowProductsList
+        posts={posts}
+        gridStyle={styles.girdStyle}
+        imageSize={styles.imageSize}
+      />
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

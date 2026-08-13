@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './SortProducts.module.css';
 
 export function SortProducts({ sort }) {
   const [selected, setSelected] = useState('recent');
@@ -13,12 +14,9 @@ export function SortProducts({ sort }) {
   };
   return (
     <div>
-      <select value={selected} onChange={handleChange}>
-        <option value="" disabled>
-          정렬기준
-        </option>
+      <select value={selected} onChange={handleChange} className={styles.selectStyle}>
         {options.map((option) => (
-          <option key={option.name} value={option.value}>
+          <option key={option.name} value={option.value} className={styles.optionStyle}>
             {option.name}
           </option>
         ))}

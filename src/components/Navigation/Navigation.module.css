@@ -85,10 +85,10 @@
 
     & .pandaLogo {
       font-size: 20.202px;
-      margin-right: 8px;
+      margin: 0;
     }
     & p {
-      margin: 0 8px;
+      margin: 0 0 0 8px;
     }
     & img {
       display: none;

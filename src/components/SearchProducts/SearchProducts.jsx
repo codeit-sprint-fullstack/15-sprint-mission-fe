@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './SearchProducts.module.css';
 
 export function SearchProducts({ search }) {
   const [inputData, setInputData] = useState('');
@@ -10,12 +11,15 @@ export function SearchProducts({ search }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={inputData}
-        onChange={(e) => setInputData(e.target.value)}
-        placeholder="검색할 상품명을 입력해주세요"
-      />
+      <div>
+        <input
+          type="text"
+          value={inputData}
+          onChange={(e) => setInputData(e.target.value)}
+          placeholder="검색할 상품명을 입력해주세요"
+          className={styles.input}
+        />
+      </div>
     </form>
   );
 }

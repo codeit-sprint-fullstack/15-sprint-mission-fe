@@ -1,0 +1,50 @@
+.title {
+  color: var(--Secondary-900, #111827);
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.body {
+  margin: 1.625rem 22.5rem 2.5rem 22.5rem;
+}
+
+.girdStyle {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.imageSize {
+  width: 17.625rem;
+  height: 17.625rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  /* 테블릿 */
+  .body {
+    margin: 1.625rem 1.5rem 2.5rem 1.5rem;
+  }
+  .girdStyle {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.625rem;
+  }
+
+  .imageSize {
+    width: 21.437rem;
+    height: 21.437rem;
+    margin-bottom: 0.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 작은 폰 */
+  .body {
+    margin: 1.06rem 1rem 1.5rem 1rem;
+  }
+  .girdStyle {
+    grid-template-columns: 1fr;
+  }
+}
