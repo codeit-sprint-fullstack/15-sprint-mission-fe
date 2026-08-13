@@ -2,11 +2,16 @@ import { useEffect, useState } from "react"
 import { getProducts } from "../api/marketApi"
 import ic_search from "../assets/ic_search.svg"
 import useWindowSize from "../hooks/useWindowSize"
+import MarketOrderBySelect from "./MarketOrderBySelect"
 import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
 import styles from "./SellProducts.module.css"
 
 const PAGE_SIZE = 10
+const SELECT_OPTIONS = [
+  { name: "최신순", value: "recent" },
+  { name: "좋아요순", value: "favorite" },
+]
 
 function SellProducts() {
   const [isLoading, setIsLoading] = useState(false)
@@ -16,7 +21,10 @@ function SellProducts() {
   const [error, setError] = useState(null)
   const [searchKeyword, setSearchKeyword] = useState("")
   const [inputKeyword, setInputKeyword] = useState("")
-  const [orderBy, setOrderBy] = useState("recent")
+  const [orderBy, setOrderBy] = useState({
+    name: "최신순",
+    value: "recent",
+  })
   const windowWidth = useWindowSize()
 
   const isTablet = windowWidth <= 744
@@ -29,7 +37,7 @@ function SellProducts() {
         const data = await getProducts({
           page: currentPage,
           pageSize: isMobile ? 4 : isTablet ? 6 : PAGE_SIZE,
-          orderBy,
+          orderBy: orderBy.value,
           keyword: searchKeyword,
         })
         setProductsData(data.list)
@@ -43,11 +51,6 @@ function SellProducts() {
     fetchProducts()
   }, [currentPage, orderBy, searchKeyword, isTablet, isMobile])
 
-  const handleOrderChange = (e) => {
-    setOrderBy(e.target.value)
-    setCurrentPage(1)
-  }
-
   const handleSearchChange = (e) => {
     setInputKeyword(e.target.value)
   }
@@ -57,6 +60,11 @@ function SellProducts() {
       setSearchKeyword(inputKeyword)
       setCurrentPage(1)
     }
+  }
+
+  const handleOptionChange = (value) => {
+    setOrderBy(value)
+    setCurrentPage(1)
   }
 
   if (error) return <div>에러 발생: {error}</div>
@@ -78,10 +86,12 @@ function SellProducts() {
             />
           </div>
           <button>상품 등록하기</button>
-          <select value={orderBy} onChange={handleOrderChange}>
-            <option value="recent">최신순</option>
-            <option value="favorite">좋아요순</option>
-          </select>
+          {/* select box */}
+          <MarketOrderBySelect
+            options={SELECT_OPTIONS}
+            selected={orderBy}
+            handleOptionChange={handleOptionChange}
+          />
         </div>
       </div>
       <div>

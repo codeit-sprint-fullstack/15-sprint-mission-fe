@@ -7,13 +7,13 @@ function GlobalHeader() {
     <header className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.nav_wrapper}>
-          <a className={styles.logo_wrapper}>
+          <a href="#" className={styles.logo_wrapper}>
             <img className={styles.logo} src={logo} alt="로고" />
             <img className={styles.logotype} src={logotype} alt="로고" />
           </a>
           <nav className={styles.navigation}>
-            <a>자유게시판</a>
-            <a>중고마켓</a>
+            <a href="#">자유게시판</a>
+            <a href="#">중고마켓</a>
           </nav>
         </div>
         <button className={styles.btn_login}>로그인</button>
