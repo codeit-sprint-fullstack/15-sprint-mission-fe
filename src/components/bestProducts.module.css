@@ -1,4 +1,8 @@
 /* 베스트 상품 디자인 */
+.container {
+  padding: 0 24px;
+}
+
 .section_title {
   font-size: var(--text-xl);
   font-weight: 700;
@@ -11,4 +15,21 @@
   column-gap: 24px;
 
   margin-top: 16px;
+}
+
+@media (max-width: 744px) {
+  .best_products {
+    grid-template-columns: repeat(2, 0.5fr);
+    column-gap: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .best_products {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

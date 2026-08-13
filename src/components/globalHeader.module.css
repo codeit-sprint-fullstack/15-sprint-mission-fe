@@ -3,6 +3,7 @@
   align-items: center;
   height: 68px;
   border-bottom: 1px solid #dfdfdf;
+  padding: 0 24px;
 }
 .wrapper {
   max-width: 1520px;
@@ -47,4 +48,24 @@
   border-radius: 8px;
   background-color: var(--color-primary-100);
   color: var(--color-secondary-100);
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
+  }
+  .logo {
+    display: none;
+  }
+  .logotype {
+    width: 81px;
+  }
+
+  .logo_wrapper {
+    margin-right: 4px;
+  }
+  .navigation > a {
+    margin: 0 4px;
+    font-size: var(--text-lg);
+  }
 }

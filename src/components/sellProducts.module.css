@@ -1,6 +1,7 @@
 /* 판매중인 상품 디자인 */
 .container {
   margin-top: 40px;
+  padding: 0 24px;
 }
 
 .section_title {
@@ -64,3 +65,53 @@
   color: var(--color-secondary-100);
 }
 
+@media (max-width: 744px) {
+  .sell_products {
+    grid-template-columns: repeat(3, 0.333333fr);
+    column-gap: 16px;
+  }
+  .controlls input {
+    width: 242px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
+  }
+  .sell_products {
+    grid-template-columns: repeat(2, 0.5fr);
+  }
+
+  .sell_title_wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .controlls {
+    display: contents;
+  }
+
+  .section_title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .controlls > button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .search_wrapper {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .controlls > select {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../api/marketApi"
 import ic_search from "../assets/ic_search.svg"
+import useWindowSize from "../hooks/useWindowSize"
 import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
 import styles from "./SellProducts.module.css"
@@ -16,6 +17,10 @@ function SellProducts() {
   const [searchKeyword, setSearchKeyword] = useState("")
   const [inputKeyword, setInputKeyword] = useState("")
   const [orderBy, setOrderBy] = useState("recent")
+  const windowWidth = useWindowSize()
+
+  const isTablet = windowWidth <= 744
+  const isMobile = windowWidth <= 375
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -23,7 +28,7 @@ function SellProducts() {
       try {
         const data = await getProducts({
           page: currentPage,
-          pageSize: PAGE_SIZE,
+          pageSize: isMobile ? 4 : isTablet ? 6 : PAGE_SIZE,
           orderBy,
           keyword: searchKeyword,
         })
@@ -36,7 +41,7 @@ function SellProducts() {
       }
     }
     fetchProducts()
-  }, [currentPage, orderBy, searchKeyword])
+  }, [currentPage, orderBy, searchKeyword, isTablet, isMobile])
 
   const handleOrderChange = (e) => {
     setOrderBy(e.target.value)
