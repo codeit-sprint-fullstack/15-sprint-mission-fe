@@ -1,0 +1,7 @@
+/* 판매중인 상품 디자인 */
+.sell_products {
+  display: grid;
+  grid-template-columns: repeat(5, 0.2fr);
+  column-gap: 24px;
+  row-gap: 40px;
+}

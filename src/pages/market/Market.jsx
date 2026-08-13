@@ -1,8 +1,16 @@
 import { useEffect } from "react"
+import BestProducts from "../../components/BestProducts"
+import SellProducts from "../../components/SellProducts"
+import styles from "./market.module.css"
 
 function Market() {
   useEffect(() => {}, [])
-  return <article>마켓 페이지</article>
+  return (
+    <article className={styles.container}>
+      <BestProducts />
+      <SellProducts />
+    </article>
+  )
 }
 
 export default Market
