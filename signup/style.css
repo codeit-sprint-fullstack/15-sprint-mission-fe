@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #1f2937;
+  background-color: #fcfcfc;
+  font-family: "Pretendard", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+button {
+  font-family: "Pretendard", sans-serif;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.signup-page {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.signup-container {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.home-logo {
+  display: block;
+  width: 396px;
+  margin: 0 auto 40px;
+}
+
+.home-logo img {
+  display: block;
+  width: 396px;
+}
+
+.signup-form {
+  width: 100%;
+}
+
+.input-area {
+  margin-bottom: 24px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.signup-input {
+  width: 100%;
+  height: 56px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.signup-input:focus {
+  border: 1px solid #3692ff;
+}
+
+.password-area {
+  position: relative;
+}
+
+.password-input {
+  padding-right: 64px;
+}
+
+.password-button {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.password-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.signup-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #9ca3af;
+  color: #f3f4f6;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.simple-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 74px;
+  margin: 24px 0;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+}
+
+.simple-login-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.simple-login-links {
+  display: flex;
+  gap: 16px;
+}
+
+.simple-login-link {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.simple-login-link img {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.login-message {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.login-page-link {
+  color: #3692ff;
+  text-decoration: underline;
+}
