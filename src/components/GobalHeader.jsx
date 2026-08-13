@@ -1,6 +1,6 @@
 import logotype from "../assets/logo-type.png"
 import logo from "../assets/logo.png"
-import styles from "./globalHeader.module.css"
+import styles from "./GlobalHeader.module.css"
 
 function GlobalHeader() {
   return (

@@ -17,11 +17,11 @@ export async function getBestProducts(page, pageSize) {
   }
 }
 export async function getProducts(params) {
-  const { page = 1, pageSize = 10, orderBy = "recent", keyword } = params
+  const { page, pageSize, orderBy, keyword } = params
 
   const queryParamas = new URLSearchParams()
   if (orderBy) queryParamas.append("orderBy", orderBy)
-  if (keyword) queryParamas.append("keword", keyword)
+  if (keyword) queryParamas.append("keyword", keyword)
   queryParamas.append("page", page.toString())
   queryParamas.append("pageSize", pageSize.toString())
 
@@ -33,7 +33,6 @@ export async function getProducts(params) {
       throw new Error("상품 목록을 불러오는데 실패했습니다.")
     }
     const productData = await response.json()
-    console.log(productData)
     return productData
   } catch (err) {
     console.error("API Error:", err)

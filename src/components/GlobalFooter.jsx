@@ -2,7 +2,7 @@ import ic_facebook from "../assets/ic_facebook.png"
 import ic_instagram from "../assets/ic_instagram.png"
 import ic_twitter from "../assets/ic_twitter.png"
 import ic_youtube from "../assets/ic_youtube.png"
-import styles from "./globalFooter.module.css"
+import styles from "./GlobalFooter.module.css"
 
 function GlobalFooter() {
   return (

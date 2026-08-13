@@ -1,5 +1,5 @@
 import ic_heart from "../assets/ic_heart.svg"
-import styles from "./productItem.module.css"
+import styles from "./ProductItem.module.css"
 
 function ProductItem({ images, name, price }) {
   return (

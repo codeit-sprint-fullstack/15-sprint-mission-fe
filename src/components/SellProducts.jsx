@@ -3,7 +3,7 @@ import { getProducts } from "../api/marketApi"
 import ic_search from "../assets/ic_search.svg"
 import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
-import styles from "./sellProducts.module.css"
+import styles from "./SellProducts.module.css"
 
 const PAGE_SIZE = 10
 
@@ -14,6 +14,7 @@ function SellProducts() {
   const [currentPage, setCurrentPage] = useState(1)
   const [error, setError] = useState(null)
   const [searchKeyword, setSearchKeyword] = useState("")
+  const [inputKeyword, setInputKeyword] = useState("")
   const [orderBy, setOrderBy] = useState("recent")
 
   useEffect(() => {
@@ -42,6 +43,17 @@ function SellProducts() {
     setCurrentPage(1)
   }
 
+  const handleSearchChange = (e) => {
+    setInputKeyword(e.target.value)
+  }
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && inputKeyword !== searchKeyword) {
+      setSearchKeyword(inputKeyword)
+      setCurrentPage(1)
+    }
+  }
+
   if (error) return <div>에러 발생: {error}</div>
 
   return (
@@ -54,7 +66,9 @@ function SellProducts() {
             <img src={ic_search} />
             <input
               type="text"
-              value={searchKeyword}
+              value={inputKeyword}
+              onChange={handleSearchChange}
+              onKeyDown={handleKeyDown}
               placeholder="검색할 상품을 입력해주세요"
             />
           </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getBestProducts } from "../api/marketApi"
+import styles from "./BestProducts.module.css"
 import ProductItem from "./ProductItem"
-import styles from "./bestProducts.module.css"
 
 function BestProducts() {
   const [isLoading, setIsLoading] = useState(false)
