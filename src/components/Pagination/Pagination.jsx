@@ -1,3 +1,5 @@
+import styles from './Pagination.module.css';
+
 export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   const PAGES_PER_GROUP = 5;
   const currentGroup = Math.ceil(currentPage / PAGES_PER_GROUP);
@@ -18,21 +20,21 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   };
 
   return (
-    <nav>
-      <button onClick={handlePrevGroup} disabled={startPage === 1}>
-        이전
+    <nav className={styles.navBody}>
+      <button onClick={handlePrevGroup} className={styles.button} disabled={startPage === 1}>
+        &lt;
       </button>
       {pageNumbers.map((pageNumber) => (
         <button
           key={pageNumber}
           onClick={() => onPageChange(pageNumber)}
-          aria-current={currentPage === pageNumber ? 'page' : undefined}
+          className={pageNumber === currentPage ? styles.activeButton : styles.button}
         >
           {pageNumber}
         </button>
       ))}
-      <button onClick={handleNextGroup} disabled={endPage === totalPages}>
-        다음
+      <button onClick={handleNextGroup} className={styles.button} disabled={endPage === totalPages}>
+        &gt;
       </button>
     </nav>
   );
