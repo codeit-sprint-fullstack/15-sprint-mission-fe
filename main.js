@@ -2,6 +2,79 @@ import { getArticleList, getArticle, createArticle, patchArticle, deleteArticle 
 import * as productServices from "./ProductService.js";
 
 /* ============================================================
+   ARTICLE API 대표 흐름 (전체 CRUD 사이클을 한 번에 확인)
+   ============================================================ */
+
+async function runArticleFlow() {
+  console.log("<ARTICLE API 대표 흐름>");
+  console.log("");
+  console.log("1. 게시글 생성");
+  const created = await createArticle(
+    "대표 흐름 테스트",
+    "생성 → 조회 → 수정 → 삭제까지 이어지는 대표 흐름입니다.",
+    "https://example.com/article-flow-test.jpg",
+  );
+  console.log("");
+  console.log("2. 생성된 게시글 상세 조회");
+  await getArticle(created.id);
+  console.log("");
+  console.log("3. 게시글 수정");
+  await patchArticle(created.id, "수정된 제목", "수정된 내용입니다.", "https://example.com/article-flow-updated.jpg");
+  console.log("");
+  console.log("4. 게시글 삭제 (테스트 데이터 정리)");
+  await deleteArticle(created.id);
+  console.log("");
+  console.log("5. 삭제 확인 - 재조회 시도 (404가 정상)");
+  await getArticle(created.id);
+  console.log("");
+  console.log("--- --- --- --- 끝 --- --- --- ---");
+  console.log("");
+}
+
+await runArticleFlow();
+
+/* ============================================================
+   PRODUCT API 대표 흐름 (전체 CRUD 사이클을 한 번에 확인)
+   ============================================================ */
+
+async function runProductFlow() {
+  console.log("<PRODUCT API 대표 흐름>");
+  console.log("");
+  console.log("1. 상품 생성");
+  const created = await productServices.createProduct(
+    "대표 흐름 테스트 상품",
+    "생성 → 조회 → 수정 → 삭제까지 이어지는 대표 흐름입니다.",
+    10000,
+    ["테스트"],
+    ["https://example.com/product-flow-test.jpg"],
+  );
+  console.log("");
+  console.log("2. 생성된 상품 상세 조회");
+  await productServices.getProduct(created.id);
+  console.log("");
+  console.log("3. 상품 수정");
+  await productServices.patchProduct(
+    created.id,
+    "수정된 상품명",
+    "수정된 설명입니다.",
+    15000,
+    ["테스트", "수정"],
+    ["https://example.com/product-flow-updated.jpg"],
+  );
+  console.log("");
+  console.log("4. 상품 삭제 (테스트 데이터 정리)");
+  await productServices.deleteProduct(created.id);
+  console.log("");
+  console.log("5. 삭제 확인 - 재조회 시도 (404가 정상)");
+  await productServices.getProduct(created.id);
+  console.log("");
+  console.log("--- --- --- --- 끝 --- --- --- ---");
+  console.log("");
+}
+
+await runProductFlow();
+
+/* ============================================================
    ARTICLE API 테스트
    ============================================================ */
 
