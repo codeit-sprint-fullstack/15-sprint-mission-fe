@@ -1,0 +1,28 @@
+.container {
+  height: 160px;
+  padding-top: 32px;
+  background-color: var(--color-secondary-900);
+  color: var(--color-secondary-200);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.copyright {
+  color: var(--color-secondary-400);
+}
+
+.links > a {
+  padding: 0 15px;
+}
+
+.sns > a {
+  padding-right: 12px;
+}
+.sns > a:last-child {
+  padding-right: 0px;
+}
