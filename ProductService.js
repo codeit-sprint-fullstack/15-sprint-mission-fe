@@ -3,7 +3,7 @@ import axios from "axios";
 // axios 기반 Product API 구현
 const instance = axios.create({
   baseURL: "https://panda-market-api-crud.vercel.app",
-  timeout: 5000,
+  timeout: 15000, // runProductFlow() 테스트 함수 작성후 실행한 결과, [Done] exited with code=0 in 9.426 seconds, timeout값을 5초에서 15초로 수정
 });
 
 async function getProductList(params = {}) {
@@ -18,7 +18,7 @@ async function getProductList(params = {}) {
       console.error(error.response.data); // 서버가 보낸 에러 메시지 내용
     } else {
       // 서버가 응답 자체를 받지 못하는 경우
-      console.error("리퀘스트가 실패했습니다."); // 네트워크 끊김, timeout(5초 초과), 잘못된 URL 요청
+      console.error("리퀘스트가 실패했습니다."); // 네트워크 끊김, timeout(15초 초과), 잘못된 URL 요청
     }
   }
 }
