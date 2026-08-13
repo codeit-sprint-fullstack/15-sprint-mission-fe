@@ -8,8 +8,8 @@ function GlobalHeader() {
       <div className={styles.wrapper}>
         <div className={styles.nav_wrapper}>
           <a className={styles.logo_wrapper}>
-            <img className={styles.logo} src={logo}></img>
-            <img className={styles.logotype} src={logotype}></img>
+            <img className={styles.logo} src={logo} alt="로고" />
+            <img className={styles.logotype} src={logotype} alt="로고" />
           </a>
           <nav className={styles.navigation}>
             <a>자유게시판</a>

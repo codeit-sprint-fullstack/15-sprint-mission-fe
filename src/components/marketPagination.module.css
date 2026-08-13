@@ -1,0 +1,30 @@
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  gap: 4px;
+
+  margin-top: 43px;
+}
+
+.pagination_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--color-secondary-200);
+  border-radius: 40px;
+
+  font-weight: 600;
+  color: var(--color-secondary-600);
+
+  cursor: pointer;
+}
+
+.pagination_btn.selected {
+  border: none;
+  background-color: var(--color-primary-100);
+  color: var(--color-secondary-100);
+}
