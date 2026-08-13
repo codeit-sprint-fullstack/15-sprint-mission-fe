@@ -1,7 +1,6 @@
 export function ShowProductsList({ posts }) {
   return (
     <div>
-      <h1>ShowProductsList</h1>
       <ul>
         {posts.map(({ id, name, price, favoriteCount, images }) => (
           <li key={id}>

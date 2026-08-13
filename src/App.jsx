@@ -1,20 +1,13 @@
-import { BestProducts } from './components/BestProducts';
-import { Footer } from './components/Footer';
-import { Navigation } from './components/Navigation';
-import { SaleProducts } from './components/SaleProducts';
+import { Home } from './pages';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <h1>판다마켓</h1>
-      <Navigation />
-
-      <BestProducts />
-
-      <SaleProducts />
-
-      <Footer />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 

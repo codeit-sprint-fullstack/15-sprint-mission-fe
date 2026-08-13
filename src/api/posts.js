@@ -6,13 +6,11 @@ export const fetchPosts = async (
   orderBy = 'recent',
   keyword,
 ) => {
-  console.log('[fetchPosts]실행');
   const url = new URL(`${API_BASE_URL}`);
   url.searchParams.set('page', page);
   url.searchParams.set('pageSize', pagesize);
   url.searchParams.set('orderBy', orderBy);
   if (keyword) url.searchParams.set('keyword', keyword);
-  console.log('[fetchPosts]입력된URL: ', url);
   const response = await fetch(url, {
     method: 'GET',
     headers: {
@@ -28,8 +26,14 @@ export const fetchPosts = async (
   const list = data.list;
   const totalCount = data.totalCount;
 
-  console.log('[fetchPosts]totalCount: ', totalCount);
-  console.log('[fetchPosts]data: ', list);
+  console.log(
+    '[fetchPosts]실행완료/데이터:',
+    list,
+    'totalCount:',
+    totalCount,
+    'URL:',
+    url,
+  );
 
   return { list, totalCount: Number(totalCount) };
 };
