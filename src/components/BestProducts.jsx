@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getBestProducts } from "../api/marketApi"
+import { getProducts } from "../api/marketApi"
 import styles from "./BestProducts.module.css"
 import ProductItem from "./ProductItem"
 
@@ -14,8 +14,8 @@ function BestProducts() {
       try {
         const page = Math.floor(Math.random() * 10) + 1
         const pageSize = 4
-        const pageData = await getBestProducts(page, pageSize)
-        setProducts(pageData)
+        const pageData = await getProducts({ page, pageSize })
+        setProducts(pageData.list)
       } catch (err) {
         setError(err.message)
       } finally {
