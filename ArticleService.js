@@ -11,7 +11,10 @@ export function getArticleList(params = {}) {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
     .catch((error) => console.error(`네트워크 요청 오류: ${error}`));
 }
 
@@ -23,7 +26,10 @@ export function getArticle(articleID) {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
     .catch((error) => console.error(`네트워크 요청 오류: ${error}`));
 }
 
@@ -41,7 +47,10 @@ export function createArticle(title, content, image) {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
     .catch((error) => console.error(`네트워크 요청 오류: ${error}`));
 }
 
@@ -59,7 +68,10 @@ export function patchArticle(articleID, title, content, image) {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
     .catch((error) => console.error(`네트워크 요청 오류: ${error}`));
 }
 
@@ -73,6 +85,9 @@ export function deleteArticle(articleID) {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
     .catch((error) => console.error(`네트워크 요청 오류: ${error}`));
 }
