@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.container button > img {
+.container button .icn_pc {
   position: absolute;
   top: calc(50% - 14px);
   right: 20px;
@@ -50,4 +50,33 @@
 
 .container li:last-child {
   border: none;
+}
+
+.icn_mobile {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .icn_pc,
+  .text_pc {
+    display: none;
+  }
+
+  .icn_mobile {
+    display: inline;
+  }
+
+  .container button {
+    width: 42px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .container {
+    text-align: right;
+  }
+
+  .container ul {
+    right: 0;
+  }
 }
