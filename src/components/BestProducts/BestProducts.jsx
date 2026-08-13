@@ -13,7 +13,11 @@ export function BestProducts() {
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>베스트 상품</h1>
-      <ShowProductsList posts={posts} gridStyle={styles.girdStyle} imageSize={styles.imageSize} />
+      <ShowProductsList
+        posts={posts}
+        gridStyle={styles.girdStyle}
+        imageSize={styles.imageSize}
+      />
     </div>
   );
 }

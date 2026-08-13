@@ -14,9 +14,17 @@ export function SortProducts({ sort }) {
   };
   return (
     <div>
-      <select value={selected} onChange={handleChange} className={styles.selectStyle}>
+      <select
+        value={selected}
+        onChange={handleChange}
+        className={styles.selectStyle}
+      >
         {options.map((option) => (
-          <option key={option.name} value={option.value} className={styles.optionStyle}>
+          <option
+            key={option.name}
+            value={option.value}
+            className={styles.optionStyle}
+          >
             {option.name}
           </option>
         ))}

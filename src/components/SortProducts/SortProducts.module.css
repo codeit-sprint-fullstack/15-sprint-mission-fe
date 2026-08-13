@@ -23,8 +23,7 @@
 
 @media (max-width: 480px) {
   /* 작은 폰 */
-    .selectStyle {
-        width: 42px;
-    }
-
+  .selectStyle {
+    width: 42px;
+  }
 }

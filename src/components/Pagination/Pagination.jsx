@@ -21,19 +21,29 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
 
   return (
     <nav className={styles.navBody}>
-      <button onClick={handlePrevGroup} className={styles.button} disabled={startPage === 1}>
+      <button
+        onClick={handlePrevGroup}
+        className={styles.button}
+        disabled={startPage === 1}
+      >
         &lt;
       </button>
       {pageNumbers.map((pageNumber) => (
         <button
           key={pageNumber}
           onClick={() => onPageChange(pageNumber)}
-          className={pageNumber === currentPage ? styles.activeButton : styles.button}
+          className={
+            pageNumber === currentPage ? styles.activeButton : styles.button
+          }
         >
           {pageNumber}
         </button>
       ))}
-      <button onClick={handleNextGroup} className={styles.button} disabled={endPage === totalPages}>
+      <button
+        onClick={handleNextGroup}
+        className={styles.button}
+        disabled={endPage === totalPages}
+      >
         &gt;
       </button>
     </nav>
