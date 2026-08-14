@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import BestProducts from "../../components/BestProducts"
-import SellProducts from "../../components/SellProducts"
+import BestProducts from "./components/BestProducts"
+import SellProducts from "./components/SellProducts"
 import styles from "./Market.module.css"
 
 function Market() {

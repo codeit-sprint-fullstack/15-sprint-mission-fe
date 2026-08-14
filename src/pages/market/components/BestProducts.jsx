@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../api/marketApi"
-import useWindowSize from "../hooks/useWindowSize"
+import { getProducts } from "../../../api/marketApi"
+import useWindowSize from "../../../hooks/useWindowSize"
 import styles from "./BestProducts.module.css"
 import ProductItem from "./ProductItem"
 
