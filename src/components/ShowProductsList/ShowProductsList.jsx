@@ -2,7 +2,7 @@ import styles from './ShowProductsList.module.css';
 
 export function ShowProductsList({ posts, gridStyle, imageSize }) {
   return (
-    <div>
+    <div className={styles.listBody}>
       <ul className={`${styles.listGrid} ${gridStyle || ''}`}>
         {posts.map(({ id, name, price, favoriteCount, images }) => (
           <li key={id}>
@@ -11,6 +11,10 @@ export function ShowProductsList({ posts, gridStyle, imageSize }) {
                 src={images}
                 className={`${styles.imageSize} ${imageSize || ''}`}
                 loading="lazy"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'comment-empty.png';
+                }}
               />
               <p className={styles.name}>{name}</p>
               <p className={styles.price}>{price}원</p>

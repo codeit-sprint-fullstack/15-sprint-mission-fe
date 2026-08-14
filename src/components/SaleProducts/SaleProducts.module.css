@@ -1,9 +1,14 @@
 .body {
-  margin: 26px 360px 40px 360px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .nav {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   margin-bottom: 24px;
   gap: 12px;
@@ -15,7 +20,8 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px;
+  display: flex;
+  align-items: center;
 }
 
 .resistButton {

@@ -11,7 +11,8 @@ export function SearchProducts({ search }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className={styles.inputSide}>
+        <img src="ic_search.svg" alt="돋보기" />
         <input
           type="text"
           value={inputData}

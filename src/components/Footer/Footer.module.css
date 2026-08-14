@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
   padding: 2rem 12.5rem;
   flex-wrap: wrap;
 }

@@ -1,3 +1,12 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-shrink: 0;
+}
+
 .title {
   color: var(--Secondary-900, #111827);
   font-family: Pretendard;
@@ -5,10 +14,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 2rem;
-}
-
-.body {
-  margin: 1.625rem 22.5rem 2.5rem 22.5rem;
 }
 
 .girdStyle {
@@ -25,7 +30,7 @@
 @media (max-width: 768px) {
   /* 테블릿 */
   .body {
-    margin: 1.625rem 1.5rem 2.5rem 1.5rem;
+    width: 100%;
   }
   .girdStyle {
     grid-template-columns: 1fr 1fr;

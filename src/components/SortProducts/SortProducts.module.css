@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.selectStyle:focus {
+  outline: none;
+}
+
 .optionStyle {
   color: var(--Secondary-800, #1f2937);
   font-family: Pretendard;
