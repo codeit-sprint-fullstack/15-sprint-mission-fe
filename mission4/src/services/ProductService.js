@@ -1,8 +1,10 @@
 export async function getProductList(page, pageSize, keyword, orderBy = "") {
   try {
-    const url = `https://panda-market-api-crud.vercel.app/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}${
-      orderBy ? `&orderBy=${orderBy}` : ""
-    }`;
+    let url = `https://panda-market-api-crud.vercel.app/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}`;
+
+    if (orderBy) {
+      url += `&orderBy=${orderBy}`;
+    }
 
     const response = await fetch(url);
 
@@ -15,4 +17,3 @@ export async function getProductList(page, pageSize, keyword, orderBy = "") {
     console.error(error);
   }
 }
-  

@@ -6,13 +6,14 @@ import BestProducts from "./components/BestProducts";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
   const [keyword, setKeyword] = useState("");
   const [orderBy, setOrderBy] = useState("");
 
   useEffect(() => {
     async function fetchProducts() {
-      const data = await getProductList(1, 10, keyword, orderBy);
-
+      const data = await getProductList(page, 10, keyword, orderBy);
+      console.log("현재 페이지:", page);
       console.log("상품 목록:", data);
 
       if (data) {
@@ -21,7 +22,7 @@ function App() {
     }
 
     fetchProducts();
-  }, [keyword, orderBy]);
+  }, [page, keyword, orderBy]);
 
   function handleSearch(event) {
     event.preventDefault();
@@ -59,6 +60,13 @@ function App() {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+        <div>
+          <button onClick={() => setPage(1)}>1</button>
+          <button onClick={() => setPage(2)}>2</button>
+          <button onClick={() => setPage(3)}>3</button>
+          <button onClick={() => setPage(4)}>4</button>
+          <button onClick={() => setPage(5)}>5</button>
         </div>
       </section>
     </div>
