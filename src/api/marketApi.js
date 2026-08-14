@@ -1,7 +1,7 @@
 const API_BASE_URL = "https://panda-market-api-crud.vercel.app"
 
 export async function postProducts() {}
-export async function getProducts(params) {
+export async function fetchProducts(params) {
   const { page, pageSize, orderBy, keyword } = params
 
   const queryParamas = new URLSearchParams()
@@ -18,13 +18,26 @@ export async function getProducts(params) {
       throw new Error("상품 목록을 불러오는데 실패했습니다.")
     }
     const productData = await response.json()
+    console.log(productData)
     return productData
   } catch (err) {
     console.error("API Error:", err)
     throw err
   }
 }
-export async function getProductItem() {}
+export async function fetchProductItem(productId) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/products/${productId}}`)
+    if (!response.ok) {
+      throw new Error("상품 페이지를 불러오는데 실패했습니다.")
+    }
+    const productData = await response.json()
+    return productData
+  } catch (err) {
+    console.error("API Error:", err)
+    throw err
+  }
+}
 export async function patchProductItem() {}
 export async function deleteProductItem() {}
 export async function postProductFavorite() {}

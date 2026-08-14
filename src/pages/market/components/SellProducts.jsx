@@ -1,4 +1,4 @@
-import { getProducts } from "@/api/marketApi"
+import { fetchProducts } from "@/api/marketApi"
 import ic_search from "@/assets/ic_search.svg"
 import useWindowSize from "@/hooks/useWindowSize"
 import { useEffect, useState } from "react"
@@ -31,10 +31,10 @@ function SellProducts() {
   const isMobile = windowWidth <= 375
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const getProducts = async () => {
       setIsLoading(true)
       try {
-        const data = await getProducts({
+        const data = await fetchProducts({
           page: currentPage,
           pageSize: isMobile ? 4 : isTablet ? 6 : PAGE_SIZE,
           orderBy: orderBy.value,
@@ -48,7 +48,7 @@ function SellProducts() {
         setIsLoading(false)
       }
     }
-    fetchProducts()
+    getProducts()
   }, [currentPage, orderBy, searchKeyword, isTablet, isMobile])
 
   const handleSearchChange = (e) => {

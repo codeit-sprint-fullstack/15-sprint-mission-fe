@@ -1,4 +1,4 @@
-import { getProducts } from "@/api/marketApi"
+import { fetchProducts } from "@/api/marketApi"
 import useWindowSize from "@/hooks/useWindowSize"
 import { useEffect, useState } from "react"
 import styles from "./BestProducts.module.css"
@@ -14,12 +14,12 @@ function BestProducts() {
   const isMobile = windowWidth <= 375
 
   useEffect(() => {
-    const fetchBestProducts = async () => {
+    const getBestProducts = async () => {
       setIsLoading(true)
       try {
         const page = Math.floor(Math.random() * 10) + 1
         const pageSize = isMobile ? 1 : isTablet ? 2 : 4
-        const pageData = await getProducts({
+        const pageData = await fetchProducts({
           page,
           pageSize,
           orderBy: "favorite",
@@ -31,7 +31,7 @@ function BestProducts() {
         setIsLoading(false)
       }
     }
-    fetchBestProducts()
+    getBestProducts()
   }, [isMobile, isTablet])
 
   if (error) return <div>에러 발생: {error}</div>
