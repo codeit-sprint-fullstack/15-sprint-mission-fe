@@ -1,5 +1,5 @@
-import arrow_left from "../../../assets/arrow_left.svg"
-import arrow_right from "../../../assets/arrow_right.svg"
+import arrow_left from "@/assets/arrow_left.svg"
+import arrow_right from "@/assets/arrow_right.svg"
 import styles from "./MarketPagination.module.css"
 
 const PAGE_LIMIT = 5 // 💡 한 화면에 노출할 최대 페이지 버튼 개수

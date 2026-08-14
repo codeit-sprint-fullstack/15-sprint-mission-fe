@@ -1,6 +1,6 @@
+import ic_arrow_down from "@/assets/ic_arrow_down.svg"
+import ic_sort from "@/assets/ic_sort.svg"
 import { useState } from "react"
-import ic_arrow_down from "../../../assets/ic_arrow_down.svg"
-import ic_sort from "../../../assets/ic_sort.svg"
 import styles from "./MarketOrderBySelect.module.css"
 
 function MarketOrderBySelect({ options, selected, handleOptionChange }) {
