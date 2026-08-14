@@ -4,13 +4,19 @@ export async function getProductList(page, pageSize, keyword) {
       `https://panda-market-api-crud.vercel.app/products?page=${page}&pageSize=${pageSize}&keyword=${keyword}`
     );
 
+    console.log("1. response:", response);
+
     if (!response.ok) {
       throw new Error("상품 목록을 가져오는데 실패했습니다.");
     }
 
-    return response;
+    const data = await response.json();
+
+    console.log("2. json data:", data);
+
+    return data;
   } catch (error) {
-    console.error(error);
+    console.error("상품 목록 오류:", error);
   }
 }
 
