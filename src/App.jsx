@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router"
 import "./App.css"
 import GlobalFooter from "./components/GlobalFooter"
 import GlobalHeader from "./components/GobalHeader"
@@ -7,7 +8,9 @@ function App() {
   return (
     <>
       <GlobalHeader />
-      <Market />
+      <Routes>
+        <Route path="/" element={<Market />} />
+      </Routes>
       <GlobalFooter />
     </>
   )
