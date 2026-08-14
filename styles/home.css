@@ -1,0 +1,98 @@
+/* 히어로와 하단 배너 공통 스타일 */
+.banner {
+  height: 54rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #cfe5ff;
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
+}
+
+main {
+  padding-top: 7rem;
+}
+
+#hero {
+  background-image: url("../images/home/hero-image.png");
+}
+
+#hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  letter-spacing: 0.02em;
+}
+
+.pill-button {
+  padding: 1.6rem 12.4rem;
+  border-radius: 99.9rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* 제목과 버튼 사이 간격 */
+#hero .pill-button {
+  margin-top: 3.2rem;
+}
+
+#features {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 13.8rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  padding: 13.8rem 0;
+}
+
+.feature > img {
+  width: 60rem;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-tag {
+  margin-bottom: 1.2rem;
+  color: #3692ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+}
+
+.feature h2 {
+  margin-bottom: 2.4rem;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  letter-spacing: 0.02em;
+}
+
+.feature-description {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+}
+
+.feature:nth-child(2) .feature-content {
+  text-align: right;
+}
+
+#bottomBanner {
+  background-image: url("../images/home/bottom-banner-image.png");
+}
+
+#bottomBanner h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  letter-spacing: 0.02em;
+}
