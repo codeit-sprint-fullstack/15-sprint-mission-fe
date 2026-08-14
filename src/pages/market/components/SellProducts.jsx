@@ -2,6 +2,7 @@ import { fetchProducts } from "@/api/marketApi"
 import ic_search from "@/assets/ic_search.svg"
 import useWindowSize from "@/hooks/useWindowSize"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 import MarketOrderBySelect from "./MarketOrderBySelect"
 import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
@@ -25,6 +26,9 @@ function SellProducts() {
     name: "최신순",
     value: "recent",
   })
+
+  const navigate = useNavigate()
+
   const windowWidth = useWindowSize()
 
   const isTablet = windowWidth <= 744
@@ -67,6 +71,10 @@ function SellProducts() {
     setCurrentPage(1)
   }
 
+  const handleRegister = () => {
+    navigate("/product-register")
+  }
+
   if (error) return <div>에러 발생: {error}</div>
 
   return (
@@ -85,7 +93,7 @@ function SellProducts() {
               placeholder="검색할 상품을 입력해주세요"
             />
           </div>
-          <button>상품 등록하기</button>
+          <button onClick={handleRegister}>상품 등록하기</button>
           {/* select box */}
           <MarketOrderBySelect
             options={SELECT_OPTIONS}
