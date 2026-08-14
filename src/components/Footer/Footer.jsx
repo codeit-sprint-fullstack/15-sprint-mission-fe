@@ -1,7 +1,8 @@
 import styles from './Footer.module.css';
 
 export function Footer() {
-  return <div className={styles.footerBody}>
+  return (
+    <div className={styles.footerBody}>
       <p className={styles.codeit}>©codeit - 2024</p>
       <div className={styles.pfLink}>
         <a href="./pages/privacypolicy.html">Privacy Policy</a>
@@ -26,4 +27,5 @@ export function Footer() {
         </a>
       </div>
     </div>
+  );
 }

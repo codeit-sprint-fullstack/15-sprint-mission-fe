@@ -40,14 +40,14 @@
 @media (max-width: 768px) {
   /* 테블릿 */
   .footerBody {
-  height: 10rem;
-  background: var(--Secondary-900, #111827);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: flex-start;
-  padding: 2rem 24px;
-}
+    height: 10rem;
+    background: var(--Secondary-900, #111827);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 2rem 24px;
+  }
 }
 
 @media (max-width: 480px) {
