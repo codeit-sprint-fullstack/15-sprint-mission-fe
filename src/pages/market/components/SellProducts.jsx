@@ -2,7 +2,7 @@ import { fetchProducts } from "@/api/marketApi"
 import ic_search from "@/assets/ic_search.svg"
 import useWindowSize from "@/hooks/useWindowSize"
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router"
+import { useNavigate, useSearchParams } from "react-router"
 import MarketOrderBySelect from "./MarketOrderBySelect"
 import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
@@ -22,14 +22,10 @@ function SellProducts() {
   const [error, setError] = useState(null)
   const [searchKeyword, setSearchKeyword] = useState("")
   const [inputKeyword, setInputKeyword] = useState("")
-  const [orderBy, setOrderBy] = useState({
-    name: "최신순",
-    value: "recent",
-  })
-
-  const navigate = useNavigate()
+  const [orderBy, setOrderBy] = useState({ name: "최신순", value: "recent" })
 
   const windowWidth = useWindowSize()
+  const navigate = useNavigate()
 
   const isTablet = windowWidth <= 744
   const isMobile = windowWidth <= 375

@@ -18,7 +18,6 @@ export async function fetchProducts(params) {
       throw new Error("상품 목록을 불러오는데 실패했습니다.")
     }
     const productData = await response.json()
-    console.log(productData)
     return productData
   } catch (err) {
     console.error("API Error:", err)
