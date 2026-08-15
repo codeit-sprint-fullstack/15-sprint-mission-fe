@@ -10,6 +10,7 @@ import styles from "./SellProducts.module.css"
 
 const INITIAL_PAGE = 1
 const INITIAL_PAGE_SIZE = 10
+const INITIAL_TOTAL_COUNT = 0
 const SELECT_OPTIONS = [
   { name: "최신순", value: "recent" },
   { name: "좋아요순", value: "favorite" },
@@ -21,7 +22,7 @@ function SellProducts() {
   const [isLoading, setIsLoading] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const [productsData, setProductsData] = useState([])
-  const [totalCount, setTotalCount] = useState(0)
+  const [totalCount, setTotalCount] = useState(INITIAL_TOTAL_COUNT)
   const [error, setError] = useState(null)
   const [inputKeyword, setInputKeyword] = useState(
     searchParams.get("keyword") || "",
