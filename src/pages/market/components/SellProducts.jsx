@@ -23,7 +23,9 @@ function SellProducts() {
   const [productsData, setProductsData] = useState([])
   const [totalCount, setTotalCount] = useState(0)
   const [error, setError] = useState(null)
-  const [inputKeyword, setInputKeyword] = useState("")
+  const [inputKeyword, setInputKeyword] = useState(
+    searchParams.get("keyword") || "",
+  )
 
   const windowWidth = useWindowSize()
   const navigate = useNavigate()
@@ -41,7 +43,6 @@ function SellProducts() {
           orderBy: searchParams.get("orderBy") || SELECT_OPTIONS[0].value,
           keyword: searchParams.get("keyword") || "",
         })
-        setInputKeyword(searchParams.get("keyword"))
         setProductsData(data.list)
         setTotalCount(data.totalCount)
       } catch (err) {
@@ -61,8 +62,8 @@ function SellProducts() {
     if (!inputKeyword) return
     if (e.key === "Enter" && inputKeyword !== searchParams.get("keyword")) {
       const newSearchParams = new URLSearchParams(searchParams)
-      newSearchParams.set("page", 1)
       newSearchParams.set("keyword", inputKeyword)
+      newSearchParams.set("page", 1)
       setSearchParams(newSearchParams)
     }
   }
@@ -74,21 +75,20 @@ function SellProducts() {
     setSearchParams(newSearchParams)
   }
 
-  const handleRegister = () => {
-    navigate("/product-register")
-  }
-
   const handlePagination = (selectedPage) => {
     const newSearchParams = new URLSearchParams(searchParams)
     newSearchParams.set("page", selectedPage)
     setSearchParams(newSearchParams)
   }
 
+  const handleRegister = () => {
+    navigate("/product-register")
+  }
+
   if (error) return <div>에러 발생: {error}</div>
 
   return (
     <section className={styles.container}>
-      {/* 타이틀 */}
       <div className={styles.sell_title_wrapper}>
         <span className={styles.section_title}>판매 중인 상품</span>
         <div className={styles.controlls}>
