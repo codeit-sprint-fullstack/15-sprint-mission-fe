@@ -1,0 +1,22 @@
+.navbar{
+    font-family: 'ROKAFSansMedium', sans-serif;
+    padding: 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.navbar a{
+    text-decoration: none;
+}
+
+.logoContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoText{
+    color: var(--color-logoText);
+}

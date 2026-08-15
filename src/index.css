@@ -1,0 +1,10 @@
+@import 'pretendard/dist/web/static/pretendard.css';
+@import '@noonnu/rokaf-sans-medium';
+
+:root{
+    --color-logoText: #3692FF;
+}
+
+body{
+    font-family: 'Pretendard', sans-serif;
+}
