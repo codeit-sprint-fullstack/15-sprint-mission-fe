@@ -24,14 +24,14 @@ const useMarketProduct = () => {
 
   const isTablet = windowWidth <= BREAK_POINT_TABLET
   const isMobile = windowWidth <= BREAK_POINT_MOBILE
-
+  const currentPageSize = isMobile ? 4 : isTablet ? 6 : INITIAL_PAGE_SIZE
   useEffect(() => {
     const getProducts = async () => {
       setIsLoading(true)
       try {
         const data = await fetchProducts({
           page: searchParams.get("page") || INITIAL_PAGE,
-          pageSize: isMobile ? 4 : isTablet ? 6 : INITIAL_PAGE_SIZE,
+          pageSize: currentPageSize,
           orderBy: searchParams.get("orderBy") || SELECT_OPTIONS[0].value,
           keyword: searchParams.get("keyword") || "",
         })
@@ -44,7 +44,7 @@ const useMarketProduct = () => {
       }
     }
     getProducts()
-  }, [searchParams, isTablet, isMobile])
+  }, [searchParams, currentPageSize])
 
   return {
     isLoading,
@@ -54,7 +54,7 @@ const useMarketProduct = () => {
     totalCount,
     error,
     INITIAL_PAGE,
-    INITIAL_PAGE_SIZE,
+    currentPageSize,
     SELECT_OPTIONS,
   }
 }

@@ -15,8 +15,8 @@ function SellProducts() {
     setSearchParams,
     totalCount,
     error,
+    currentPageSize,
     INITIAL_PAGE,
-    INITIAL_PAGE_SIZE,
     SELECT_OPTIONS,
   } = useMarketProduct()
 
@@ -93,7 +93,7 @@ function SellProducts() {
           )}
         </div>
         <MarketPagination
-          pageSize={INITIAL_PAGE_SIZE}
+          pageSize={currentPageSize}
           totalCount={totalCount}
           currentPage={Number(searchParams.get("page")) || INITIAL_PAGE}
           setCurrentPage={handlePagination}
