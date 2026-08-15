@@ -6,12 +6,14 @@ import styles from "./MarketOrderBySelect.module.css"
 function MarketOrderBySelect({ options, selected, handleOptionChange }) {
   const [isOpen, setIsOpen] = useState(false)
 
+  const selectedOption = options.filter((option) => option.value === selected)
+
   const handleSelect = () => {
     setIsOpen(!isOpen)
   }
 
   const handleSelectChange = (option) => {
-    if (selected.name !== option.name) {
+    if (selectedOption[0].name !== option.name) {
       handleOptionChange(option)
     }
     setIsOpen(false)
@@ -20,7 +22,7 @@ function MarketOrderBySelect({ options, selected, handleOptionChange }) {
   return (
     <div className={styles.container}>
       <button onClick={handleSelect}>
-        <span className={styles.text_pc}>{selected.name}</span>
+        <span className={styles.text_pc}>{selectedOption[0].name}</span>
         <img
           className={styles.icn_pc}
           src={ic_arrow_down}

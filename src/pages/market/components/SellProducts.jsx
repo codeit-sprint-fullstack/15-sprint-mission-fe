@@ -8,38 +8,40 @@ import MarketPagination from "./MarketPagination"
 import ProductItem from "./ProductItem"
 import styles from "./SellProducts.module.css"
 
-const PAGE_SIZE = 10
+const INITIAL_PAGE = 1
+const INITIAL_PAGE_SIZE = 10
 const SELECT_OPTIONS = [
   { name: "최신순", value: "recent" },
   { name: "좋아요순", value: "favorite" },
 ]
+const BREAK_POINT_TABLET = 744
+const BREAK_POINT_MOBILE = 375
 
 function SellProducts() {
   const [isLoading, setIsLoading] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams()
   const [productsData, setProductsData] = useState([])
   const [totalCount, setTotalCount] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
   const [error, setError] = useState(null)
-  const [searchKeyword, setSearchKeyword] = useState("")
   const [inputKeyword, setInputKeyword] = useState("")
-  const [orderBy, setOrderBy] = useState({ name: "최신순", value: "recent" })
 
   const windowWidth = useWindowSize()
   const navigate = useNavigate()
 
-  const isTablet = windowWidth <= 744
-  const isMobile = windowWidth <= 375
+  const isTablet = windowWidth <= BREAK_POINT_TABLET
+  const isMobile = windowWidth <= BREAK_POINT_MOBILE
 
   useEffect(() => {
     const getProducts = async () => {
       setIsLoading(true)
       try {
         const data = await fetchProducts({
-          page: currentPage,
-          pageSize: isMobile ? 4 : isTablet ? 6 : PAGE_SIZE,
-          orderBy: orderBy.value,
-          keyword: searchKeyword,
+          page: searchParams.get("page") || INITIAL_PAGE,
+          pageSize: isMobile ? 4 : isTablet ? 6 : INITIAL_PAGE_SIZE,
+          orderBy: searchParams.get("orderBy") || SELECT_OPTIONS[0].value,
+          keyword: searchParams.get("keyword") || "",
         })
+        setInputKeyword(searchParams.get("keyword"))
         setProductsData(data.list)
         setTotalCount(data.totalCount)
       } catch (err) {
@@ -49,26 +51,37 @@ function SellProducts() {
       }
     }
     getProducts()
-  }, [currentPage, orderBy, searchKeyword, isTablet, isMobile])
+  }, [searchParams, isTablet, isMobile])
 
   const handleSearchChange = (e) => {
     setInputKeyword(e.target.value)
   }
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" && inputKeyword !== searchKeyword) {
-      setSearchKeyword(inputKeyword)
-      setCurrentPage(1)
+    if (!inputKeyword) return
+    if (e.key === "Enter" && inputKeyword !== searchParams.get("keyword")) {
+      const newSearchParams = new URLSearchParams(searchParams)
+      newSearchParams.set("page", 1)
+      newSearchParams.set("keyword", inputKeyword)
+      setSearchParams(newSearchParams)
     }
   }
 
-  const handleOptionChange = (value) => {
-    setOrderBy(value)
-    setCurrentPage(1)
+  const handleOptionChange = (option) => {
+    const newSearchParams = new URLSearchParams(searchParams)
+    newSearchParams.set("orderBy", option.value)
+    newSearchParams.set("page", 1)
+    setSearchParams(newSearchParams)
   }
 
   const handleRegister = () => {
     navigate("/product-register")
+  }
+
+  const handlePagination = (selectedPage) => {
+    const newSearchParams = new URLSearchParams(searchParams)
+    newSearchParams.set("page", selectedPage)
+    setSearchParams(newSearchParams)
   }
 
   if (error) return <div>에러 발생: {error}</div>
@@ -90,10 +103,9 @@ function SellProducts() {
             />
           </div>
           <button onClick={handleRegister}>상품 등록하기</button>
-          {/* select box */}
           <MarketOrderBySelect
             options={SELECT_OPTIONS}
-            selected={orderBy}
+            selected={searchParams.get("orderBy") || SELECT_OPTIONS[0].value}
             handleOptionChange={handleOptionChange}
           />
         </div>
@@ -109,12 +121,10 @@ function SellProducts() {
           )}
         </div>
         <MarketPagination
-          pageSize={PAGE_SIZE}
+          pageSize={INITIAL_PAGE_SIZE}
           totalCount={totalCount}
-          currentPage={currentPage}
-          setCurrentPage={(selectedPage) => {
-            setCurrentPage(selectedPage)
-          }}
+          currentPage={Number(searchParams.get("page")) || INITIAL_PAGE}
+          setCurrentPage={handlePagination}
         />
       </div>
     </section>
