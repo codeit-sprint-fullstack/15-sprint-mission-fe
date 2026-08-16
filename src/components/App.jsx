@@ -1,9 +1,17 @@
-import Navbar from "./Navbar";
+import NavBar from "./NavBar";
+import ProductCard from "./ProductCard";
+import defaultProductImage from "../assets/defaultProductImage.svg";
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      <NavBar></NavBar>
+      <ProductCard
+        image={defaultProductImage}
+        title="제목입니다"
+        price={100000}
+        likes={5000}
+      />
     </>
   );
 }
