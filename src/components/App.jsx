@@ -1,12 +1,12 @@
-import Navbar from './Navbar'
+import Navbar from "./Navbar";
 
 function App() {
   return (
     <>
-    <Navbar></Navbar>
-    <hr/>
+      <Navbar></Navbar>
+      <div className="bg-blue-500"></div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
