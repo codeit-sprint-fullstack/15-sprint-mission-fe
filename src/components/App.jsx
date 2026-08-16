@@ -4,7 +4,6 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="bg-blue-500"></div>
     </>
   );
 }

@@ -1,11 +1,12 @@
-@import 'pretendard/dist/web/static/pretendard.css';
-@import '@noonnu/rokaf-sans-medium';
-@import 'tailwindcss';
+@import "pretendard/dist/web/static/pretendard.css";
+@import "@noonnu/rokaf-sans-medium";
+@import "tailwindcss";
 
-:root{
-    --color-logoText: #3692FF;
+:root {
+  --color-logoText: #3692ff;
 }
 
-body{
-    font-family: 'Pretendard', sans-serif;
+@theme {
+  --font-sans: "Pretendard", sans-serif;
+  --font-rokaf: "ROKAFSansMedium", sans-serif;
 }
