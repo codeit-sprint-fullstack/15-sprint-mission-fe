@@ -22,7 +22,7 @@ function PaginationBar({ currentPage, totalPages }) {
   const isLastPage = currentPage >= totalPages;
 
   return (
-    <nav className="flex items-center justify-center gap-1 my-6">
+    <nav className="flex items-center justify-center gap-1 mt-2 mb-[100px]">
       {isFirstPage ? (
         <img src={leftButton} alt="이전 페이지 버튼" className="opacity-30" />
       ) : (
