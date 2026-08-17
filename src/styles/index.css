@@ -1,0 +1,27 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+  --color-primary-blue100: #3692ff;
+  --color-primary-blue200: #1967d6;
+  --color-primary-blue300: #1251aa;
+  --color-secondary-gray900: #111827;
+  --color-secondary-gray800: #1f2937;
+  --color-secondary-gray700: #374151;
+  --color-secondary-gray600: #4b5563;
+  --color-secondary-gray500: #6b7280;
+  --color-secondary-gray400: #9ca3af;
+  --color-secondary-gray200: #e5e7eb;
+  --color-secondary-gray100: #f3f4f6;
+  --color-secondary-gray50: #f9fafb;
+  --color-error-red: #f74747;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
