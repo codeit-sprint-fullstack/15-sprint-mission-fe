@@ -1,32 +1,41 @@
 import leftButton from "../assets/leftButton.svg";
 import rightButton from "../assets/rightButton.svg";
-import pageButton1 from "../assets/pageButton1.svg";
-import pageButton2 from "../assets/pageButton2.svg";
-import pageButton3 from "../assets/pageButton3.svg";
-import pageButton4 from "../assets/pageButton4.svg";
-import pageButton5 from "../assets/pageButton5.svg";
-import { Link } from "react-router-dom";
-
-const pageImages = {
-  1: pageButton1,
-  2: pageButton2,
-  3: pageButton3,
-  4: pageButton4,
-  5: pageButton5,
-};
+import { Link, useSearchParams } from "react-router-dom";
 
 function PaginationBar({ currentPage, totalPages }) {
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const [searchParams] = useSearchParams();
+  const PAGE_LIMIT = 5;
 
-  const isFirstPage = currentPage <= 1;
-  const isLastPage = currentPage >= totalPages;
+  const currentGroup = Math.ceil(currentPage / PAGE_LIMIT);
+  const startPage = (currentGroup - 1) * PAGE_LIMIT + 1;
+  const endPage = Math.min(startPage + PAGE_LIMIT - 1, totalPages);
+
+  const pageNumbers = Array.from(
+    { length: endPage - startPage + 1 },
+    (_, i) => startPage + i,
+  );
+
+  const getPageUrl = (page) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("page", page);
+    return `?${newParams.toString()}`;
+  };
+
+  const isFirstGroup = startPage <= 1;
+  const isLastGroup = endPage >= totalPages;
+
+  if (totalPages <= 0) return null;
 
   return (
-    <nav className="flex items-center justify-center gap-1 mt-2 mb-[100px]">
-      {isFirstPage ? (
-        <img src={leftButton} alt="이전 페이지 버튼" className="opacity-30" />
+    <nav className="flex items-center justify-center gap-2 mt-2 mb-[100px]">
+      {isFirstGroup ? (
+        <img
+          src={leftButton}
+          alt="이전 페이지 버튼"
+          className="opacity-30 cursor-not-allowed"
+        />
       ) : (
-        <Link to={`?page=${currentPage - 1}`}>
+        <Link to={getPageUrl(startPage - 1)}>
           <img src={leftButton} alt="이전 페이지 버튼" />
         </Link>
       )}
@@ -35,22 +44,28 @@ function PaginationBar({ currentPage, totalPages }) {
         const isCurrent = page === currentPage;
 
         return (
-          <Link key={page} to={`?page=${page}`}>
+          <Link key={page} to={getPageUrl(page)}>
             {isCurrent ? (
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#2F80ED] text-white">
+              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#2F80ED] text-white font-bold text-sm">
                 {page}
               </span>
             ) : (
-              <img src={pageImages[page]} alt={`${page}페이지 버튼`} />
+              <span className="w-10 h-10 flex items-center justify-center rounded-full text-[#4B5563] border border-[#E5E7EB] hover:bg-gray-100 font-medium text-sm transition-colors">
+                {page}
+              </span>
             )}
           </Link>
         );
       })}
 
-      {isLastPage ? (
-        <img src={rightButton} alt="다음 페이지 버튼" className="opacity-30" />
+      {isLastGroup ? (
+        <img
+          src={rightButton}
+          alt="다음 페이지 버튼"
+          className="opacity-30 cursor-not-allowed"
+        />
       ) : (
-        <Link to={`?page=${currentPage + 1}`}>
+        <Link to={getPageUrl(endPage + 1)}>
           <img src={rightButton} alt="다음 페이지 버튼" />
         </Link>
       )}

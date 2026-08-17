@@ -1,16 +1,16 @@
 import { useState } from "react";
 import downArrow from "../assets/downArrow.svg";
 
-const SORT_OPTIONS = [
+const ORDER_OPTIONS = [
   { value: "recent", label: "최신순" },
-  { value: "likes", label: "좋아요순" },
+  { value: "favorite", label: "좋아요순" },
 ];
 
-function SortDropdown({ value, onChange }) {
+function OrderDropdown({ value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const selected =
-    SORT_OPTIONS.find((option) => option.value === value) ?? SORT_OPTIONS[0];
+    ORDER_OPTIONS.find((option) => option.value === value) ?? ORDER_OPTIONS[0];
 
   const handleSelect = (option) => {
     onChange?.(option.value);
@@ -29,12 +29,12 @@ function SortDropdown({ value, onChange }) {
 
       {isOpen && (
         <ul className="absolute right-0 mt-1 w-[130px] bg-white border border-[#E5E7EB] rounded-xl shadow-md z-10 overflow-hidden">
-          {SORT_OPTIONS.map((option, index) => (
+          {ORDER_OPTIONS.map((option, index) => (
             <li key={option.value}>
               <button
                 onClick={() => handleSelect(option)}
                 className={`w-full text-center py-3 text-base hover:bg-gray-50 ${
-                  index !== SORT_OPTIONS.length - 1
+                  index !== ORDER_OPTIONS.length - 1
                     ? "border-b border-[#E5E7EB]"
                     : ""
                 } ${option.value === selected.value ? "font-bold text-[#111827]" : "text-[#111827]"}`}
@@ -49,4 +49,4 @@ function SortDropdown({ value, onChange }) {
   );
 }
 
-export default SortDropdown;
+export default OrderDropdown;

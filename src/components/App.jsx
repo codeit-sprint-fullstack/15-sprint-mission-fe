@@ -1,20 +1,53 @@
 import NavBar from "./NavBar";
 import ProductCardList from "./ProductCardList";
-import { bestProducts, allProducts } from "./DummyProduct";
 import { useSearchParams } from "react-router-dom";
-import {useState} from "react";
 import PaginationBar from "./PaginationBar";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import RegisterButton from "./RegisterButton";
-import SortDropdown from "./SortDropdown";
+import OrderDropdown from "./OrderDropdown";
+import { useBestProducts, useProducts } from "../hooks/useProducts";
 
 function App() {
-  const [searchParams] = useSearchParams();
-  const currentPage = Number(searchParams.get("page")) || 1;
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [keyword, setKeyword] = useState("");
-  const [sortBy, setSortBy] = useState("recent");
+  const page = Number(searchParams.get("page")) || 1;
+  const orderBy = searchParams.get("orderBy") || "recent";
+  const keyword = searchParams.get("keyword") || "";
+
+  const { bestProducts, isLoading: isBestLoading } = useBestProducts(4);
+  const {
+    products,
+    totalCount,
+    isLoading: isProductsLoading,
+  } = useProducts({
+    page,
+    orderBy,
+    keyword,
+  });
+
+  const pageSize = 10;
+  const totalPages = Math.ceil(totalCount / pageSize);
+
+  const handleSortChange = (newSort) => {
+    setSearchParams((prev) => {
+      prev.set("orderBy", newSort);
+      prev.set("page", "1");
+      return prev;
+    });
+  };
+
+  const handleSearch = (newKeyword) => {
+    setSearchParams((prev) => {
+      if (newKeyword) {
+        prev.set("keyword", newKeyword);
+      } else {
+        prev.delete("keyword");
+      }
+      prev.set("page", "1");
+      return prev;
+    });
+  };
 
   return (
     <>
@@ -37,19 +70,21 @@ function App() {
               판매 중인 상품
             </h2>
             <div className="flex items-center gap-3">
-              <SearchBar onSearch={setKeyword} />
+              <SearchBar initialKeyword={keyword} onSearch={handleSearch} />
               <RegisterButton onClick={() => alert("상품 등록 기능 준비 중")} />
-              <SortDropdown value={sortBy} onChange={setSortBy} />
+              <OrderDropdown value={orderBy} onChange={handleSortChange} />
             </div>
           </div>
           <ProductCardList
-            products={allProducts}
+            products={products}
             gridCols="grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
           />
         </section>
+
       </main>
 
-      <PaginationBar currentPage={currentPage} totalPages={5} />
+      <PaginationBar currentPage={page} totalPages={totalPages || 1} />
+      
       <Footer />
     </>
   );
