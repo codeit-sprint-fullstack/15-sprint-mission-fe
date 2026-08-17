@@ -16,6 +16,10 @@
   --blue-light: #e6f2ff;
   --blue-brand: #3692ff;
 
+
+/*레드*/ 
+--red-error: #F74747;
+
 /* 배경/기타 */
   --navy-dark: #111827;
 }
