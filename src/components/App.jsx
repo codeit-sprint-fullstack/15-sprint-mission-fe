@@ -8,6 +8,7 @@ import OrderDropdown from "./OrderDropdown";
 import { useBestProducts, useProducts } from "../hooks/useProducts";
 import { useProductParams } from "../hooks/useProductParams";
 import { usePageSize } from "../hooks/usePageSize";
+import LoadingSpinner from "./LoadingSpinner";
 
 function App() {
   const { page, orderBy, keyword, handleSortChange, handleSearch } =
@@ -35,10 +36,14 @@ function App() {
           <h2 className="font-bold text-[20px] text-[#111827] mb-4">
             베스트 상품
           </h2>
-          <ProductCardList
-            products={bestProducts}
-            gridCols="grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-          />
+          {isBestLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <ProductCardList
+              products={bestProducts}
+              gridCols="grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+            />
+          )}
         </section>
 
         <section>
@@ -52,10 +57,14 @@ function App() {
               <OrderDropdown value={orderBy} onChange={handleSortChange} />
             </div>
           </div>
-          <ProductCardList
-            products={products}
-            gridCols="grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
-          />
+          {isProductsLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <ProductCardList
+              products={products}
+              gridCols="grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
+            />
+          )}
         </section>
       </main>
 
