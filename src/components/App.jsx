@@ -3,6 +3,7 @@ import ProductCardList from "./ProductCardList";
 import { bestProducts, allProducts } from "./DummyProduct";
 import { useSearchParams } from "react-router-dom";
 import PaginationBar from "./PaginationBar";
+import Footer from "./Footer"
 
 function App() {
   const [searchParams] = useSearchParams();
@@ -31,6 +32,7 @@ function App() {
       </main>
 
       <PaginationBar currentPage={currentPage} totalPages={5}/>
+      <Footer/>
     </>
   );
 }
