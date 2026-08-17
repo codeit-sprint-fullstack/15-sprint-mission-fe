@@ -1,19 +1,40 @@
 .section{
-  padding: 2rem 12.5rem;
+  padding: 2rem 12.5rem 0;
 }
 
 .title{
   color: var(--gray-darkest);
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.625rem; 
+  line-height: 1.625rem;
 }
 
-
+/* Desktop: 5열 */
 .grid{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap:1.5rem
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+/* Tablet: 3열 */
+@media (max-width: 1199px){
+  .section{
+    padding: 2rem 2.5rem 0;
+  }
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 2열 */
+@media (max-width: 743px){
+  .section{
+    padding: 1.5rem 1rem 0;
+  }
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }

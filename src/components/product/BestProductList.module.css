@@ -5,15 +5,36 @@
 .title{
   color: var(--gray-darkest);
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.625rem; 
+  line-height: 1.625rem;
+  margin-bottom: 1.5rem;
 }
 
-
+/* Desktop: 4열 */
 .grid{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap:1.5rem
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Tablet: 2열 */
+@media (max-width: 1199px){
+  .section{
+    padding: 2rem 2.5rem;
+  }
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1열 */
+@media (max-width: 743px){
+  .section{
+    padding: 1.5rem 1rem;
+  }
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

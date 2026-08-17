@@ -1,23 +1,31 @@
 //# 베스트 상품 섹션 (그리드 + 데이터 fetch)
 import ProductCard from './ProductCard.jsx';
 import styles from './BestProductList.module.css';
+import { useProducts } from '../hooks/useProducts';
+import LoadingSpinner from '../common/LoadingSpinner.jsx';
+import ErrorMessage from '../common/ErrorMessage.jsx';
+import EmptyState from '../common/EmptyState.jsx';
 
-const mockProducts = [
-  {id:1, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
-  {id:2, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
-  {id:3, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
-  {id:4, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
-];
+export default function BestProductList() {
+  const { products, isLoading, error } = useProducts({
+    pageSize: 4,
+    orderBy: 'favorite',
+  });
 
-export default function BestProductList(){
   return (
-    <sectionv className={styles.section} >
+    <section className={styles.section}>
       <h2 className={styles.title}>베스트 상품</h2>
-      <div className={styles.grid}>
-        {mockProducts.map((product)=>(
-          <ProductCard key={product.id}{...product}/>
+      {isLoading && <LoadingSpinner />}
+      {!isLoading && error && <ErrorMessage message={error.message} />}
+      {!isLoading && !error && products.length === 0 && <EmptyState />}
+
+      {!isLoading && !error && products.length > 0 && (
+        <div className={styles.grid}>
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
           ))}
-      </div>
-    </sectionv>
+        </div>
+      )}
+    </section>
   );
 }

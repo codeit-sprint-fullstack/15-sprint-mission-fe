@@ -29,7 +29,7 @@ export default function Pagination({currentPage, totalPages, onPageChange}){
   if (totalPages <= 1) return null;
 
   return (
-    <nav>
+    <nav className={styles.pagination}>
       <button
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
@@ -38,35 +38,36 @@ export default function Pagination({currentPage, totalPages, onPageChange}){
         className={styles.navButton}
       >
         ‹
-        </button>
+      </button>
 
-        {pageItems.map((item) => 
-          item.type === 'ellipsis' ? (
-            <span key={item.key} className ={styles.ellipsis}>
-              ...
-            </span>
-          ) : (
-            <button
-              type="button"
-              onClick={() => onPageChange(item.value)}
-              aria-label={item.value === currentPage ? 'page':undefined}
-              className={item.value === currentPage ? styles.pageButtonActive:styles.pageButton}
-            >
-              {item.value}
-            </button>
-          )
-        )}
-        <button
-          type="button"
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          aria-label="다음 페이지"
-          className={styles.navButton}
-        >
-          ›          
-        </button>
+      {pageItems.map((item) =>
+        item.type === 'ellipsis' ? (
+          <span key={item.key} className={styles.ellipsis}>
+            ...
+          </span>
+        ) : (
+          <button
+            key={item.key}
+            type="button"
+            onClick={() => onPageChange(item.value)}
+            aria-current={item.value === currentPage ? 'page' : undefined}
+            className={item.value === currentPage ? styles.pageButtonActive : styles.pageButton}
+          >
+            {item.value}
+          </button>
+        )
+      )}
+      <button
+        type="button"
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        aria-label="다음 페이지"
+        className={styles.navButton}
+      >
+        ›
+      </button>
     </nav>
-  );   
+  );
 }
 
     
