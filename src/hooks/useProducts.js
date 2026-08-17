@@ -64,6 +64,7 @@ export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
 
     fetchProducts();
   }, [page, pageSize, orderBy, keyword]);
+  const totalPages = Math.ceil(totalCount / pageSize) || 1;
 
-  return { products, totalCount, isLoading };
+  return { products, totalCount, totalPages, isLoading };
 }

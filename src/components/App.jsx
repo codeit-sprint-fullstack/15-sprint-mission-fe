@@ -1,53 +1,26 @@
 import NavBar from "./NavBar";
 import ProductCardList from "./ProductCardList";
-import { useSearchParams } from "react-router-dom";
 import PaginationBar from "./PaginationBar";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import RegisterButton from "./RegisterButton";
 import OrderDropdown from "./OrderDropdown";
 import { useBestProducts, useProducts } from "../hooks/useProducts";
+import { useProductParams } from "../hooks/useProductParams";
 
 function App() {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const page = Number(searchParams.get("page")) || 1;
-  const orderBy = searchParams.get("orderBy") || "recent";
-  const keyword = searchParams.get("keyword") || "";
-
+  const { page, orderBy, keyword, handleSortChange, handleSearch } = useProductParams()
   const { bestProducts, isLoading: isBestLoading } = useBestProducts(4);
+
   const {
     products,
-    totalCount,
+    totalPages,
     isLoading: isProductsLoading,
   } = useProducts({
     page,
     orderBy,
     keyword,
   });
-
-  const pageSize = 10;
-  const totalPages = Math.ceil(totalCount / pageSize);
-
-  const handleSortChange = (newSort) => {
-    setSearchParams((prev) => {
-      prev.set("orderBy", newSort);
-      prev.set("page", "1");
-      return prev;
-    });
-  };
-
-  const handleSearch = (newKeyword) => {
-    setSearchParams((prev) => {
-      if (newKeyword) {
-        prev.set("keyword", newKeyword);
-      } else {
-        prev.delete("keyword");
-      }
-      prev.set("page", "1");
-      return prev;
-    });
-  };
 
   return (
     <>
@@ -84,7 +57,7 @@ function App() {
       </main>
 
       <PaginationBar currentPage={page} totalPages={totalPages || 1} />
-      
+
       <Footer />
     </>
   );
