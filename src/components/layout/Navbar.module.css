@@ -1,0 +1,65 @@
+.left{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logoLink{
+  display: flex;
+  align-items: center;
+  gap: 0.5375rem;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+.logoLink img{
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+}
+.logoText{
+  color: var(--blue-brand);
+  font-family: "ROKAF Sans";
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.navLink{
+  color: var(--gray-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btnLogin{
+  border-radius: 0.5rem;
+  width: 8rem;
+  height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--blue-brand);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 743px){
+  .left{
+    gap: 0.75rem;
+  }
+  .navLink{
+    display: none; /* 모바일 폭에서는 메뉴를 숨겨 공간을 확보 */
+  }
+  .btnLogin{
+    width: auto;
+    padding: 0.5rem 1rem;
+    height: 2.25rem;
+    font-size: 0.875rem;
+  }
+}
