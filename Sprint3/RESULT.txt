@@ -1,0 +1,156 @@
+게시들 목록: {
+  list: [
+    {
+      id: 6780,
+      title: '게시글 제목입니다.',
+      content: '게시글 내용입니다.',
+      image: 'https://example.com/...',
+      createdAt: '2026-08-02T03:17:39.719Z',
+      updatedAt: '2026-08-02T03:17:39.719Z'
+    },
+    {
+      id: 6779,
+      title: '스프린트 미션 테스트 게시글',
+      content: 'createArticle 함수 생성 테스트입니다.',
+      image: 'https://example.com/image.jpg',
+      createdAt: '2026-08-02T03:16:21.494Z',
+      updatedAt: '2026-08-02T03:16:21.494Z'
+    },
+    {
+      id: 6777,
+      title: '제목',
+      content: '내용',
+      image: 'https://example.com/test.jpg',
+      createdAt: '2026-08-02T03:03:25.493Z',
+      updatedAt: '2026-08-02T03:03:25.493Z'
+    },
+    {
+      id: 6776,
+      title: '제목',
+      content: '내용',
+      image: 'https://example.com/test.jpg',
+      createdAt: '2026-08-02T03:02:29.411Z',
+      updatedAt: '2026-08-02T03:02:29.411Z'
+    },
+    {
+      id: 6765,
+      title: '수정된 제목',
+      content: '내용입니다',
+      image: 'https://picsum.photos/200',
+      createdAt: '2026-08-01T08:06:25.194Z',
+      updatedAt: '2026-08-01T08:06:28.197Z'
+    }
+  ],
+  totalCount: 4250
+}
+생성된 게시글 {
+  id: 6794,
+  title: '8월 9일까지 맥북 1+1 행사 기간입니다.',
+  content: '기종 상관없이 모든 맥북 1대 구매시 1대를 추가로 증정해드리고 있습니다. 많은 관심 부탁드립니다.',
+  image: 'https://picsum.photos/200',
+  createdAt: '2026-08-02T09:05:03.129Z',
+  updatedAt: '2026-08-02T09:05:03.129Z'
+}
+게시글 상세: {
+  id: 6794,
+  title: '8월 9일까지 맥북 1+1 행사 기간입니다.',
+  content: '기종 상관없이 모든 맥북 1대 구매시 1대를 추가로 증정해드리고 있습니다. 많은 관심 부탁드립니다.',
+  image: 'https://picsum.photos/200',
+  createdAt: '2026-08-02T09:05:03.129Z',
+  updatedAt: '2026-08-02T09:05:03.129Z'
+}
+게시글 수정: {
+  id: 6794,
+  title: '많은 성원 덕분에 8월 12일까지 맥북 1+1 행사, 연장되었습니다!',
+  content: '기종 상관없이 모든 맥북 1대 구매시 1대를 추가로 증정해드리고 있습니다. 많은 관심 부탁드립니다.',
+  image: 'https://picsum.photos/200',
+  createdAt: '2026-08-02T09:05:03.129Z',
+  updatedAt: '2026-08-02T09:05:04.498Z'
+}
+게시글 삭제 { id: 6794 }
+상품 목록: {
+  list: [
+    {
+      id: 4132,
+      name: '이름',
+      description: '상품 설명',
+      price: 1000,
+      tags: [Array],
+      images: [Array],
+      createdAt: '2026-08-02T04:16:02.053Z',
+      updatedAt: '2026-08-02T04:16:02.053Z'
+    },
+    {
+      id: 4131,
+      name: 'Pikachu_toy',
+      description: 'string',
+      price: 125000,
+      tags: [Array],
+      images: [Array],
+      createdAt: '2026-08-02T03:50:53.732Z',
+      updatedAt: '2026-08-02T03:50:53.732Z'
+    },
+    {
+      id: 4130,
+      name: '상품 이름',
+      description: 'string',
+      price: 0,
+      tags: [Array],
+      images: [Array],
+      createdAt: '2026-08-02T03:16:57.013Z',
+      updatedAt: '2026-08-02T03:16:57.013Z'
+    },
+    {
+      id: 4127,
+      name: '고양이',
+      description: '고양이',
+      price: 30000,
+      tags: [Array],
+      images: [Array],
+      createdAt: '2026-08-01T16:12:12.081Z',
+      updatedAt: '2026-08-01T16:12:12.081Z'
+    },
+    {
+      id: 4110,
+      name: '테스트 상품',
+      description: '설명입니다',
+      price: 10000,
+      tags: [Array],
+      images: [Array],
+      createdAt: '2026-08-01T07:03:31.645Z',
+      updatedAt: '2026-08-01T07:03:31.645Z'
+    }
+  ],
+  totalCount: 2372
+}
+생성된 상품: {
+  id: 4149,
+  name: 'M10 MacBook Fantastic 1TB',
+  description: 'M10 칩 탑재, 1TB RAM을 장착한 최신 Fantastic 모델입니다.',
+  price: 20000000,
+  tags: [ '애플', '노트북', '맥북' ],
+  images: [ 'https://picsum.photos/200' ],
+  createdAt: '2026-08-02T09:05:06.001Z',
+  updatedAt: '2026-08-02T09:05:06.001Z'
+}
+상품 상세: {
+  id: 4149,
+  name: 'M10 MacBook Fantastic 1TB',
+  description: 'M10 칩 탑재, 1TB RAM을 장착한 최신 Fantastic 모델입니다.',
+  price: 20000000,
+  tags: [ '애플', '노트북', '맥북' ],
+  images: [ 'https://picsum.photos/200' ],
+  createdAt: '2026-08-02T09:05:06.001Z',
+  updatedAt: '2026-08-02T09:05:06.001Z'
+}
+상품 수정: {
+  id: 4149,
+  name: 'M10 MacBook Fantastic 1TB',
+  description: 'M10 칩 탑재, 1TB RAM을 장착한 최신 Fantastic 모델입니다.',
+  price: 18000000,
+  tags: [ '애플', '노트북', '맥북' ],
+  images: [ 'https://picsum.photos/200' ],
+  createdAt: '2026-08-02T09:05:06.001Z',
+  updatedAt: '2026-08-02T09:05:10.305Z'
+}
+상품 삭제: { id: 4149 }
