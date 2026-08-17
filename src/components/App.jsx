@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import PaginationBar from "./PaginationBar";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
+import RegisterButton from "./RegisterButton";
 
 function App() {
   const [searchParams] = useSearchParams();
@@ -30,6 +31,7 @@ function App() {
             판매 중인 상품
           </h2>
           <SearchBar/>
+          <RegisterButton/>
           <ProductCardList
             products={allProducts}
             gridCols="grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
