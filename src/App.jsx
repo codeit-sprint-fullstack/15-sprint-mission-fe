@@ -1,5 +1,7 @@
+import MarketplacePage from "./pages/MarketplacePage"
+
 function App() {
-  return <div>Panda Market</div>
+  return <MarketplacePage />
 }
 
 export default App
