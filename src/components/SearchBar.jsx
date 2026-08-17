@@ -22,7 +22,7 @@ function SearchBar({ onSearch, placeholder = "검색할 상품을 입력해주�
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder={placeholder}
-        className="w-full pl-10 pr-4 py-2 rounded-[12px] bg-[#F3F4F6] font-normal focus:outline-none focus:border-[#2F80ED]"
+        className="w-full pl-10 pr-4 py-2 rounded-[12px] bg-[#F3F4F6] font-normal border border-transparent focus:outline-none focus:border-[#3692FF]"
       />
     </form>
   );
