@@ -1,0 +1,1189 @@
+diff --git a/README.md b/README.md
+index 48de23b..c95f2b4 100644
+--- a/README.md
++++ b/README.md
+@@ -23,24 +23,24 @@ React 라이브러리를 사용해 프론트엔드 기능을 구현하는 브랜
+ ### 기본 요구사항
+  
+ **공통**
+-- [ ] GitHub에 스프린트 미션 PR 생성
+-- [ ] React로 진행
++- [x] GitHub에 스프린트 미션 PR 생성
++- [x] React로 진행
+ **중고마켓 페이지**
+-- [ ] PC / Tablet / Mobile 반응형 디자인 구현
+-- [ ] 페이지 url path는 '/' 로 설정
+-- [ ] 상단 네비게이션 바 (랜딩 페이지와 동일 스타일)
+-- [ ] 푸터 (랜딩 페이지와 동일 스타일)
+-- [ ] 상품 데이터 연동 (`GET /products`)
+-  - [ ] 페이지네이션
+-  - [ ] 정렬 드롭다운 (최신순 / 좋아요순)
+-  - [ ] 검색 기능
+-- [ ] 베스트 상품 연동 (`GET /products`, orderBy=favorite)
+-### 심화 요구사항
+- 
++- [x] PC / Tablet / Mobile 반응형 디자인 구현
++- [x] 페이지 url path는 '/' 로 설정
++- [x] 상단 네비게이션 바 (랜딩 페이지와 동일 스타일)
++- [x] 푸터 (랜딩 페이지와 동일 스타일)
++- [x] 상품 데이터 연동 (`GET /products`)
++  - [x] 페이지네이션
++  - [x] 정렬 드롭다운 (최신순 / 좋아요순)
++  - [x] 검색 기능
++- [x] 베스트 상품 연동 (`GET /products`, orderBy=favorite)
++
++### 심화 요구사항 
+ **공통**
+-- [ ] 커스텀 훅 구현 및 적용
++- [x] 커스텀 훅 구현 및 적용
+ **중고마켓 페이지**
+-- [ ] 반응형 그리드 적용
++- [x] 반응형 그리드 적용
+   - 베스트 상품: Desktop 4열 / Tablet 2열 / Mobile 1열
+   - 전체 상품: Desktop 5열 / Tablet 3열 / Mobile 2열
+-- [ ] 반응형 페이지네이션 (화면 크기별 pageSize 값 조정)
++- [x] 반응형 페이지네이션 (화면 크기별 pageSize 값 조정)
+diff --git a/package-lock.json b/package-lock.json
+index ad5de6c..cea013a 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -10,7 +10,8 @@
+       "dependencies": {
+         "react": "^19.2.8",
+         "react-dom": "^19.2.8",
+-        "react-icons": "^5.7.0"
++        "react-icons": "^5.7.0",
++        "react-router-dom": "^7.18.2"
+       },
+       "devDependencies": {
+         "@babel/core": "^7.29.7",
+@@ -1030,6 +1031,19 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/cookie": {
++      "version": "1.1.1",
++      "resolved": "https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz",
++      "integrity": "sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=18"
++      },
++      "funding": {
++        "type": "opencollective",
++        "url": "https://opencollective.com/express"
++      }
++    },
+     "node_modules/cross-spawn": {
+       "version": "7.0.6",
+       "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz",
+@@ -2115,6 +2129,44 @@
+         "react": "*"
+       }
+     },
++    "node_modules/react-router": {
++      "version": "7.18.2",
++      "resolved": "https://registry.npmjs.org/react-router/-/react-router-7.18.2.tgz",
++      "integrity": "sha512-aUVMjFm3GAPTTZL7oYr5E7ETiqfQCHRLH+B+5afnICvf0r7kkK4eR6SMuwbSTJw/7t+12khT/Kahij49fqOCIg==",
++      "license": "MIT",
++      "dependencies": {
++        "cookie": "^1.0.1",
++        "set-cookie-parser": "^2.6.0"
++      },
++      "engines": {
++        "node": ">=20.0.0"
++      },
++      "peerDependencies": {
++        "react": ">=18",
++        "react-dom": ">=18"
++      },
++      "peerDependenciesMeta": {
++        "react-dom": {
++          "optional": true
++        }
++      }
++    },
++    "node_modules/react-router-dom": {
++      "version": "7.18.2",
++      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-7.18.2.tgz",
++      "integrity": "sha512-AIKJ/jgGlFb3EbfCXk5Gzshiwt+l3mqbCrNjmEWMMjqQxNJ3svBa6bgzFyCC2Sw3RA0VWF1kg3uQf2OFhxb8hw==",
++      "license": "MIT",
++      "dependencies": {
++        "react-router": "7.18.2"
++      },
++      "engines": {
++        "node": ">=20.0.0"
++      },
++      "peerDependencies": {
++        "react": ">=18",
++        "react-dom": ">=18"
++      }
++    },
+     "node_modules/rolldown": {
+       "version": "1.2.3",
+       "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.3.tgz",
+@@ -2164,6 +2216,12 @@
+         "semver": "bin/semver.js"
+       }
+     },
++    "node_modules/set-cookie-parser": {
++      "version": "2.7.2",
++      "resolved": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.2.tgz",
++      "integrity": "sha512-oeM1lpU/UvhTxw+g3cIfxXHyJRc/uidd3yK1P242gzHds0udQBYzs3y8j4gCCW+ZJ7ad0yctld8RYO+bdurlvw==",
++      "license": "MIT"
++    },
+     "node_modules/shebang-command": {
+       "version": "2.0.0",
+       "resolved": "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz",
+diff --git a/package.json b/package.json
+index b600815..17c0819 100644
+--- a/package.json
++++ b/package.json
+@@ -12,7 +12,8 @@
+   "dependencies": {
+     "react": "^19.2.8",
+     "react-dom": "^19.2.8",
+-    "react-icons": "^5.7.0"
++    "react-icons": "^5.7.0",
++    "react-router-dom": "^7.18.2"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.29.7",
+diff --git a/src/App.css b/src/App.css
+index 010aa99..1b65a9f 100644
+--- a/src/App.css
++++ b/src/App.css
+@@ -49,7 +49,7 @@ html{
+ 
+ header{
+   display: flex;
+-  padding: 0.5625rem 200px;
++  padding: 0.5625rem 12.5rem;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+@@ -60,6 +60,19 @@ header{
+   top:0;
+   left: 0;
+   width: 100%;
++  box-sizing: border-box;
++}
++
++@media (max-width: 1199px){
++  header{
++    padding: 0.5625rem 2.5rem;
++  }
++}
++
++@media (max-width: 743px){
++  header{
++    padding: 0.5625rem 1rem;
++  }
+ }
+ nav{
+   display: flex;
+@@ -90,12 +103,24 @@ h2{
+ footer{
+   display: flex;
+   width: 100%;
+-  height: 10rem;
+   padding: 2rem 12.5rem;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 0.625rem;
+   background: var(--navy-dark);
++  box-sizing: border-box;
++}
++
++@media (max-width: 1199px){
++  footer{
++    padding: 2rem 2.5rem;
++  }
++}
++
++@media (max-width: 743px){
++  footer{
++    padding: 1.5rem 1rem;
++  }
+ }
+ 
+ footer a,
+diff --git a/src/App.jsx b/src/App.jsx
+index 145fef5..3922a7a 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -1,8 +1,15 @@
++import { BrowserRouter, Routes, Route } from 'react-router-dom';
+ import MarketPage from './components/pages/MarketPage';
+-import './App.css'
++import './App.css';
+ 
+ function App() {
+-  return <MarketPage />;
++  return (
++    <BrowserRouter>
++      <Routes>        
++        <Route path="/" element={<MarketPage />} />
++      </Routes>
++    </BrowserRouter>
++  );
+ }
+ 
+-export default App;
+\ No newline at end of file
++export default App;
+diff --git a/src/components/api/products.js b/src/components/api/products.js
+index 7fbffad..c6955fd 100644
+--- a/src/components/api/products.js
++++ b/src/components/api/products.js
+@@ -2,18 +2,16 @@
+ const BASE_URL = "https://panda-market-api.vercel.app";
+ 
+ 
+-//전체 상품목록 조회
+-export async function getProductList({page = 1, pageSize = 10, keyword="",orderBy = "recent"} = {}){
++//상품 조회
++export async function getProductList({page = 1, pageSize = 8, keyword="",orderBy = "recent"} = {}){
+   const query = new URLSearchParams({page,pageSize,keyword,orderBy});
+-  console.log(`query - ${query}`);
+-
++  
+   try{
+     const response = await fetch(`${BASE_URL}/products?${query}`);
+-    console.log(`response - ${response.id}`);
+     if(!response.ok) throw new Error(`상품 목록 조회 실패: ${response.status}`);
+     return await response.json();
+-  } catch (error) {
+-    console.log(error.message);
++  } catch (error) {  
++    console.log(error);  
+     throw error;
+   }
+ }
+\ No newline at end of file
+diff --git a/src/components/common/EmptyState.jsx b/src/components/common/EmptyState.jsx
+index 77fe8bc..185ebec 100644
+--- a/src/components/common/EmptyState.jsx
++++ b/src/components/common/EmptyState.jsx
+@@ -1,9 +1,8 @@
+ //# 데이터 없음 상태 공통 컴포넌트
+-export default function EmptyState({massage='등록된 데이터가 없습니다.'}){
++export default function EmptyState({ message = '등록된 데이터가 없습니다.' }){
+   return (
+     <div style={{ textAlign: 'center', padding: '2rem 0', color: '#888780' }}>
+-      {massage}
++      {message}
+     </div>
+-
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/hooks/useWindowSize.js b/src/components/hooks/useWindowSize.js
+index d497fe7..f695797 100644
+--- a/src/components/hooks/useWindowSize.js
++++ b/src/components/hooks/useWindowSize.js
+@@ -1 +1,47 @@
+-//# 반응형 감지 (pageSize, 컬럼 수 조정용)
+\ No newline at end of file
++//# 반응형 감지 (pageSize, 컬럼 수 조정용)
++import { useState, useEffect } from 'react';
++
++// App.css의 브레이크포인트(1199px / 743px)와 동일한 기준을 사용한다.
++export const BREAKPOINTS = {
++  tablet: 1199,
++  mobile: 743,
++};
++
++function getDeviceType(width) {
++  if (width <= BREAKPOINTS.mobile) return 'mobile';
++  if (width <= BREAKPOINTS.tablet) return 'tablet';
++  return 'desktop';
++}
++
++export function useWindowSize() {
++  const [windowWidth, setWindowWidth] = useState(
++    typeof window !== 'undefined' ? window.innerWidth : BREAKPOINTS.tablet + 1
++  );
++
++  useEffect(() => {
++    // 리사이즈 이벤트가 너무 자주 발생하지 않도록 약간의 debounce를 둔다.
++    let timerId;
++    function handleResize() {
++      clearTimeout(timerId);
++      timerId = setTimeout(() => {
++        setWindowWidth(window.innerWidth);
++      }, 150);
++    }
++
++    window.addEventListener('resize', handleResize);
++    return () => {
++      clearTimeout(timerId);
++      window.removeEventListener('resize', handleResize);
++    };
++  }, []);
++
++  const deviceType = getDeviceType(windowWidth);
++
++  return {
++    windowWidth,
++    deviceType,
++    isMobile: deviceType === 'mobile',
++    isTablet: deviceType === 'tablet',
++    isDesktop: deviceType === 'desktop',
++  };
++}
+diff --git a/src/components/layout/Footer.jsx b/src/components/layout/Footer.jsx
+index 4112b44..c833c0b 100644
+--- a/src/components/layout/Footer.jsx
++++ b/src/components/layout/Footer.jsx
+@@ -1,48 +1,58 @@
+-import styles from  './Footer.module.css';
+-import { CiFacebook, CiTwitter, CiYoutube, CiInstagram } from "react-icons/ci";
++import styles from './Footer.module.css';
++import { CiFacebook, CiTwitter, CiYoutube, CiInstagram } from 'react-icons/ci';
+ 
+- export default function Footer(){
+- 
+- return (
+-  <footer className={styles.footer}> 
+-    <div className={styles.footer__container}>      
+-      <p>©codeit - 2024</p>
+-      <div className={styles.footer__center}>
+-        <a className={styles.footer__policy} href="">Privacy Policy</a>
+-        <a className={styles.footer__faq} href="">FAQ</a>
+-      </div>
+-      <div className={styles.sns}>
+-        <a
+-          className={`${styles.sns__icon} ${styles["sns__icon--facebook"]}`}
+-          href="https://www.facebook.com/"
+-          target="_blank"
+-          rel="noopener noreferrer"
+-          aria-label="페이스북"
+-        >
+-          <CiFacebook />
+-        </a>
+-        <a  className={`${styles.sns__icon} ${styles['sns__icon--twitter']}`} 
+-            href="https://x.com/" 
+-            target="_blank" 
+-            rel="noopener noreferrer" 
+-            aria-label="X, 구 트위터" >
++export default function Footer() {
++  return (
++    <footer className={styles.footer}>
++      <div className={styles.footer__container}>
++        <p>©codeit - 2024</p>
++        <div className={styles.footer__center}>
++          <a className={styles.footer__policy} href="#">
++            Privacy Policy
++          </a>
++          <a className={styles.footer__faq} href="#">
++            FAQ
++          </a>
++        </div>
++        <div className={styles.sns}>
++          <a
++            className={styles.sns__icon}
++            href="https://www.facebook.com/"
++            target="_blank"
++            rel="noopener noreferrer"
++            aria-label="페이스북"
++          >
++            <CiFacebook />
++          </a>
++          <a
++            className={styles.sns__icon}
++            href="https://x.com/"
++            target="_blank"
++            rel="noopener noreferrer"
++            aria-label="X, 구 트위터"
++          >
+             <CiTwitter />
+-        </a>
+-        <a  className={`${styles.sns__icon} ${styles[`sns__icon--youtube`]}`} 
+-            href="https://www.youtube.com/" 
+-            target="_blank" 
+-            rel="noopener noreferrer" 
+-            aria-label="유튜브" />
+-            <CiYoutube   />
+-        <a  className={`${styles.sns__icon} ${styles[`sns__icon--instagram`]}`} 
+-            href="https://www.instagram.com" 
+-            target="_blank" 
+-            rel="noopener noreferrer" 
+-            aria-label="인스타그램" >
++          </a>
++          <a
++            className={styles.sns__icon}
++            href="https://www.youtube.com/"
++            target="_blank"
++            rel="noopener noreferrer"
++            aria-label="유튜브"
++          >
++            <CiYoutube />
++          </a>
++          <a
++            className={styles.sns__icon}
++            href="https://www.instagram.com"
++            target="_blank"
++            rel="noopener noreferrer"
++            aria-label="인스타그램"
++          >
+             <CiInstagram />
+-        </a>
+-      </div>      
+-    </div>
+-  </footer>
++          </a>
++        </div>
++      </div>
++    </footer>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/layout/Footer.module.css b/src/components/layout/Footer.module.css
+index 4500264..0a986ce 100644
+--- a/src/components/layout/Footer.module.css
++++ b/src/components/layout/Footer.module.css
+@@ -1,29 +1,55 @@
+ .footer{
+   display: flex;
+-  width: 1920px; /* 100% */
+-  height: 10rem;
++  width: 100%;
+   padding: 2rem 12.5rem;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 0.625rem;
+   background: var(--navy-dark);
++  box-sizing: border-box;
+ }
+ .footer__container{
+   display: flex;
++  flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   align-self: stretch;
++  gap: 1rem;
+ }
+ .footer__center{
+-  display: flex;          
+-  gap: 1.25rem;              
+-  justify-content: center; 
++  display: flex;
++  gap: 1.25rem;
++  justify-content: center;
++  align-items: center;
++}
++
++.sns{
++  display: flex;
++  gap: 1rem;
+   align-items: center;
+ }
+ 
+ .sns__icon{
+-  display: inline-block;
++  display: inline-flex;
+   width: 1.25rem;
+   height: 1.25rem;
+   flex-shrink: 0;
++  color: var(--gray-heavy);
++}
++
++@media (max-width: 1199px){
++  .footer{
++    padding: 2rem 2.5rem;
++  }
++}
++
++@media (max-width: 743px){
++  .footer{
++    padding: 1.5rem 1rem;
++  }
++  .footer__container{
++    flex-direction: column;
++    align-items: flex-start;
++    gap: 1rem;
++  }
+ }
+diff --git a/src/components/layout/Navbar.jsx b/src/components/layout/Navbar.jsx
+index a45a40f..68ffcc8 100644
+--- a/src/components/layout/Navbar.jsx
++++ b/src/components/layout/Navbar.jsx
+@@ -1,19 +1,27 @@
++import { Link } from 'react-router-dom';
+ import styles from './Navbar.module.css';
+ import pandaFace from '../svg/img_panda_face.svg';
+ 
+-export default function Navbar () {
+- 
+- return (
+-  <header>
+-     <nav>
+-        <a className={styles.logoLink} href="/" >
+-          <img src={pandaFace} alt="판다 로고 이미지" />
+-          <div className={styles.logoText}>판다마켓</div>
+-        </a>
+-        <button className={styles.btnLogin} href="/">자유게시판</button>
+-        <button className={styles.btnLogin} href="/">중고마켓</button>
+-        <button className={styles.btnLogin} href="/">로그인</button>
++export default function Navbar() {
++  return (
++    <header>
++      <nav>
++        <div className={styles.left}>
++          <Link className={styles.logoLink} to="/">
++            <img src={pandaFace} alt="판다 로고 이미지" />
++            <span className={styles.logoText}>판다마켓</span>
++          </Link>
++          <Link className={styles.navLink} to="/board">
++            자유게시판
++          </Link>
++          <Link className={styles.navLink} to="/">
++            중고마켓
++          </Link>
++        </div>
++        <button type="button" className={styles.btnLogin}>
++          로그인
++        </button>
+       </nav>
+-  </header>
++    </header>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/layout/Navbar.module.css b/src/components/layout/Navbar.module.css
+index 81106ed..dd8559f 100644
+--- a/src/components/layout/Navbar.module.css
++++ b/src/components/layout/Navbar.module.css
+@@ -1,13 +1,15 @@
++.left{
++  display: flex;
++  align-items: center;
++  gap: 1.5rem;
++}
++
+ .logoLink{
+   display: flex;
+-  width: 9.5625rem;
+-  height: 3.1875rem;
+-  padding: 0.3125rem 0.3125rem 0;
+-  justify-content: center;
+   align-items: center;
+   gap: 0.5375rem;
+-  text-decoration: none;   
+-  color: inherit;       
++  text-decoration: none;
++  color: inherit;
+   outline: none;
+ }
+ .logoLink img{
+@@ -22,7 +24,15 @@
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+-  white-space: nowrap;  
++  white-space: nowrap;
++}
++
++.navLink{
++  color: var(--gray-dark);
++  font-size: 1rem;
++  font-weight: 500;
++  text-decoration: none;
++  white-space: nowrap;
+ }
+ 
+ .btnLogin{
+@@ -30,5 +40,26 @@
+   width: 8rem;
+   height: 3rem;
+   padding: 0.75rem 1.5rem;
+-  gap: 0.625rem;
+-}
+\ No newline at end of file
++  border: none;
++  background: var(--blue-brand);
++  color: var(--white);
++  font-size: 1rem;
++  font-weight: 600;
++  cursor: pointer;
++  flex-shrink: 0;
++}
++
++@media (max-width: 743px){
++  .left{
++    gap: 0.75rem;
++  }
++  .navLink{
++    display: none; /* 모바일 폭에서는 메뉴를 숨겨 공간을 확보 */
++  }
++  .btnLogin{
++    width: auto;
++    padding: 0.5rem 1rem;
++    height: 2.25rem;
++    font-size: 0.875rem;
++  }
++}
+diff --git a/src/components/pages/MarketPage.jsx b/src/components/pages/MarketPage.jsx
+index ced9bdb..45688b2 100644
+--- a/src/components/pages/MarketPage.jsx
++++ b/src/components/pages/MarketPage.jsx
+@@ -1,5 +1,6 @@
+ //# 위 컴포넌트들을 조립하는 페이지 (url path: '/')
+ // pages/MarketPage.jsx
++import { useState } from 'react';
+ import Navbar from '../layout/Navbar';
+ import Footer from '../layout/Footer';
+ import BestProductList from '../product/BestProductList';
+@@ -7,13 +8,23 @@ import ProductListHeader from '../product/ProductListHeader';
+ import ProductList from '../product/ProductList';
+ 
+ export default function MarketPage() {
++  // 검색어/정렬 기준은 헤더(입력)와 목록(조회)이 함께 써야 하므로
++  // 두 컴포넌트의 공통 부모인 여기서 소유한다 ("상태 끌어올리기")
++  const [keyword, setKeyword] = useState('');
++  const [orderBy, setOrderBy] = useState('recent');
++
+   return (
+     <div>
+       <Navbar />
+       <BestProductList />
+-      <ProductListHeader /> 
+-      <ProductList />
++      <ProductListHeader
++        keyword={keyword}
++        onKeywordChange={setKeyword}
++        orderBy={orderBy}
++        onOrderByChange={setOrderBy}
++      />
++      <ProductList keyword={keyword} orderBy={orderBy} />
+       <Footer />
+     </div>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/product/BestProductList.jsx b/src/components/product/BestProductList.jsx
+index 72df25d..09a2934 100644
+--- a/src/components/product/BestProductList.jsx
++++ b/src/components/product/BestProductList.jsx
+@@ -1,23 +1,31 @@
+ //# 베스트 상품 섹션 (그리드 + 데이터 fetch)
+ import ProductCard from './ProductCard.jsx';
+ import styles from './BestProductList.module.css';
++import { useProducts } from '../hooks/useProducts';
++import LoadingSpinner from '../common/LoadingSpinner.jsx';
++import ErrorMessage from '../common/ErrorMessage.jsx';
++import EmptyState from '../common/EmptyState.jsx';
+ 
+-const mockProducts = [
+-  {id:1, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
+-  {id:2, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
+-  {id:3, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
+-  {id:4, imageUrl:"https://placehold.co/300", name:"아이패드 미니 팝니다", price:500000, favoriteCount:240},
+-];
++export default function BestProductList() {
++  const { products, isLoading, error } = useProducts({
++    pageSize: 4,
++    orderBy: 'favorite',
++  });
+ 
+-export default function BestProductList(){
+   return (
+-    <sectionv className={styles.section} >
++    <section className={styles.section}>
+       <h2 className={styles.title}>베스트 상품</h2>
+-      <div className={styles.grid}>
+-        {mockProducts.map((product)=>(
+-          <ProductCard key={product.id}{...product}/>
++      {isLoading && <LoadingSpinner />}
++      {!isLoading && error && <ErrorMessage message={error.message} />}
++      {!isLoading && !error && products.length === 0 && <EmptyState />}
++
++      {!isLoading && !error && products.length > 0 && (
++        <div className={styles.grid}>
++          {products.map((product) => (
++            <ProductCard key={product.id} {...product} />
+           ))}
+-      </div>
+-    </sectionv>
++        </div>
++      )}
++    </section>
+   );
+ }
+diff --git a/src/components/product/BestProductList.module.css b/src/components/product/BestProductList.module.css
+index 84a650f..b9a4add 100644
+--- a/src/components/product/BestProductList.module.css
++++ b/src/components/product/BestProductList.module.css
+@@ -5,15 +5,36 @@
+ .title{
+   color: var(--gray-darkest);
+   font-family: Pretendard;
+-  font-size: 1rem;
++  font-size: 1.5rem;
+   font-style: normal;
+   font-weight: 700;
+-  line-height: 1.625rem; 
++  line-height: 1.625rem;
++  margin-bottom: 1.5rem;
+ }
+ 
+-
++/* Desktop: 4열 */
+ .grid{
+   display: grid;
+-  grid-template-columns: repeat(4,1fr);
+-  gap:1.5rem
+-}
+\ No newline at end of file
++  grid-template-columns: repeat(4, 1fr);
++  gap: 1.5rem;
++}
++
++/* Tablet: 2열 */
++@media (max-width: 1199px){
++  .section{
++    padding: 2rem 2.5rem;
++  }
++  .grid{
++    grid-template-columns: repeat(2, 1fr);
++  }
++}
++
++/* Mobile: 1열 */
++@media (max-width: 743px){
++  .section{
++    padding: 1.5rem 1rem;
++  }
++  .grid{
++    grid-template-columns: repeat(1, 1fr);
++  }
++}
+diff --git a/src/components/product/Pagination.jsx b/src/components/product/Pagination.jsx
+index d784583..2fa0ff2 100644
+--- a/src/components/product/Pagination.jsx
++++ b/src/components/product/Pagination.jsx
+@@ -29,7 +29,7 @@ export default function Pagination({currentPage, totalPages, onPageChange}){
+   if (totalPages <= 1) return null;
+ 
+   return (
+-    <nav>
++    <nav className={styles.pagination}>
+       <button
+         type="button"
+         onClick={() => onPageChange(currentPage - 1)}
+@@ -38,35 +38,36 @@ export default function Pagination({currentPage, totalPages, onPageChange}){
+         className={styles.navButton}
+       >
+         ‹
+-        </button>
++      </button>
+ 
+-        {pageItems.map((item) => 
+-          item.type === 'ellipsis' ? (
+-            <span key={item.key} className ={styles.ellipsis}>
+-              ...
+-            </span>
+-          ) : (
+-            <button
+-              type="button"
+-              onClick={() => onPageChange(item.value)}
+-              aria-label={item.value === currentPage ? 'page':undefined}
+-              className={item.value === currentPage ? styles.pageButtonActive:styles.pageButton}
+-            >
+-              {item.value}
+-            </button>
+-          )
+-        )}
+-        <button
+-          type="button"
+-          onClick={() => onPageChange(currentPage + 1)}
+-          disabled={currentPage === totalPages}
+-          aria-label="다음 페이지"
+-          className={styles.navButton}
+-        >
+-          ›          
+-        </button>
++      {pageItems.map((item) =>
++        item.type === 'ellipsis' ? (
++          <span key={item.key} className={styles.ellipsis}>
++            ...
++          </span>
++        ) : (
++          <button
++            key={item.key}
++            type="button"
++            onClick={() => onPageChange(item.value)}
++            aria-current={item.value === currentPage ? 'page' : undefined}
++            className={item.value === currentPage ? styles.pageButtonActive : styles.pageButton}
++          >
++            {item.value}
++          </button>
++        )
++      )}
++      <button
++        type="button"
++        onClick={() => onPageChange(currentPage + 1)}
++        disabled={currentPage === totalPages}
++        aria-label="다음 페이지"
++        className={styles.navButton}
++      >
++        ›
++      </button>
+     </nav>
+-  );   
++  );
+ }
+ 
+     
+diff --git a/src/components/product/ProductCard.jsx b/src/components/product/ProductCard.jsx
+index 83f21ff..c53bafb 100644
+--- a/src/components/product/ProductCard.jsx
++++ b/src/components/product/ProductCard.jsx
+@@ -1,14 +1,15 @@
+ //# 상품 카드 (베스트/전체 공통 재사용)
+ import styles from './ProductCard.module.css';
+ 
+-export default function ProductCard({images,name,price,favoriteCount}){
+-  console.log(`url-${images} name-${name} price-${price} fav-${favoriteCount}`)
++export default function ProductCard({ images, name, price, favoriteCount }) {
++  const thumbnail = Array.isArray(images) ? images[0] : images;
++
+   return (
+     <div className={styles.card}>
+-      <img className={styles.image} src={Array.isArray(images) ? images[0] : images} alt={name}/>
++      <img className={styles.image} src={thumbnail} alt={name} loading="lazy" />
+       <div className={styles.info}>
+         <p className={styles.name}>{name}</p>
+-        <p className={styles.price}>{price.toLocaleString()}원</p>
++        <p className={styles.price}>{(price ?? 0).toLocaleString()}원</p>
+         <div className={styles.favorite}>
+           <span>♡</span>
+           <span>{favoriteCount ?? 0}</span>
+@@ -16,5 +17,4 @@ export default function ProductCard({images,name,price,favoriteCount}){
+       </div>
+     </div>
+   );
+-
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/product/ProductCard.module.css b/src/components/product/ProductCard.module.css
+index 1ca8860..e582813 100644
+--- a/src/components/product/ProductCard.module.css
++++ b/src/components/product/ProductCard.module.css
+@@ -3,10 +3,13 @@
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 1rem;
++  width: 100%;
+ }
+ .image{
+-  width: 17.625rem;
+-  height: 17.625rem;
++  width: 100%;
++  aspect-ratio: 1 / 1;
++  border-radius: 0.75rem;
++  object-fit: cover;
+ }
+ .info{
+   display: flex;
+@@ -14,12 +17,18 @@
+   align-items: flex-start;
+   gap: 0.375rem;
+   align-self: stretch;
++  width: 100%;
+ }
+ .name{
+-  display: flex;
+-  width: 17.625rem;
+-  align-items: center;
+-  gap: 8.875rem;
++  width: 100%;
++  color: var(--gray-dark);
++  font-family: Pretendard;
++  font-size: 1rem;
++  font-weight: 400;
++  line-height: 1.625rem;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
+ }
+ .price{
+   color: var(--gray-darkest);
+@@ -27,12 +36,12 @@
+   font-size: 1rem;
+   font-style: normal;
+   font-weight: 700;
+-  line-height: 1.625rem; 
+-
++  line-height: 1.625rem;
+ }
+ .favorite{
+   display: flex;
+-  width: 17.625rem;
+   align-items: center;
+-  gap: 8.875rem;
+-}
+\ No newline at end of file
++  gap: 0.25rem;
++  color: var(--gray-heavy);
++  font-size: 0.875rem;
++}
+diff --git a/src/components/product/ProductList.jsx b/src/components/product/ProductList.jsx
+index 10ccbfa..676b62b 100644
+--- a/src/components/product/ProductList.jsx
++++ b/src/components/product/ProductList.jsx
+@@ -3,6 +3,7 @@
+ import { useState, useEffect } from 'react';
+ import { usePagination } from '../hooks/usePaginaton';
+ import { useProducts } from '../hooks/useProducts';
++import { useWindowSize } from '../hooks/useWindowSize';
+ import ProductCard from './ProductCard.jsx';
+ import Pagination from './Pagination.jsx';
+ import LoadingSpinner from '../common/LoadingSpinner.jsx';
+@@ -10,9 +11,17 @@ import ErrorMessage from '../common/ErrorMessage.jsx';
+ import EmptyState from '../common/EmptyState.jsx';
+ import styles from './ProductList.module.css';
+ 
+-const ITEMS_PER_PAGE = 8;
++// 화면 크기별 한 페이지에 보여줄 상품 개수 (반응형 페이지네이션)
++const PAGE_SIZE_BY_DEVICE = {
++  desktop: 10,
++  tablet: 6,
++  mobile: 4,
++};
++
++export default function ProductList({ keyword = '', orderBy = 'recent' }) {
++  const { deviceType } = useWindowSize();
++  const itemsPerPage = PAGE_SIZE_BY_DEVICE[deviceType];
+ 
+-export default function ProductList() {
+   // API가 알려주기 전까지 전체 개수를 모르므로 0에서 시작,
+   // 응답이 오면 아래 useEffect에서 채워 넣는다.
+   const [totalCount, setTotalCount] = useState(0);
+@@ -20,14 +29,21 @@ export default function ProductList() {
+   // 1) 페이지 번호 상태는 여기(ProductList)가 소유한다
+   const { currentPage, totalPages, goToPage } = usePagination({
+     initialPage: 1,
+-    itemPerPage: ITEMS_PER_PAGE,
++    itemPerPage: itemsPerPage,
+     totalCount,
+   });
+ 
+-  // 2) currentPage가 바뀔 때마다 이 훅이 알아서 새로 fetch 한다
+-  const { products, totalCount: fetchedTotalCount, isLoading, error } = useProducts({
++  // 2) currentPage/검색어/정렬/페이지 크기가 바뀔 때마다 이 훅이 알아서 새로 fetch 한다
++  const {
++    products,
++    totalCount: fetchedTotalCount,
++    isLoading,
++    error,
++  } = useProducts({
+     page: currentPage,
+-    pageSize: ITEMS_PER_PAGE,
++    pageSize: itemsPerPage,
++    keyword,
++    orderBy,
+   });
+ 
+   // 3) API가 응답을 준 시점에 실제 totalCount를 위 상태로 올려서
+@@ -36,11 +52,15 @@ export default function ProductList() {
+     setTotalCount(fetchedTotalCount);
+   }, [fetchedTotalCount]);
+ 
++  // 4) 검색어, 정렬 기준, 화면 크기(pageSize)가 바뀌면 1페이지부터 다시 본다.
++  useEffect(() => {
++    goToPage(1);
++    // eslint-disable-next-line react-hooks/exhaustive-deps
++  }, [keyword, orderBy, itemsPerPage]);
++
+   return (
+     <div>
+       <section className={styles.section}>
+-        <h2 className={styles.title}>판매 중인 상품</h2>
+-
+         {isLoading && <LoadingSpinner />}
+         {!isLoading && error && <ErrorMessage message={error.message} />}
+         {!isLoading && !error && products.length === 0 && <EmptyState />}
+diff --git a/src/components/product/ProductList.module.css b/src/components/product/ProductList.module.css
+index 84a650f..e62bbab 100644
+--- a/src/components/product/ProductList.module.css
++++ b/src/components/product/ProductList.module.css
+@@ -1,19 +1,40 @@
+ .section{
+-  padding: 2rem 12.5rem;
++  padding: 2rem 12.5rem 0;
+ }
+ 
+ .title{
+   color: var(--gray-darkest);
+   font-family: Pretendard;
+-  font-size: 1rem;
++  font-size: 1.5rem;
+   font-style: normal;
+   font-weight: 700;
+-  line-height: 1.625rem; 
++  line-height: 1.625rem;
+ }
+ 
+-
++/* Desktop: 5열 */
+ .grid{
+   display: grid;
+-  grid-template-columns: repeat(4,1fr);
+-  gap:1.5rem
+-}
+\ No newline at end of file
++  grid-template-columns: repeat(5, 1fr);
++  gap: 1.5rem;
++}
++
++/* Tablet: 3열 */
++@media (max-width: 1199px){
++  .section{
++    padding: 2rem 2.5rem 0;
++  }
++  .grid{
++    grid-template-columns: repeat(3, 1fr);
++  }
++}
++
++/* Mobile: 2열 */
++@media (max-width: 743px){
++  .section{
++    padding: 1.5rem 1rem 0;
++  }
++  .grid{
++    grid-template-columns: repeat(2, 1fr);
++    gap: 1rem;
++  }
++}
+diff --git a/src/components/product/ProductListHeader.jsx b/src/components/product/ProductListHeader.jsx
+index 40e2421..a686963 100644
+--- a/src/components/product/ProductListHeader.jsx
++++ b/src/components/product/ProductListHeader.jsx
+@@ -1,8 +1,28 @@
+ //# 검색창 + 정렬 드롭다운 + 등록 버튼 묶음
+-export default function ProductListHeader(){
+-  return (
+-    <section>
++import SearchBar from './SearchBar.jsx';
++import SortDropdown from './SortDropdown.jsx';
++import RegisterButton from './RegisterButton.jsx';
++import styles from './ProductListHeader.module.css';
+ 
++export default function ProductListHeader({ keyword, onKeywordChange, orderBy, onOrderByChange }) {
++  return (
++    <section className={styles.wrapper}>
++      <div className={styles.top}>
++        <h2 className={styles.title}>판매 중인 상품</h2>
++        <div className={styles.controls}>
++          <SearchBar
++            keyword={keyword}
++            onSearch={onKeywordChange}
++            className={styles.searchInput}
++          />
++          <RegisterButton className={styles.registerButton} />
++          <SortDropdown
++            orderBy={orderBy}
++            onChange={onOrderByChange}
++            className={styles.sortSelect}
++          />
++        </div>
++      </div>
+     </section>
+   );
+ }
+diff --git a/src/components/product/RegisterButton.jsx b/src/components/product/RegisterButton.jsx
+index e69de29..6eb2794 100644
+--- a/src/components/product/RegisterButton.jsx
++++ b/src/components/product/RegisterButton.jsx
+@@ -0,0 +1,16 @@
++//# 상품 등록 페이지로 이동하는 버튼
++import { useNavigate } from 'react-router-dom';
++
++export default function RegisterButton({ href = '/items/add', className }) {
++  const navigate = useNavigate();
++
++  return (
++    <button
++      type="button"
++      className={className}
++      onClick={() => navigate(href)}
++    >
++      상품 등록하기
++    </button>
++  );
++}
+diff --git a/src/components/product/SearchBar.jsx b/src/components/product/SearchBar.jsx
+index e69de29..e6b89a7 100644
+--- a/src/components/product/SearchBar.jsx
++++ b/src/components/product/SearchBar.jsx
+@@ -0,0 +1,35 @@
++//# 상품 검색 입력창 (부모가 keyword 상태를 소유, 여긴 controlled input)
++import { useState, useEffect } from 'react';
++
++export default function SearchBar({ keyword, onSearch, placeholder = '검색할 상품을 입력해주세요', className }) {
++  // 사용자가 타이핑하는 동안 즉시 반영되는 내부(로컬) 상태
++  const [inputValue, setInputValue] = useState(keyword ?? '');
++
++  // 부모의 keyword가 바뀌면(ex. 초기화) 입력창도 동기화
++  useEffect(() => {
++    setInputValue(keyword ?? '');
++  }, [keyword]);
++
++  // 타이핑을 멈추고 300ms 뒤에만 실제 검색(onSearch)을 실행 -> 매 키 입력마다 API를 부르지 않도록 방지
++  useEffect(() => {
++    const timerId = setTimeout(() => {
++      if (inputValue !== keyword) {
++        onSearch(inputValue);
++      }
++    }, 300);
++
++    return () => clearTimeout(timerId);
++    // eslint-disable-next-line react-hooks/exhaustive-deps
++  }, [inputValue]);
++
++  return (
++    <input
++      type="text"
++      className={className}
++      value={inputValue}
++      onChange={(e) => setInputValue(e.target.value)}
++      placeholder={placeholder}
++      aria-label="상품 검색"
++    />
++  );
++}
+diff --git a/src/components/product/SortDropdown.jsx b/src/components/product/SortDropdown.jsx
+index e69de29..9247758 100644
+--- a/src/components/product/SortDropdown.jsx
++++ b/src/components/product/SortDropdown.jsx
+@@ -0,0 +1,22 @@
++//# 정렬 기준(최신순/좋아요순) 드롭다운 - 부모가 orderBy 상태를 소유
++export default function SortDropdown({ orderBy, onChange, className }) {
++  const options = [
++    { value: 'recent', label: '최신순' },
++    { value: 'favorite', label: '좋아요순' },
++  ];
++
++  return (
++    <select
++      className={className}
++      value={orderBy}
++      onChange={(e) => onChange(e.target.value)}
++      aria-label="상품 정렬 기준"
++    >
++      {options.map((option) => (
++        <option key={option.value} value={option.value}>
++          {option.label}
++        </option>
++      ))}
++    </select>
++  );
++}
