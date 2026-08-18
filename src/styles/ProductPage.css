@@ -1,0 +1,91 @@
+.product-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  border: none;
+}
+
+.best-section,
+.all-section {
+  margin-bottom: 48px;
+}
+
+.main-font {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+
+.best-product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .best-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .best-product-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.all-product-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .all-product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .all-product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.all-section {
+  margin-top: 60px;
+}
+
+.section-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.product-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pd-btn {
+  width: 133px;
+  height: 42px;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 8px;
+  background-color: #3692ff;
+  color: #f3f4f6;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

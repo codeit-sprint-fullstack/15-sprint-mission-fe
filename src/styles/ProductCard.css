@@ -1,0 +1,40 @@
+.product-image {
+  width: 100%;
+  /* height: auto; */
+  aspect-ratio: 1/ 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  gap: 24px;
+  cursor: pointer;
+}
+
+.product-card {
+  margin-bottom: 40px;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 6px;
+  color: #1f2937;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #1f2937;
+}
+
+.product-heart {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-top: 6px;
+  color: #4b5563;
+}

@@ -1,0 +1,32 @@
+.Pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 43px;
+  cursor: pointer;
+}
+
+.page-arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.page-number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #6b7280;
+}
+
+.page-number.now {
+  background-color: #3692ff;
+  color: #f9fafb;
+}
