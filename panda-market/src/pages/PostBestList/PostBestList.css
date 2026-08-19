@@ -1,0 +1,20 @@
+/* .postListcontainer{
+  width: 1200px;
+} */
+.bestListcontainer ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  margin-bottom: 40px;
+}
+.bestListheader {
+  color: var(--Secondary-900, #111827);
+
+  /* pretendard/xl-20px-bold */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+  margin-bottom: 16px;
+}
