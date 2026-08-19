@@ -1,0 +1,17 @@
+.best-product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1199px) {
+  .best-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .best-product-list {
+    grid-template-columns: 1fr;
+  }
+}
