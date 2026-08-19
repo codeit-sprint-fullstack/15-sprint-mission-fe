@@ -1,0 +1,32 @@
+.best-section {
+  max-width: 1200px;
+  margin: 17px auto 0;
+  padding: 0 16px;
+}
+
+.best-section__title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.best-section__message {
+  color: var(--color-gray-600);
+}
+
+.best-section__grid {
+  display: grid;
+  gap: 24px;
+}
+
+.best-section__grid--desktop {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.best-section__grid--tablet {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.best-section__grid--mobile {
+  grid-template-columns: repeat(1, 1fr);
+}
