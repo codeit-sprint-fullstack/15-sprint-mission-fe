@@ -5,7 +5,7 @@ function ProductCard({ product }) {
     <article className="product-card">
       <img 
       className="product-image" 
-      src={product.images[0]} 
+      src={product.images?.[0]} 
       alt={product.name} />
 
       <p className="product-name">{product.name}</p>
