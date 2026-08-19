@@ -15,8 +15,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index={true} element={<Market />} />
-          <Route path="home" element={<Home />} />
+          <Route index={true} element={<Home />} />
+          <Route path="items" element={<Market />} />
           <Route path="login" element={<Login />} />
           <Route path="product-register" element={<ProductRegister />} />
           <Route path="faq" element={<Faq />} />

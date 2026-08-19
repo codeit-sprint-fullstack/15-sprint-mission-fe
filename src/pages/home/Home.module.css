@@ -1,0 +1,113 @@
+/* hero */
+.hero_container {
+  background-color: #cfe5ff;
+}
+
+.hero_wrapper {
+  height: 540px;
+  margin: 0 auto;
+  max-width: 1110px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.hero_message {
+  margin-bottom: 100px;
+}
+
+.hero_message p {
+  margin-bottom: 32px;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-secondary-700);
+}
+.hero_message button {
+  width: 357px;
+  height: 59px;
+  background-color: var(--color-primary-100);
+  border-radius: 59px;
+  font-size: var(--text-xl);
+  color: var(--color-secondary-50);
+  cursor: pointer;
+}
+
+.hero_img {
+  width: 746px;
+}
+
+/* promotion */
+.promotion_container {
+  padding: 138px 0;
+}
+.promotion_wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 988px;
+  background-color: #fcfcfc;
+}
+
+.right_wrapper {
+  justify-content: space-between;
+  text-align: right;
+}
+
+.right_img {
+  order: 1;
+}
+
+.promotion_message {
+  margin-left: 64px;
+}
+
+.promotion_label {
+  font-size: var(--text-2lg);
+  font-weight: 700;
+  color: var(--color-primary-100);
+}
+.promotion_title {
+  margin-top: 12px;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-secondary-700);
+  line-height: 1.4;
+}
+.promotion_description {
+  margin-top: 24px;
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-secondary-700);
+  line-height: 1.333333;
+}
+
+/* banner */
+.banner_container {
+  background-color: #cfe5ff;
+}
+
+.banner_wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 540px;
+  max-width: 1110px;
+}
+
+.banner_wrapper p {
+  margin-bottom: 172px;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-secondary-700);
+  line-height: 1.4;
+}
+
+.banner_wrapper img {
+  max-width: 746px;
+}
+
+/* 태블릿 */
+
+/* 모바일 */
