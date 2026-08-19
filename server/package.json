@@ -7,7 +7,11 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "cross-env NODE_ENV=production node dist/src/server.js",
+    "dev": "cross-env NODE_ENV=development node --watch src/server.js",
+    "lint": "eslint \"src/**/*.js\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "engines": {
     "node": ">=26 <27",
@@ -15,7 +19,8 @@
   },
   "dependencies": {
     "cross-env": "^10.1.0",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nanoid": "^6.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
