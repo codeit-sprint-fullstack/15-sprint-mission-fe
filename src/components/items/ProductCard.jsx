@@ -1,4 +1,4 @@
-import defaultProductImage from "../assets/defaultProductImage.svg";
+import defaultProductImage from "@/assets/items/defaultProductImage.svg";
 
 const fallbackSrc =
   typeof defaultProductImage === "string"

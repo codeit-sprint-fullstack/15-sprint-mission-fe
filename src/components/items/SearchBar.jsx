@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ic_search from "../assets/ic_search.svg";
+import ic_search from "@/assets/items/ic_search.svg";
 
 function SearchBar({ onSearch, placeholder = "검색할 상품을 입력해주세요" }) {
   const [keyword, setKeyword] = useState("");
@@ -12,7 +12,6 @@ function SearchBar({ onSearch, placeholder = "검색할 상품을 입력해주�
   return (
     <form onSubmit={handleSubmit} className="relative w-[320px] h-[42px]">
       <img
-        src={ic_search}
         src={ic_search}
         alt="검색 아이콘"
         className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6"

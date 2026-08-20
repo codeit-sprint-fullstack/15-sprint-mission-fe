@@ -1,5 +1,5 @@
 import { useState } from "react";
-import downArrow from "../assets/downArrow.svg";
+import downArrow from "@/assets/items/downArrow.svg";
 
 const ORDER_OPTIONS = [
   { value: "recent", label: "최신순" },

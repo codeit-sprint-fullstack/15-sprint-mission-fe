@@ -1,5 +1,5 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import spinnerData from "../assets/Spinner.json"; 
+import spinnerData from "@/assets/common/Spinner.json"; 
 
 function LoadingSpinner() {
   return (

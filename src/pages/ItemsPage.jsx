@@ -1,16 +1,17 @@
-import NavBar from "./NavBar";
-import ProductCardList from "./ProductCardList";
-import PaginationBar from "./PaginationBar";
-import Footer from "./Footer";
-import SearchBar from "./SearchBar";
-import RegisterButton from "./RegisterButton";
-import OrderDropdown from "./OrderDropdown";
-import { useBestProducts, useProducts } from "../hooks/useProducts";
-import { useProductParams } from "../hooks/useProductParams";
-import { usePageSize } from "../hooks/usePageSize";
-import LoadingSpinner from "./LoadingSpinner";
+import NavBar from "@/components/common/NavBar";
+import ProductCardList from "@/components/items/ProductCardList";
+import PaginationBar from "@/components/items/PaginationBar";
+import Footer from "@/components/common/Footer";
+import SearchBar from "@/components/items/SearchBar";
+import RegisterButton from "@/components/items/RegisterButton";
+import OrderDropdown from "@/components/items/OrderDropdown";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
 
-function App() {
+import { useBestProducts, useProducts } from "@/hooks/useProducts";
+import { useProductParams } from "@/hooks/useProductParams";
+import { usePageSize } from "@/hooks/usePageSize";
+
+export default function ItemsPage() {
   const { page, orderBy, keyword, handleSortChange, handleSearch } =
     useProductParams();
   const { bestProducts, isLoading: isBestLoading } = useBestProducts(4);
@@ -74,5 +75,3 @@ function App() {
     </>
   );
 }
-
-export default App;

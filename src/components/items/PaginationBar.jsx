@@ -1,5 +1,5 @@
-import leftButton from "../assets/leftButton.svg";
-import rightButton from "../assets/rightButton.svg";
+import leftButton from "@/assets/items/leftButton.svg";
+import rightButton from "@/assets/items/rightButton.svg";
 import { Link, useSearchParams } from "react-router-dom";
 
 function PaginationBar({ currentPage, totalPages }) {

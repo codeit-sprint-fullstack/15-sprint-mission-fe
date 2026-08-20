@@ -1,7 +1,7 @@
-import ic_facebook from "../assets/ic_facebook.svg";
-import ic_twitter from "../assets/ic_twitter.svg";
-import ic_youtube from "../assets/ic_youtube.svg";
-import ic_instagram from "../assets/ic_instagram.svg";
+import ic_facebook from "@/assets/common/ic_facebook.svg";
+import ic_twitter from "@/assets/common/ic_twitter.svg";
+import ic_youtube from "@/assets/common/ic_youtube.svg";
+import ic_instagram from "@/assets/common/ic_instagram.svg";
 import { Link } from "react-router-dom";
 
 function Footer() {
