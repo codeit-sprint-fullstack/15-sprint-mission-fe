@@ -1,12 +1,13 @@
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
+import HeroSection from "@/components/landing/HeroSection";
 
 function LandingPage() {
   return (
     <>
       <Navbar />
 
-      <seciton></seciton>
+      <HeroSection/>
 
       <seciton></seciton>
 
