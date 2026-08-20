@@ -7,8 +7,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "prod": "cross-env node --env-file=./src/env/.env.production dist/src/server.js",
-    "dev": "cross-env  node --env-file=./src/env/.env.development --watch src/server.js",
+    "prod": "cross-env node --env-file=./env/.env.production dist/src/server.js",
+    "dev": "cross-env  node --env-file=./env/.env.development --watch src/server.js",
     "lint": "eslint \"src/**/*.js\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
