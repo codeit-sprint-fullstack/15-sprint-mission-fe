@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ItemHead.module.css';
 
-export function ItemHead() {
+export function ItemHead({ search, sort }) {
   const [inputData, setInputData] = useState('');
   const [selected, setSelected] = useState('recent');
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('입력값: ', inputData);
+    search(inputData);
     setInputData('');
   };
 
@@ -15,6 +16,7 @@ export function ItemHead() {
   const handleChange = (e) => {
     console.log('[SortProducts]정렬기준은: ', e.target.value);
     setSelected(e.target.value);
+    sort(e.target.value);
   };
   return (
     <div className={styles.nav}>
