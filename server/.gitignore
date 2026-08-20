@@ -3,6 +3,4 @@ dist
 build
 .DS_Store
 
-src/env/*
-
 env/*

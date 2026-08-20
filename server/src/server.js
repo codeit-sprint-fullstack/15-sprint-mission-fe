@@ -12,5 +12,5 @@ app.use(logger);
 app.use('/', router);
 
 app.listen(config.PORT, () => {
-  console.log(`Sprint mission5 Server running on http://localhost:${config.PORT}`);
+  console.log(`Sprint mission 5 Server running on http://localhost:${config.PORT}`);
 });
