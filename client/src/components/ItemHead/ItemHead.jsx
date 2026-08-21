@@ -5,6 +5,7 @@ import styles from './ItemHead.module.css';
 export function ItemHead({ search, sort }) {
   const [inputData, setInputData] = useState('');
   const [selected, setSelected] = useState('recent');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('입력값: ', inputData);

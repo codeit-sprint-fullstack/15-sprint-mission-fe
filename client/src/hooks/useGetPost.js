@@ -4,7 +4,7 @@ import { getPosts } from '../api/posts';
 const INITIAL_TOTAL_PAGES = 0;
 const INITIAL_PAGE = 1;
 
-export function usePost(limit, sort, keyword) {
+export function useGetPost(limit, sort, keyword) {
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
   const [posts, setPosts] = useState([]);;
   const [totalPages, setTotalPages] = useState(INITIAL_TOTAL_PAGES);
@@ -20,7 +20,7 @@ export function usePost(limit, sort, keyword) {
         setPosts(data);
         setTotalPages(totalPages);
       } catch (error) {
-        console.log('[usePosts]Error: ', error);
+        console.log('[useGetPosts]Error: ', error);
       }
     };
     getPostsData();
