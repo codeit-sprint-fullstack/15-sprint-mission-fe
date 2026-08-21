@@ -2,16 +2,22 @@
   display: flex;
   justify-content: center;
   width: fit-content;
+  margin: auto;
 }
 
 .listGrid {
   display: grid;
   justify-content: space-between;
   gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-  & img {
+  & .imageSize {
     border: none;
     outline: none;
+    width: 221px;
+    height: 221px;
+    margin-bottom: 16px;
+    border-radius: 8px;
   }
 
   & .name {
@@ -33,21 +39,28 @@
     line-height: 26px;
     margin-bottom: 6px;
   }
+}
 
-  & .favorite {
-    color: var(--Secondary-600, #4b5563);
-    font-family: Pretendard;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
+@media (max-width: 768px) {
+  /* 테블릿 */
+  .listGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-    & img {
-      width: 16px;
-      height: 16px;
-      margin: 0 4px 0 0;
-    }
+  .imageSize {
+    width: 221px;
+    height: 221px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 작은 폰 */
+  .listGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imageSize {
+    width: 168px;
+    height: 168px;
   }
 }

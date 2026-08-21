@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   margin-bottom: 24px;
   gap: 12px;
+  width: 1200px;
+  margin: 26px auto 24px auto;
 }
 
 .title {
@@ -99,6 +101,10 @@
 
 @media (max-width: 768px) {
   /* 테블릿 */
+  .nav {
+    width: 692px;
+    margin: 26px auto 32px auto;
+  }
   .inputSide {
     width: 242px;
     padding: 9px 20px 9px 10px;
@@ -111,6 +117,8 @@
 @media (max-width: 480px) {
   /* 작은 폰 */
   .nav {
+    width: 466px;
+    margin: 17px auto 16px auto;
     column-gap: 0;
     row-gap: 8px;
   }

@@ -1,15 +1,16 @@
 import styles from './ShowProductsList.module.css';
 
+
 export function ShowProductsList({ posts }) {
   return (
     <div className={styles.listBody}>
-      <ul className={`${styles.listGrid}`}>
+      <ul className={styles.listGrid}>
         {posts.map(({ _id, name, price, img }) => (
           <li key={_id}>
             <div>
               <img
                 src={img}
-                className={`${styles.imageSize}`}
+                className={styles.imageSize}
                 loading="lazy"
                 onError={(e) => {
                   e.target.onerror = null;

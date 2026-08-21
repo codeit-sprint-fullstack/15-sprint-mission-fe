@@ -1,0 +1,334 @@
+.landingBody {
+}
+
+.navBody {
+  height: 4.25rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12.5rem;
+  align-items: center;
+
+  & .pandaLogo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #3692ff;
+    font-family: 'ROKAF Sans';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 1.5rem;
+
+    & img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 0.53rem;
+    }
+  }
+
+  & .loginButton {
+    display: flex;
+    height: 42px;
+    padding: 0.75rem 1.43rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.5rem;
+    background: var(--Primary-100, #3692ff);
+    border: none;
+    color: var(--Cool-Gray-100, #f3f4f6);
+    font-family: Pretendard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.625rem;
+    text-decoration: none;
+  }
+}
+
+.landingTopSectionBody {
+  display: flex;
+  justify-content: center;
+  background: #cfe5ff;
+  height: 540px;
+  align-items: flex-end;
+
+  & .landingTopSectionContent1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    & .ment {
+      width: 350px;
+      text-align: left;
+      color: var(--Secondary-700, #374151);
+      font-family: Pretendard;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 56px */
+    }
+    & .itemButton {
+      display: flex;
+      height: 56px;
+      justify-content: center;
+      align-items: center;
+      width: 357px;
+      height: 56px;
+      gap: 10px;
+      border-radius: 40px;
+      background: var(--brand-blue, #3692ff);
+      border: none;
+      color: var(--Secondary-50, #f9fafb);
+      text-align: center;
+      font-family: Pretendard;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 32px; /* 160% */
+      margin-top: 32px;
+      margin-bottom: 92px;
+      cursor: pointer;
+    }
+  }
+
+  & .landingTopSectionContent2 {
+    width: 746px;
+  }
+}
+
+.landingMiddleSectionBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 720px;
+  margin-bottom: 56px;
+  & .landingMiddleSectionContent1 {
+    width: 588px;
+    height: 444px;
+  }
+
+  & .landingMiddleSectionContent2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 64px;
+    & .ment1 {
+      color: var(--Primary-100, #3692ff);
+      font-family: Pretendard;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 26px; /* 144.444% */
+    }
+    & .ment2 {
+      color: var(--Secondary-700, #374151);
+      font-family: Pretendard;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: 0.8px;
+      width: 240px;
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+    & .ment3 {
+      color: var(--Secondary-700, #374151);
+      font-family: Pretendard;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 32px;
+      width: 290px;
+    }
+  }
+}
+
+.landingMiddleSectionContent2.patch1content1 {
+  align-items: flex-end;
+  padding-left: 0;
+  margin-right: 64px;
+
+  & .ment1.patch1ment1 {
+  }
+
+  & .ment2.patch1ment2 {
+    text-align: end;
+    width: 400px;
+  }
+
+  & .ment3.patch1ment3 {
+    text-align: end;
+    width: 310px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 테블릿 */
+  .navBody {
+    padding: 0 1.5rem;
+
+    & .pandaLogo {
+      margin-right: 1.25rem;
+    }
+  }
+
+  .landingTopSectionBody {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 771px;
+    & .landingTopSectionContent1 {
+      align-items: center;
+      margin-bottom: 211px;
+      & .ment {
+        text-align: center;
+        width: auto;
+      }
+      & .itemButton {
+        margin-top: 24px;
+        margin-bottom: 0;
+      }
+    }
+
+    & .landingTopSectionContent2 {
+      width: 100%;
+    }
+  }
+
+  .landingMiddleSectionBody {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    margin-top: 24px;
+    & .landingMiddleSectionContent1 {
+      width: 696px;
+      margin-bottom: 24px;
+    }
+
+    & .landingMiddleSectionContent2 {
+      width: 696px;
+      align-items: flex-start;
+      padding: 0;
+
+      & .ment1 {
+      }
+      & .ment2 {
+        margin-top: 16px;
+        font-size: 32px;
+        width: 100%;
+      }
+      & .ment3 {
+        font-size: 18px;
+        width: 230px;
+      }
+    }
+  }
+
+  .landingMiddleSectionBody {
+    & .landingMiddleSectionContent2.patch1content1 {
+      order: 2;
+      margin: 0;
+      align-items: flex-end;
+      & .ment1.patch1ment1 {
+      }
+
+      & .ment2.patch1ment2 {
+        width: 100%;
+      }
+
+      & .ment3.patch1ment3 {
+        width: 235px;
+      }
+    }
+
+    & .landingMiddleSectionContent1.patch1content2 {
+      order: 1;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  /* 작은 폰 */
+  .navBody {
+    height: 70px;
+    padding: 0 16px;
+    & .pandaLogo {
+      font-size: 20.202px;
+      margin: 0;
+
+      & img {
+        display: none;
+      }
+    }
+    & .loginButton {
+      padding: 12px 23px;
+    }
+  }
+
+  .landingTopSectionBody {
+    margin-top: 24px;
+    & .landingTopSectionContent1 {
+      align-items: center;
+      margin-bottom: 132px;
+      & .ment {
+        text-align: center;
+        width: 260px;
+        font-size: 32px;
+      }
+      & .itemButton {
+        margin-top: 18px;
+        width: 240px;
+        height: 48px;
+        font-size: 18px;
+      }
+    }
+
+    & .landingTopSectionContent2 {
+      width: 100%;
+    }
+  }
+
+  .landingMiddleSectionBody {
+    & .landingMiddleSectionContent1 {
+      height: 259px;
+      width: 344px;
+    }
+
+    & .landingMiddleSectionContent2 {
+      width: 344px;
+
+      & .ment1 {
+        font-size: 16px;
+      }
+      & .ment2 {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        font-size: 24px;
+        width: 100%;
+      }
+      & .ment3 {
+        font-size: 16px;
+        width: 200px;
+      }
+    }
+  }
+
+  .landingMiddleSectionBody {
+    & .landingMiddleSectionContent2.patch1content1 {
+      & .ment1.patch1ment1 {
+      }
+
+      & .ment2.patch1ment2 {
+      }
+
+      & .ment3.patch1ment3 {
+        width: 220px;
+      }
+    }
+
+    & .landingMiddleSectionContent1.patch1content2 {
+    }
+  }
+}
