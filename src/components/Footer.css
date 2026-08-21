@@ -42,3 +42,36 @@
   width: 20px;
   height: 20px;
 }
+
+@media (max-width: 1279px) {
+  .footer {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 743px) {
+  .footer {
+    padding: 32px 16px;
+  }
+
+  .footerContent {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 24px;
+  }
+
+  .footerLinks {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footerSocials {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footerCopyright {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

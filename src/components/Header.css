@@ -51,3 +51,45 @@
   line-height: 26px;
   text-decoration: none;
 }
+
+@media (max-width: 1279px) {
+  .header {
+    padding: 0 24px;
+  }
+
+  .headerLogo {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 743px) {
+  .header {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .headerLogo {
+    width: 81px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .headerLogo img {
+    object-fit: contain;
+  }
+
+  .headerNav {
+    gap: 8px;
+  }
+
+  .headerNav a {
+    padding: 22px 0;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .headerLogin {
+    width: 88px;
+    flex-shrink: 0;
+  }
+}
