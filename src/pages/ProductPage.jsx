@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
@@ -7,16 +8,13 @@ import "../styles/ProductPage.css";
 import useProducts from "../hooks/useProducts";
 
 function ProductPage() {
+  const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const [keyword, setKeyword] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
   const [orderBy, setOrderBy] = useState("recent");
 
-  const { products, bestProducts, totalCount } = useProducts(
-    page,
-    searchKeyword,
-    orderBy,
-  );
+  const { products, totalCount } = useProducts(page, searchKeyword, orderBy);
 
   const handleSearch = () => {
     setPage(1);
@@ -24,15 +22,6 @@ function ProductPage() {
   };
   return (
     <main className="product-page">
-      <section className="best-section">
-        <h2 className="main-font">베스트 상품</h2>
-        <div className="best-product-list">
-          {bestProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
       {/* 판매중인 상품 영역 */}
       <section className="all-section">
         {/* 판매중인 상품 제목과 버튼묶음 */}
@@ -45,7 +34,12 @@ function ProductPage() {
               setKeyword={setKeyword}
               onSearch={handleSearch}
             />
-            <button className="pd-btn">상품 등록하기</button>
+            <button
+              className="pd-btn"
+              onClick={() => navigate("/registration")}
+            >
+              상품 등록하기
+            </button>
             <SortDropdown orderBy={orderBy} setOrderBy={setOrderBy} />
           </div>
         </div>

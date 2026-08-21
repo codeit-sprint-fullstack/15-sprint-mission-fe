@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -18,10 +22,34 @@
   padding: 0 200px;
 }
 
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 16px;
+  }
+}
+
 .logomenu {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .logomenu {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logomenu {
+    gap: 0;
+  }
 }
 
 .menu {
@@ -33,6 +61,10 @@
   padding: 15px 21px;
   gap: 30px;
   color: #4b5563;
+}
+
+.menu .active {
+  color: #3692ff;
 }
 
 .logo {
