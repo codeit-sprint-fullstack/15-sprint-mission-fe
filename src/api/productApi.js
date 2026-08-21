@@ -1,6 +1,6 @@
 export default async function getProducts(
   page = 1,
-  pageSize = 0,
+  pageSize = 1,
   orderBy = 'recent',
   keyword = '',
 ) {

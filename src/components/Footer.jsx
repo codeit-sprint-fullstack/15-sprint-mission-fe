@@ -1,15 +1,15 @@
 export default function Footer() {
   return (
-    <div class="footer-outbox">
-      <footer class="footer">
-        <div class="footer-left">
+    <div className="footerOutbox">
+      <footer className="footer">
+        <div className="footerLeft">
           <span>&copy;codeit - 2024</span>
         </div>
-        <div class="footer-center">
+        <div className="footerCenter">
           <a href="./privacy.html">Privacy Policy</a>
           <a href="./faq.html">FAQ</a>
         </div>
-        <div class="footer-right">
+        <div className="footerRight">
           <a href="">
             <img src="" alt="페이스북 아이콘" />
           </a>
