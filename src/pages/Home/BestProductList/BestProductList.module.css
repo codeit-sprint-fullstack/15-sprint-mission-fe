@@ -1,0 +1,20 @@
+.bestProductsDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.bestProductsTitle {
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-gray900);
+  padding-bottom: 20px;
+}
+
+.bestProductsUl {
+  list-style: none;
+  display: grid;
+  width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
