@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCreatePost } from '../hooks/useCreatePost';
+import styles from '../styles/RegistrationPage.module.css';
 
 export function RegistrationPage() {
   const [tagsData, setTagsData] = useState([]); // 태그 배열
   const [tagInput, setTagInput] = useState('');
   const navigate = useNavigate();
-  const {submitPost} = useCreatePost();
+  const { submitPost } = useCreatePost();
   const handleFormKeyDown = (e) => {
     if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
       e.preventDefault();
@@ -43,36 +44,53 @@ export function RegistrationPage() {
       newId,
     );
     if (newId) navigate(`/product/${newId}`);
-    
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit} onKeyDown={handleFormKeyDown}>
-        <h1>상품등록 페이지입니다.</h1>
-        <button>등록</button>
-        <label htmlFor="productName">상품명</label>
-        <input
+    <div className={styles.body}>
+      <form
+        onSubmit={handleSubmit}
+        onKeyDown={handleFormKeyDown}
+        className={styles.formBody}
+      >
+        <div className={styles.nav}>
+          <p className={styles.title}>상품 등록하기</p>
+          <button className={styles.registButton}>등록</button>
+        </div>
+
+        <label htmlFor="productName" className={styles.labels}>
+          상품명
+        </label>
+        <textarea
           name="상품명"
           type="text"
           id="productName"
           placeholder="상품명을 입력해주세요"
+          className={styles.inputs}
         />
-        <label htmlFor="productDescription">상품 소개</label>
-        <input
+        <label htmlFor="productDescription" className={styles.labels}>
+          상품 소개
+        </label>
+        <textarea
           name="상품소개"
           type="text"
           id="productDescription"
           placeholder="상품 소개를 입력해주세요"
+          className={`${styles.inputs} ${styles.bigProductNameInput}`}
         />
-        <label htmlFor="productPrice">판매가격</label>
-        <input
+        <label htmlFor="productPrice" className={styles.labels}>
+          판매가격
+        </label>
+        <textarea
           name="판매가격"
           type="number"
           id="productPrice"
           placeholder="판매 가격을 입력해주세요"
+          className={styles.inputs}
         />
-        <label htmlFor="productTags">태그</label>
-        <input
+        <label htmlFor="productTags" className={styles.labels}>
+          태그
+        </label>
+        <textarea
           name="태그"
           type="text"
           id="productTags"
@@ -80,16 +98,21 @@ export function RegistrationPage() {
           onChange={(e) => setTagInput(e.target.value)}
           onKeyDown={handleTagKeyDown}
           placeholder="태그를 입력해주세요"
+          className={styles.inputs}
         />
       </form>
-      <div>
+      <div className={styles.tagsBody}>
         {tagsData.map((tag, index) => (
-          <span key={index}>
+          <div key={index} className={styles.tags}>
             #{tag}{' '}
-            <button type="button" onClick={() => handleTagRemove(index)}>
+            <button
+              type="button"
+              onClick={() => handleTagRemove(index)}
+              className={styles.tagDeleteButton}
+            >
               ×
             </button>
-          </span>
+          </div>
         ))}
       </div>
     </div>

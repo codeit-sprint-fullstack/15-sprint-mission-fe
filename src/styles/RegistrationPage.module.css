@@ -1,0 +1,113 @@
+.body {
+  width: 100%;
+  padding: 26px 360px 162px 360px;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  & .title {
+    color: var(--Secondary-800, #1f2937);
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  & .registButton {
+    display: flex;
+    height: 42px;
+    padding: 12px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--Primary-100, #3692FF);
+    color: var(--Cool-Gray-100, #F3F4F6);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  & .labels {
+    color: var(--Secondary-800, #1f2937);
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+  }
+
+  & .inputs {
+    margin-bottom: 32px;
+    display: flex;
+    padding: 16px 24px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 12px;
+    background: var(--Cool-Gray-100, #f3f4f6);
+    border: none;
+    height: 56px;
+  }
+
+  & .bigProductNameInput {
+    height: 282px;
+  }
+}
+
+.tagsBody {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  height: 36px;
+  width: fit-content;
+  padding: 0 10px 0 15px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 26px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+
+  & .tagDeleteButton {
+    width: 22px;
+    height: 22px;
+    border-radius: 20px;
+    border: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 테블릿 */
+  .body {
+  padding: 18px 24px 194px 24px;
+}
+.formBody {
+    & .inputs {
+        margin-bottom: 24px;
+    }
+}
+}
+
+@media (max-width: 480px) {
+  /* 작은 폰 */
+}
