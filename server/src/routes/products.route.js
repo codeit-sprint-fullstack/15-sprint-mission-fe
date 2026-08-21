@@ -59,11 +59,8 @@ productsRouter.get('/', async (req, res, next) => {
 
 productsRouter.get('/:productId', async (req, res, next) => {
   try {
-    console.log('찾는중');
     const product = await Product.findById(req.params.productId);
-    console.log('찾았나?');
     if (!product) {
-      console.log('없다는데...');
       throw new NotFoundException('제품을 찾을수 없음');
     }
 
@@ -99,11 +96,8 @@ productsRouter.patch('/:productId', validateProduct, async (req, res, next) => {
   try {
     const productId = req.params.productId;
     const { name, description, price, tags, img } = req.body ?? {};
-    console.log('찾는중');
     const target = Product.findOne({ _id: productId });
-    console.log('찾았나?');
     if (!target) {
-      console.log('제품 못찾음');
       throw new NotFoundException('제품을 찾을 수 없음');
     }
 
@@ -151,7 +145,7 @@ productsRouter.delete('/:productId', async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      data: target,
+      data: deleteTarget,
       message: '제품 삭제 완료',
     });
   } catch (error) {
