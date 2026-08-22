@@ -69,7 +69,7 @@ export const createPost = async (
   description,
   price,
   tags = [],
-  img = 'https://picsum.photos/250/250',
+  img,
 ) => {
   const response = await fetch(`${API_BASE_URL}`, {
     method: 'POST',
