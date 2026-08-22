@@ -9,7 +9,7 @@ export function ShowProductsList({ posts, isLoding }) {
       ) : (
         <div className={styles.listBody}>
           <ul className={styles.listGrid}>
-            {posts.map(({ _id, name, price, img }) => (
+            {posts.map(({ _id, name, price, img, tags }) => (
               <li key={_id}>
                 <div>
                   <img
@@ -23,6 +23,11 @@ export function ShowProductsList({ posts, isLoding }) {
                   />
                   <p className={styles.name}>{name}</p>
                   <p className={styles.price}>{price}원</p>
+                  {tags.map((tag, index) => (
+                    <span key={index} className={styles.tag}>
+                      #{tag}{' '}
+                    </span>
+                  ))}
                 </div>
               </li>
             ))}
