@@ -22,7 +22,7 @@ export function ItemHead({ search, sort }) {
   return (
     <div className={styles.nav}>
       <h1 className={styles.title}>판매 중인 상품</h1>
-      <form  onSubmit={handleSubmit} className={styles.search}>
+      <form onSubmit={handleSubmit} className={styles.search}>
         <div className={styles.inputSide}>
           <img src="ic_search.svg" alt="돋보기" />
           <input
@@ -34,7 +34,9 @@ export function ItemHead({ search, sort }) {
           />
         </div>
       </form>
-      <Link className={styles.resistButton} to="/registration">상품 등록하기</Link>
+      <Link className={styles.resistButton} to="/registration">
+        상품 등록하기
+      </Link>
       <select
         value={selected}
         onChange={handleChange}

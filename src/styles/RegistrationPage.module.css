@@ -25,8 +25,26 @@
     gap: 10px;
     border-radius: 8px;
     border: none;
-    background: var(--Primary-100, #3692FF);
-    color: var(--Cool-Gray-100, #F3F4F6);
+    background: var(--Primary-100, #3692ff);
+    color: var(--Cool-Gray-100, #f3f4f6);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  & .disableRegistButton {
+    display: flex;
+    height: 42px;
+    padding: 12px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--Cool-Gray-400, #9ca3af);
+    color: var(--Cool-Gray-100, #f3f4f6);
     font-family: Pretendard;
     font-size: 16px;
     font-style: normal;
@@ -46,10 +64,10 @@
     font-weight: 700;
     line-height: 26px;
     margin-bottom: 16px;
+    margin-top: 24px;
   }
 
   & .inputs {
-    margin-bottom: 32px;
     display: flex;
     padding: 16px 24px;
     align-items: flex-start;
@@ -60,15 +78,30 @@
     height: 56px;
   }
 
+  & .errorLabelsNone {
+    display: none;
+  }
+
+  & .errorLabels {
+    display: inline;
+    margin-left: 16px;
+    color: var(--error-red, #f74747);
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
   & .bigProductNameInput {
     height: 282px;
   }
 }
 
 .tagsBody {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .tags {
@@ -96,16 +129,19 @@
   }
 }
 
+.inputs.bedInput {
+  border: 2px solid #f74747;
+}
+
 @media (max-width: 768px) {
   /* 테블릿 */
   .body {
-  padding: 18px 24px 194px 24px;
-}
-.formBody {
+    padding: 18px 24px 194px 24px;
+  }
+  .formBody {
     & .inputs {
-        margin-bottom: 24px;
     }
-}
+  }
 }
 
 @media (max-width: 480px) {

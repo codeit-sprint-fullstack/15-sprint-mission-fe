@@ -20,18 +20,21 @@ export function LandingPage() {
           </Link>
         </div>
 
-
         <div className={styles.landingTopSectionBody}>
           <div className={styles.landingTopSectionContent1}>
             <div className={styles.ment}>일상의 모든 물건을 거래해보세요</div>
-              <button onClick={() => navigation('/item')} className={styles.itemButton}>구경하러 가기</button>
+            <button
+              onClick={() => navigation('/item')}
+              className={styles.itemButton}
+            >
+              구경하러 가기
+            </button>
           </div>
           <img
             src="Img_home_top.png"
             className={styles.landingTopSectionContent2}
           />
         </div>
-
 
         <div className={styles.landingMiddleSectionBody}>
           <img
@@ -47,11 +50,14 @@ export function LandingPage() {
           </div>
         </div>
 
-
-        <div className={styles.landingMiddleSectionBody} >
-          <div className={`${styles.landingMiddleSectionContent2} ${styles.patch1content1}`}>          
+        <div className={styles.landingMiddleSectionBody}>
+          <div
+            className={`${styles.landingMiddleSectionContent2} ${styles.patch1content1}`}
+          >
             <p className={`${styles.ment1} ${styles.patch1ment1}`}>Search</p>
-            <p className={`${styles.ment2} ${styles.patch1ment2}`}>구매를 원하는 상품을 검색하세요</p>
+            <p className={`${styles.ment2} ${styles.patch1ment2}`}>
+              구매를 원하는 상품을 검색하세요
+            </p>
             <p className={`${styles.ment3} ${styles.patch1ment3}`}>
               구매하고 싶은 물품은 검색해서 쉽게 찾아보세요
             </p>
@@ -61,7 +67,6 @@ export function LandingPage() {
             className={styles.landingMiddleSectionContent1}
           />
         </div>
-
 
         <div className={styles.landingMiddleSectionBody}>
           <img

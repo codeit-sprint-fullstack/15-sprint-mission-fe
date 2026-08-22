@@ -17,11 +17,8 @@ export function ItemPage() {
   const limit = windowWidth <= 480 ? 4 : windowWidth <= 768 ? 6 : 10;
 
   console.log('params:', limitParams, sortParams, keywordParams);
-  const { posts, totalPages, currentPage, handleCurrentPage } = useGetPost(
-    limitParams ?? limit,
-    sortParams,
-    keywordParams,
-  );
+  const { posts, totalPages, currentPage, isLoding, handleCurrentPage } =
+    useGetPost(limitParams ?? limit, sortParams, keywordParams);
   const handleSearch = (searchValue) => {
     setSearchParams({ limit: limit, sort: sort, keyword: searchValue });
     setKeyword(searchValue);
@@ -34,7 +31,7 @@ export function ItemPage() {
   return (
     <>
       <ItemHead search={handleSearch} sort={handleSort} />
-      <ShowProductsList posts={posts} />
+      <ShowProductsList posts={posts} isLoding={isLoding} />
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

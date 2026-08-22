@@ -1,14 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useGetPostById } from '../hooks/useGetPostById';
-
+import { LoadingSpinner } from '../components/LoadingSpinner';
 
 export function ProductDetails() {
   const { productId } = useParams();
-  console.log('표시할ID:',productId)
-  const post = useGetPostById(productId);
-  console.log('상세페이지 표시데이터',post);
+  console.log('표시할ID:', productId);
+  const { post } = useGetPostById(productId);
+  console.log('상세페이지 표시데이터', post);
 
-  if (!post) return <div>로딩 중...</div>;
+  if (!post) return <LoadingSpinner />;
 
   return (
     <>
