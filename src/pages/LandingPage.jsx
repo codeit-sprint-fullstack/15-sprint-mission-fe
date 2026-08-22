@@ -1,16 +1,24 @@
 import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/Navbar";
-import HeroSection from "@/components/landing/HeroSection";
-import HotItemSection from "@/components/landing/HotItemSection";
-
+import LandingNavbar from "@/components/landingPageComponents/LandingNavbar";
+import HeroSection from "@/components/landingPageComponents/HeroSection";
+import HotItemSection from "@/components/landingPageComponents/HotItemSection";
+import SearchSection from "@/components/landingPageComponents/SearchSection";
+import RegisterSection from "@/components/landingPageComponents/RegisterSection";
+import TrustSection from "@/components/landingPageComponents/TrustSection";
 function LandingPage() {
   return (
     <>
-      <Navbar />
+      <LandingNavbar />
 
       <HeroSection />
 
       <HotItemSection />
+
+      <SearchSection />
+
+      <RegisterSection />
+
+      <TrustSection />
 
       <Footer />
     </>

@@ -1,10 +1,10 @@
 import NavBar from "@/components/common/Navbar";
-import ProductCardList from "@/components/items/ProductCardList";
-import PaginationBar from "@/components/items/PaginationBar";
+import ProductCardList from "@/components/itemsPageComponents/ProductCardList";
+import PaginationBar from "@/components/itemsPageComponents/PaginationBar";
 import Footer from "@/components/common/Footer";
-import SearchBar from "@/components/items/SearchBar";
-import RegisterButton from "@/components/items/RegisterButton";
-import OrderDropdown from "@/components/items/OrderDropdown";
+import SearchBar from "@/components/itemsPageComponents/SearchBar";
+import RegisterButton from "@/components/itemsPageComponents/RegisterButton";
+import OrderDropdown from "@/components/itemsPageComponents/OrderDropdown";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 import ErrorMessage from "@/components/common/ErrorMessage";
 
