@@ -1,4 +1,4 @@
-import NavBar from "@/components/common/NavBar";
+import NavBar from "@/components/common/Navbar";
 import ProductCardList from "@/components/items/ProductCardList";
 import PaginationBar from "@/components/items/PaginationBar";
 import Footer from "@/components/common/Footer";

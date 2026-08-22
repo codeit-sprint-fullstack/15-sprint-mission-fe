@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="flex justify-between bg-[#111827] pt-10 pb-24 px-[200px]">
+    <footer className="flex justify-between px-4 md:px-8 bg-[#111827] pt-10 pb-24">
       <span className="text-[#9CA3AF]">©codeit - 2024</span>
       <div className="flex gap-[30px] text-[#E5E7EB]">
         <Link to="/privacy-policy">Privacy Policy</Link>

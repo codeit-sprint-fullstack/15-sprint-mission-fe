@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
+import { useDebounce } from "./useDebounce";
+
+function getPageSizeFromWidth(width) {
+  if (width < 768) return 4;
+  if (width < 1024) return 6;
+  return 10;
+}
 
 export function usePageSize() {
-  const getPageSize = () => {
-    const width = window.innerWidth;
-    if (width < 768) return 4; 
-    if (width < 1024) return 6; 
-    return 10; 
-  };
-
-  const [pageSize, setPageSize] = useState(getPageSize);
+  const [rawWidth, setRawWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      setPageSize(getPageSize());
+      console.log("resize 이벤트 발생, width:", window.innerWidth);
+      setRawWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return pageSize;
+  const debouncedWidth = useDebounce(rawWidth, 200);
+  console.log("rawWidth:", rawWidth, "/ debouncedWidth:", debouncedWidth);
+
+  return getPageSizeFromWidth(debouncedWidth);
 }
