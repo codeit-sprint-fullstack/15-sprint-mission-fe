@@ -11,7 +11,7 @@ export function useProductParams() {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
       next.set("orderBy", newSort);
-      next.set("page", "1"); 
+      next.set("page", "1");
       return next;
     });
   };
@@ -24,7 +24,7 @@ export function useProductParams() {
       } else {
         next.delete("keyword");
       }
-      next.set("page", "1"); 
+      next.set("page", "1");
       return next;
     });
   };

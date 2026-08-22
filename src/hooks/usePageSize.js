@@ -12,7 +12,6 @@ export function usePageSize() {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log("resize 이벤트 발생, width:", window.innerWidth);
       setRawWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
@@ -20,7 +19,6 @@ export function usePageSize() {
   }, []);
 
   const debouncedWidth = useDebounce(rawWidth, 200);
-  console.log("rawWidth:", rawWidth, "/ debouncedWidth:", debouncedWidth);
 
   return getPageSizeFromWidth(debouncedWidth);
 }

@@ -7,7 +7,8 @@ import RegisterButton from "@/components/items/RegisterButton";
 import OrderDropdown from "@/components/items/OrderDropdown";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 
-import { useBestProducts, useProducts } from "@/hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
+import { useBestProducts } from "@/hooks/useBestProducts";
 import { useProductParams } from "@/hooks/useProductParams";
 import { usePageSize } from "@/hooks/usePageSize";
 
@@ -21,6 +22,7 @@ export default function ItemsPage() {
     products,
     totalPages,
     isLoading: isProductsLoading,
+    error: productsError,
   } = useProducts({
     page,
     pageSize,
@@ -60,6 +62,10 @@ export default function ItemsPage() {
           </div>
           {isProductsLoading ? (
             <LoadingSpinner />
+          ) : productsError ? (
+            <div className="py-16 text-center text-[#6B7280]">
+              상품을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.
+            </div>
           ) : (
             <ProductCardList
               products={products}
