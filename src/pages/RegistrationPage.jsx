@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCreatePost } from '../hooks/useCreatePost';
 import styles from '../styles/RegistrationPage.module.css';
+import { LoadingSpinner } from '../components/LoadingSpinner';
 
 export function RegistrationPage() {
   const [tagsData, setTagsData] = useState([]);
@@ -10,11 +11,11 @@ export function RegistrationPage() {
   const [descriptionValue, setDescriptionValue] = useState('');
   const [priceValue, setPriceValue] = useState(0);
   const navigate = useNavigate();
-  const { submitPost } = useCreatePost();
+  const { submitPost, isLoding } = useCreatePost();
   const isNamePass = nameValue.length <= 10 && nameValue.length >= 1;
   const isDescroptionPass =
     descriptionValue.length >= 10 && descriptionValue.length <= 100;
-  const isPricePass = typeof priceValue === 'string';
+  const isPricePass = !isNaN(priceValue);
   const isTagPass = tagInput.length <= 5;
   const [outCursor1, setOutCursor1] = useState(false);
   const [outCursor2, setOutCursor2] = useState(false);
@@ -56,6 +57,9 @@ export function RegistrationPage() {
     const price = formData.get('판매가격');
     const tags = tagsData;
     const newId = await submitPost(name, description, price, tags);
+    while(isLoding) {
+      return (<LoadingSpinner/>)
+    }
     console.log(
       '등록 처리',
       name.current,
@@ -89,7 +93,7 @@ export function RegistrationPage() {
           <p className={styles.title}>상품 등록하기</p>
           <button
             disabled={
-              isNamePass || isDescroptionPass || isPricePass || isTagPass
+              !isNamePass || !isDescroptionPass || !isPricePass || !isTagPass
             }
             className={
               isNamePass && isDescroptionPass && isPricePass && isTagPass
@@ -128,7 +132,7 @@ export function RegistrationPage() {
           onBlur={handleBlur2}
           className={`${styles.inputs} ${styles.bigProductNameInput} ${!isDescroptionPass && outCursor2 ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isDescroptionPass && outCursor1 ? styles.errorLabels : ''}`}>10자 이상 입력해주세요</label>
+        <label className={`${styles.errorLabelsNone} ${!isDescroptionPass && outCursor2 ? styles.errorLabels : ''}`}>10자 이상 입력해주세요</label>
         <label htmlFor="productPrice" className={styles.labels}>
           판매가격
         </label>
@@ -142,7 +146,7 @@ export function RegistrationPage() {
           onBlur={handleBlur3}
           className={`${styles.inputs} ${!isPricePass && outCursor3 ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isPricePass && outCursor1 ? styles.errorLabels : ''}`}>숫자로 입력해주세요</label>
+        <label className={`${styles.errorLabelsNone} ${!isPricePass && outCursor3 ? styles.errorLabels : ''}`}>숫자로 입력해주세요</label>
         <label htmlFor="productTags" className={styles.labels}>
           태그
         </label>
@@ -156,7 +160,7 @@ export function RegistrationPage() {
           placeholder="태그를 입력해주세요"
           className={`${styles.inputs} ${!isTagPass ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isTagPass && outCursor1 ? styles.errorLabels : ''}`}>5글자 이내로 입력해주세요</label>
+        <label className={`${styles.errorLabelsNone} ${!isTagPass ? styles.errorLabels : ''}`}>5글자 이내로 입력해주세요</label>
       </form>
       <div className={styles.tagsBody}>
         {tagsData.map((tag, index) => (

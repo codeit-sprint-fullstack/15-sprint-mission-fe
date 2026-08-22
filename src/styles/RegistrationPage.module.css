@@ -99,12 +99,14 @@
 }
 
 .tagsBody {
+    margin-top: 18px;
   display: flex;
   flex-direction: row;
   gap: 12px;
 }
 
 .tags {
+
   display: flex;
   flex-direction: row;
   height: 36px;
