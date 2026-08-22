@@ -6,6 +6,7 @@ import SearchBar from "@/components/items/SearchBar";
 import RegisterButton from "@/components/items/RegisterButton";
 import OrderDropdown from "@/components/items/OrderDropdown";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
+import ErrorMessage from "@/components/common/ErrorMessage";
 
 import { useProducts } from "@/hooks/useProducts";
 import { useBestProducts } from "@/hooks/useBestProducts";
@@ -15,7 +16,13 @@ import { usePageSize } from "@/hooks/usePageSize";
 export default function ItemsPage() {
   const { page, orderBy, keyword, handleSortChange, handleSearch } =
     useProductParams();
-  const { bestProducts, isLoading: isBestLoading } = useBestProducts(4);
+
+  const {
+    bestProducts,
+    isLoading: isBestLoading,
+    error: bestProductsError,
+  } = useBestProducts(4);
+
   const pageSize = usePageSize();
 
   const {
@@ -41,6 +48,8 @@ export default function ItemsPage() {
           </h2>
           {isBestLoading ? (
             <LoadingSpinner />
+          ) : bestProductsError ? (
+            <ErrorMessage />
           ) : (
             <ProductCardList
               products={bestProducts}
@@ -63,9 +72,7 @@ export default function ItemsPage() {
           {isProductsLoading ? (
             <LoadingSpinner />
           ) : productsError ? (
-            <div className="py-16 text-center text-[#6B7280]">
-              상품을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.
-            </div>
+            <ErrorMessage />
           ) : (
             <ProductCardList
               products={products}

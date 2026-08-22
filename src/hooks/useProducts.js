@@ -4,7 +4,7 @@ export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-   const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -30,8 +30,7 @@ export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
         const data = await response.json();
         setProducts(data.list || []);
         setTotalCount(data.totalCount || 0);
-        setError(null); 
-
+        setError(null);
       } catch (error) {
         if (error.name === "AbortError") {
           return;
@@ -54,5 +53,5 @@ export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
 
   const totalPages = Math.ceil(totalCount / pageSize) || 1;
 
-  return { products, totalCount, totalPages, isLoading, error};
+  return { products, totalCount, totalPages, isLoading, error };
 }
