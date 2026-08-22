@@ -1,18 +1,8 @@
-import { useResponsiveCount } from '../hooks/useResponsiveCount';
-import getProducts from '../api/productApi';
 import { useState, useEffect } from 'react';
-
-function BestItem({ name, price, likes, image }) {
-  return (
-    <div className="bestItemCard">
-      <img className="bestItemPhoto" src={image} alt="상품이미지" />
-      <p className="bestItemName">{name}</p>
-      <p className="bestItemPrice">{price}원</p>
-      <img className="bestItemHeartIcon" src="하트" alt="하트" />
-      <span className="bestItemLikes">{likes}</span>
-    </div>
-  );
-}
+import { useResponsiveCount } from '../hooks/useResponsiveCount';
+import getProducts from '../api/getProducts';
+import { ItemCard } from './ItemCard';
+import style from '../styles/BestItems.module.css';
 
 export default function BestItems() {
   const { bestItemsPerPage } = useResponsiveCount();
@@ -27,11 +17,11 @@ export default function BestItems() {
   }, [bestItemsPerPage]);
 
   return (
-    <div className="bestItemsSection">
+    <div className={style.bestItemsSection}>
       <h2>베스트 상품</h2>
-      <div className="bestItems">
+      <div className={style.bestItems}>
         {products.map((product) => (
-          <BestItem
+          <ItemCard
             key={product.id}
             name={product.name}
             price={product.price}

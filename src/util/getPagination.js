@@ -1,6 +1,6 @@
 
-export function getPagination(currentPage = 1, totalItems, pageLimit = 10) {
-    const totalPageButtons = Math.ceil(totalItems/pageLimit);
+export function getPagination(currentPage = 1, totalItems=0, PAGE_LIMIT = 10) {
+    const totalPageButtons = Math.ceil(totalItems/PAGE_LIMIT);
     const buttonBlocks = [];
     const BLOCK_LIMIT = 5;
     const totalButtonBlocks = Math.ceil(totalPageButtons/BLOCK_LIMIT);
@@ -13,7 +13,7 @@ export function getPagination(currentPage = 1, totalItems, pageLimit = 10) {
       }
     }
 
-    const currentBlock = buttonBlocks.find((block) => block.includes(currentPage));
+    const currentBlock = buttonBlocks.find((block) => block.includes(currentPage)) ?? [];
 
-    return({buttonBlocks, currentBlock});
+    return({currentBlock, buttonBlocks, totalPageButtons});
 }

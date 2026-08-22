@@ -1,0 +1,38 @@
+.navOutbox {
+  width: 100%;
+  background-color: #ffffff;
+  position: sticky;
+  padding: 0 200px;
+  top: 0;
+}
+
+nav {
+  max-width: 1520px;
+  height: 70px;
+  border-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navLogo {
+  & img {
+    width: 153px;
+    height: 51px;
+  }
+}
+
+.loginButton {
+  display: flex;
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-blue100);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-secondary-gray100);
+  white-space: nowrap;
+}

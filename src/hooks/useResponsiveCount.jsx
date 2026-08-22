@@ -1,9 +1,9 @@
 import { useMediaQuery } from './useMediaQuery';
 
 const CONFIG = {
-  mobile: {bestItemsPerPage: 1, forSaleItemsPerPage: 4},
-  tablet: {bestItemsPerPage: 2, forSaleItemsPerPage: 6},
-  desktop: {bestItemsPerPage: 4, forSaleItemsPerPage: 10},
+  mobile: {bestItemsPerPage: 1, allItemsPerPage: 4},
+  tablet: {bestItemsPerPage: 2, allItemsPerPage: 6},
+  desktop: {bestItemsPerPage: 4, allItemsPerPage: 10},
 };
 
 export const useResponsiveCount = () => {

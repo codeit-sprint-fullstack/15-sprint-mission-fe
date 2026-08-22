@@ -1,0 +1,12 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+.bestItems {
+  display: flex;
+  gap: 24px;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+}
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+}

@@ -2,17 +2,17 @@
 // import { useMediaQuery } from './hooks/useMediaQuery';
 import Nav from './components/Nav';
 import BestItems from './components/BestItems';
-import ForSaleItems from './components/ForSaleItems';
+import AllItems from './components/AllItems';
 import Footer from './components/Footer';
 
 function App() {
   // const mediaQuery = useMediaQuery();
   return (
     <>
-    <Nav />
-    <BestItems/>
-    <ForSaleItems/>
-    <Footer />
+      <Nav />
+      <BestItems />
+      <AllItems />
+      <Footer />
     </>
   );
 }
