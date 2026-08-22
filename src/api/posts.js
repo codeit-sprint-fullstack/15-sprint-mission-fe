@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5001/products';
+const API_BASE_URL = 'https://one5-sprint-mission-be.onrender.com/products';
 
 export const getPosts = async (
   page = 1,
@@ -28,7 +28,7 @@ export const getPosts = async (
   const isSuccess = posts.success;
   const message = posts.message;
 
-  console.log('[getPosts]받은데이터:',data)
+  console.log('[getPosts]받은데이터:', data);
 
   return {
     data,
@@ -39,10 +39,8 @@ export const getPosts = async (
   };
 };
 
-export const getPostById = async (
-  id,
-) => {
-  if(!id) return console.log('ID 미입력');
+export const getPostById = async (id) => {
+  if (!id) return console.log('ID 미입력');
   const url = new URL(`${API_BASE_URL}/${id}`);
   const response = await fetch(url, {
     method: 'GET',
@@ -58,7 +56,7 @@ export const getPostById = async (
   const data = post.data;
   const idValue = post._id;
 
-  console.log('[getPostById]받은데이터:',data)
+  console.log('[getPostById]받은데이터:', data);
 
   return {
     data,
@@ -71,12 +69,12 @@ export const createPost = async (
   description,
   price,
   tags = [],
-  img = "https://picsum.photos/250/250",
+  img = 'https://picsum.photos/250/250',
 ) => {
   const response = await fetch(`${API_BASE_URL}`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       name,
@@ -95,6 +93,6 @@ export const createPost = async (
   const id = data.data.id;
   console.log('createPost:', id, success, data);
 
-  const value = {success, id}
+  const value = { success, id };
   return value;
-}
+};
