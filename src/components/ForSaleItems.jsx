@@ -31,6 +31,8 @@ function PageButton({ page, currentPage, handlePageButtonClick }) {
 const { totalCount } = await getProducts();
 const PAGE_LIMIT = 5;
 
+
+
 export default function ForSaleItems() {
   const { forSaleItemsPerPage } = useResponsiveCount();
 
