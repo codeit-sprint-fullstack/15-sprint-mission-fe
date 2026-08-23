@@ -5,6 +5,7 @@ import HotItemSection from "@/components/landingPageComponents/HotItemSection";
 import SearchSection from "@/components/landingPageComponents/SearchSection";
 import RegisterSection from "@/components/landingPageComponents/RegisterSection";
 import TrustSection from "@/components/landingPageComponents/TrustSection";
+
 function LandingPage() {
   return (
     <>

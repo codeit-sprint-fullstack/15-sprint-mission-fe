@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+const API_URL =
+  import.meta.env.API_URL || "https://one5-sprint-mission-be-xgtr.onrender.com";
+
 export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -19,7 +22,7 @@ export function useProducts({ page, pageSize = 10, orderBy, keyword }) {
         });
 
         const response = await fetch(
-          `https://panda-market-api.vercel.app/products?${queryParams.toString()}`,
+          `${API_URL}/products?${queryParams.toString()}`,
           { signal: controller.signal },
         );
 
