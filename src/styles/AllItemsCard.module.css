@@ -1,7 +1,7 @@
 /* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
-.itemCard {
-  width: 282px;
-  height: 378px;
+.allItemsCard {
+  width: 221px;
+  height: 317px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -10,13 +10,11 @@
 }
 
 .itemPhoto {
-  width: 282px;
-  height: 423px;
+  width: 221px;
+  height: 221px;
   border-radius: 8px;
   object-fit: cover no-repeat;
-  background: lightgray 50%;
-  margin-top: 51px;
-  border: 16px 0;
+  background: url('../assets/img_default.png') lightgray 50%;
 }
 
 .textSection {
@@ -62,7 +60,7 @@
 
 /* 화면 너비가 768px 이하일 때 (태블릿 이하) */
 @media (max-width: 768px) {
-  .itemCard {
+  .allItemsCard {
     width: 343px;
     height: 434px;
     display: flex;
@@ -72,6 +70,7 @@
     background: #fcfcfc;
   }
 }
+
 /* 화면 너비가 480px 이하일 때 (모바일) */
 @media (max-width: 480px) {
 }

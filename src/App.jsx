@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import BestItems from './components/BestItems';
 import AllItems from './components/AllItems';
 import Footer from './components/Footer';
+import './styles/App.css';
 
 function App() {
   // const mediaQuery = useMediaQuery();

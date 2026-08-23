@@ -1,12 +1,40 @@
 /* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+.bestItemsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
 .bestItems {
   display: flex;
+  justify-content: space-around;
   gap: 24px;
 }
 
 /* 화면 너비가 768px 이하일 때 (태블릿 이하) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+  .bestItemsSection {
+    width: 100%;
+    max-width: 696px;
+    margin: 16px auto 0;
+  }
+
+  .bestItems {
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+  }
 }
 /* 화면 너비가 480px 이하일 때 (모바일) */
-@media (max-width: 480px) {
-}
+/* @media (max-width: 480px) {
+  .bestItemsSection {
+    width: 100%;
+    max-width: 343px;
+    margin: 16px auto 0;
+  }
+
+  .bestItems {
+    display: flex;
+    justify-content: space-around;
+  }
+} */
