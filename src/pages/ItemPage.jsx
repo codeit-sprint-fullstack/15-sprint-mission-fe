@@ -24,7 +24,9 @@ export function ItemPage() {
     isSuccess,
     handleCurrentPage,
   } = useGetPost(limitParams ?? limit, sortParams, keywordParams);
+
   const handleSearch = (searchValue) => {
+    handleCurrentPage(1);
     setSearchParams({ limit: limit, sort: sort, keyword: searchValue });
     setKeyword(searchValue);
   };
