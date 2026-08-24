@@ -1,0 +1,53 @@
+.listBody {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.listGrid {
+  display: grid;
+  justify-content: space-between;
+  gap: 24px;
+
+  & img {
+    border: none;
+    outline: none;
+  }
+
+  & .name {
+    color: var(--Secondary-800, #1f2937);
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+
+  & .price {
+    color: var(--Secondary-800, #1f2937);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 6px;
+  }
+
+  & .favorite {
+    color: var(--Secondary-600, #4b5563);
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    & img {
+      width: 16px;
+      height: 16px;
+      margin: 0 4px 0 0;
+    }
+  }
+}
