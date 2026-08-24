@@ -4,15 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/reset.css" />
-    <link rel="stylesheet" href="../style/sigup.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dongle&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Panda-Sigup</title>
+    <link rel="stylesheet" href="../style/signup.css" />
+    <title>Panda-Signup</title>
     <link rel="icon" href="../img/판다 얼굴.svg" />
+    <script src="../script/signup.js" defer></script>
   </head>
   <body>
     <div class="mainbody">
@@ -24,35 +19,44 @@
       </header>
       <main>
         <form>
-          <label for="sigup-email">이메일</label>
+          <label for="signup-email">이메일</label>
           <input
-            id="sigup-email"
+            id="signup-email"
             name="email"
             type="email"
             placeholder="이메일을 입력해주세요"
           />
-          <label for="sigup-nickname">닉네임</label>
+          <div class="email error" style="display: none">
+            <span class="error-text">error text</span>
+          </div>
+          <label for="signup-nickname">닉네임</label>
           <input
-            id="sigup-nickname"
+            id="signup-nickname"
             name="nickname"
             type="text"
             placeholder="닉네임을 입력해주세요"
           />
-          <label for="sigup-passwd">비밀번호</label>
+          <label for="signup-passwd">비밀번호</label>
           <input
-            id="sigup-passwd"
+            id="signup-passwd"
             name="passwd"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
-          <label for="sigup-passwd2">비밀번호 확인</label>
+          <div class="passwd error" style="display: none">
+            <span class="error-text">error text</span>
+          </div>
+          <label for="signup-passwd2">비밀번호 확인</label>
           <input
-            id="sigup-passwd2"
+            id="signup-passwd2"
             name="passwd2"
             type="password"
             placeholder="비밀번호를 다시 한 번 입력해주세요"
           />
-          <button class="sigup-button">회원가입</button>
+          <div class="passwd2 error" style="display: none">
+            <span class="error-text">error text</span>
+          </div>
+          <button class="signup-button">회원가입</button>
         </form>
         <div class="simple-login">
           간편 로그인하기
