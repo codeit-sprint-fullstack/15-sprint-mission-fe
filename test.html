@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/main.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="productContainer">
+      <h1>상품관련 API</h1>
+      <div>
+        수정할 때는 아이디 칸도 채워주세요
+        <br />
+        <pre>
+        이미지 예시: https://picsum.photos/250/250
+      </pre
+        >
+      </div>
+      <p>
+        상품 리스트 가져오기:
+        <button id="productList">product list</button>
+      </p>
+
+      <label for="productIdInput">Product Id</label>
+      <input type="number" id="productIdInput" />
+      <button type="button" id="productGet">조회</button>
+      <button type="button" id="productDelete">삭제</button>
+
+      <form id="productForm">
+        <label for="productName">Product name</label>
+        <input name="name" type="text" id="productName" />
+
+        <label for="productDescription">Product description</label>
+        <input name="description" type="text" id="productDescription" />
+
+        <label for="productPrice">Product price</label>
+        <input name="price" type="number" id="productPrice" />
+
+        <label for="productImage">Product image</label>
+        <input name="images" type="text" id="productImage" />
+
+        <label for="productTag">Product tag</label>
+        <input name="tags" type="text" id="productTag" />
+
+        <button type="submit" id="productCreate">생성</button>
+        <button type="submit" id="productPatch">수정</button>
+      </form>
+    </div>
+
+    <div class="articleContainer">
+      <h1>아티클 관련 API</h1>
+      <div>
+        수정할 때는 아이디 칸도 채워주세요
+        <br />
+        <pre>
+        이미지 예시: https://picsum.photos/250/250
+      </pre
+        >
+      </div>
+      <p>
+        아티클 리스트 가져오기:
+        <button id="articleList">article list</button>
+      </p>
+
+      <label for="articleIdInput">article Id</label>
+      <input type="number" id="articleIdInput" />
+      <button type="button" id="articleGet">조회</button>
+      <button type="button" id="articleDelete">삭제</button>
+
+      <form id="articleForm">
+        <label for="articleTitle">article title</label>
+        <input name="title" type="text" id="articleTitle" />
+
+        <label for="articleContent">article content</label>
+        <input name="content" type="text" id="articleContent" />
+
+        <label for="articleImage">article image</label>
+        <input name="image" type="text" id="articleImage" />
+
+        <button type="submit" id="articleCreate">생성</button>
+        <button type="submit" id="articlePatch">수정</button>
+      </form>
+    </div>
+
+    <pre id="result"></pre>
+  </body>
+</html>
