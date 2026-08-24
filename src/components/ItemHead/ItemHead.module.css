@@ -1,11 +1,10 @@
 .nav {
   display: flex;
-  width: 100%;
+  max-width: 1200px;
   flex-wrap: wrap;
   margin-bottom: 24px;
   gap: 12px;
-  margin: 26px 0;
-  padding: 0 60px;
+  margin: 26px auto;
   box-sizing: border-box;
 }
 
@@ -103,7 +102,7 @@
 @media (max-width: 768px) {
   /* 테블릿 */
   .nav {
-    padding: 0 28px;
+    max-width: 711px;
   }
   .inputSide {
     width: 242px;
@@ -120,6 +119,7 @@
   .nav {
     column-gap: 0;
     row-gap: 8px;
+    max-width: 360px;
   }
   .resistButton {
     order: 1;

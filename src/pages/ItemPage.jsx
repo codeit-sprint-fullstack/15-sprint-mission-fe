@@ -9,16 +9,21 @@ import { useWindowSize } from '../hooks/useWindowSize';
 export function ItemPage() {
   const [sort, setSort] = useState('recent');
   const [keyword, setKeyword] = useState('');
+  const windowWidth = useWindowSize();
+  const limit = windowWidth <= 480 ? 4 : windowWidth <= 768 ? 6 : 10;
   const [searchParams, setSearchParams] = useSearchParams();
   const limitParams = searchParams.get('limit');
   const sortParams = searchParams.get('sort');
   const keywordParams = searchParams.get('keyword');
-  const windowWidth = useWindowSize();
-  const limit = windowWidth <= 480 ? 4 : windowWidth <= 768 ? 6 : 10;
-
   console.log('params:', limitParams, sortParams, keywordParams);
-  const { posts, totalPages, currentPage, isLoding, handleCurrentPage } =
-    useGetPost(limitParams ?? limit, sortParams, keywordParams);
+  const {
+    posts,
+    totalPages,
+    currentPage,
+    isLoding,
+    isSuccess,
+    handleCurrentPage,
+  } = useGetPost(limitParams ?? limit, sortParams, keywordParams);
   const handleSearch = (searchValue) => {
     setSearchParams({ limit: limit, sort: sort, keyword: searchValue });
     setKeyword(searchValue);
@@ -31,7 +36,11 @@ export function ItemPage() {
   return (
     <>
       <ItemHead search={handleSearch} sort={handleSort} />
-      <ShowProductsList posts={posts} isLoding={isLoding} />
+      <ShowProductsList
+        posts={posts}
+        isLoding={isLoding}
+        isSuccess={isSuccess}
+      />
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

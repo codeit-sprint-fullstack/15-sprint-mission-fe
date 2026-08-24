@@ -17,10 +17,7 @@ export const getPosts = async (
       'Content-Type': 'application/json',
     },
   });
-  if (!response.ok) {
-    console.log('[getPosts]GET ERROR');
-    throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
-  }
+
   const posts = await response.json();
   const data = posts.data;
   const totalCount = posts.totalCount;
@@ -28,7 +25,13 @@ export const getPosts = async (
   const isSuccess = posts.success;
   const message = posts.message;
 
-  console.log('[getPosts]받은데이터:', data);
+  if (!response.ok) {
+    console.log('[getPosts]GET ERROR');
+    //throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
+    return { isSuccess };
+  }
+
+  console.log('[getPosts]받은데이터:', data, isSuccess);
 
   return {
     data,
@@ -64,13 +67,7 @@ export const getPostById = async (id) => {
   };
 };
 
-export const createPost = async (
-  name,
-  description,
-  price,
-  tags = [],
-  img,
-) => {
+export const createPost = async (name, description, price, tags = [], img) => {
   const response = await fetch(`${API_BASE_URL}`, {
     method: 'POST',
     headers: {

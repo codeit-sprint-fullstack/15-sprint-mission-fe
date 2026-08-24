@@ -9,12 +9,13 @@ export function useGetPost(limit, sort, keyword) {
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(INITIAL_TOTAL_PAGES);
   const [isLoding, setIsLoding] = useState(false);
+  const [isSuccess, setIsSuccess] = useState();
   useEffect(() => {
     const getPostsData = async () => {
       try {
         setIsLoding(true);
         console.log('로딩중...', isLoding);
-        const { data, totalPages } = await getPosts(
+        const { data, totalPages, isSuccess } = await getPosts(
           currentPage,
           limit,
           sort,
@@ -22,6 +23,7 @@ export function useGetPost(limit, sort, keyword) {
         );
         setPosts(data);
         setTotalPages(totalPages);
+        setIsSuccess(isSuccess);
       } catch (error) {
         console.log('[useGetPosts]Error: ', error);
       } finally {
@@ -30,7 +32,7 @@ export function useGetPost(limit, sort, keyword) {
       }
     };
     getPostsData();
-  }, [currentPage, limit, sort, keyword]);
+  }, [currentPage, limit, sort, keyword, isSuccess]);
 
   const handleCurrentPage = (selectedPage) => {
     if (selectedPage < 1 || selectedPage > totalPages) {
@@ -45,6 +47,7 @@ export function useGetPost(limit, sort, keyword) {
     totalPages,
     currentPage,
     isLoding,
+    isSuccess,
     handleCurrentPage,
   };
   console.log('usePost:', posts);

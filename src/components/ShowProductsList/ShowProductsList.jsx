@@ -1,17 +1,19 @@
+import { Link } from 'react-router-dom';
 import { LoadingSpinner } from '../LoadingSpinner';
 import styles from './ShowProductsList.module.css';
 
-export function ShowProductsList({ posts, isLoding }) {
+export function ShowProductsList({ posts, isLoding, isSuccess }) {
+  console.log('검색여부:', isSuccess);
   return (
     <>
       {isLoding ? (
         <LoadingSpinner />
-      ) : (
+      ) : isSuccess ? (
         <div className={styles.listBody}>
           <ul className={styles.listGrid}>
             {posts.map(({ _id, name, price, img, tags }) => (
               <li key={_id}>
-                <div>
+                <div className={styles.eachBody}>
                   <img
                     src={img}
                     className={styles.imageSize}
@@ -32,6 +34,11 @@ export function ShowProductsList({ posts, isLoding }) {
               </li>
             ))}
           </ul>
+        </div>
+      ) : (
+        <div className={styles.notFoundBody}>
+          <p>제품을 찾을 수 없습니다...</p>
+          <Link to="/item">목록으로 돌아가기</Link>
         </div>
       )}
     </>

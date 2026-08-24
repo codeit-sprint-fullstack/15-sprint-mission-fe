@@ -12,6 +12,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.eachBody {
+  max-width: 221px;
+}
+
 .imageSize {
   border: none;
   outline: none;
@@ -29,7 +33,7 @@
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 2px;
-  width: fit-content;
+  width: 100%;
 }
 
 .price {
@@ -53,15 +57,17 @@
   width: fit-content;
 }
 
+.notFoundBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap : 12px;
+}
+
 @media (max-width: 768px) {
   /* 테블릿 */
   .listGrid {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .imageSize {
-    width: 221px;
-    height: 221px;
   }
 }
 
@@ -75,4 +81,8 @@
     width: 168px;
     height: 168px;
   }
+
+  .eachBody {
+  max-width: 168px;
+}
 }
