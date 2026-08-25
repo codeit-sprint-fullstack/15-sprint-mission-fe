@@ -14,7 +14,7 @@
   height: 221px;
   border-radius: 8px;
   object-fit: cover no-repeat;
-  background: url('../assets/img_default.png') lightgray 50%;
+  background: url('../../assets/img_default.png') lightgray 50%;
 }
 
 .textSection {

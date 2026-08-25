@@ -1,12 +1,12 @@
+import { BASE_URL } from "./config";
+
 export default async function getProducts(
   page = 1,
   pageSize = 1,
   orderBy = 'recent',
   keyword = '',
 ) {
-  const BASE_URL = 'https://panda-market-api.vercel.app';
   const PRODUCTS_URL = new URL(`${BASE_URL}/products`);
-
   PRODUCTS_URL.searchParams.set('page', page);
   PRODUCTS_URL.searchParams.set('pageSize', pageSize);
   PRODUCTS_URL.searchParams.set('orderBy', orderBy);

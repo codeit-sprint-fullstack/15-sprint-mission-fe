@@ -4,8 +4,6 @@ import twitter from '../assets/ic_twitter.png'
 import youtube from '../assets/ic_youtube.png'
 import instagram from '../assets/ic_instagram.png'
 
-
-
 export default function Footer() {
   return (
     <div className={style.footerOutbox}>

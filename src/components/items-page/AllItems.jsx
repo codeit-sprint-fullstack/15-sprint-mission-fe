@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 // import { useResponsiveCount } from '../hooks/useResponsiveCount';
-import getProducts from '../api/getProducts';
-import { AllItemsCard } from './AllItemsCard';
-import { getPagination } from '../util/getPagination';
-import style from '../styles/AllItems.module.css';
-import prev from '../assets/arrow_left.png';
-import next from '../assets/arrow_right.png';
+import getProducts from '../../apis/getProducts';
+import AllItemsCard from './AllItemsCard';
+import { getPagination } from '../../util/getPagination';
+import style from './AllItems.module.css';
+import prev from '../../assets/arrow_left.png';
+import next from '../../assets/arrow_right.png';
+import { Link } from 'react-router';
 
 export default function AllItems() {
   // const { allItemsPerPage } = useResponsiveCount();
@@ -47,11 +48,11 @@ export default function AllItems() {
   };
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-    setCurrentPage(1);
   };
   const handleInputKeyDown = (e) => {
     if (e.key !== 'Enter' || e.nativeEvent.isComposing) return;
     setKeyword(e.target.value);
+    setCurrentPage(1);
     setInputValue('');
   };
 
@@ -82,9 +83,11 @@ export default function AllItems() {
             onKeyDown={handleInputKeyDown}
             placeholder="검색할 상품을 입력해주세요"
           />
-          <button name="register" className={style.button} type="button">
-            상품 등록하기
-          </button>
+          <Link to="/register">
+            <button name="register" className={style.button} type="button">
+              상품 등록하기
+            </button>
+          </Link>
           <select value={orderBy} onChange={handleOrderChange}>
             <option value="recent">최신순 </option>
             <option value="favorite">좋아요 순</option>

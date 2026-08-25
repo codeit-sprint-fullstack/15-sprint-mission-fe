@@ -1,20 +1,18 @@
-// import './App.css';
-// import { useMediaQuery } from './hooks/useMediaQuery';
-import Nav from './components/Nav';
-import BestItems from './components/BestItems';
-import AllItems from './components/AllItems';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import { LandingPage } from './components/landing-page/LandingPage';
+import { ItemsPage } from './components/items-page/ItemsPage';
+import { RegisterPage } from './components/register-page/RegisterPage';
 import './styles/App.css';
 
 function App() {
-  // const mediaQuery = useMediaQuery();
   return (
-    <>
-      <Nav />
-      <BestItems />
-      <AllItems />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/items" element={<ItemsPage />} />
+        <Route path="/register" element={<RegisterPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

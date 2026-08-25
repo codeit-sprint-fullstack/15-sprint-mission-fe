@@ -1,10 +1,14 @@
-import style from '../styles/BestItemsCard.module.css';
-import heart from '../assets/ic_heart.png';
+import style from './AllItemsCard.module.css';
+import heart from '../../assets/ic_heart.png';
 
-export function BestItemsCard({ name, price, likes, image }) {
+export default function AllItemsCard({ name, price, likes, image }) {
   return (
-    <div className={style.bestItemsCard}>
-      <img className={style.itemPhoto} src={image} alt="상품이미지" />
+    <div className={style.allItemsCard}>
+      <img
+        className={style.itemPhoto}
+        src={image}
+        alt="상품이미지"
+      />
       <div className={style.textSection}>
         <p className={style.itemName}>{name}</p>
         <p className={style.itemPrice}>{price.toLocaleString()}원</p>
