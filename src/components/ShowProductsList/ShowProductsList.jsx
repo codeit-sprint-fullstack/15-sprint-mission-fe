@@ -23,7 +23,7 @@ export function ShowProductsList({ posts, isLoding, isSuccess }) {
                     }}
                   />
                   <p className={styles.name}>{name}</p>
-                  <p className={styles.price}>{price}원</p>
+                  <p className={styles.price}>{price.toLocaleString()}원</p>
                   {tags.map((tag, index) => (
                     <span key={index} className={styles.tag}>
                       #{tag}{' '}

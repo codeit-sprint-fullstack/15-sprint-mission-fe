@@ -24,7 +24,7 @@ export function ProductDetails() {
       />
       <p className={styles.name}>상품명: {post.name}</p>
       <p className={styles.ment}>상품소개: {post.description}</p>
-      <p className={styles.ment}>판매가격: {post.price}원</p>
+      <p className={styles.ment}>판매가격: {post.price.toLocaleString()}원</p>
       {post.tags.map((tag, index) => (
         <span key={index} className={styles.ment}>
           #{tag}{' '}
