@@ -9,7 +9,7 @@ export function RegistrationPage() {
   const [tagInput, setTagInput] = useState('');
   const [nameValue, setNameValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
-  const [priceValue, setPriceValue] = useState(0);
+  const [priceValue, setPriceValue] = useState();
   const navigate = useNavigate();
   const { submitPost, isLoding } = useCreatePost();
   const isNamePass = nameValue.length <= 10 && nameValue.length >= 1;
