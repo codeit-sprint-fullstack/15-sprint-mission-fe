@@ -1,14 +1,14 @@
 .body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: fit-content;
-    margin: 50px auto 90px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  margin: 50px auto 90px auto;
 }
 
 .title {
-    margin-bottom: 30px;
-    font-family: Pretendard;
+  margin-bottom: 20px;
+  font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -17,8 +17,8 @@
 .imageSize {
   border: none;
   outline: none;
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
   margin-bottom: 16px;
   border-radius: 8px;
 }

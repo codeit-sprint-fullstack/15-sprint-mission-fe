@@ -20,16 +20,6 @@ export function RegistrationPage() {
   const [outCursor1, setOutCursor1] = useState(false);
   const [outCursor2, setOutCursor2] = useState(false);
   const [outCursor3, setOutCursor3] = useState(false);
-  console.log(
-    'name',
-    isNamePass,
-    'desc',
-    isDescroptionPass,
-    'price',
-    isPricePass,
-    'tag',
-    isTagPass,
-  );
   const handleFormKeyDown = (e) => {
     if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
       e.preventDefault();
@@ -57,30 +47,19 @@ export function RegistrationPage() {
     const price = formData.get('판매가격');
     const tags = tagsData;
     const newId = await submitPost(name, description, price, tags);
-    while(isLoding) {
-      return (<LoadingSpinner/>)
+    while (isLoding) {
+      return <LoadingSpinner />;
     }
-    console.log(
-      '등록 처리',
-      name.current,
-      description.current,
-      price.current,
-      tags.current,
-      newId,
-    );
     if (newId) navigate(`/product/${newId}`);
   };
   const handleBlur1 = () => {
     setOutCursor1(true);
-    console.log('blur1', outCursor1);
   };
   const handleBlur2 = () => {
     setOutCursor2(true);
-    console.log('blur1', outCursor2);
   };
   const handleBlur3 = () => {
     setOutCursor3(true);
-    console.log('blur1', outCursor3);
   };
   return (
     <div className={styles.body}>
@@ -118,7 +97,11 @@ export function RegistrationPage() {
           onBlur={handleBlur1}
           className={`${styles.inputs} ${!isNamePass && outCursor1 ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isNamePass && outCursor1 ? styles.errorLabels : ''}`}>10자 이내로 입력해주세요</label>
+        <label
+          className={`${styles.errorLabelsNone} ${!isNamePass && outCursor1 ? styles.errorLabels : ''}`}
+        >
+          10자 이내로 입력해주세요
+        </label>
         <label htmlFor="productDescription" className={styles.labels}>
           상품 소개
         </label>
@@ -132,7 +115,11 @@ export function RegistrationPage() {
           onBlur={handleBlur2}
           className={`${styles.inputs} ${styles.bigProductNameInput} ${!isDescroptionPass && outCursor2 ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isDescroptionPass && outCursor2 ? styles.errorLabels : ''}`}>10자 이상 입력해주세요</label>
+        <label
+          className={`${styles.errorLabelsNone} ${!isDescroptionPass && outCursor2 ? styles.errorLabels : ''}`}
+        >
+          10자 이상 입력해주세요
+        </label>
         <label htmlFor="productPrice" className={styles.labels}>
           판매가격
         </label>
@@ -146,7 +133,11 @@ export function RegistrationPage() {
           onBlur={handleBlur3}
           className={`${styles.inputs} ${!isPricePass && outCursor3 ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isPricePass && outCursor3 ? styles.errorLabels : ''}`}>숫자로 입력해주세요</label>
+        <label
+          className={`${styles.errorLabelsNone} ${!isPricePass && outCursor3 ? styles.errorLabels : ''}`}
+        >
+          숫자로 입력해주세요
+        </label>
         <label htmlFor="productTags" className={styles.labels}>
           태그
         </label>
@@ -160,7 +151,11 @@ export function RegistrationPage() {
           placeholder="태그를 입력해주세요"
           className={`${styles.inputs} ${!isTagPass ? styles.bedInput : ''}`}
         />
-        <label className={`${styles.errorLabelsNone} ${!isTagPass ? styles.errorLabels : ''}`}>5글자 이내로 입력해주세요</label>
+        <label
+          className={`${styles.errorLabelsNone} ${!isTagPass ? styles.errorLabels : ''}`}
+        >
+          5글자 이내로 입력해주세요
+        </label>
       </form>
       <div className={styles.tagsBody}>
         {tagsData.map((tag, index) => (
