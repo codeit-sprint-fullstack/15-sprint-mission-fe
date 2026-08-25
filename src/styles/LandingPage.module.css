@@ -65,7 +65,7 @@
     flex-direction: column;
     justify-content: end;
     & .ment {
-      width: 350px;
+      width: 330px;
       text-align: left;
       color: var(--Secondary-700, #374151);
       font-family: Pretendard;
@@ -135,7 +135,7 @@
       font-weight: 700;
       line-height: 140%;
       letter-spacing: 0.8px;
-      width: 240px;
+      width: 230px;
       margin-top: 12px;
       margin-bottom: 24px;
     }
@@ -148,6 +148,11 @@
       line-height: 32px;
       width: 290px;
     }
+    & .ment2.patch2ment2 {
+    text-align: end;
+    width: 380px;
+    text-align: left;
+  }
   }
 }
 
@@ -161,7 +166,7 @@
 
   & .ment2.patch1ment2 {
     text-align: end;
-    width: 400px;
+    width: 350px;
   }
 
   & .ment3.patch1ment3 {
@@ -169,6 +174,8 @@
     width: 310px;
   }
 }
+
+
 
 @media (max-width: 768px) {
   /* 테블릿 */

@@ -74,7 +74,7 @@ export function LandingPage() {
           />
           <div className={styles.landingMiddleSectionContent2}>
             <p className={styles.ment1}>Register</p>
-            <p className={styles.ment2}>판매를 원하는 상품을 등록하세요</p>
+            <p className={`${styles.ment2} ${styles.patch2ment2}`}>판매를 원하는 상품을 등록하세요</p>
             <p className={styles.ment3}>
               어떤 물건이든 판매하고 싶은 상품을 쉽게 등록하세요
             </p>
