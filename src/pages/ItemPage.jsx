@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 import { ItemHead } from '../components/ItemHead/ItemHead';
 import { Pagination } from '../components/Pagination/Pagination';
@@ -7,15 +7,12 @@ import { useGetPost } from '../hooks/useGetPost';
 import { useWindowSize } from '../hooks/useWindowSize';
 
 export function ItemPage() {
-  const [sort, setSort] = useState('recent');
-  const [keyword, setKeyword] = useState('');
   const windowWidth = useWindowSize();
   const limit = windowWidth <= 480 ? 4 : windowWidth <= 768 ? 6 : 10;
   const [searchParams, setSearchParams] = useSearchParams();
   const limitParams = searchParams.get('limit');
   const sortParams = searchParams.get('sort');
   const keywordParams = searchParams.get('keyword');
-  console.log('params:', limitParams, sortParams, keywordParams);
   const {
     posts,
     totalPages,
@@ -24,15 +21,12 @@ export function ItemPage() {
     isSuccess,
     handleCurrentPage,
   } = useGetPost(limitParams ?? limit, sortParams, keywordParams);
-
   const handleSearch = (searchValue) => {
     handleCurrentPage(1);
-    setSearchParams({ limit: limit, sort: sort, keyword: searchValue });
-    setKeyword(searchValue);
+    setSearchParams({keyword: searchValue });
   };
   const handleSort = (sortValue) => {
-    setSearchParams({ limit: limit, sort: sortValue, keyword: keyword });
-    setSort(sortValue);
+    setSearchParams({sort: sortValue});
   };
 
   return (

@@ -3,7 +3,6 @@ import { LoadingSpinner } from '../LoadingSpinner';
 import styles from './ShowProductsList.module.css';
 
 export function ShowProductsList({ posts, isLoding, isSuccess }) {
-  console.log('검색여부:', isSuccess);
   return (
     <>
       {isLoding ? (

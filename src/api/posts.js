@@ -1,45 +1,42 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-console.log('BASE URL:',API_BASE_URL);
-export const getPosts = async (
-  page = 1,
-  limit = 10,
-  sort = 'recent',
-  keyword,
-) => {
-  const url = new URL(`${API_BASE_URL}`);
-  url.searchParams.set('page', page);
-  url.searchParams.set('limit', limit);
-  url.searchParams.set('sort', sort);
-  if (keyword) url.searchParams.set('keyword', keyword);
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+export const getPosts = async (page = 1, limit = 10, sort = 'recent', keyword) => {
+  try {
+    const url = new URL(`${API_BASE_URL}`);
+    url.searchParams.set('page', page);
+    url.searchParams.set('limit', limit);
+    url.searchParams.set('sort', sort);
+    if (keyword) url.searchParams.set('keyword', keyword);
 
-  const posts = await response.json();
-  const data = posts.data;
-  const totalCount = posts.totalCount;
-  const totalPages = posts.totalPages;
-  const isSuccess = posts.success;
-  const message = posts.message;
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  if (!response.ok) {
-    console.log('[getPosts]GET ERROR');
-    //throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
-    return { isSuccess };
+    if (!response.ok) {
+      throw new Error(`요청 실패: ${response.status}`);
+    }
+
+    const posts = await response.json();
+
+    return {
+      data: posts.data,
+      totalCount: Number(posts.totalCount),
+      totalPages: Number(posts.totalPages),
+      isSuccess: posts.success,
+      message: posts.message,
+    };
+  } catch (error) {
+    console.error('[getPosts] Error:', error);
+    return {
+      data: [],
+      totalCount: 0,
+      totalPages: 0,
+      isSuccess: false,
+      message: error.message,
+    };
   }
-
-  console.log('[getPosts]받은데이터:', data, isSuccess);
-
-  return {
-    data,
-    totalCount: Number(totalCount),
-    totalPages: Number(totalPages),
-    isSuccess,
-    message,
-  };
 };
 
 export const getPostById = async (id) => {
@@ -52,14 +49,11 @@ export const getPostById = async (id) => {
     },
   });
   if (!response.ok) {
-    console.log('[getPostById]GET ERROR');
     throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
   }
   const post = await response.json();
   const data = post.data;
   const idValue = post._id;
-
-  console.log('[getPostById]받은데이터:', data);
 
   return {
     data,
@@ -82,14 +76,12 @@ export const createPost = async (name, description, price, tags = [], img) => {
     }),
   });
   if (!response.ok) {
-    console.log('[createPost]POST ERROR');
-    throw new Error(`HTTP 에러가 발생했습니다. ${response.statusText}`);
+    return isSuccess;
   }
   const data = await response.json();
-  const success = data.success;
+  const isSuccess = data.success;
   const id = data.data.id;
-  console.log('createPost:', id, success, data);
 
-  const value = { success, id };
+  const value = { isSuccess, id };
   return value;
 };

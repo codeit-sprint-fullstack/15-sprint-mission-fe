@@ -6,7 +6,6 @@ import styles from '../styles/LandingPage.module.css';
 export function LandingPage() {
   const location = useLocation();
   const navigation = useNavigate();
-  console.log('현재위치:', location.pathname);
   if (location.pathname === '/') {
     return (
       <div className={styles.landingBody}>

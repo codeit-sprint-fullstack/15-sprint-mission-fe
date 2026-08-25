@@ -8,14 +8,12 @@ export function ItemHead({ search, sort }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('입력값: ', inputData);
     search(inputData);
     setInputData('');
   };
 
   const options = [{ name: '최신순', value: 'recent' }];
   const handleChange = (e) => {
-    console.log('[SortProducts]정렬기준은: ', e.target.value);
     setSelected(e.target.value);
     sort(e.target.value);
   };

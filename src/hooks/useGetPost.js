@@ -25,7 +25,7 @@ function reducer(state, action) {
         totalPages: action.payload.totalPages,
       };
     case 'FETCH_ERROR':
-      return { ...state, isLoading: false, isSuccess: false };
+      return { ...state, isLoading: false, isSuccess: false, totalPages: 0 };
     case 'SET_PAGE':
       return { ...state, currentPage: action.payload };
     default:
@@ -43,15 +43,23 @@ export function useGetPost(limit, sort, keyword) {
     const getPostsData = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const { data, totalPages } = await getPosts(currentPage, limit, sort, keyword);
+        const { data, totalPages, isSuccess } = await getPosts(
+          currentPage,
+          limit,
+          sort,
+          keyword,
+        );
+        if (!isSuccess) {
+          throw new Error('useGetPost ERROR');
+        }
         if (isActive) {
           dispatch({ type: 'FETCH_SUCCESS', payload: { data, totalPages } });
         }
       } catch (error) {
         if (isActive) {
+          console.log('error:', error);
           dispatch({ type: 'FETCH_ERROR' });
         }
-        throw new Error("useGetPost ERROR", { cause: error });
       }
     };
 
