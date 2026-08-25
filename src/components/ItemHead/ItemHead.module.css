@@ -1,0 +1,148 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  gap: 12px;
+  margin: 26px auto;
+  box-sizing: border-box;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.title {
+  color: var(--Secondary-900, #111827);
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  margin-left: auto;
+}
+
+.inputSide {
+  display: flex;
+  width: 325px;
+  height: 42px;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  border: none;
+  padding: 9px 20px 9px 16px;
+}
+
+.input {
+  display: flex;
+  align-items: flex-start;
+  background: var(--Secondary-100, #f3f4f6);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.resistButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100, #3692ff);
+  border: none;
+  color: var(--Cool-Gray-100, #f3f4f6);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.selectStyle {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+  align-items: center;
+}
+
+.selectStyle:focus {
+  outline: none;
+}
+
+.optionStyle {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  /* 테블릿 */
+  .nav {
+    max-width: 711px;
+  }
+  .inputSide {
+    width: 242px;
+    padding: 9px 20px 9px 10px;
+  }
+  .input {
+    width: 195px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 작은 폰 */
+  .nav {
+    column-gap: 0;
+    row-gap: 8px;
+    max-width: 360px;
+  }
+  .resistButton {
+    order: 1;
+    margin-left: 53px;
+  }
+  .search {
+    order: 2;
+    margin-right: 14px;
+  }
+  .selectStyle {
+    order: 3;
+  }
+  .inputSide {
+    width: 288px;
+    
+  }
+  .selectStyle {
+    width: 42px;
+  }
+}

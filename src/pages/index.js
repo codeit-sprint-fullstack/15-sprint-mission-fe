@@ -1,6 +1,6 @@
-export { Home } from './Home';
-export { FreePage } from './FreePage';
-export { SiteLayout } from './SiteLayout';
-export { NotFound } from './NotFound';
-export { UsedMarket } from './UsedMarket';
+export { LandingPage } from './LandingPage';
+export { ItemPage } from './ItemPage';
 export { LoginPage } from './LoginPage';
+export { FreePage } from './FreePage';
+export { RegistrationPage } from './RegistrationPage';
+export { ProductDetails } from './ProductDetails';
