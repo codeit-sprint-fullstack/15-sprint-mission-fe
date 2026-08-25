@@ -1,5 +1,5 @@
-const API_BASE_URL = 'https://one5-sprint-mission-be.onrender.com/products';
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+console.log('BASE URL:',API_BASE_URL);
 export const getPosts = async (
   page = 1,
   limit = 10,
