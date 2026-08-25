@@ -1,55 +1,80 @@
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
 import { getPosts } from '../api/posts';
 
 const INITIAL_TOTAL_PAGES = 0;
 const INITIAL_PAGE = 1;
 
+const initialState = {
+  currentPage: INITIAL_PAGE,
+  posts: [],
+  totalPages: INITIAL_TOTAL_PAGES,
+  isLoading: false,
+  isSuccess: undefined,
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'FETCH_START':
+      return { ...state, isLoading: true };
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        isLoading: false,
+        isSuccess: true,
+        posts: action.payload.data,
+        totalPages: action.payload.totalPages,
+      };
+    case 'FETCH_ERROR':
+      return { ...state, isLoading: false, isSuccess: false };
+    case 'SET_PAGE':
+      return { ...state, currentPage: action.payload };
+    default:
+      return state;
+  }
+}
+
 export function useGetPost(limit, sort, keyword) {
-  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
-  const [posts, setPosts] = useState([]);
-  const [totalPages, setTotalPages] = useState(INITIAL_TOTAL_PAGES);
-  const [isLoding, setIsLoding] = useState(false);
-  const [isSuccess, setIsSuccess] = useState();
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { currentPage, posts, totalPages, isLoading, isSuccess } = state;
+
   useEffect(() => {
+    let isActive = true;
+
     const getPostsData = async () => {
+      dispatch({ type: 'FETCH_START' });
       try {
-        setIsLoding(true);
-        console.log('로딩중...', isLoding);
-        const { data, totalPages, isSuccess } = await getPosts(
-          currentPage,
-          limit,
-          sort,
-          keyword,
-        );
-        setPosts(data);
-        setTotalPages(totalPages);
-        setIsSuccess(isSuccess);
+        const { data, totalPages } = await getPosts(currentPage, limit, sort, keyword);
+        if (isActive) {
+          dispatch({ type: 'FETCH_SUCCESS', payload: { data, totalPages } });
+        }
       } catch (error) {
-        console.log('[useGetPosts]Error: ', error);
-      } finally {
-        setIsLoding(false);
-        console.log('로딩완료', isLoding);
+        if (isActive) {
+          dispatch({ type: 'FETCH_ERROR' });
+        }
+        throw new Error("useGetPost ERROR", { cause: error });
       }
     };
+
     getPostsData();
-  }, [currentPage, limit, sort, keyword, isSuccess]);
+
+    return () => {
+      isActive = false;
+    };
+  }, [currentPage, limit, sort, keyword]);
 
   const handleCurrentPage = (selectedPage) => {
     if (selectedPage < 1 || selectedPage > totalPages) {
-      console.log('페이지 선택이 잘못되었습니다.');
       return;
     }
-    setCurrentPage(selectedPage);
+    dispatch({ type: 'SET_PAGE', payload: selectedPage });
   };
 
-  const value = {
+  return {
     posts,
     totalPages,
     currentPage,
-    isLoding,
+    isLoading,
     isSuccess,
     handleCurrentPage,
   };
-  console.log('usePost:', posts);
-  return value;
 }

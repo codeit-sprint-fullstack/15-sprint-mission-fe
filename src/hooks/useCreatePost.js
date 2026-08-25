@@ -8,15 +8,13 @@ export function useCreatePost() {
   const submitPost = async (name, description, price, tags = [], img = 'https://picsum.photos/250/250') => {
     try {
       setIsLoding(true);
-      console.log('로딩중...', isLoding);
       const { id } = await createPost(name, description, price, tags, img);
       setId(id);
       return id;
     } catch (error) {
-      console.log('[useCreatePost] Error: ', error);
+      throw new Error("useCreatePost ERROR", { cause: error });
     } finally {
       setIsLoding(false);
-      console.log('로딩완료', isLoding);
     }
   };
 
