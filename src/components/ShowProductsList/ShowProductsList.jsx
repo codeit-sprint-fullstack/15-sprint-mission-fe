@@ -19,7 +19,7 @@ export function ShowProductsList({ posts, isLoding, isSuccess }) {
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = 'comment-empty.png';
+                      e.target.src = '/public/comment-empty.png';
                     }}
                   />
                   <p className={styles.name}>{name}</p>
