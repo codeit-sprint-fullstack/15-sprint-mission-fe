@@ -1,0 +1,17 @@
+.searchItem {
+  display: flex;
+  width: 325px;
+  height: 42px;
+  padding: 9px 20px 9px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border: none;
+  border-radius: 12px;
+  background: var(--Secondary-100, #e5e7eb);
+  transition: all 0.2s;
+}
+.searchItem:focus{
+    outline: none;
+    box-shadow: 0 0 5px 3px #aad0fe;
+  }

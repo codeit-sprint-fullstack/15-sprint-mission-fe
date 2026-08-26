@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 200px;
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+}
+nav .navContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 auto;
+}
+.navContainer .logoImg {
+  display: flex;
+  padding: 5.017px 0 5.848px 0;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8.592px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+nav .login {
+  display: flex;
+  flex-shrink: 0;
+  width: 88px;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100, #3692ff);
+  color: var(--Cool-Gray-100, #f3f4f6);
+  cursor: pointer;
+
+  /* pretendard/lg-16px-semibold */
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+}
+.goBoard,
+.secondShop {
+  flex-shrink: 0;
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  cursor: pointer;
+
+  /* pretendard/2lg-18px-bold */
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 144.444% */
+  text-decoration: none;
+}
