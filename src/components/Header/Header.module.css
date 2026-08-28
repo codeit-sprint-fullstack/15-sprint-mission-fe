@@ -1,0 +1,110 @@
+.headerContainer {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 0 200px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+}
+
+.mainTitle {
+  display: flex;
+  height: 51px;
+  margin-right: 24px;
+  padding: 5.017px 0 5.848px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8.592px;
+  flex-shrink: 0;
+  cursor: pointer;
+  & img {
+    width: 40px;
+    height: 40.135px;
+    flex-shrink: 0;
+  }
+
+  & h2 {
+    color: #3692ff;
+    font-family: "ROKAF";
+    font-size: 25.633px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.mainNavContainer {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  & h3 {
+    display: flex;
+    padding: 21px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--Secondary-600);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    cursor: pointer;
+  }
+}
+
+.loginButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100);
+  color: var(--Cool-Gray-100);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  border: 0px;
+  cursor: pointer;
+}
+.desktopTabletOnly {
+  display: block;
+}
+
+@media (max-width: 744px) {
+  .mainTitle {
+    margin-right: 20px;
+    & h2 {
+      font-size: 20.202px;
+    }
+  }
+  .headerContainer {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mainTitle {
+    margin-right: 4px;
+  }
+
+  .mainNavContainer {
+    & h3 {
+      padding: 25px 4px;
+      font-size: 16px;
+    }
+  }
+  .headerContainer {
+    padding: 0 16px;
+  }
+  .desktopTabletOnly {
+    display: none;
+  }
+}

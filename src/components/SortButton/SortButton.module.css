@@ -1,0 +1,101 @@
+.sortWrapper {
+  width: fit-content;
+  position: relative;
+}
+
+.sortButton {
+  display: flex;
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200);
+  background: #fff;
+  cursor: pointer;
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.sortList {
+  position: absolute;
+
+  margin-top: 8px;
+  display: flex;
+  width: 130px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  gap: 2px;
+
+  & button {
+    width: 130px;
+    height: 42px;
+
+    border: 1px solid var(--Cool-Gray-200);
+    background: #fff;
+    color: var(--Secondary-800);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+    cursor: pointer;
+  }
+  & li:first-child button {
+    border-radius: 12px 12px 0 0;
+  }
+
+  & li:last-child button {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+.mobileIcon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid var(--Cool-Gray-200);
+  background: #fff;
+}
+
+.mobileSortList {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+  display: flex;
+  width: 130px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  gap: 2px;
+
+  & button {
+    width: 130px;
+    height: 42px;
+    border: 1px solid var(--Cool-Gray-200);
+    background: #fff;
+    color: var(--Secondary-800);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    cursor: pointer;
+  }
+  & li:first-child button {
+    border-radius: 12px 12px 0 0;
+  }
+  & li:last-child button {
+    border-radius: 0 0 12px 12px;
+  }
+}
