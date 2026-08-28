@@ -1,0 +1,16 @@
+.detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 16px;
+  text-align: center;
+}
+
+.detail-page__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.detail-page__id {
+  color: var(--color-gray-600);
+}

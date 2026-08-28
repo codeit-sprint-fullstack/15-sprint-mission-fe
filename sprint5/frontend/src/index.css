@@ -1,0 +1,46 @@
+:root {
+  --color-blue: #3692ff;
+  --color-blue-dark: #1967d9;
+  --color-gray-900: #1f2937;
+  --color-gray-600: #4b5563;
+  --color-gray-300: #d1d5db;
+  --color-gray-100: #f3f4f6;
+  --color-bg: #fcfcfc;
+  --color-navy: #111827;
+  --radius-md: 12px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard';
+  color: var(--color-gray-900);
+  background: var(--color-bg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
