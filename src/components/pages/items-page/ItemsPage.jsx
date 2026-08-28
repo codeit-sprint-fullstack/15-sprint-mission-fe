@@ -1,6 +1,6 @@
-import Nav from '../Nav';
+import Nav from '../../Nav';
 import AllItems from './AllItems';
-import Footer from '../Footer';
+import Footer from '../../Footer';
 
 export function ItemsPage() {
   return (

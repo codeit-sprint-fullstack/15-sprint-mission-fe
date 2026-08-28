@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-// import { useResponsiveCount } from '../hooks/useResponsiveCount';
-import getProducts from '../../apis/getProducts';
+import { useResponsiveCount } from '../../../hooks/useResponsiveCount';
+import getProducts from '../../../apis/getProducts';
 import AllItemsCard from './AllItemsCard';
-import { getPagination } from '../../util/getPagination';
+import { getPagination } from '../../../util/getPagination';
 import style from './AllItems.module.css';
-import prev from '../../assets/arrow_left.png';
-import next from '../../assets/arrow_right.png';
+import prev from '../../../assets/arrow_left.png';
+import next from '../../../assets/arrow_right.png';
+import sort from '../../../assets/btn_sort.png';
 import { Link } from 'react-router';
 
 export default function AllItems() {
-  // const { allItemsPerPage } = useResponsiveCount();
-  const allItemsPerPage = 10;
+  const { allItemsPerPage } = useResponsiveCount();
   const [products, setProducts] = useState([]);
   const [orderBy, setOrderBy] = useState('recent');
   const [inputValue, setInputValue] = useState('');
@@ -92,6 +92,7 @@ export default function AllItems() {
             <option value="recent">최신순 </option>
             <option value="favorite">좋아요 순</option>
           </select>
+          <img src={sort} className={style.sortIcon}/>
         </div>
       </div>
       <div className={style.allItems}>

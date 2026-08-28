@@ -1,5 +1,5 @@
 import style from './AllItemsCard.module.css';
-import heart from '../../assets/ic_heart.png';
+import heart from '../../../assets/ic_heart.png';
 
 export default function AllItemsCard({ name, price, likes, image }) {
   return (

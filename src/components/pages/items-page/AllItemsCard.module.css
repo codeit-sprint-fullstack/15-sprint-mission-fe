@@ -14,7 +14,7 @@
   height: 221px;
   border-radius: 8px;
   object-fit: cover no-repeat;
-  background: url('../../assets/img_default.png') lightgray 50%;
+  background: url('../../../assets/img_default.png') lightgray 50%;
 }
 
 .textSection {
@@ -43,10 +43,13 @@
 
 .likeSection {
   display: flex;
+  gap: 2px;
 }
 
 .heartIcon {
   display: inline-block;
+  width: 16px;
+  height: 16px;
 }
 
 .itemLikes {
@@ -61,16 +64,13 @@
 /* 화면 너비가 768px 이하일 때 (태블릿 이하) */
 @media (max-width: 768px) {
   .allItemsCard {
-    width: 343px;
-    height: 434px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    background: #fcfcfc;
+    width: 220px;
+    height: 319px;
   }
 }
 
 /* 화면 너비가 480px 이하일 때 (모바일) */
 @media (max-width: 480px) {
+  width: 168px;
+  height: 267px;
 }

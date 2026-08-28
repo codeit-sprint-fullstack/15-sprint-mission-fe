@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import { LandingPage } from './components/landing-page/LandingPage';
-import { ItemsPage } from './components/items-page/ItemsPage';
-import { RegisterPage } from './components/register-page/RegisterPage';
+import { LandingPage } from './components/pages/landing-page/LandingPage';
+import { ItemsPage } from './components/pages/items-page/ItemsPage';
+import { RegisterPage } from './components/pages/register-page/RegisterPage';
 import './styles/App.css';
 
 function App() {

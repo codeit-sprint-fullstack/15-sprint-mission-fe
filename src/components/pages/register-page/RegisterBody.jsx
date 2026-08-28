@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { nanoid } from 'nanoid';
-import createProduct from '../../apis/createProduct';
+import iconX from '../../../assets/ic_X.png'
+import createProduct from '../../../apis/createProduct';
 import style from './RegisterBody.module.css';
 
 function Input({ children, name, value, placeholder, onChange, onKeyDown }) {
@@ -21,7 +22,11 @@ function Input({ children, name, value, placeholder, onChange, onKeyDown }) {
 }
 
 function Tags({ children, onClick }) {
-  return <span onClick={onClick}>{children} X</span>;
+  return (
+    <span className={style.tag} onClick={onClick}>
+      #{children} <img src={iconX} className={iconX} alt="엑스버튼"/>
+    </span>
+  );
 }
 
 export function RegisterBody() {
@@ -105,6 +110,7 @@ export function RegisterBody() {
       >
         태그
       </Input>
+      <div className={style.tags}>
       {tags.map((tag) => {
         return (
           <Tags
@@ -114,6 +120,7 @@ export function RegisterBody() {
           />
         );
       })}
+      </div>
     </form>
   );
 }

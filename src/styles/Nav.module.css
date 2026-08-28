@@ -1,4 +1,6 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
 .navOutbox {
+  z-index: 9999;
   width: 100%;
   background-color: #ffffff;
   position: sticky;
@@ -15,6 +17,7 @@ nav {
   align-items: center;
   margin: 0 auto;
 }
+
 
 .navLogo {
   & img {
@@ -35,4 +38,24 @@ nav {
   text-decoration: none;
   color: var(--color-secondary-gray100);
   white-space: nowrap;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+  .navOutbox {
+    padding: 0 24px;
+  }
+  nav {
+    max-width: 720px;
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+  .navOutbox {
+    padding: 0 16px;
+  }
+  nav {
+    max-width: 448px;
+  }
 }
