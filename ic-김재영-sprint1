@@ -1,0 +1,240 @@
+[33mcommit dae52c94af3eeaa0c7fc47f20b76e7d5c32d164a[m
+Author: YANGPA <wodud7273@gmail.com>
+Date:   Thu Jul 30 00:06:17 2026 +0900
+
+     fix panda market /delete trash img / fix url link / fix google Analytics / ...
+
+ faq/index.html                                     |  21 [32m+++[m
+ index.css                                          |  10 [32m+[m[31m-[m
+ index.html                                         | 143 [32m++++++++++++[m[31m---------[m
+ item/index.html                                    |  21 [32m+++[m
+ item/item.html                                     |   0
+ pandamarket/login/login.html => login/index.html   |  34 [32m+++[m[31m--[m
+ {pandamarket/login => login}/login.css             |   0
+ loginpageimg/Component 2-2.png                     | Bin [31m1622[m -> [32m0[m bytes
+ loginpageimg/Component 2.png                       | Bin [31m1622[m -> [32m0[m bytes
+ loginpageimg/Component 2@2x-1.png                  | Bin [31m3335[m -> [32m0[m bytes
+ loginpageimg/Component 2@2x-2.png                  | Bin [31m3335[m -> [32m0[m bytes
+ loginpageimg/Component 2@2x.png                    | Bin [31m3335[m -> [32m0[m bytes
+ loginpageimg/Component 2@3x-1.png                  | Bin [31m5106[m -> [32m0[m bytes
+ loginpageimg/Component 2@3x-2.png                  | Bin [31m5106[m -> [32m0[m bytes
+ loginpageimg/Component 2@3x.png                    | Bin [31m5106[m -> [32m0[m bytes
+ loginpageimg/Component 3-2.png                     | Bin [31m1510[m -> [32m0[m bytes
+ loginpageimg/Component 3.png                       | Bin [31m1510[m -> [32m0[m bytes
+ loginpageimg/Component 3@2x-1.png                  | Bin [31m2760[m -> [32m0[m bytes
+ loginpageimg/Component 3@2x-2.png                  | Bin [31m2760[m -> [32m0[m bytes
+ loginpageimg/Component 3@2x.png                    | Bin [31m2760[m -> [32m0[m bytes
+ loginpageimg/Component 3@3x-1.png                  | Bin [31m3966[m -> [32m0[m bytes
+ loginpageimg/Component 3@3x-2.png                  | Bin [31m3966[m -> [32m0[m bytes
+ loginpageimg/Component 3@3x.png                    | Bin [31m3966[m -> [32m0[m bytes
+ ...14\220\353\213\244\353\247\210\354\274\223.png" | Bin [31m620274[m -> [32m0[m bytes
+ .../{Component 2-1.png => goolgleComponent.png}    | Bin
+ .../{Component 3-1.png => kakaoTalkComponent.png}  | Bin
+ ...4\251 \355\216\230\354\235\264\354\247\200.png" | Bin [31m1211392[m -> [32m0[m bytes
+ pandaImg/Frame 2608833-1.png                       | Bin [31m13679[m -> [32m0[m bytes
+ pandaImg/Frame 2608833.png                         | Bin [31m56485[m -> [32m0[m bytes
+ pandaImg/Frame 2608833@2x.png                      | Bin [31m32419[m -> [32m0[m bytes
+ pandaImg/Group 33682.png                           | Bin [31m37040[m -> [32m0[m bytes
+ pandaImg/Img_home_01@2x.png                        | Bin [31m32419[m -> [32m0[m bytes
+ pandaImg/Img_home_01@3x.png                        | Bin [31m56485[m -> [32m0[m bytes
+ pandaImg/Img_home_02.png                           | Bin [31m177803[m -> [32m0[m bytes
+ pandaImg/Img_home_02@2x.png                        | Bin [31m87625[m -> [32m0[m bytes
+ pandaImg/Img_home_03@2x.png                        | Bin [31m22755[m -> [32m0[m bytes
+ pandaImg/Img_home_03@3x.png                        | Bin [31m37040[m -> [32m0[m bytes
+ pandaImg/Img_home_bottom@2x.png                    | Bin [31m148289[m -> [32m0[m bytes
+ pandaImg/Img_home_bottom@3x.png                    | Bin [31m239669[m -> [32m0[m bytes
+ pandaImg/Img_home_top@2x.png                       | Bin [31m139365[m -> [32m0[m bytes
+ pandaImg/Img_home_top@3x.png                       | Bin [31m246009[m -> [32m0[m bytes
+ pandaImg/Input/btn_visibility_on_24px.svg          |  10 [31m--[m
+ pandaImg/Property 1=Typo.png                       | Bin [31m1358[m -> [32m0[m bytes
+ pandaImg/Property 1=Typo@2x.png                    | Bin [31m2034[m -> [32m0[m bytes
+ pandaImg/Property 1=Typo@3x.png                    | Bin [31m2673[m -> [32m0[m bytes
+ pandaImg/Property 1=lg@2x.png                      | Bin [31m11964[m -> [32m0[m bytes
+ pandaImg/Property 1=lg@3x.png                      | Bin [31m17940[m -> [32m0[m bytes
+ pandaImg/Property 1=md-1.png                       | Bin [31m2809[m -> [32m0[m bytes
+ pandaImg/Property 1=md.png                         | Bin [31m3510[m -> [32m0[m bytes
+ pandaImg/Property 1=md.svg                         |  16 [31m---[m
+ pandaImg/Property 1=md@2x-1.png                    | Bin [31m6095[m -> [32m0[m bytes
+ pandaImg/Property 1=md@2x.png                      | Bin [31m6318[m -> [32m0[m bytes
+ pandaImg/Property 1=md@3x-1.png                    | Bin [31m10059[m -> [32m0[m bytes
+ pandaImg/Property 1=md@3x.png                      | Bin [31m9052[m -> [32m0[m bytes
+ pandaImg/Property 1=sm-1.png                       | Bin [31m4594[m -> [32m0[m bytes
+ pandaImg/Property 1=sm.png                         | Bin [31m2817[m -> [32m0[m bytes
+ pandaImg/Property 1=sm.svg                         |  17 [31m---[m
+ pandaImg/Property 1=sm@2x-1.png                    | Bin [31m8871[m -> [32m0[m bytes
+ pandaImg/Property 1=sm@2x.png                      | Bin [31m5040[m -> [32m0[m bytes
+ pandaImg/Property 1=sm@3x-1.png                    | Bin [31m13668[m -> [32m0[m bytes
+ pandaImg/Property 1=sm@3x.png                      | Bin [31m7278[m -> [32m0[m bytes
+ pandaImg/Tab/Dropdown/Tag/ic_X.png                 | Bin [31m623[m -> [32m0[m bytes
+ pandaImg/Tab/Dropdown/Tag/ic_X.svg                 |   5 [31m-[m
+ pandaImg/Tab/Dropdown/Tag/ic_X@2x.png              | Bin [31m1070[m -> [32m0[m bytes
+ pandaImg/Tab/Dropdown/Tag/ic_X@3x.png              | Bin [31m1582[m -> [32m0[m bytes
+ ...14\220\353\213\244\353\247\210\354\274\223.png" | Bin [31m2761018[m -> [32m0[m bytes
+ pandaImg/arrow_left/ic_back.png                    | Bin [31m357[m -> [32m0[m bytes
+ pandaImg/arrow_left/ic_back.svg                    |   4 [31m-[m
+ pandaImg/arrow_left/ic_back@2x.png                 | Bin [31m531[m -> [32m0[m bytes
+ pandaImg/arrow_left/ic_back@3x.png                 | Bin [31m731[m -> [32m0[m bytes
+ pandaImg/btn_visibility_off_24px-1.svg             |   3 [31m-[m
+ pandaImg/btn_visibility_off_24px-2.svg             |   3 [31m-[m
+ pandaImg/btn_visibility_off_24px-3.svg             |   3 [31m-[m
+ pandaImg/btn_visibility_off_24px-4.svg             |   3 [31m-[m
+ pandaImg/btn_visibility_off_24px.svg               |   3 [31m-[m
+ pandaImg/btn_visibility_on_24px-1.svg              |  10 [31m--[m
+ pandaImg/btn_visibility_on_24px-2.svg              |  10 [31m--[m
+ pandaImg/gnb/Group 19-1.png                        | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19-2.png                        | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19-3.png                        | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19-4.png                        | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19-5.png                        | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19.png                          | Bin [31m2820[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x-1.png                     | Bin [31m5048[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x-2.png                     | Bin [31m5047[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x-3.png                     | Bin [31m5047[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x-4.png                     | Bin [31m5047[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x-5.png                     | Bin [31m5047[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@2x.png                       | Bin [31m5048[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x-1.png                     | Bin [31m7286[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x-2.png                     | Bin [31m7290[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x-3.png                     | Bin [31m7290[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x-4.png                     | Bin [31m7288[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x-5.png                     | Bin [31m7288[m -> [32m0[m bytes
+ pandaImg/gnb/Group 19@3x.png                       | Bin [31m7286[m -> [32m0[m bytes
+ .../btn_visibility_on_24px/Input/Mask group.png    | Bin [31m348[m -> [32m0[m bytes
+ pandaImg/gnb/logo-1.png                            | Bin [31m1212[m -> [32m0[m bytes
+ pandaImg/gnb/logo-2.png                            | Bin [31m1212[m -> [32m0[m bytes
+ pandaImg/gnb/logo.png                              | Bin [31m1358[m -> [32m0[m bytes
+ pandaImg/gnb/logo@2x-1.png                         | Bin [31m1766[m -> [32m0[m bytes
+ pandaImg/gnb/logo@2x-2.png                         | Bin [31m1766[m -> [32m0[m bytes
+ pandaImg/gnb/logo@2x.png                           | Bin [31m2034[m -> [32m0[m bytes
+ pandaImg/gnb/logo@3x-1.png                         | Bin [31m2268[m -> [32m0[m bytes
+ pandaImg/gnb/logo@3x-2.png                         | Bin [31m2268[m -> [32m0[m bytes
+ pandaImg/gnb/logo@3x.png                           | Bin [31m2673[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_center.png                   | Bin [31m305[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_center.svg                   |   3 [31m-[m
+ pandaImg/ic_Alignment_center@2x.png                | Bin [31m364[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_center@3x.png                | Bin [31m403[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_left.png                     | Bin [31m292[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_left.svg                     |   3 [31m-[m
+ pandaImg/ic_Alignment_left@2x.png                  | Bin [31m340[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_left@3x.png                  | Bin [31m381[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_right.png                    | Bin [31m287[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_right.svg                    |   3 [31m-[m
+ pandaImg/ic_Alignment_right@2x.png                 | Bin [31m334[m -> [32m0[m bytes
+ pandaImg/ic_Alignment_right@3x.png                 | Bin [31m379[m -> [32m0[m bytes
+ pandaImg/ic_Bullet.png                             | Bin [31m345[m -> [32m0[m bytes
+ pandaImg/ic_Bullet.svg                             |   3 [31m-[m
+ pandaImg/ic_Bullet@2x.png                          | Bin [31m527[m -> [32m0[m bytes
+ pandaImg/ic_Bullet@3x.png                          | Bin [31m572[m -> [32m0[m bytes
+ pandaImg/ic_coloring.png                           | Bin [31m437[m -> [32m0[m bytes
+ pandaImg/ic_coloring.svg                           |   3 [31m-[m
+ pandaImg/ic_coloring@2x.png                        | Bin [31m742[m -> [32m0[m bytes
+ pandaImg/ic_coloring@3x.png                        | Bin [31m981[m -> [32m0[m bytes
+ .../{btn_visibility_on_24px.svg => ic_eye.svg}     |   0
+ pandaImg/ic_facebook.svg                           |   3 [31m-[m
+ pandaImg/ic_facebook@2x.png                        | Bin [31m660[m -> [32m0[m bytes
+ pandaImg/ic_facebook@3x.png                        | Bin [31m951[m -> [32m0[m bytes
+ pandaImg/ic_instagram.svg                          |   3 [31m-[m
+ pandaImg/ic_instagram@2x.png                       | Bin [31m708[m -> [32m0[m bytes
+ pandaImg/ic_instagram@3x.png                       | Bin [31m1045[m -> [32m0[m bytes
+ pandaImg/ic_numbering.png                          | Bin [31m386[m -> [32m0[m bytes
+ pandaImg/ic_numbering.svg                          |   3 [31m-[m
+ pandaImg/ic_numbering@2x.png                       | Bin [31m557[m -> [32m0[m bytes
+ pandaImg/ic_numbering@3x.png                       | Bin [31m607[m -> [32m0[m bytes
+ pandaImg/ic_search.png                             | Bin [31m526[m -> [32m0[m bytes
+ pandaImg/ic_search.svg                             |   3 [31m-[m
+ pandaImg/ic_search@2x.png                          | Bin [31m942[m -> [32m0[m bytes
+ pandaImg/ic_search@3x.png                          | Bin [31m1352[m -> [32m0[m bytes
+ pandaImg/ic_twitter.svg                            |   3 [31m-[m
+ pandaImg/ic_twitter@2x.png                         | Bin [31m647[m -> [32m0[m bytes
+ pandaImg/ic_twitter@3x.png                         | Bin [31m909[m -> [32m0[m bytes
+ pandaImg/ic_youtube.svg                            |  10 [31m--[m
+ pandaImg/ic_youtube@2x.png                         | Bin [31m514[m -> [32m0[m bytes
+ pandaImg/ic_youtube@3x.png                         | Bin [31m694[m -> [32m0[m bytes
+ pandaImg/img_badge.png                             | Bin [31m1384[m -> [32m0[m bytes
+ pandaImg/img_badge.svg                             |   6 [31m-[m
+ pandaImg/img_badge@2x.png                          | Bin [31m2580[m -> [32m0[m bytes
+ pandaImg/img_badge@3x.png                          | Bin [31m3688[m -> [32m0[m bytes
+ pandaImg/list_community/ic_medal.png               | Bin [31m498[m -> [32m0[m bytes
+ pandaImg/list_community/ic_medal.svg               |   4 [31m-[m
+ pandaImg/list_community/ic_medal@2x.png            | Bin [31m779[m -> [32m0[m bytes
+ pandaImg/list_community/ic_medal@3x.png            | Bin [31m1047[m -> [32m0[m bytes
+ pandaImg/pandaface.png                             | Bin [31m1553[m -> [32m0[m bytes
+ pandaImg/size=large.png                            | Bin [31m1374[m -> [32m0[m bytes
+ pandaImg/size=large.svg                            |  24 [31m----[m
+ pandaImg/size=large@2x.png                         | Bin [31m2481[m -> [32m0[m bytes
+ pandaImg/size=large@3x.png                         | Bin [31m3646[m -> [32m0[m bytes
+ pandaImg/size=medium.png                           | Bin [31m1059[m -> [32m0[m bytes
+ pandaImg/size=medium.svg                           |  24 [31m----[m
+ pandaImg/size=medium@2x.png                        | Bin [31m2068[m -> [32m0[m bytes
+ pandaImg/size=medium@3x.png                        | Bin [31m2964[m -> [32m0[m bytes
+ pandaImg/size=small.png                            | Bin [31m825[m -> [32m0[m bytes
+ pandaImg/size=small.svg                            |  24 [31m----[m
+ pandaImg/size=small@2x.png                         | Bin [31m1566[m -> [32m0[m bytes
+ pandaImg/size=small@3x.png                         | Bin [31m2246[m -> [32m0[m bytes
+ pandaImg/status=active-1.png                       | Bin [31m311[m -> [32m0[m bytes
+ pandaImg/status=active-1.svg                       |   3 [31m-[m
+ pandaImg/status=active-2.png                       | Bin [31m3530[m -> [32m0[m bytes
+ pandaImg/status=active-2.svg                       |  11 [31m--[m
+ pandaImg/status=active-3.png                       | Bin [31m1204[m -> [32m0[m bytes
+ pandaImg/status=active-3.svg                       |  11 [31m--[m
+ pandaImg/status=active-4.png                       | Bin [31m1201[m -> [32m0[m bytes
+ pandaImg/status=active.png                         | Bin [31m327[m -> [32m0[m bytes
+ pandaImg/status=active.svg                         |   3 [31m-[m
+ pandaImg/status=active@2x-1.png                    | Bin [31m397[m -> [32m0[m bytes
+ pandaImg/status=active@2x-2.png                    | Bin [31m2387[m -> [32m0[m bytes
+ pandaImg/status=active@2x-3.png                    | Bin [31m2398[m -> [32m0[m bytes
+ pandaImg/status=active@2x.png                      | Bin [31m392[m -> [32m0[m bytes
+ pandaImg/status=active@3x-1.png                    | Bin [31m502[m -> [32m0[m bytes
+ pandaImg/status=active@3x-2.png                    | Bin [31m3533[m -> [32m0[m bytes
+ pandaImg/status=active@3x.png                      | Bin [31m515[m -> [32m0[m bytes
+ pandaImg/status=inactive-1.png                     | Bin [31m309[m -> [32m0[m bytes
+ pandaImg/status=inactive-1.svg                     |   3 [31m-[m
+ pandaImg/status=inactive-2.png                     | Bin [31m3485[m -> [32m0[m bytes
+ pandaImg/status=inactive-2.svg                     |  11 [31m--[m
+ pandaImg/status=inactive-3.png                     | Bin [31m1195[m -> [32m0[m bytes
+ pandaImg/status=inactive-3.svg                     |  11 [31m--[m
+ pandaImg/status=inactive-4.png                     | Bin [31m1189[m -> [32m0[m bytes
+ pandaImg/status=inactive.png                       | Bin [31m308[m -> [32m0[m bytes
+ pandaImg/status=inactive.svg                       |   3 [31m-[m
+ pandaImg/status=inactive@2x-1.png                  | Bin [31m378[m -> [32m0[m bytes
+ pandaImg/status=inactive@2x-2.png                  | Bin [31m2373[m -> [32m0[m bytes
+ pandaImg/status=inactive@2x-3.png                  | Bin [31m2387[m -> [32m0[m bytes
+ pandaImg/status=inactive@2x.png                    | Bin [31m369[m -> [32m0[m bytes
+ pandaImg/status=inactive@3x-1.png                  | Bin [31m479[m -> [32m0[m bytes
+ pandaImg/status=inactive@3x-2.png                  | Bin [31m3490[m -> [32m0[m bytes
+ pandaImg/status=inactive@3x.png                    | Bin [31m457[m -> [32m0[m bytes
+ pandaImg/status=white-1.png                        | Bin [31m211[m -> [32m0[m bytes
+ pandaImg/status=white-1.svg                        |   3 [31m-[m
+ pandaImg/status=white.png                          | Bin [31m221[m -> [32m0[m bytes
+ pandaImg/status=white.svg                          |   3 [31m-[m
+ pandaImg/status=white@2x-1.png                     | Bin [31m253[m -> [32m0[m bytes
+ pandaImg/status=white@2x.png                       | Bin [31m262[m -> [32m0[m bytes
+ pandaImg/status=white@3x-1.png                     | Bin [31m302[m -> [32m0[m bytes
+ pandaImg/status=white@3x.png                       | Bin [31m323[m -> [32m0[m bytes
+ pandaImg/upload/ic_X-1.png                         | Bin [31m614[m -> [32m0[m bytes
+ pandaImg/upload/ic_X-1.svg                         |   5 [31m-[m
+ pandaImg/upload/ic_X.png                           | Bin [31m614[m -> [32m0[m bytes
+ pandaImg/upload/ic_X.svg                           |   5 [31m-[m
+ pandaImg/upload/ic_X@2x-1.png                      | Bin [31m1091[m -> [32m0[m bytes
+ pandaImg/upload/ic_X@2x.png                        | Bin [31m1091[m -> [32m0[m bytes
+ pandaImg/upload/ic_X@3x-1.png                      | Bin [31m1565[m -> [32m0[m bytes
+ pandaImg/upload/ic_X@3x.png                        | Bin [31m1565[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus-1.png                      | Bin [31m341[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus-1.svg                      |   4 [31m-[m
+ pandaImg/upload/ic_plus.png                        | Bin [31m341[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus.svg                        |   4 [31m-[m
+ pandaImg/upload/ic_plus@2x-1.png                   | Bin [31m541[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus@2x.png                     | Bin [31m541[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus@3x-1.png                   | Bin [31m750[m -> [32m0[m bytes
+ pandaImg/upload/ic_plus@3x.png                     | Bin [31m750[m -> [32m0[m bytes
+ ...20\353\213\244 \354\226\274\352\265\264@2x.png" | Bin [31m2924[m -> [32m0[m bytes
+ ...20\353\213\244 \354\226\274\352\265\264@3x.png" | Bin [31m4246[m -> [32m0[m bytes
+ ...4\220\353\213\244 \354\240\204\354\213\240.png" | Bin [31m11530[m -> [32m0[m bytes
+ ...20\353\213\244 \354\240\204\354\213\240@2x.png" | Bin [31m22564[m -> [32m0[m bytes
+ ...20\353\213\244 \354\240\204\354\213\240@3x.png" | Bin [31m34114[m -> [32m0[m bytes
+ pandamarket/faq/faq.html                           |   0
+ pandamarket/private/private.html                   |   0
+ private/index.html                                 |  21 [32m+++[m
+ .../signup/signup.html => signup/index.html        |  39 [32m++++[m[31m--[m
+ {pandamarket/signup => signup}/signup.css          |   0
+ 233 files changed, 206 insertions(+), 372 deletions(-)

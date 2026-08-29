@@ -1,0 +1,38 @@
+footer {
+  width: 100%;
+  height: 160px;
+  background-color: var(--color-gray900);
+}
+
+.marketFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 200px;
+  padding-top: 20px;
+}
+
+.nameYear {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-gray400);
+}
+
+.privateFaq {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.privateFaq > a {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-gray200);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.snsDiv {
+  display: flex;
+  gap: 12px;
+}
