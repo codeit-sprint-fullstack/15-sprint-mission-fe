@@ -1,0 +1,141 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+.card {
+  max-width: 988px;
+  max-height: 444px;
+  margin: 138px auto;
+  background-color: #fcfcfc;
+  word-break: keep-all;
+  &:nth-of-type(odd) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 64px;
+  }
+  &:nth-of-type(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 64px;
+    &.cardText {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+}
+
+.cardImage {
+  max-width: 588px;
+  max-height: 444px;
+}
+
+.cardImage > img {
+  width: 100%;
+  height: 100%;
+}
+
+.cardText {
+  max-width: 300px;
+  max-height: 444px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cardText > h2,
+.cardText > p {
+  display: inline-block;
+}
+
+.cardText > h2 {
+  display: inline-block;
+  color: var(--color-primary-blue100);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.cardTextAndTitle {
+  margin-top: 12px;
+  color: var(--color-secondary-gray700);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+}
+
+.cardTextDesc {
+  margin-top: 24px;
+  color: var(--color-secondary-gray700);
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+hr {
+  opacity: 0;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+  .card {
+    max-width: 696px;
+    width: 100%;
+    max-height: 708px;
+    background-color: #fcfcfc;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    &:nth-of-type(odd) {
+      display: flex;
+      flex-direction: column;
+    }
+    &:nth-of-type(even) {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      & .cardText {
+        max-width: 650px;
+        align-items: flex-end;
+        text-align: right;
+        & .cardTextAndTitle {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .cardImage {
+    display: flex;
+    justify-content: center;
+  }
+  & img {
+    width: 100%;
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+  .card {
+    max-width: 344px;
+    width: 100%;
+    max-height: 417px;
+    background-color: #fcfcfc;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    & .cardText {
+      & .cardTextAndTitle {
+        font-size: 24px;
+        line-height: 16px;
+      }
+      & .cardTextDesc {
+        font-size: 16px;
+        line-height: 10px;        
+      }
+    }
+  }
+}

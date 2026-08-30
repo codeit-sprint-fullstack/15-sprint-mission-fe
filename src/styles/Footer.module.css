@@ -1,0 +1,95 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+.footerOutbox {
+  width: 100%;
+  padding: 0 200px;
+  margin: 0 auto;
+  background-color: var(--color-secondary-gray900);
+  display: flex;
+  justify-content: center;
+}
+
+.footerOutbox > .footer {
+  width: 100%;
+  max-width: 1520px;
+  height: 160px;
+  padding: 32px 0;
+  background-color: var(--color-secondary-gray900);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+.footerLeft {
+  color: var(--color-secondary-gray400);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footerCenter {
+  display: flex;
+  gap: 30px;
+  & a {
+    color: var(--color-secondary-gray200);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+.footerRight {
+  display: flex;
+  gap: 12px;
+}
+
+a {
+  cursor: pointer;
+  font-family: Pretendard;
+}
+
+span {
+  font-family: Pretendard;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+  .footerOutbox {
+    padding: 0 24px;
+    & .footer {
+      max-width: 720px;
+    }
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+  .footerOutbox {
+    padding: 0 16px;
+    & .footer {
+      max-width: 448px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+      "topLeft topRight"
+      "bottomLeft .";
+      & .footerLeft {
+        grid-area: bottomLeft;  
+        text-align: left;              
+      }
+      & .footerCenter {
+        grid-area: topLeft;      
+      }
+      & .footerRight {
+        grid-area: topRight; 
+        display: flex;
+        justify-content: flex-end;  
+      }
+      & select {
+        display: none;
+      }
+    }
+  }
+}

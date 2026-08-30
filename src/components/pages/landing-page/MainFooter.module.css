@@ -1,0 +1,72 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+.outer {
+  width: 100%;
+  background-color: #cfe5ff;
+  border-top: 138px solid #cfe5ff;
+}
+
+.footer {
+  max-width: 1920px;
+  height: 540px;
+  background-color: #cfe5ff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 69px;
+}
+
+.inner > h2 {
+  display: inline-block;
+  color: var(--color-secondary-gray700);
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+  .outer {
+    height: 791px;
+  }
+
+  .footer {
+    height: 791px;
+  }
+  .inner {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    & > h2 {
+      position: relative;
+      bottom: 201px;
+    }
+    & > img {
+      position: relative;
+      bottom: 138px;
+    }
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+  .outer {
+    height: 540px;
+  }
+  .footer {
+    height: 540px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,76 @@
+/* 기본 스타일 (데스크탑 등 모든 화면에 적용) */
+
+.bestItemsCard {
+  width: 282px;
+  height: 378px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fcfcfc;
+}
+
+.itemPhoto {
+  width: 282px;
+  height: 423px;
+  border-radius: 8px;
+  object-fit: cover no-repea;
+  background: url('../assets/img_default.png') lightgray 50%;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemName {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.itemPrice {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.likeSection {
+  display: flex;
+}
+
+.heartIcon {
+  display: inline-block;
+}
+
+.itemLikes {
+  color: var(--Secondary-600, #4b5563);
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+/* 화면 너비가 768px 이하일 때 (태블릿 이하) */
+@media (max-width: 768px) {
+  .bestItemsCard {
+    width: 343px;
+    height: 434px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    background: #fcfcfc;
+  }
+}
+/* 화면 너비가 480px 이하일 때 (모바일) */
+@media (max-width: 480px) {
+}
