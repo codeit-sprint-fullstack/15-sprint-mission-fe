@@ -1,43 +1,19 @@
-import Layout from './components/common/Layout/Layout';
-import BestProducts from './pages/BestProducts';
-import SellProducts from './pages/SellProducts';
+import { Route, Routes } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Items from './pages/Items';
+import Registration from './pages/Registration';
+import ProductDetail from './pages/ProductDetail';
+
 import './App.css';
-import { useEffect, useState } from 'react';
-import { getProducts } from './api/product';
 
 function App() {
-  const [bestProducts, setBestProducts] = useState([]);
-  // const [sellProducts, setSellProducts] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const bestResult = await getProducts(1, 4, '', 'favorite');
-
-        setBestProducts(bestResult.list);
-        // setSellProducts(sellResult.list);
-      } catch (error) {
-        setError(error);
-      }
-    }
-    loadProducts();
-  }, []);
-
-  if (error) {
-    return <p>상품을 불러오지 못했습니다.</p>;
-  }
-
   return (
-    <div>
-      <Layout>
-        <div className="bodyBox">
-          <BestProducts products={bestProducts} />
-          {/* <SellProducts products={sellProducts} /> */}
-          <SellProducts />
-        </div>
-      </Layout>
-    </div>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/items" element={<Items />} />
+      <Route path="/registration" element={<Registration />} />
+      <Route path="/products/:id" element={<ProductDetail />} />
+    </Routes>
   );
 }
 
