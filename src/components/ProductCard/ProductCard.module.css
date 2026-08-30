@@ -1,0 +1,79 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 14rem;
+  height: 20rem;
+}
+
+.image {
+  width: 100%;
+  height: 74%;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  padding-bottom: 0.5rem;
+}
+.description {
+  color: var(--Secondary-800);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-small);
+  word-break: keep-all;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price {
+  color: var(--Secondary-800);
+  font-size: 1rem;
+  font-weight: var(--font-weight-big);
+  width: 100%;
+}
+
+.favoriteCount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--Secondary-600);
+
+  & p {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-small);
+  }
+
+  & svg {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+}
+/* 베스트 상품 스타일 */
+.best {
+  width: 17.6rem;
+  height: 23.6rem;
+}
+
+/* 반응형 타블렛 사이즈 */
+@media (max-width: 768px) {
+  .card {
+    width: 13.8rem;
+    height: 19.8rem;
+  }
+  .best {
+    width: 20.5rem;
+    height: 26rem;
+  }
+}
+
+/* 반응형 모바일 사이즈 */
+@media (max-width: 375px) {
+  .card {
+    width: 10.3rem;
+    height: 16.5rem;
+  }
+  .image {
+    height: 68%;
+  }
+  .best {
+    width: 100%;
+  }
+}
