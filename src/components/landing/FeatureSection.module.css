@@ -1,25 +1,34 @@
 /* =========================================
   1. 기본 스타일(모바일)
 ========================================= */
-.wrapper {
+.featureContainer {
   width: 100%;
-  padding: 0 16px 135px;
+  padding: 52px 16px 80px;
   background: #fcfcfc;
 }
 
-.content {
-  display: inline-flex;
+.featureList {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pcOnly {
+  display: none;
 }
 
 /* =========================================
   2. 태블릿 사이즈 (744px 이상)
 ========================================= */
 @media (width >= 744px) {
-  .wrapper {
-    padding: 0 24px 165px;
+  .featureContainer {
+    padding: 24px 24px 52px;
+  }
+
+  .featureList {
+    gap: 52px;
   }
 }
 
@@ -27,13 +36,17 @@
   3. PC 사이즈 (1024px 이상)
 ========================================= */
 @media (width >= 1024px) {
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 0 200px 140px;
+  .featureContainer {
+    width: 100%;
+    padding: 138px 0;
+    background: #fff;
   }
 
-  .content {
-    max-width: 1200px;
+  .featureList {
+    gap: 276px;
+  }
+
+  .pcOnly {
+    display: block;
   }
 }

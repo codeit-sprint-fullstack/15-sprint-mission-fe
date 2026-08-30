@@ -1,19 +1,19 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-import styles from "./Input.module.css";
+import styles from "./Textarea.module.css";
 
-function Input({ label, id, error, ...rest }, ref) {
+function Textarea({ id, label, error, ...rest }, ref) {
   return (
-    <div className={styles.inputContainer}>
-      <div className={styles.inputWrapper}>
+    <div className={styles.textareaContainer}>
+      <div className={styles.textareaWrapper}>
         <label htmlFor={id} className={styles.label}>
           {label}
         </label>
-        <input
+        <textarea
           id={id}
           ref={ref}
-          className={clsx(styles.input, error && styles.error)}
+          className={clsx(styles.textarea, error && styles.error)}
           {...rest}
         />
       </div>
@@ -21,4 +21,4 @@ function Input({ label, id, error, ...rest }, ref) {
     </div>
   );
 }
-export default forwardRef(Input);
+export default forwardRef(Textarea);

@@ -1,0 +1,62 @@
+/* =========================================
+  1. 기본 스타일(모바일)
+========================================= */
+.formContainer {
+  width: 100%;
+  padding-bottom: 52px;
+}
+
+.headWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.formTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xl);
+  color: var(--secondary-800, #1f2937);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.tagInputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* =========================================
+  2. 태블릿 사이즈 (744px 이상)
+========================================= */
+@media (width >= 744px) {
+  .formContainer {
+    padding-bottom: 28px;
+  }
+
+  .headWrapper {
+    padding: 20px 0 24px;
+  }
+}
+
+/* =========================================
+  3. PC 사이즈 (1024px 이상)
+========================================= */
+@media (width >= 1024px) {
+  .formContainer {
+    padding-bottom: 24px;
+  }
+
+  .headWrapper {
+    padding: 28px 0 24px;
+  }
+}

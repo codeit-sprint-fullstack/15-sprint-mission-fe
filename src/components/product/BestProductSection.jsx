@@ -1,30 +1,50 @@
 import clsx from "clsx";
 
-import { useState } from "react";
-import useProducts from "../../hooks/useProducts";
-
-import ProductCard from "./ProductCard";
-import Spinner from "../ui/Spinner";
-import ErrorView from "../ui/ErrorView";
-
-import styles from "./BestProductSection.module.css";
 import useDeviceType from "../../hooks/useDeviceType";
 
+import ErrorView from "../error/ErrorView";
+import Spinner from "../ui/Spinner";
+import ProductCard from "./ProductCard";
+
+import styles from "./BestProductSection.module.css";
+
 function BestProductSection() {
-  const { products, isLoading, error } = useProducts({
-    page: 1,
-    pageSize: 10,
-    orderBy: "favorite",
-  });
+  // 임시처리
+  const products = [
+    {
+      id: 1,
+      name: "베스트 상품1",
+      price: 9900,
+      createdAt: "2026-08-29T12:53:17.365Z",
+    },
+    {
+      id: 2,
+      name: "베스트 상품2",
+      price: 29900,
+      createdAt: "2026-08-29T12:53:17.365Z",
+    },
+    {
+      id: 3,
+      name: "베스트 상품3",
+      price: 39900,
+      createdAt: "2026-08-29T12:53:17.365Z",
+    },
+    {
+      id: 4,
+      name: "베스트 상품4",
+      price: 49900,
+      createdAt: "2026-08-29T12:53:17.365Z",
+    },
+  ];
+  const isLoading = false;
+  const error = false;
+
   const { device } = useDeviceType();
 
-  const [displayCount] = useState(
-    device === "MOBILE" ? 1 : device === "TABLET" ? 2 : 4,
-  );
+  const displayCount = device === "MOBILE" ? 1 : device === "TABLET" ? 2 : 4;
+  const minHeight = device === "PC" ? 378 : 434;
 
   const displayProducts = products.slice(0, displayCount);
-
-  const minHeight = device === "PC" ? 378 : 434;
 
   return (
     <section className={styles.bestProduct}>
@@ -32,7 +52,7 @@ function BestProductSection() {
       {isLoading ? (
         <Spinner minHeight={minHeight} />
       ) : error ? (
-        <ErrorView minHeight={minHeight} message={error} />
+        <ErrorView message={error} minHeight={minHeight} />
       ) : (
         <ul className={styles.productList}>
           {displayProducts.map((product) => (

@@ -1,18 +1,19 @@
 import clsx from "clsx";
-
 import { useState } from "react";
+
 import useDeviceType from "../../hooks/useDeviceType";
 import useProducts from "../../hooks/useProducts";
 
+import { ROUTES } from "../../constants/routes";
+import ErrorView from "../error/ErrorView";
 import Button from "../ui/Button";
-import Input from "../ui/Input";
-import ProductCard from "./ProductCard";
 import Dropdown from "../ui/Dropdown";
 import Pagination from "../ui/Pagination";
+import SearchInput from "../ui/SearchInput";
+import Spinner from "../ui/Spinner";
+import ProductCard from "./ProductCard";
 
 import styles from "./SaleProductList.module.css";
-import Spinner from "../ui/Spinner";
-import ErrorView from "../ui/ErrorView";
 
 const DROPDOWN_OPTIONS = [
   { value: "recent", label: "최신순" },
@@ -30,14 +31,22 @@ function SaleProductList() {
 
   const [selectedValue, setSelectedValue] = useState(DROPDOWN_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [prevPageSize, setPrevPageSize] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const { pageSize, minHeight } = DEVICE_CONFIG[device] ?? DEVICE_CONFIG.PC;
 
+  if (prevPageSize !== pageSize) {
+    setPrevPageSize(pageSize);
+    if (prevPageSize !== null) {
+      setCurrentPage(1);
+    }
+  }
+
   const { products, totalCount, isLoading, error } = useProducts({
     page: currentPage,
-    pageSize: pageSize,
+    limit: pageSize,
     orderBy: selectedValue.value,
     keyword: searchKeyword,
   });
@@ -65,14 +74,18 @@ function SaleProductList() {
     <h2 className={clsx(styles.title, "text-xl-bold")}>판매 중인 상품</h2>
   );
 
-  const buttonElement = <Button size="sm40">상품 등록하기</Button>;
+  const buttonElement = (
+    <Button size="sm40" to={ROUTES.PRODUCT_REGISTRATION}>
+      상품 등록하기
+    </Button>
+  );
 
   const searchElement = (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
-      <Input
-        value={inputValue}
-        placeholder="검색할 상품을 입력해주세요"
+      <SearchInput
         aria-label="상품 검색"
+        placeholder="검색할 상품을 입력해주세요"
+        value={inputValue}
         onChange={handleKeywordChange}
       />
     </form>
@@ -114,7 +127,7 @@ function SaleProductList() {
       {isLoading ? (
         <Spinner minHeight={minHeight} />
       ) : error ? (
-        <ErrorView minHeight={minHeight} message={error} />
+        <ErrorView message={error} minHeight={minHeight} />
       ) : (
         <ul className={styles.productList}>
           {products.map((product) => (
@@ -123,9 +136,9 @@ function SaleProductList() {
         </ul>
       )}
       <Pagination
-        totalItems={totalCount}
-        itemsPerPage={pageSize}
         currentPage={currentPage}
+        itemsPerPage={pageSize}
+        totalItems={totalCount}
         onPageChange={handlePageChange}
       />
     </section>
