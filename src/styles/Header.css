@@ -63,6 +63,11 @@
   color: #4b5563;
 }
 
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .menu .active {
   color: #3692ff;
 }
@@ -72,6 +77,10 @@
   height: auto;
   display: block;
   cursor: pointer;
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 .login-btn {
