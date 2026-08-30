@@ -3,16 +3,6 @@ import "../styles/LandingPage.css";
 function LandingPage() {
   return (
     <>
-      {/* <header className="top_gdn">
-        <div className="logo_gap">
-          <a href="index.html">
-            <img src="/image/logo.png" alt="판다마켓로고" className="logo" />
-          </a>
-          <a href="login.html" className="btn_login">
-            로그인
-          </a>
-        </div>
-      </header> */}
 
       {/* 메인배너 */}
       <main className="main_banner">

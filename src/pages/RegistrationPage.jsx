@@ -10,7 +10,7 @@ function Registration() {
   const handle = async (e) => {
     e.preventDefault();
 
-    console.log("등록버튼실패")
+    console.log("등록버튼실패");
 
     const productData = {
       name,
