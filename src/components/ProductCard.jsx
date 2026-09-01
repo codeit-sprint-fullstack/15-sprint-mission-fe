@@ -3,10 +3,15 @@ import "../styles/ProductCard.css";
 function ProductCard({ product }) {
   return (
     <article className="product-card">
-      <img 
-      className="product-image" 
-      src={product.images[0]} 
-      alt={product.name} />
+      <img
+        className="product-image"
+        src={product.images?.[0] || "/image/defauit.png"}
+        alt={product.name}
+        onError={(e) => {
+          e.currentTarget.onerror = null;
+          e.currentTarget.src = "/image/default.png";
+        }}
+      />
 
       <p className="product-name">{product.name}</p>
 

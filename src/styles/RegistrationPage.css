@@ -1,0 +1,128 @@
+.rg-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: center;
+}
+
+.rg-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px auto;
+}
+
+.main-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sub-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rg-btn {
+  display: flex;
+  width: 74px;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: var(--Primary-100, #9ca3af);
+  color: var(--Cool-Gray-100, #f3f4f6);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rg-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.rg-main:last-of-type {
+  margin-bottom: 0;
+}
+
+.input {
+  width: 100%;
+  max-width: 1200px;
+  border: none;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 16px 24px;
+}
+
+.input-a {
+  height: 56px;
+}
+
+.input-b {
+  height: 250px;
+}
+
+.input-c {
+  height: 56px;
+}
+
+.input-d {
+  height: 56px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9ca3ad;
+}
+
+.tag {
+  width: 110px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 100px;
+  padding: 16px auto;
+}
+
+.tag span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tag-btn {
+  width: 22px;
+  height: 24px;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tag-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 200px;
+}

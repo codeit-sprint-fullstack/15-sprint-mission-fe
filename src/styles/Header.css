@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -18,10 +22,34 @@
   padding: 0 200px;
 }
 
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 16px;
+  }
+}
+
 .logomenu {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .logomenu {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logomenu {
+    gap: 0;
+  }
 }
 
 .menu {
@@ -35,11 +63,24 @@
   color: #4b5563;
 }
 
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu .active {
+  color: #3692ff;
+}
+
 .logo {
   width: 153px;
   height: auto;
   display: block;
   cursor: pointer;
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 .login-btn {

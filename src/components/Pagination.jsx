@@ -4,7 +4,7 @@ function Pagination({ page, setPage, totalCount }) {
   const pageSize = 10;
 
   // 전체 상품 개수를 기준으로 필요한 페이지 수를 계산합니다.
-  const totalPages = Math.ceil(totalCount / pageSize);
+  const totalPages = Math.ceil(totalCount / pageSize) || 1;
 
   // 페이지 번호를 담을 배열을 만듭니다.
   const pageCount = 5;
