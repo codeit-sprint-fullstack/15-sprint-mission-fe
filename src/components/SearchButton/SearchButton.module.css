@@ -1,0 +1,18 @@
+.searchButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  margin-right: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Primary-100);
+  border-color: var(--Primary-100);
+  border: 0px;
+  color: var(--Cool-Gray-100);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+}
