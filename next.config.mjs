@@ -1,7 +1,15 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
+
+const withVanillaExtract = createVanillaExtractPlugin({
+  unstable_turbopack: { mode: "auto" },
+});
+
+/** @type {import("next").NextConfig} */
 const nextConfig = {
-  /* config options here */
+  agentRules: false,
+  reactStrictMode: true,
   reactCompiler: true,
 };
 
-export default nextConfig;
+export default withVanillaExtract(nextConfig);
