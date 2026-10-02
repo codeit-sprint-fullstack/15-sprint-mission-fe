@@ -50,7 +50,7 @@ function Registration() {
 
     try {
       const res = await productApi.post(productData);
-      res.data?.id && router.replace("/ProductDetail", { replace: true });
+      res?.id && router.replace("/ProductDetail", { replace: true });
       router.push("/ProductDetail");
     } catch {
       router.push("/ErrorPage");
