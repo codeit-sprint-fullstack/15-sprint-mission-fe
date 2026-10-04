@@ -36,7 +36,7 @@ function ProductProvider({ children }) {
       setError(null);
       setIsLoading(true);
       try {
-        const { data, totalCount } = await productApi.get({
+        const { data, totalCount } = await productApi.getList({
           offset: (currentPage - 1) * productsPerPage,
           limit: productsPerPage,
           keyword: keyword,
