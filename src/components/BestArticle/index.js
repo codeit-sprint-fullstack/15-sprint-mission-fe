@@ -1,0 +1,1 @@
+export {default as BestArticle} from './BestArticle'
