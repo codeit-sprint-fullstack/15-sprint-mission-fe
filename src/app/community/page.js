@@ -7,6 +7,7 @@ import { BestArticleList } from "@/components/BestArticleList";
 import { ArticleCardList } from "@/components/ArticleCardList";
 import { SearchFilter } from "@/components/SearchFilter";
 import { Suspense } from "react";
+import Link from "next/link";
 
 export default async function Community({ searchParams }) {
   const { data: bestList } = await articleApi.getList({
@@ -31,7 +32,12 @@ export default async function Community({ searchParams }) {
           <BestArticleList list={bestList} />
         </section>
         <section className={styles.articles}>
-          <h2 className={styles.sectionTitle}>게시글</h2>
+          <div className={styles.titleWrapper}>
+            <h2 className={styles.sectionTitle}>게시글</h2>
+            <Link href="/createPost" className={styles.createPostButton}>
+              글쓰기
+            </Link>
+          </div>
           <Suspense>
             <SearchFilter />
           </Suspense>

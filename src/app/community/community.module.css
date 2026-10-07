@@ -5,10 +5,28 @@
   display: grid;
   gap: 2.5rem;
 }
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .sectionTitle {
   color: var(--secondary-color-900);
   font-size: 1.25rem;
   font-weight: var(--font-weight-big);
+}
+.createPostButton {
+  height: 2.625rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--primary-color-100);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: normal;
 }
 .best {
   display: grid;
