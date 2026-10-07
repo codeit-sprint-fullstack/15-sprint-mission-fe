@@ -30,7 +30,7 @@ function Items() {
   return (
     <>
       <Header>
-        <Nav classNameAdd="active" />
+        <Nav />
       </Header>
       <main className={styles.main}>
         <div id="productsTitle" className={styles.productsHeader}>

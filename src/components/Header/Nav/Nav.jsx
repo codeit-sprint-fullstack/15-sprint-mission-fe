@@ -1,16 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Nav.module.css";
+import { usePathname } from "next/navigation";
 
-function Nav({ classNameAdd }) {
+function Nav() {
+  const pathname = usePathname();
+
   return (
-    <>
-      <nav className={styles.nav}>
-        <Link href="#">자유게시판</Link>
-        <Link href="/Items" className={styles[classNameAdd]}>
-          중고마켓
-        </Link>
-      </nav>
-    </>
+    <nav className={styles.nav}>
+      <Link
+        href="/community"
+        className={pathname === "/community" ? styles.active : ""}
+      >
+        자유게시판
+      </Link>
+      <Link
+        href="/items"
+        className={pathname === "/items" ? styles.active : ""}
+      >
+        중고마켓
+      </Link>
+    </nav>
   );
 }
 export default Nav;
