@@ -1,9 +1,9 @@
 import { request } from "./request";
 
 export const articleApi = {
-  getList: ({ offset = 1, limit = 10, sort, keyword } = {}) =>
+  getList: ({ page = 1, limit = 10, sort, keyword } = {}) =>
     request("/articles", {
-      params: { offset, limit, sort, keyword },
+      params: { page, limit, sort, keyword },
       errorMessage: "게시글 목록 조회 실패",
     }),
   get: (articleId) =>

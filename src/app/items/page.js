@@ -47,7 +47,7 @@ function Items() {
           </div>
 
           <button className={styles.addProductButton}>
-            <Link href="/Registration">상품 등록하기</Link>
+            <Link href="/registration">상품 등록하기</Link>
           </button>
 
           <div className={styles.sortDropdown}>

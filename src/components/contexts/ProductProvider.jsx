@@ -37,12 +37,12 @@ function ProductProvider({ children }) {
       setIsLoading(true);
       try {
         const { data, totalCount } = await productApi.getList({
-          offset: (currentPage - 1) * productsPerPage,
+          page: (currentPage - 1) * productsPerPage,
           limit: productsPerPage,
           keyword: keyword,
           sort: sort,
         });
-        console.log(data);
+
         setProducts(data);
         setTotalProducts(totalCount);
       } catch (error) {

@@ -1,9 +1,9 @@
 import { request } from "./request";
 
 export const productApi = {
-  getList: ({ offset = 1, limit = 10, sort, keyword } = {}) =>
+  getList: ({ page = 1, limit = 10, sort, keyword } = {}) =>
     request("/products", {
-      params: { offset, limit, sort, keyword },
+      params: { page, limit, sort, keyword },
       errorMessage: "상품 목록 조회 실패",
     }),
   post: (body) =>

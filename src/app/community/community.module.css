@@ -1,0 +1,20 @@
+.main {
+  margin: 2.5rem auto 16rem;
+  width: 75rem;
+  gap: 2.5rem;
+  display: grid;
+  gap: 2.5rem;
+}
+.sectionTitle {
+  color: var(--secondary-color-900);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-big);
+}
+.best {
+  display: grid;
+  gap: 1.5rem;
+}
+.articles {
+  display: grid;
+  gap: 1.5rem;
+}
