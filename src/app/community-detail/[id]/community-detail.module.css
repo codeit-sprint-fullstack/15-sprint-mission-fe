@@ -1,0 +1,209 @@
+.main {
+  display: flex;
+  width: 75rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin: 2rem auto 16rem;
+}
+.postDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.titleHeader {
+  width: 75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  color: var(--secondary-color-800);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2rem; /* 160% */
+}
+.postMenuButton {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+}
+.profileImage {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.username {
+  color: var(--secondary-color-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 171.429% */
+}
+.createdAt {
+  color: var(--secondary-color-400);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem; /* 171.429% */
+}
+.profileDivider {
+  width: 1px;
+  height: 40px;
+  margin: 0 1rem;
+  border: 0;
+  border-left: 1px solid var(--secondary-color-200);
+}
+.likeChip {
+  color: var(--secondary-color-500);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625rem; /* 162.5% */
+  display: flex;
+  height: 2.5rem;
+  padding: 0.25rem 0.75rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 2.1875rem;
+  border: 1px solid var(--secondary-color-200);
+  background: #fff;
+}
+.likeIcon {
+  width: 2rem;
+  height: 2rem;
+}
+.contentDivider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--secondary-color-200);
+  margin-bottom: 1.5rem;
+}
+.content {
+  color: var(--secondary-color-800);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+/* comment form */
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5625rem;
+  align-self: stretch;
+}
+.commentLabel {
+  color: var(--secondary-color-900);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+}
+.commentInput {
+  display: flex;
+  width: 75rem;
+  height: 6.5rem;
+  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  background-color: var(--secondary-color-100);
+  color: var(--secondary-color-400);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  border: none;
+  outline: none;
+}
+.commentSubmit {
+  display: flex;
+  height: 2.625rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--secondary-color-400);
+  color: var(--secondary-color-100);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  align-self: flex-end;
+}
+
+/* comment list */
+.emptyComment {
+  display: flex;
+  width: 9.4375rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.emptyCommentIcon {
+  width: 8.75rem;
+  height: 8.75rem;
+}
+.emptyCommentText {
+  align-self: stretch;
+  color: var(--secondary-color-400);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+/*  */
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.commentCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75rem;
+  padding-bottom: 0.75rem;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5625rem 0.25rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--secondary-color-300);
+  background-color: #fcfcfc;
+}
+.commentBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+}
+.commentContent {
+  align-self: stretch;
+  color: var(--secondary-color-800);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.commentProfile .commentMoreMenu {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.commentProfile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
+  align-items: center;
+}
+.profileImage {
+  grid-row: 1 / 3;
+}

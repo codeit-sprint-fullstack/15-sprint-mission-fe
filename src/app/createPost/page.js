@@ -27,7 +27,7 @@ export default function CreatePost() {
         title: parsedTitle,
         content: parsedContent,
       });
-      if (res.data) router.push("/");
+      if (res.data) router.push(`/community-detail/${res.data.id}`);
     } catch {
       router.push("/error");
     }

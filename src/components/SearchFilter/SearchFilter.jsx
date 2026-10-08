@@ -37,7 +37,7 @@ export default function SearchFilter() {
         value={sort}
         onChange={(e) => setSort(e.target.value)}
       >
-        <option selected value="desc">
+        <option defaultValue={true} value="desc">
           최신순
         </option>
         <option value="asc">오래된순</option>
