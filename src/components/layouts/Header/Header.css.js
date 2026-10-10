@@ -7,6 +7,7 @@ export const container = style({
   padding: "9px 200px",
   background: vars.color.white,
   borderBottom: `1px solid ${vars.color.lightGray}`,
+  zIndex: 10,
 });
 
 export const inner = style({
@@ -31,7 +32,6 @@ export const logo = style({
 
 export const group = style({
   padding: "0 15px",
-  color: vars.color.gray[600],
 });
 
 export const item = style({

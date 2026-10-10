@@ -44,12 +44,17 @@ globalStyle("h1, h2, h3, h4, h5, h6", {
 
 globalStyle("a", {
   textDecoration: "none",
+  color: "inherit",
+});
+
+globalStyle("ul, ol", {
+  listStyle: "none",
+  padding: 0,
 });
 
 globalStyle("button", {
   cursor: "pointer",
   border: "none",
-  outline: "none",
   background: "none",
   color: "inherit",
   font: "inherit",

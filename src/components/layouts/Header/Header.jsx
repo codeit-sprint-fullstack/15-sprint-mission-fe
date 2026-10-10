@@ -1,5 +1,5 @@
-import Link from "next/link.js";
-import Image from "next/image.js";
+import Link from "next/link";
+import Image from "next/image";
 import HeaderNav from "./HeaderNav.jsx";
 import * as styles from "./Header.css.js";
 
