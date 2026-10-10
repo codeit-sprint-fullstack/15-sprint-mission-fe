@@ -1,10 +1,10 @@
-import { globalStyle } from "@vanilla-extract/css";
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "@/styles/globals.css";
 
 export const container = style({
   background: vars.color.gray[900],
   padding: "32px 200px",
+  height: "160px",
 });
 
 export const inner = style({
@@ -14,7 +14,6 @@ export const inner = style({
   alignItems: "flex-start",
   margin: "0 auto",
   maxWidth: "1920px",
-  height: "160px",
 });
 
 export const company = style({
@@ -43,5 +42,3 @@ export const social = style({
   flexDirection: "row",
   gap: "12px",
 });
-
-// globalStyle(`${}`)

@@ -101,7 +101,6 @@ export const text = style({
 });
 
 export const bottom = style({
-  paddingTop: "138px",
   background: vars.color.snow,
 });
 
@@ -135,4 +134,5 @@ export const bottomTitle = style({
   fontWeight: 700,
   fontSize: "40px",
   lineHeight: "56px",
+  color: vars.color.gray[700],
 });
