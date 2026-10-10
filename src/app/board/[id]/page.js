@@ -1,6 +1,7 @@
 import { getArticle } from "@/lib/api";
 import { ArticleMenu } from "@/components/board/ArticleMenu";
 import { CommentForm } from "@/components/board/CommentForm";
+import Link from "next/link";
 
 export default async function BoardDetail({ params }) {
   const { id } = await params;
@@ -15,6 +16,7 @@ export default async function BoardDetail({ params }) {
         <p>{article.content}</p>
       </article>
       <CommentForm />
+      <Link href="/board">목록으로 돌아가기</Link>
     </>
   );
 }
