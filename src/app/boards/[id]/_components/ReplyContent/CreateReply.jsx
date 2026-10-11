@@ -16,7 +16,9 @@ function CreateReply() {
   const { mutate, isPending } = useMutation({
     mutationFn: (newReply) => createReply(newReply),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.replies.all() });
+      queryClient.invalidateQueries({ queryKey: queryKeys.replies.list(id) });
+
+      setReply('');
     },
     onError: (error) => {
       alert('댓글 등록에 실패했습니다.');
@@ -39,8 +41,6 @@ function CreateReply() {
       articleId: id,
       content: trimmedReply,
     });
-
-    setReply('');
   };
 
   return (

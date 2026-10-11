@@ -7,5 +7,6 @@ export const queryKeys = {
   },
   replies: {
     all: () => ['reply'],
+    list: (articleId) => ['reply', 'list', articleId],
   },
 };
