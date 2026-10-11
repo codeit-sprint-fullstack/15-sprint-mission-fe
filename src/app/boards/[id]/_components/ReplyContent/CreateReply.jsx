@@ -45,11 +45,14 @@ function CreateReply() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
-      <label htmlFor="reply">댓글달기</label>
+      <label className={styles.replyLabel} htmlFor="reply">
+        댓글달기
+      </label>
       <textarea
         id="reply"
         value={reply}
         className={styles.replyTextarea}
+        placeholder="댓글을 입력해주세요."
         onChange={(event) => setReply(event.target.value)}
       />
       <button
