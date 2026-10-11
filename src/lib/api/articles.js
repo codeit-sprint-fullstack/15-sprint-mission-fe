@@ -35,3 +35,14 @@ export const createArticle = async (newArticle) => {
   }
   return response.json();
 };
+
+export const fetchArticle = async (id) => {
+  const response = await fetch(`${BASE_URL}/api/articles/${id}`);
+  if (!response.ok) {
+    throw new Error('게시글 호출 실패');
+  }
+
+  return response.json();
+};
+
+export const fetchReplies = async () => {};
