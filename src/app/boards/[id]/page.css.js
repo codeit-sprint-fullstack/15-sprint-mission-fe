@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const container = style({
   margin: '24px',
+  minHeight: 'calc(100vh - 278px)',
 });
 
 export const content = style({

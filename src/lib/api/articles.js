@@ -56,5 +56,3 @@ export const deleteArticle = async (id) => {
 
   return response.json();
 };
-
-export const fetchReplies = async () => {};

@@ -6,7 +6,7 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
-  output: 'standalone',
+  // output: 'standalone',
 };
 
 export default withVanillaExtract(nextConfig);

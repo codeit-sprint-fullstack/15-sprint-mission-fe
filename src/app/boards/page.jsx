@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import ArticleListSection from './_components/ArticleListSection/ArticleListSection';
 import BestArticleList from './_components/BestArticles/BestArticleList';
 import * as styles from './page.css';
@@ -18,7 +19,9 @@ function BoardListPage() {
               글쓰기
             </Link>
           </div>
+          <Suspense fallback={<div>게시글 목록을 불러오는 중...</div>}>
           <ArticleListSection />
+          </Suspense>
         </section>
       </div>
     </article>
