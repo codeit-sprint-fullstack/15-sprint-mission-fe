@@ -1,11 +1,29 @@
 import icKebab from '@/assets/boards/ic_kebab.svg';
+import { deleteArticle } from '@/lib/api/articles';
+import { queryKeys } from '@/lib/queryKeys';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import * as styles from './ArticleOptionMenu.css';
 
 function ArticleOptionMenu({ id }) {
   const [isOpen, setIsOpen] = useState(false);
   const optionMenuRef = useRef(null);
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: () => deleteArticle(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.articles.all() });
+      router.push('/boards');
+    },
+    onError: (error) => {
+      alert('게시글 삭제에 실패했습니다. 다시 시도해주세요.');
+      console.error(error);
+    },
+  });
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -21,8 +39,17 @@ function ArticleOptionMenu({ id }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleArticleDelete = () => {};
-  const handleArticleEdit = () => {};
+  const handleArticleDelete = () => {
+    if (isPending) return;
+    const result = window.confirm('정말 삭제하시겠습니까?');
+    if (!result) return;
+
+    setIsOpen(false);
+    mutate();
+  };
+  const handleArticleEdit = () => {
+    router.push(`/boards/edit/${id}`);
+  };
 
   return (
     <div className={styles.container} ref={optionMenuRef}>
@@ -38,7 +65,7 @@ function ArticleOptionMenu({ id }) {
             수정하기
           </li>
           <li className={styles.optionMenu} onClick={handleArticleDelete}>
-            삭제하기
+            {isPending ? '삭제중...' : '삭제하기'}
           </li>
         </ul>
       )}

@@ -45,4 +45,16 @@ export const fetchArticle = async (id) => {
   return response.json();
 };
 
+export const deleteArticle = async (id) => {
+  const response = await fetch(`${BASE_URL}/api/articles/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!response.ok) {
+    throw new Error('게시글 삭제 실패');
+  }
+
+  return response.json();
+};
+
 export const fetchReplies = async () => {};
