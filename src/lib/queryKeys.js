@@ -5,4 +5,7 @@ export const queryKeys = {
     list: (queryParams) => ['article', 'list', queryParams],
     detail: (id) => ['article', 'detail', id],
   },
+  replies: {
+    all: () => ['reply'],
+  },
 };
