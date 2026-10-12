@@ -1,15 +1,21 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { ActionMenu } from "../ActionMenu";
+import { articleApi } from "../api/articleApi";
+import { useRouter } from "next/navigation";
 
-export default function ArticleAction({ id, onEdit, onDelete }) {
+export default function ArticleAction({ id }) {
   const router = useRouter();
-  router.push(`/createPost/${id}/edit`);
+  const articleEdit = async (id) => router.push(`/createPost/${id}/edit`);
+
+  const articleDelete = async (id) => {
+    await articleApi.remove(id);
+    router.push("/community");
+  };
 
   return (
-    <div>
-      <ActionMenu id={id} onDelete={onDelete} onEdit={onEdit} />
-    </div>
+    <>
+      <ActionMenu id={id} onEdit={articleEdit} onDelete={articleDelete} />
+    </>
   );
 }

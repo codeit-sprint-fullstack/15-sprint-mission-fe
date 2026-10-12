@@ -22,13 +22,11 @@ export default function EditPost() {
   const submit = async (e) => {
     e.preventDefault();
     if (!isValid) return;
-    console.log("parsedTitle", parsedTitle);
     try {
       const res = await articleApi.patch(id, {
         title: parsedTitle,
         content: parsedContent,
       });
-      console.log(res);
       if (res.data) router.push(`/community-detail/${res.data.id}`);
     } catch {
       router.push("/error");

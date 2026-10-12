@@ -7,7 +7,7 @@ import { useState } from "react";
 import { articleCommentApi } from "../api/articleCommentApi";
 import styles from "./CommentList.module.css";
 import defaultImage from "@/assets/default-profile.svg";
-import { ActionMenu } from "../ActionMenu";
+import ArticleCommentAction from "../ArticleCommentAction/ArticleCommentAction";
 
 export default function CommentList({
   initCommentList,
@@ -25,6 +25,10 @@ export default function CommentList({
       });
     setCommentList((prev) => [...prev, ...newCommentList]);
     setCursorId(nextCursor);
+  };
+
+  const handleDeleted = (id) => {
+    setCommentList((prev) => prev.filter((c) => c.id !== id));
   };
 
   return (
@@ -55,7 +59,10 @@ export default function CommentList({
                   </div>
                 </div>
 
-                <ActionMenu />
+                <ArticleCommentAction
+                  id={comment.id}
+                  onDeleted={handleDeleted}
+                />
                 {/* id를 보내서 처리할 것이냐 그냥 할 것이냐 */}
               </li>
             ))}

@@ -11,7 +11,7 @@ import Link from "next/link";
 import backToList from "@/assets/icons/backToList.svg";
 import { articleCommentApi } from "@/components/api/articleCommentApi";
 import { CommentList } from "@/components/CommentList/";
-import { ActionMenu } from "@/components/ActionMenu";
+import { ArticleAction } from "@/components/ArticleAction";
 
 export default async function CommunityDetail({ params }) {
   const { id: articleId } = await params;
@@ -28,7 +28,7 @@ export default async function CommunityDetail({ params }) {
         <div className={styles.postDetail}>
           <div className={styles.titleHeader}>
             <h1 className={styles.title}>{article.title}</h1>
-            <ActionMenu id={articleId} />
+            <ArticleAction id={articleId} />
           </div>
 
           <div className={styles.profile}>
