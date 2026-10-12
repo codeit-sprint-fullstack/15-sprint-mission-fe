@@ -3,9 +3,10 @@ import { style } from "@vanilla-extract/css";
 
 export const container = style({
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "40px 24px 80px",
   maxWidth: "1248px",
+
   "@media": {
-    [media.mobile]: { padding: "0 16px" },
+    [media.mobile]: { padding: "24px 16px 48px" },
   },
 });

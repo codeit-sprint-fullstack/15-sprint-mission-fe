@@ -25,21 +25,27 @@ export default async function Board({ searchParams }) {
 
   return (
     <div className={styles.container}>
-      <section>
-        <h2>베스트 게시글</h2>
-        <ul>
+      <section className={styles.section}>
+        <h2 className={styles.title}>베스트 게시글</h2>
+        <ul className={styles.bestList}>
           {bestList.map((article) => (
             <BestArticleCard key={article.id} article={article} />
           ))}
         </ul>
       </section>
 
-      <section>
-        <h2>게시글</h2>
-        <Link href="/board/new">글쓰기</Link>
-        <ArticleSearch defaultKeyword={trimmed} />
-        <ArticleSort />
-        <ul>
+      <section className={styles.section}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>게시글</h2>
+          <Link className={styles.writeButton} href="/board/new">
+            글쓰기
+          </Link>
+        </div>
+        <div className={styles.toolbar}>
+          <ArticleSearch defaultKeyword={trimmed} />
+          <ArticleSort />
+        </div>
+        <ul className={styles.normalList}>
           {list.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
