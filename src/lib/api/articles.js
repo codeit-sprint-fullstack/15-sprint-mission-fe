@@ -56,3 +56,22 @@ export const deleteArticle = async (id) => {
 
   return response.json();
 };
+
+export const updateArticle = async ({ id, title, content }) => {
+  const response = await fetch(`${BASE_URL}/api/articles/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      title,
+      content,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error('게시글 수정 중 오류가 발생했습니다.');
+  }
+
+  return response.json();
+};

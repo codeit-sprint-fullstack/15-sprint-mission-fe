@@ -36,8 +36,6 @@ function ReplyList() {
       .flatMap((page) => page?.data.list)
       .filter((i) => i !== undefined) ?? [];
 
-  console.log(replies);
-
   if (replies.length === 0) {
     return (
       <div className={styles.emptyContainer}>
