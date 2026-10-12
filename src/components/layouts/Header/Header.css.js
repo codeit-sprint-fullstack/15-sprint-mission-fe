@@ -35,6 +35,10 @@ export const item = style({
   fontSize: "18px",
   fontWeight: 700,
   color: vars.color.gray[600],
+
+  selectors: {
+    '&[aria-current="page"]': { color: vars.color.primary[100] },
+  },
 });
 
 export const login = style({
