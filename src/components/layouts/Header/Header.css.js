@@ -46,11 +46,9 @@ export const login = style({
   justifyContent: "center",
   alignItems: "center",
   flexShrink: 0,
-  padding: "12px 24px",
-  width: "128px",
-  height: "48px",
+  padding: "10px 24px",
   fontWeight: 600,
   background: vars.color.primary[100],
-  color: vars.color.gray[100],
+  color: vars.color.white,
   borderRadius: "8px",
 });
