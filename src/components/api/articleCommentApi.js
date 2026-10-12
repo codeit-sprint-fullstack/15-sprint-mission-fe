@@ -1,9 +1,9 @@
 import { request } from "./request";
 
 export const articleCommentApi = {
-  getList: ({ articleId, page = 1, limit = 10 } = {}) =>
+  getList: ({ articleId, cursorId, page = 1, limit = 10 } = {}) =>
     request("/articleComments", {
-      params: { articleId, page, limit },
+      params: { articleId, cursorId, page, limit },
       errorMessage: "게시글 댓글 목록 조회 실패",
     }),
   get: (articleCommentId) =>
