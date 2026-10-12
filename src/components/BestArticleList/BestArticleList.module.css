@@ -26,6 +26,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 2rem;
+  text-align: start;
 }
 .image {
   justify-self: end;
