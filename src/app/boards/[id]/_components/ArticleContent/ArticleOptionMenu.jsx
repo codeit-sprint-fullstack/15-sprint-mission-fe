@@ -17,6 +17,7 @@ function ArticleOptionMenu({ id }) {
     mutationFn: () => deleteArticle(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.articles.all() });
+      alert('게시글이 삭제되었습니다.');
       router.push('/boards');
     },
     onError: (error) => {

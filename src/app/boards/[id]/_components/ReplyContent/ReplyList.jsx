@@ -1,8 +1,10 @@
 'use client';
 
+import imgReplyEmpty from '@/assets/boards/img_reply_empty.svg';
 import { fetchReplies } from '@/lib/api/replies';
 import { queryKeys } from '@/lib/queryKeys';
 import { useInfiniteQuery } from '@tanstack/react-query';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import ReplyItem from './ReplyItem';
 import * as styles from './ReplyList.css';
@@ -37,7 +39,16 @@ function ReplyList() {
   console.log(replies);
 
   if (replies.length === 0) {
-    return <div>작성된 댓글이 없습니다.</div>;
+    return (
+      <div className={styles.emptyContainer}>
+        <Image src={imgReplyEmpty} alt="댓글 없음 이미지" />
+        <p className={styles.emptyMessage}>
+          아직 댓글이 없어요,
+          <br />
+          지금 댓글을 달아보세요!
+        </p>
+      </div>
+    );
   }
 
   return (

@@ -36,3 +36,15 @@ export const fetchReplies = async ({ articleId, cursor, limit = 10 }) => {
 
   return response.json();
 };
+
+export const deleteReply = async (id) => {
+  const response = await fetch(`${BASE_URL}/api/article-replies/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!response.ok) {
+    throw new Error('댓글 삭제에 실패했습니다.');
+  }
+
+  return response.json();
+};
