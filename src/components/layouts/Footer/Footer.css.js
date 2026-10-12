@@ -13,7 +13,7 @@ export const inner = style({
   justifyContent: "space-between",
   alignItems: "flex-start",
   margin: "0 auto",
-  maxWidth: "1920px",
+  maxWidth: "1200px",
 });
 
 export const company = style({
