@@ -1,7 +1,7 @@
 import { colorTokens, typographyTokens } from '@/styles/tokens.css';
 import { style } from '@vanilla-extract/css';
 
-export const container = style({
+export const readOnlyContainer = style({
   paddingBottom: '12px',
   display: 'flex',
   flexDirection: 'column',
@@ -53,4 +53,60 @@ export const replyUser = style({
 export const replyDate = style({
   fontSize: typographyTokens.fontSize.xs,
   color: colorTokens.secondary.gray400,
+});
+
+export const editContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '20px',
+});
+
+export const editTextarea = style({
+  padding: '16px 24px',
+  width: '100%',
+  minHeight: '80px',
+  resize: 'none',
+  backgroundColor: colorTokens.secondary.gray100,
+  border: 'none',
+  borderRadius: '12px',
+  fontSize: typographyTokens.fontSize.md,
+  color: colorTokens.secondary.gray800,
+  '::placeholder': {
+    fontSize: typographyTokens.fontSize.md,
+    color: colorTokens.secondary.gray400,
+  },
+});
+
+export const cancelButton = style({
+  width: '70px',
+  height: '42px',
+  border: 'none',
+  backgroundColor: '#fff',
+  fontSize: typographyTokens.fontSize.lg,
+  fontWeight: typographyTokens.fontWeight.semibold,
+  color: colorTokens.secondary.gray500,
+  cursor: 'pointer',
+});
+
+export const submitButton = style({
+  width: '106px',
+  height: '42px',
+  border: 'none',
+  borderRadius: '12px',
+  backgroundColor: colorTokens.primary[100],
+  fontSize: typographyTokens.fontSize.lg,
+  fontWeight: typographyTokens.fontWeight.semibold,
+  color: colorTokens.secondary.gray100,
+  cursor: 'pointer',
+});
+
+export const replyEditBottom = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+});
+
+export const buttonGroup = style({
+  display: 'flex',
+  gap: '4px',
 });

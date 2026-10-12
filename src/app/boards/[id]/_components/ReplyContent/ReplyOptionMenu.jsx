@@ -9,7 +9,7 @@ import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import * as styles from './ReplyOptionMenu.css';
 
-function ReplyOptionMenu({ id }) {
+function ReplyOptionMenu({ id, onEdit }) {
   const [isOpen, setIsOpen] = useState(false);
   const optionMenuRef = useRef(null);
   const queryClient = useQueryClient();
@@ -29,7 +29,9 @@ function ReplyOptionMenu({ id }) {
     },
   });
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    onEdit();
+  };
   const handleDelete = () => {
     if (isPending) return;
     const result = window.confirm('정말 삭제하시겠습니까?');

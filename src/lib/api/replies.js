@@ -48,3 +48,21 @@ export const deleteReply = async (id) => {
 
   return response.json();
 };
+
+export const updateReply = async ({ id, content }) => {
+  const response = await fetch(`${BASE_URL}/api/article-replies/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      content,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error('댓글 수정에 실패했습니다.');
+  }
+
+  return response.json();
+};
