@@ -54,6 +54,7 @@ globalStyle("ul, ol", {
 });
 
 globalStyle("button", {
+  padding: 0,
   cursor: "pointer",
   border: "none",
   background: "none",
