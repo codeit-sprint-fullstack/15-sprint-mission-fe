@@ -33,7 +33,6 @@ export const heroHeaders = style({
 export const heroTitle = style({
   fontSize: "40px",
   fontWeight: 700,
-  lineHeight: "56px",
   color: vars.color.gray[700],
 });
 
@@ -45,7 +44,6 @@ export const heroLink = style({
   color: vars.color.gray[50],
   fontWeight: 600,
   fontSize: "20px",
-  lineHeight: "32px",
 });
 
 export const section = style({
@@ -81,7 +79,6 @@ export const tag = style({
   color: vars.color.primary[100],
   fontWeight: 700,
   fontSize: "18px",
-  lineHeight: "26px",
 });
 
 export const title = style({
@@ -90,14 +87,12 @@ export const title = style({
   color: vars.color.gray[700],
   fontWeight: 700,
   fontSize: "40px",
-  lineHeight: "56px",
 });
 
 export const text = style({
   color: vars.color.gray[700],
   fontWeight: 500,
   fontSize: "24px",
-  lineHeight: "32px",
 });
 
 export const bottom = style({
@@ -133,6 +128,5 @@ export const bottomTitle = style({
   marginBottom: "60px",
   fontWeight: 700,
   fontSize: "40px",
-  lineHeight: "56px",
   color: vars.color.gray[700],
 });

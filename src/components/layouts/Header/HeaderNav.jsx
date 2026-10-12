@@ -12,7 +12,7 @@ export default function HeaderNav() {
   }
 
   return (
-    <div className={styles.group}>
+    <div>
       <Link className={styles.item} href="/board">
         자유게시판
       </Link>

@@ -3,7 +3,7 @@ import { vars } from "@/styles/globals.css";
 
 export const container = style({
   background: vars.color.gray[900],
-  padding: "32px 200px",
+  padding: "32px 24px",
   height: "160px",
 });
 
@@ -19,7 +19,6 @@ export const inner = style({
 export const company = style({
   flexShrink: 0,
   fontWeight: 400,
-  lineHeight: "26px",
   color: vars.color.gray[400],
 });
 
@@ -32,7 +31,6 @@ export const info = style({
 
 globalStyle(`${info} a`, {
   fontWeight: 400,
-  lineHeight: "26px",
   color: vars.color.gray[200],
 });
 

@@ -4,7 +4,7 @@ import { vars } from "@/styles/globals.css";
 export const container = style({
   position: "sticky",
   top: 0,
-  padding: "9px 200px",
+  padding: "10px 24px",
   background: vars.color.white,
   borderBottom: `1px solid ${vars.color.lightGray}`,
   zIndex: 10,
@@ -16,7 +16,7 @@ export const inner = style({
   justifyContent: "space-between",
   alignItems: "center",
   margin: "0 auto",
-  maxWidth: "1920px",
+  maxWidth: "1680px",
 });
 
 export const navigation = style({
@@ -30,15 +30,10 @@ export const logo = style({
   flexShrink: 0,
 });
 
-export const group = style({
-  padding: "0 15px",
-});
-
 export const item = style({
-  padding: "21px 15px",
+  padding: "20px 16px",
   fontSize: "18px",
   fontWeight: 700,
-  lineHeight: "26px",
   color: vars.color.gray[600],
 });
 
@@ -47,11 +42,10 @@ export const login = style({
   justifyContent: "center",
   alignItems: "center",
   flexShrink: 0,
-  padding: "12px 23px",
+  padding: "12px 24px",
   width: "128px",
   height: "48px",
   fontWeight: 600,
-  lineHeight: "26px",
   background: vars.color.primary[100],
   color: vars.color.gray[100],
   borderRadius: "8px",
