@@ -1,0 +1,72 @@
+/* comment list */
+.emptyComment {
+  display: flex;
+  width: 9.4375rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.emptyCommentIcon {
+  width: 8.75rem;
+  height: 8.75rem;
+}
+.emptyCommentText {
+  align-self: stretch;
+  color: var(--secondary-color-400);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+/*  */
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.commentCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75rem;
+  padding-bottom: 0.75rem;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5625rem 0.25rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--secondary-color-300);
+  background-color: #fcfcfc;
+}
+.commentBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+}
+.commentContent {
+  align-self: stretch;
+  color: var(--secondary-color-800);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.commentProfile .commentMoreMenu {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.commentProfile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
+  align-items: center;
+}
+.profileImage {
+  grid-row: 1 / 3;
+}
