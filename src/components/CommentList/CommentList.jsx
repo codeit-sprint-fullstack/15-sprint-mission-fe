@@ -7,7 +7,7 @@ import { useState } from "react";
 import { articleCommentApi } from "../api/articleCommentApi";
 import styles from "./CommentList.module.css";
 import defaultImage from "@/assets/default-profile.svg";
-import moreMenu from "@/assets/icons/settingIcon.svg";
+import { ActionMenu } from "../ActionMenu";
 
 export default function CommentList({
   initCommentList,
@@ -55,15 +55,8 @@ export default function CommentList({
                   </div>
                 </div>
 
-                <button className={styles.commentMoreMenu}>
-                  <Image
-                    src={moreMenu}
-                    alt="댓글 관리 메뉴"
-                    width={24}
-                    height={24}
-                    className={styles.commentMenuImg}
-                  />
-                </button>
+                <ActionMenu />
+                {/* id를 보내서 처리할 것이냐 그냥 할 것이냐 */}
               </li>
             ))}
           </ul>

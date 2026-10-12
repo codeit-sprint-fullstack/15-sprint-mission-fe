@@ -28,7 +28,7 @@ export default async function CommunityDetail({ params }) {
         <div className={styles.postDetail}>
           <div className={styles.titleHeader}>
             <h1 className={styles.title}>{article.title}</h1>
-            {/* <ActionMenu onEdit={onEdit} onDelete={onDelete} /> */}
+            <ActionMenu id={articleId} />
           </div>
 
           <div className={styles.profile}>
