@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import * as styles from "./ArticleSort.css.js";
 
 export default function ArticleSort() {
   const router = useRouter();
@@ -14,10 +15,14 @@ export default function ArticleSort() {
   };
 
   return (
-    <select value={orderBy} onChange={handleChange}>
+    <select
+      className={styles.container}
+      value={orderBy}
+      onChange={handleChange}
+    >
       <option value="recent">최신순</option>
       <option value="like" disabled>
-        좋아요순(준비)
+        좋아요순
       </option>
     </select>
   );
