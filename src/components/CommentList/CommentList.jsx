@@ -67,7 +67,11 @@ export default function CommentList({
               </li>
             ))}
           </ul>
-          {cursorId && <button onClick={getMoreCommentList}>더보기</button>}
+          {cursorId && (
+            <button onClick={getMoreCommentList} className={styles.moreButton}>
+              더보기
+            </button>
+          )}
         </div>
       ) : (
         <div className={styles.emptyComment}>
