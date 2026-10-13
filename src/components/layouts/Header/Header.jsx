@@ -10,7 +10,7 @@ export default function Header() {
         <nav className={styles.navigation}>
           <Link className={styles.logo} href="/">
             <Image
-              src="/panda-logo.svg"
+              src="/logo/panda-logo.svg"
               alt="판다마켓 로고 이미지"
               width={153}
               height={51}

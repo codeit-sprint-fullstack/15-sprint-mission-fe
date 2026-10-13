@@ -8,7 +8,7 @@ export default function BestArticleCard({ article }) {
     <li className={styles.container}>
       <Link className={styles.card} href={`/board/${article.id}`}>
         <Image
-          src="/best-badge.svg"
+          src="/icon/best-badge.svg"
           alt="베스트 아이콘 로고"
           width={102}
           height={30}
@@ -18,7 +18,7 @@ export default function BestArticleCard({ article }) {
           <div className={styles.thumbnail}>
             <Image
               className={styles.thumbnailImg}
-              src="/board-img.png"
+              src="/image/board-img.png"
               alt="썸네일 이미지"
               width={48}
               height={48}

@@ -12,7 +12,7 @@ export default function ArticleCard({ article }) {
           <div className={styles.thumbnail}>
             <Image
               className={styles.thumbnailImg}
-              src="/board-img.png"
+              src="/image/board-img.png"
               alt="썸네일 이미지"
               width={48}
               height={48}
