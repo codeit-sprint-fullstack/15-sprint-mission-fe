@@ -82,7 +82,7 @@ export const like = style({
 });
 
 export const content = style({
-  minHeight: "30svh",
+  minHeight: "20svh",
   fontSize: "18px",
   fontWeight: 400,
   color: vars.color.gray[800],

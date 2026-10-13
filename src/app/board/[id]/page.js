@@ -4,11 +4,16 @@ import { getArticle } from "@/lib/api";
 import { ArticleMenu } from "@/components/board/ArticleMenu";
 import { CommentForm } from "@/components/board/CommentForm";
 import { formatDate } from "@/lib/formatDate.js";
+import { getMockComments } from "@/mocks/comments.js";
+import { CommentList } from "@/components/board/CommentList";
 import * as styles from "./page.css.js";
 
 export default async function BoardDetail({ params }) {
   const { id } = await params;
-  const article = await getArticle(id);
+  const [article, { list: comments }] = await Promise.all([
+    getArticle(id),
+    getMockComments(id),
+  ]);
 
   return (
     <div className={styles.container}>
@@ -55,6 +60,8 @@ export default async function BoardDetail({ params }) {
       </article>
 
       <CommentForm />
+
+      <CommentList comments={comments} />
 
       <Link className={styles.backButton} href="/board">
         목록으로 돌아가기
