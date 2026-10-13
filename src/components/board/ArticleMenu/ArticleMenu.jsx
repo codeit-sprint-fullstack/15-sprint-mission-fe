@@ -41,7 +41,7 @@ export default function ArticleMenu({ articleId }) {
               type="button"
               onClick={handleDelete}
             >
-              삭제하기 삭제
+              삭제하기
             </button>
           </li>
         </ul>
