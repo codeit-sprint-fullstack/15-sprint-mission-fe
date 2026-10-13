@@ -4,7 +4,7 @@ import { style } from "@vanilla-extract/css";
 export const container = style({
   background: vars.color.gray[50],
   borderRadius: "8px",
-  boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.12)",
+  boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.12)",
 });
 
 export const card = style({

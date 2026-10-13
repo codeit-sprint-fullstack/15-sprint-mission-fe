@@ -2,11 +2,9 @@ import { vars } from "@/styles/globals.css";
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
-  // borderBottom: `1px solid ${vars.color.gray[200]}`,
   borderRadius: "8px",
-  // background: vars.color.snow,
   background: vars.color.gray[50],
-  boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.12)",
+  boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.12)",
 });
 
 export const card = style({

@@ -23,7 +23,7 @@ export const textArea = style({
   color: vars.color.gray[800],
   resize: "none",
   scrollbarWidth: "none",
-  boxShadow: "1px 1px 3px #0000001f",
+  boxShadow: "1px 1px 4px #0000001f",
 
   "::placeholder": {
     color: vars.color.gray[400],
