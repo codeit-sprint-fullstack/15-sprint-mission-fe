@@ -5,8 +5,29 @@ import styles from "./ArticleCardList.module.css";
 import likeIcon from "@/assets/likeIcon.svg";
 import { formatDate } from "@/utils/formatTime";
 import Link from "next/link";
+import { articleApi } from "@/components/api/articleApi";
 
-export default function ArticleCardList({ list }) {
+export default async function ArticleCardList({ keyword, sort }) {
+  let list;
+  try {
+    const { data } = await articleApi.getList({
+      keyword: keyword || undefined,
+      sort,
+    });
+    list = data?.list ?? [];
+  } catch (error) {
+    console.error("게시글 불러오기 실패", error);
+    return (
+      <div className={styles.stateMessage} role="alert">
+        게시글을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.
+      </div>
+    );
+  }
+
+  if (list.length === 0) {
+    return <div className={styles.empty}>아직 게시글이 없어요</div>;
+  }
+
   return (
     <ul className={styles.articleList}>
       {list.map((value) => (
@@ -15,16 +36,16 @@ export default function ArticleCardList({ list }) {
             <div className={styles.title}>{value.title}</div>
             <Image
               src={sample}
-              alt="게시글 사진"
+              alt={`${value.title} 게시 사진`}
               width={48}
               height={44}
               className={styles.image}
-            ></Image>
+            />
 
             <div className={styles.user}>
               <Image
                 src={provileImg}
-                alt="프로필 사진"
+                alt=""
                 width={24}
                 height={24}
                 className={styles.profile}

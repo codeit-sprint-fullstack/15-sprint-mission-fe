@@ -1,28 +1,25 @@
 import styles from "./community.module.css";
 import Link from "next/link";
 import { Suspense } from "react";
-import { articleApi } from "@/components/api/articleApi";
 import { BestArticleList } from "@/components/pages/community/BestArticleList";
 import { ArticleCardList } from "@/components/pages/community/ArticleCardList";
 import { SearchFilter } from "@/components/pages/community/SearchFilter";
+import { normalizeSort } from "@/utils/normalizeSort";
+import { BestArticleListSkeleton } from "@/components/pages/community/skeleton/BestArticleSkeleton";
+import { ArticleCardListSkeleton } from "@/components/pages/community/skeleton/ArticleCardListSkeleton";
 
 export default async function Community({ searchParams }) {
-  const { data: bestList } = await articleApi.getList({
-    sort: "desc",
-    page: 1,
-    limit: 3,
-  });
-  const { q = "", sort = "desc" } = await searchParams;
-  const { data: list } = await articleApi.getList({
-    keyword: q || undefined,
-    sort,
-  });
+  const { q = "", sort: rawSort } = await searchParams;
+  const sort = normalizeSort(rawSort);
 
   return (
     <main className={styles.main}>
       <section className={styles.best}>
         <h2 className={styles.sectionTitle}>베스트 게시글</h2>
-        <BestArticleList list={bestList} />
+
+        <Suspense fallback={<BestArticleListSkeleton />}>
+          <BestArticleList />
+        </Suspense>
       </section>
       <section className={styles.articles}>
         <div className={styles.titleWrapper}>
@@ -31,10 +28,14 @@ export default async function Community({ searchParams }) {
             글쓰기
           </Link>
         </div>
+
         <Suspense>
-          <SearchFilter />
+          <SearchFilter key={`${q} - ${sort}`} />
         </Suspense>
-        <ArticleCardList list={list} />
+
+        <Suspense key={`${q} - ${sort}`} fallback={<ArticleCardListSkeleton />}>
+          <ArticleCardList keyword={q} sort={sort} />
+        </Suspense>
       </section>
     </main>
   );

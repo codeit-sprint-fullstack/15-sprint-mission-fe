@@ -1,0 +1,83 @@
+.articleCard {
+  background-color: #fcfcfc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 1.5rem;
+}
+.title {
+  width: 100%;
+  height: 2rem;
+  background-color: var(--secondary-color-300);
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+.image {
+  justify-self: end;
+  align-self: start;
+  display: flex;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0.85706rem 0.75rem 0.85719rem 0.75rem;
+  background-color: var(--secondary-color-300);
+  border-radius: 0.5rem;
+  border: 1px solid var(--secondary-color-100);
+}
+.user {
+  width: 11.5rem;
+  height: 1.5rem;
+  background-color: var(--secondary-color-300);
+  align-self: end;
+  display: flex;
+  gap: 0.5rem;
+}
+.liked {
+  width: 5.13rem;
+  height: 1.63rem;
+  background-color: var(--secondary-color-300);
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* 스켈레톤 애니메이션 */
+.title,
+.image,
+.user,
+.liked {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondary-color-300);
+  border-radius: 6px;
+}
+.title::after,
+.image::after,
+.user::after,
+.liked::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: sweep 1.4s linear infinite;
+}
+@keyframes sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block,
+  .block::after {
+    animation: none;
+  }
+}

@@ -31,3 +31,13 @@
   border: 1px solid var(---secondary-color-200);
   background: #fff;
 }
+
+.status {
+  min-width: 70px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.searchFilter[aria-busy="true"] .search {
+  opacity: 0.6;
+}
