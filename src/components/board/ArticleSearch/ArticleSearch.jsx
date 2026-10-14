@@ -1,24 +1,28 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import * as styles from "./ArticleSearch.css.js";
 
 export default function ArticleSearch({ defaultKeyword = "" }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [keyword, setKeyword] = useState(defaultKeyword);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const query = keyword.trim();
+    const params = new URLSearchParams(searchParams);
 
-    if (!query) {
-      router.push("/board");
-      return;
+    if (query) {
+      params.set("keyword", query);
+    } else {
+      params.delete("keyword");
     }
 
-    router.push(`/board?keyword=${encodeURIComponent(query)}`);
+    const queryString = params.toString();
+    router.push(queryString ? `/board?${queryString}` : "/board");
   };
 
   return (
