@@ -2,9 +2,9 @@
 
 import { ErrorView } from "@/components/common/ErrorView";
 
-export default function Error() {
+export default function Error({ reset }) {
   const link = "/";
   const target = "홈";
 
-  return <ErrorView link={link} target={target} />;
+  return <ErrorView reset={reset} link={link} target={target} />;
 }
