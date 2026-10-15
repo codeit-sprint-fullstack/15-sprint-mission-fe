@@ -16,6 +16,8 @@ export default function CommentSection({
 
   const [cursorId, setCursorId] = useState(initCursorId);
   const [commentList, setCommentList] = useState(initCommentList);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [moreErrorMessage, setMoreErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ export default function CommentSection({
       });
       setContent("");
       // console.log(data.content);
-      setCommentList((prev) => [data, ...prev]);
+      setCommentList((prev) => [...prev, data]);
     } catch (error) {
       console.error("댓글 달기 실패", error);
       setErrorMessage("댓글 등록에 실패했습니다. 잠시 후에 다시 시도해주세요.");
@@ -43,16 +45,26 @@ export default function CommentSection({
   };
 
   const getMoreCommentList = async () => {
+    if (loadingMore) return;
+
+    setLoadingMore(true);
+    setMoreErrorMessage("");
+
     try {
       const { data: newCommentList, nextCursor } =
         await articleCommentApi.getList({
           articleId,
           cursorId,
         });
-      setCommentList((prev) => [...newCommentList, ...prev]);
+      setCommentList((prev) => [...prev, ...newCommentList]);
       setCursorId(nextCursor);
     } catch (error) {
       console.error("더보기 목록을 불러오는 데 실패했습니다.", error);
+      setMoreErrorMessage(
+        "더보기 목록을 불러오는 데 실패했습니다. 잠시 후 다시 시도해주세요.",
+      );
+    } finally {
+      setLoadingMore(false);
     }
   };
 
@@ -76,6 +88,8 @@ export default function CommentSection({
         cursorId={cursorId}
         handleDeleted={handleDeleted}
         getMoreCommentList={getMoreCommentList}
+        loadingMore={loadingMore}
+        moreErrorMessage={moreErrorMessage}
       />
     </div>
   );

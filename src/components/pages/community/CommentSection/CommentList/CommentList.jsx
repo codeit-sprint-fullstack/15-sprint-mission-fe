@@ -7,12 +7,15 @@ import { formatRelativeTime } from "@/utils/relativeTime";
 import styles from "./CommentList.module.css";
 import defaultImage from "@/assets/default-profile.svg";
 import { ArticleCommentAction } from "@/components/pages/community/ArticleCommentAction";
+import { ErrorMessage } from "@/components/common/ErrorMessage";
 
 export default function CommentList({
   commentList,
   handleDeleted,
   cursorId,
   getMoreCommentList,
+  loadingMore,
+  moreErrorMessage,
 }) {
   return (
     <>
@@ -50,10 +53,15 @@ export default function CommentList({
             ))}
           </ul>
           {cursorId && (
-            <button onClick={getMoreCommentList} className={styles.moreButton}>
-              더보기
+            <button
+              onClick={getMoreCommentList}
+              className={styles.moreButton}
+              aria-disabled={loadingMore}
+            >
+              {loadingMore ? "불러오는 중..." : "더보기"}
             </button>
           )}
+          {ErrorMessage && <ErrorMessage errorMessage={moreErrorMessage} />}
         </div>
       ) : (
         <div className={styles.emptyComment}>

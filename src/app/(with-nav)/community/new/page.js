@@ -4,6 +4,7 @@ import styles from "./createPost.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { articleApi } from "@/components/api/articleApi";
+import { ErrorMessage } from "@/components/common/ErrorMessage";
 
 export default function CreatePost() {
   const router = useRouter();
@@ -90,11 +91,7 @@ export default function CreatePost() {
           내용을 입력해주세요
         </textarea>
       </div>
-      {errorMessage && (
-        <p role="alert" className={styles.errorMessage}>
-          {errorMessage}
-        </p>
-      )}
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
     </form>
   );
 }
