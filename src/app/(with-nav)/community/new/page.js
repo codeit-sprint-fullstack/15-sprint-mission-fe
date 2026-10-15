@@ -81,13 +81,14 @@ export default function CreatePost() {
         <textarea
           id="content"
           name="content"
-          placeholder="내용을 입력해주세요"
           className={styles.contentInput}
           required
           value={content}
           onChange={(e) => setContent(e.target.value)}
           maxLength={500}
-        ></textarea>
+        >
+          내용을 입력해주세요
+        </textarea>
       </div>
       {errorMessage && (
         <p role="alert" className={styles.errorMessage}>

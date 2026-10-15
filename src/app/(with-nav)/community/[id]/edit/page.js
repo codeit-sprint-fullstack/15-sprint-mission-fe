@@ -5,46 +5,63 @@ import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { articleApi } from "@/components/api/articleApi";
 
-export default function EditPost() {
+export default function UpdatePost() {
   const { id } = useParams();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const parsedTitle = title.trim();
   const parsedContent = content.trim();
 
-  const isValid = parsedTitle !== "" || parsedContent !== "";
+  const isValid = parsedTitle !== "" && parsedContent !== "";
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!isValid) return;
+    if (!isValid || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setErrorMessage("");
+
     try {
       const res = await articleApi.patch(id, {
         title: parsedTitle,
         content: parsedContent,
       });
-      if (res.data) router.push(`/community/${res.data.id}`);
+
+      if (res.data) {
+        router.push(`/community/${res.data.id}`);
+      } else {
+        setErrorMessage("게시글 수정에 실패했어요. 다시 시도해주세요.");
+      }
     } catch {
-      router.push("/error");
+      setErrorMessage("수정 중 문제가 생겼어요. 잠시 후 다시 시도해주세요.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <form className={styles.createPostForm} onSubmit={submit}>
+    <form
+      className={styles.createPostForm}
+      onSubmit={submit}
+      aria-busy={isSubmitting}
+    >
       <div className={styles.writeHeader}>
-        <h1 className={styles.headertitle}>게시글 수정하기</h1>
+        <h1 className={styles.headerTitle}>게시글 수정하기</h1>
         <button
           type="submit"
           className={styles.submitButton}
-          disabled={!isValid}
+          aria-disabled={!isValid || isSubmitting}
         >
-          수정하기
+          {isSubmitting ? "등록 중..." : "등록"}
         </button>
       </div>
       <div className={styles.titleField}>
-        <label htmlFor="title" className={styles.title}>
-          *제목
+        <label htmlFor="title" className={styles.titleLabel}>
+          <span aria-hidden={true}>*</span>제목
         </label>
         <input
           id="title"
@@ -52,26 +69,33 @@ export default function EditPost() {
           type="text"
           placeholder="제목을 입력해주세요"
           className={styles.titleInput}
-
+          required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          maxLength={100}
         />
       </div>
       <div className={styles.contentField}>
-        <label htmlFor="content" className={styles.content}>
-          *내용
+        <label htmlFor="content" className={styles.contentLabel}>
+          <span aria-hidden={true}>*</span>내용
         </label>
-        <input
+        <textarea
           id="content"
           name="content"
-          type="text"
-          placeholder="내용을 입력해주세요"
           className={styles.contentInput}
-
+          required
           value={content}
           onChange={(e) => setContent(e.target.value)}
-        />
+          maxLength={500}
+        >
+          내용을 입력해주세요
+        </textarea>
       </div>
+      {errorMessage && (
+        <p role="alert" className={styles.errorMessage}>
+          {errorMessage}
+        </p>
+      )}
     </form>
   );
 }
