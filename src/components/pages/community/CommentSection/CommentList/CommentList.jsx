@@ -20,7 +20,7 @@ export default function CommentList({
   return (
     <>
       {commentList.length > 0 ? (
-        <div>
+        <div className={styles.commentListContainer}>
           <ul className={styles.commentList}>
             {commentList.map((comment) => (
               <li key={comment.id} className={styles.commentCard}>

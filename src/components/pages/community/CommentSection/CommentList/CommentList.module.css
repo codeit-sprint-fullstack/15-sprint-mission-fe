@@ -21,7 +21,9 @@
 }
 
 /*  */
-
+.commentListContainer {
+  position: relative;
+}
 .commentList {
   display: flex;
   flex-direction: column;
