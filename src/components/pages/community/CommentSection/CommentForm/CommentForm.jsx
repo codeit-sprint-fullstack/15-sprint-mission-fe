@@ -10,11 +10,12 @@ export default function CommentForm({
   isSubmitting,
   setContent,
   content,
+  commentTitle = "댓글달기",
 }) {
   return (
     <form className={styles.commentForm} onSubmit={handleSubmit}>
       <label htmlFor="commentInput" className={styles.commentLabel}>
-        댓글달기
+        {commentTitle}
       </label>
       <input
         id="commentInput"

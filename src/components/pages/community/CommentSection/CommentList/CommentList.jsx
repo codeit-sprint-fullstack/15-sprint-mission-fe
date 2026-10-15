@@ -61,7 +61,7 @@ export default function CommentList({
               {loadingMore ? "불러오는 중..." : "더보기"}
             </button>
           )}
-          {ErrorMessage && <ErrorMessage errorMessage={moreErrorMessage} />}
+          {moreErrorMessage && <ErrorMessage moreErrorMessage={moreErrorMessage} />}
         </div>
       ) : (
         <div className={styles.emptyComment}>

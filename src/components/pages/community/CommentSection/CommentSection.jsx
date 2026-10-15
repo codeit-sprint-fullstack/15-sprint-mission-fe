@@ -34,7 +34,7 @@ export default function CommentSection({
         content: parsedContent,
       });
       setContent("");
-      // console.log(data.content);
+
       setCommentList((prev) => [...prev, data]);
     } catch (error) {
       console.error("댓글 달기 실패", error);
