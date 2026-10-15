@@ -3,34 +3,17 @@
 import Image from "next/image";
 import replyEmpty from "@/assets/icons/Img_reply_empty.svg";
 import { formatRelativeTime } from "@/utils/relativeTime";
-import { useState } from "react";
-import { articleCommentApi } from "@/components/api/articleCommentApi";
+
 import styles from "./CommentList.module.css";
 import defaultImage from "@/assets/default-profile.svg";
 import { ArticleCommentAction } from "@/components/pages/community/ArticleCommentAction";
 
 export default function CommentList({
-  initCommentList,
-  articleId,
-  initCursorId,
+  commentList,
+  handleDeleted,
+  cursorId,
+  getMoreCommentList,
 }) {
-  const [cursorId, setCursorId] = useState(initCursorId);
-  const [commentList, setCommentList] = useState(initCommentList);
-
-  const getMoreCommentList = async () => {
-    const { data: newCommentList, nextCursor } =
-      await articleCommentApi.getList({
-        articleId,
-        cursorId,
-      });
-    setCommentList((prev) => [...prev, ...newCommentList]);
-    setCursorId(nextCursor);
-  };
-
-  const handleDeleted = (id) => {
-    setCommentList((prev) => prev.filter((c) => c.id !== id));
-  };
-
   return (
     <>
       {commentList.length > 0 ? (

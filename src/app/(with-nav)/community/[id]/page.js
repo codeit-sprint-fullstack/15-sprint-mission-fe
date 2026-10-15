@@ -7,9 +7,8 @@ import backToList from "@/assets/icons/backToList.svg";
 import { formatDate } from "@/utils/formatTime";
 import { articleApi } from "@/components/api/articleApi";
 import { articleCommentApi } from "@/components/api/articleCommentApi";
-import { CommentList } from "@/components/pages/community/CommentList";
 import { ArticleAction } from "@/components/pages/community/ArticleAction";
-import { CommentForm } from "@/components/pages/community/CommentForm";
+import { CommentSection } from "@/components/pages/community/CommentSection";
 
 export default async function CommunityDetail({ params }) {
   const { id: articleId } = await params;
@@ -58,12 +57,9 @@ export default async function CommunityDetail({ params }) {
         <div className={styles.content}>{article.content}</div>
       </div>
 
-      <CommentForm articleId={articleId} />
-
-      <CommentList
-        key={articleId}
-        initCommentList={initCommentList}
+      <CommentSection
         articleId={articleId}
+        initCommentList={initCommentList}
         initCursorId={initCursorId}
       />
 
