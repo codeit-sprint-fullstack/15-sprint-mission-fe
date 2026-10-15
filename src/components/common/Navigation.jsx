@@ -1,20 +1,43 @@
 'use client';
 
+import icProfile from '@/assets/boards/ic_profile.svg';
 import logo from '@/assets/common/logo.svg';
 import wordType from '@/assets/common/word_type.svg';
+import { useAuth } from '@/providers/AuthProvider';
 import { textLg } from '@/styles/typography.css';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import * as styles from './Navigation.css';
 
 function Navigation() {
+  const router = useRouter();
   const pathname = usePathname();
+
   const isBoard = pathname.includes('/boards');
   const isItems = pathname.includes('/items');
 
-  const router = useRouter();
+  const userProfileRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { user, isLoggedIn, logout } = useAuth();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        userProfileRef.current &&
+        !userProfileRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <nav className={styles.container}>
@@ -45,16 +68,44 @@ function Navigation() {
             </div>
           )}
         </div>
-        <button
-          className={clsx(
-            styles.loginButton,
-            textLg.semibold,
-            (isBoard || isItems) && styles.loginButtonWithLinks,
-          )}
-          onClick={() => router.push('/login')}
-        >
-          로그인
-        </button>
+        {isLoggedIn && user ? (
+          <div
+            className={styles.userInfoContainer}
+            ref={userProfileRef}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            <Image
+              className={styles.userImage}
+              src={user.image || icProfile}
+              alt="기본 프로필 이미지"
+            />
+            <span className={styles.userNickname}>{user.nickname}</span>
+            {isOpen && (
+              <button
+                className={clsx(
+                  styles.logoutButton,
+                  styles.loginButton,
+                  textLg.semibold,
+                  (isBoard || isItems) && styles.loginButtonWithLinks,
+                )}
+                onClick={() => logout()}
+              >
+                로그아웃
+              </button>
+            )}
+          </div>
+        ) : (
+          <button
+            className={clsx(
+              styles.loginButton,
+              textLg.semibold,
+              (isBoard || isItems) && styles.loginButtonWithLinks,
+            )}
+            onClick={() => router.push('/login')}
+          >
+            로그인
+          </button>
+        )}
       </div>
     </nav>
   );

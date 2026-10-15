@@ -103,3 +103,28 @@ export const loginButton = style({
 export const loginButtonWithLinks = style({
   maxWidth: '88px',
 });
+
+// userInfo
+export const userInfoContainer = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '6px',
+  position: 'relative',
+});
+
+export const userImage = style({
+  width: '40px',
+  height: 'auto',
+});
+
+export const userNickname = style({
+  fontSize: typographyTokens.fontSize['2lg'],
+  fontWeight: typographyTokens.fontWeight.regular,
+  color: colorTokens.secondary.gray600,
+});
+
+export const logoutButton = style({
+  position: 'absolute',
+  top: '70px',
+  right: '0px',
+});
