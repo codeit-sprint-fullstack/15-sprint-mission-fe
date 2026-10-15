@@ -9,6 +9,7 @@ import { articleApi } from "@/components/api/articleApi";
 import { articleCommentApi } from "@/components/api/articleCommentApi";
 import { CommentList } from "@/components/pages/community/CommentList";
 import { ArticleAction } from "@/components/pages/community/ArticleAction";
+import { CommentForm } from "@/components/pages/community/CommentForm";
 
 export default async function CommunityDetail({ params }) {
   const { id: articleId } = await params;
@@ -57,20 +58,7 @@ export default async function CommunityDetail({ params }) {
         <div className={styles.content}>{article.content}</div>
       </div>
 
-      <form className={styles.commentForm}>
-        <label htmlFor="commentInput" className={styles.commentLabel}>
-          댓글달기
-        </label>
-        <input
-          id="commentInput"
-          name="content"
-          type="text"
-          placeholder="댓글을 입력해주세요"
-          className={styles.commentInput}
-          required
-        />
-        <button className={styles.commentSubmit}>등록</button>
-      </form>
+      <CommentForm articleId={articleId} />
 
       <CommentList
         key={articleId}
