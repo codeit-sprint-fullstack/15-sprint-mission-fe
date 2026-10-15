@@ -9,12 +9,14 @@ import { articleApi } from "@/components/api/articleApi";
 import { articleCommentApi } from "@/components/api/articleCommentApi";
 import { ArticleAction } from "@/components/pages/community/ArticleAction";
 import { CommentSection } from "@/components/pages/community/CommentSection";
+import { notFound } from "next/navigation";
 
 export default async function CommunityDetail({ params }) {
   const { id: articleId } = await params;
   const { data: article } = await articleApi.get(articleId);
   const { data: initCommentList, nextCursor: initCursorId } =
     await articleCommentApi.getList({ articleId });
+  if (!article || !initCommentList) return notFound();
 
   return (
     <main className={styles.main}>
