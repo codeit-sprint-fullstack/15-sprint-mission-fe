@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import styles from "./CommentForm.module.css";
 
 import { ErrorMessage } from "@/components/common/ErrorMessage";
@@ -12,13 +13,15 @@ export default function CommentForm({
   content,
   commentTitle = "댓글달기",
 }) {
+  const inputId = useId();
+
   return (
     <form className={styles.commentForm} onSubmit={handleSubmit}>
-      <label htmlFor="commentInput" className={styles.commentLabel}>
+      <label htmlFor={inputId} className={styles.commentLabel}>
         {commentTitle}
       </label>
       <input
-        id="commentInput"
+        id={inputId}
         name="content"
         type="text"
         placeholder="댓글을 입력해주세요"
