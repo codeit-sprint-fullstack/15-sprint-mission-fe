@@ -7,7 +7,7 @@ import imgHome03 from '@/assets/landing/img_home_03.svg';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import * as styles from './page.css';
+import * as styles from '../page.css';
 
 export default function Home() {
   return (
@@ -111,7 +111,11 @@ export default function Home() {
             <br />
             판다마켓 중고 거래
           </p>
-          <Image className={styles.bottomBannerImg} src={imgHomeBottom} alt="바텀 배너 이미지" />
+          <Image
+            className={styles.bottomBannerImg}
+            src={imgHomeBottom}
+            alt="바텀 배너 이미지"
+          />
         </div>
       </section>
     </article>
