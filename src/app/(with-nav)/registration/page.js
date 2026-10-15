@@ -7,9 +7,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { productApi } from "@/components/api/productApi.js";
 import useProductValidate from "@/components/hooks/useProductValidate.js";
+import { ErrorMessage } from "@/components/common/ErrorMessage";
 
 function Registration() {
   const router = useRouter();
+
   const {
     validateName,
     validateDescription,
@@ -27,6 +29,9 @@ function Registration() {
   const [input, setInput] = useState("");
   const [tags, setTags] = useState([]);
 
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, SetIsSubmitting] = useState(false);
+
   const validSubmit =
     !name ||
     validErrorName ||
@@ -34,23 +39,32 @@ function Registration() {
     validErrorDescription ||
     !price ||
     validErrorPrice ||
-    !tags ||
+    !tags.length === 0 ||
     validErrorTag;
 
   const submit = async (event) => {
     event.preventDefault();
+    if (validSubmit || isSubmitting) return;
+
+    SetIsSubmitting(true);
+
     const parsedPrice = Number(price);
-
-    if (validSubmit) return;
-
     const productData = { name, description, price: parsedPrice, tags };
 
     try {
       const res = await productApi.post(productData);
-      res?.id && router.replace(`/items/${res.id}`, { replace: true });
-      router.push(`/items/${res.id}`);
-    } catch {
-      router.push("/ErrorPage");
+
+      if (res?.id) router.push(`/items/${res.id}`);
+      else {
+        setErrorMessage("상품 등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      }
+    } catch (error) {
+      console.error("상품 등록 실패", error);
+      setErrorMessage(
+        "상품 등록 중 문제가 생겼습니다. 잠시 후 다시 시도해주세요.",
+      );
+    } finally {
+      SetIsSubmitting(false);
     }
   };
 
@@ -97,14 +111,15 @@ function Registration() {
   return (
     <>
       <main className={styles.main}>
-        <form className={styles.product} onSubmit={(e) => submit(e)}>
+        <form className={styles.product} onSubmit={submit}>
           <div className={styles.productHeader}>
             <h1 className={styles.title}>상품 등록하기</h1>
             <button
               type="submit"
               className={`${styles.submit} ${!validSubmit ? styles.submitActive : ""}`}
+              aria-disabled={isSubmitting || validSubmit}
             >
-              등록
+              {isSubmitting ? "등록 중..." : "등록"}
             </button>
           </div>
 
@@ -201,6 +216,7 @@ function Registration() {
             </ul>
           </div>
         </form>
+        {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
       </main>
     </>
   );
