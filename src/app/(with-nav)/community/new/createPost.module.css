@@ -1,6 +1,7 @@
 .createPostForm {
   margin: 3rem auto 16rem;
   width: 75rem;
+  position: relative;
 }
 .writeHeader {
   display: flex;
@@ -8,7 +9,7 @@
   align-items: center;
   margin-bottom: 2rem;
 }
-.headertitle {
+.headerTitle {
   color: var(--secondary-color-800);
   font-size: 1.25rem;
   font-weight: 700;
@@ -28,14 +29,18 @@
   line-height: 1.4rem;
   border-radius: 0.5rem;
 }
+.submitButton[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .titleField,
 .contentField {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
-.title,
-.content {
+.titleLabel,
+.contentLabel {
   color: var(--secondary-color-800);
   font-size: 1.125rem;
   font-weight: 700;
@@ -72,4 +77,19 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.625rem; /* 162.5% */
+}
+.errorMessage {
+  width: 24rem;
+  height: 12rem;
+  background-color: var(--secondary-color-200);
+  color: var(--error-color);
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }

@@ -7,7 +7,13 @@ export default function Header({ children }) {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <Image src={logo} alt="판다 마켓 로고 이미지" width={160} height={53} />
+        <Image
+          src={logo}
+          alt="판다 마켓 로고 이미지"
+          width={160}
+          height={53}
+          priority
+        />
       </Link>
 
       {children}

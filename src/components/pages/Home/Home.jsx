@@ -27,6 +27,7 @@ export default function HomePage() {
             alt="판다마켓 메인 배너"
             width={746}
             height={340}
+            loading="eager"
           />
         </div>
       </section>

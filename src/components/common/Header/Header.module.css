@@ -7,7 +7,7 @@
   padding-top: 0.15rem;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     border-bottom: 1px solid #dfdfdf;
     left: 0;
@@ -18,9 +18,11 @@
 
 .logo {
   width: 10rem;
+  height: 3.3125rem;
 
   & > img {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -76,10 +78,10 @@
     }
 
     &::after {
-      content: '판다마켓';
+      content: "판다마켓";
       color: var(--primary-color-100);
       font-weight: 800;
-      font-family: 'ROKAF Sans';
+      font-family: "ROKAF Sans";
       font-size: 1.26263rem;
     }
   }

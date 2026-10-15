@@ -16,7 +16,7 @@ export default async function BestArticleList() {
       page: 1,
       limit: 3,
     });
-    list = data?.list ?? [];
+    list = data ?? [];
   } catch (error) {
     console.error("베스트 게시글 불러오기 실패", error);
     return (
@@ -27,7 +27,7 @@ export default async function BestArticleList() {
   }
 
   if (list.length === 0) {
-    return <div className={styles.empty}>아직 게시글이 없어요</div>;
+    return <div className={styles.stateMessage}>아직 게시글이 없어요</div>;
   }
 
   return (
