@@ -72,6 +72,12 @@ export default function CommentSection({
     setCommentList((prev) => prev.filter((c) => c.id !== id));
   };
 
+  const handleUpdated = (updated) => {
+    setCommentList((prev) =>
+      prev.map((c) => (c.id === updated.id ? updated : c)),
+    );
+  };
+
   return (
     <div>
       <CommentForm
@@ -87,6 +93,7 @@ export default function CommentSection({
         commentList={commentList}
         cursorId={cursorId}
         handleDeleted={handleDeleted}
+        handleUpdated={handleUpdated}
         getMoreCommentList={getMoreCommentList}
         loadingMore={loadingMore}
         moreErrorMessage={moreErrorMessage}

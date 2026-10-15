@@ -12,6 +12,7 @@ import { ErrorMessage } from "@/components/common/ErrorMessage";
 export default function CommentList({
   commentList,
   handleDeleted,
+  handleUpdated,
   cursorId,
   getMoreCommentList,
   loadingMore,
@@ -47,7 +48,9 @@ export default function CommentList({
 
                 <ArticleCommentAction
                   id={comment.id}
+                  initialContent={comment.content}
                   onDeleted={handleDeleted}
+                  onEdit={handleUpdated}
                 />
               </li>
             ))}
@@ -61,7 +64,9 @@ export default function CommentList({
               {loadingMore ? "불러오는 중..." : "더보기"}
             </button>
           )}
-          {moreErrorMessage && <ErrorMessage moreErrorMessage={moreErrorMessage} />}
+          {moreErrorMessage && (
+            <ErrorMessage moreErrorMessage={moreErrorMessage} />
+          )}
         </div>
       ) : (
         <div className={styles.emptyComment}>
