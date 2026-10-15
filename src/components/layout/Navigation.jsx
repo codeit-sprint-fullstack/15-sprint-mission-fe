@@ -6,13 +6,15 @@ import { textLg } from '@/styles/typography.css';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import * as styles from './Navigation.css';
 
 function Navigation() {
   const pathname = usePathname();
   const isBoard = pathname.includes('/boards');
   const isItems = pathname.includes('/items');
+
+  const router = useRouter();
 
   return (
     <nav className={styles.container}>
@@ -49,6 +51,7 @@ function Navigation() {
             textLg.semibold,
             (isBoard || isItems) && styles.loginButtonWithLinks,
           )}
+          onClick={() => router.push('/login')}
         >
           로그인
         </button>
