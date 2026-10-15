@@ -46,3 +46,7 @@
   line-height: 1.625rem;
   align-self: flex-end;
 }
+.commentSubmit[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
