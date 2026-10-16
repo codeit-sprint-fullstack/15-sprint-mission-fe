@@ -1,0 +1,20 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="80" r="72" fill="#F3F4F6"/>
+
+  <!-- 돋보기 손잡이 -->
+  <line x1="102" y1="102" x2="128" y2="128" stroke="#9CA3AF" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- 돋보기 렌즈 -->
+  <circle cx="72" cy="70" r="36" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="8"/>
+
+  <!-- 슬픈 얼굴 -->
+  <circle cx="60" cy="64" r="4" fill="#6B7280"/>
+  <circle cx="84" cy="64" r="4" fill="#6B7280"/>
+  <path d="M60 86 Q72 76 84 86" stroke="#6B7280" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- 포인트 장식 -->
+  <circle cx="34" cy="38" r="4" fill="#3692FF" opacity="0.5"/>
+  <circle cx="128" cy="44" r="3" fill="#3692FF" opacity="0.5"/>
+  <circle cx="30" cy="112" r="3" fill="#D1D5DB"/>
+  <path d="M122 28 v10 M117 33 h10" stroke="#3692FF" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+</svg>
