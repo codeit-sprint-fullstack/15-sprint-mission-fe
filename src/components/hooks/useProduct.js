@@ -1,11 +1,14 @@
-"use client";
-
 import { useEffect, useState } from "react";
-import { ProductContext } from "./ProductContext.jsx";
-import { productApi } from "../api/productApi.js";
-import usePagination from "../hooks/usePagination.js";
+import { productApi } from "@/components/api/productApi.js";
+import usePagination from "./usePagination.js";
 
-function ProductProvider({ children }) {
+export default function useProduct() {
+  const [products, setProducts] = useState([]);
+  const [keyword, setKeyword] = useState("");
+  const [sort, setSort] = useState("desc");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const {
     currentPage,
     setTotalProducts,
@@ -14,12 +17,6 @@ function ProductProvider({ children }) {
     productsPerPage,
     setCurrentPage,
   } = usePagination();
-
-  const [products, setProducts] = useState([]);
-  const [keyword, setKeyword] = useState("");
-  const [sort, setSort] = useState("desc");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const handleKeyword = (value) => {
     setKeyword(value);
@@ -54,14 +51,6 @@ function ProductProvider({ children }) {
     getProductsList();
   }, [currentPage, productsPerPage, setTotalProducts, keyword, sort]);
 
-  if (isLoading) {
-    return <div className="spinner"></div>;
-  }
-
-  if (error) {
-    return <div>상품을 찾을 수 없습니다.</div>;
-  }
-
   const value = {
     products,
     totalPages,
@@ -69,10 +58,9 @@ function ProductProvider({ children }) {
     currentPage,
     setSort: handleSort,
     setKeyword: handleKeyword,
+    isLoading,
+    error,
   };
 
-  return (
-    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
-  );
+  return value;
 }
-export default ProductProvider;

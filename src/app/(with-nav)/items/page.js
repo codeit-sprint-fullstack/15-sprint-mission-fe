@@ -8,11 +8,19 @@ import { FaCaretDown } from "react-icons/fa";
 import { FaSortAmountDown } from "react-icons/fa";
 import { ProductsCardList } from "@/components/pages/items/ProductsCardList/";
 import { PaginationButton } from "@/components/pages/items/PaginationButton/";
-import { useProductContext } from "@/components/contexts/ProductContext.jsx";
+import useProduct from "@/components/hooks/useProduct";
 
 function Items() {
-  const { products, totalPages, goToPage, currentPage, setSort, setKeyword } =
-    useProductContext();
+  const {
+    products,
+    totalPages,
+    goToPage,
+    currentPage,
+    setSort,
+    setKeyword,
+    isLoading,
+    error,
+  } = useProduct();
 
   const [searchInput, setSearchInput] = useState("");
 
@@ -21,6 +29,10 @@ function Items() {
       setKeyword(searchInput.trim());
     }
   };
+
+  if (isLoading) return <div>로딩</div>;
+
+  if (error) return <div>에러</div>;
 
   return (
     <main className={styles.main}>
