@@ -30,26 +30,31 @@ function Registration() {
   const [tags, setTags] = useState([]);
 
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, SetIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validSubmit =
-    !name ||
+    !name.trim() ||
     validErrorName ||
     !description ||
     validErrorDescription ||
     !price ||
     validErrorPrice ||
-    !tags.length === 0 ||
+    tags.length === 0 ||
     validErrorTag;
 
   const submit = async (event) => {
     event.preventDefault();
     if (validSubmit || isSubmitting) return;
 
-    SetIsSubmitting(true);
+    setIsSubmitting(true);
 
     const parsedPrice = Number(price);
-    const productData = { name, description, price: parsedPrice, tags };
+    const productData = {
+      name: name.trim(),
+      description,
+      price: parsedPrice,
+      tags,
+    };
 
     try {
       const res = await productApi.post(productData);
@@ -57,21 +62,21 @@ function Registration() {
       if (res?.id) router.push(`/items/${res.id}`);
       else {
         setErrorMessage("상품 등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error("상품 등록 실패", error);
       setErrorMessage(
         "상품 등록 중 문제가 생겼습니다. 잠시 후 다시 시도해주세요.",
       );
-    } finally {
-      SetIsSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 
   const checkName = (e) => {
-    const value = e.target.value.trim();
+    const value = e.target.value;
     setName(value);
-    validateName(value);
+    validateName(value.trim());
   };
 
   const checkDescription = (e) => {
@@ -136,6 +141,7 @@ function Registration() {
             />
             <p
               className={`${validErrorName ? styles.errorMessage : ""} ${styles.errorName}`}
+              role="alert"
             >
               10자 이내로 입력해주세요
             </p>
@@ -154,6 +160,7 @@ function Registration() {
             />
             <p
               className={`${validErrorDescription ? styles.errorMessage : ""} ${styles.errorDescription}`}
+              role="alert"
             >
               10자 이상 100자 이내로 입력해주세요
             </p>
@@ -172,6 +179,7 @@ function Registration() {
             />
             <p
               className={`${validErrorPrice ? styles.errorMessage : ""} ${styles.errorPrice}`}
+              role="alert"
             >
               가격을 입력해주세요
             </p>
@@ -191,6 +199,7 @@ function Registration() {
             />
             <p
               className={`${validErrorTag ? styles.errorMessage : ""} ${styles.errorTags}`}
+              role="alert"
             >
               {validErrorTag === "length"
                 ? "5자 이내로 입력해주세요"
