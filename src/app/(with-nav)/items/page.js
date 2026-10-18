@@ -47,9 +47,9 @@ function Items() {
           />
         </div>
 
-        <button className={styles.addProductButton}>
-          <Link href="/registration">상품 등록하기</Link>
-        </button>
+        <Link className={styles.addProductButton} href="/registration">
+          상품 등록하기
+        </Link>
 
         <div className={styles.sortDropdown}>
           <select onChange={(e) => setSort(e.target.value)}>
