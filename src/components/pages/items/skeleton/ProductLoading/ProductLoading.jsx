@@ -2,7 +2,11 @@ import styles from "./ProductLoading.module.css";
 
 export default function ProductLoading({ productsPerPage }) {
   return (
-    <ul className={`${styles.cardList} ${variant ? styles[variant] : ""}`}>
+    <ul
+      className={`${styles.cardList} ${variant ? styles[variant] : ""}`}
+      aria-busy="true"
+      aria-label="상품 목록 불러오는 중"
+    >
       {Array.from({ length: productsPerPage }, (_, i) => (
         <li key={i} className={styles.card}>
           <div className={styles.image}></div>
