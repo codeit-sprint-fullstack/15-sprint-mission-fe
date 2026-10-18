@@ -60,6 +60,7 @@ export default function useProduct() {
     setKeyword: handleKeyword,
     isLoading,
     error,
+    productsPerPage,
   };
 
   return value;

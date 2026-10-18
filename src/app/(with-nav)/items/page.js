@@ -9,6 +9,7 @@ import { FaSortAmountDown } from "react-icons/fa";
 import { ProductsCardList } from "@/components/pages/items/ProductsCardList/";
 import { PaginationButton } from "@/components/pages/items/PaginationButton/";
 import useProduct from "@/components/hooks/useProduct";
+import { ProductLoading } from "@/components/pages/items/skeleton/ProductLoading";
 
 function Items() {
   const {
@@ -20,6 +21,7 @@ function Items() {
     setKeyword,
     isLoading,
     error,
+    productsPerPage,
   } = useProduct();
 
   const [searchInput, setSearchInput] = useState("");
@@ -30,7 +32,7 @@ function Items() {
     }
   };
 
-  if (isLoading) return <div>로딩</div>;
+  if (isLoading) return <ProductLoading count={productsPerPage} />;
 
   if (error) return <div>에러</div>;
 
