@@ -1,0 +1,30 @@
+{
+  "name": "sprint-mission7",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.21.2",
+    "axios": "^1.20.0",
+    "dayjs": "^1.11.23",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@vanilla-extract/next-plugin": "^2.5.2",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "3.9.9"
+  },
+  "packageManager": "pnpm@12.4.2"
+}

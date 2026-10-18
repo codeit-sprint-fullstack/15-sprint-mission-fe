@@ -1,0 +1,29 @@
+.nav {
+  color: var(--secondary-color-600);
+  font-weight: var(--font-weight-big);
+  line-height: 1.625rem;
+  padding-left: 2.5rem;
+  margin-right: auto;
+
+  & a {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+}
+.active {
+  color: var(--primary-color-100);
+}
+
+/* 반응형 모바일 사이즈 */
+@media (max-width: 375px) {
+  .nav {
+    padding: 0;
+    align-self: start;
+    margin-right: 0;
+
+    & a {
+      font-size: 1rem;
+      margin-right: 0;
+    }
+  }
+}

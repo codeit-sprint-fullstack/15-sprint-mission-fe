@@ -1,0 +1,273 @@
+/* Main */
+.mainVisual {
+  background-color: var(--bg-color);
+  /* margin-top: 56px; */
+  display: flex;
+}
+
+.inner2 {
+  width: 119rem;
+  height: 33rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  & span {
+    display: block;
+  }
+}
+
+.mainTitle {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 80px;
+}
+
+.mainVisualImg {
+  width: 46.625rem;
+  height: 21.25rem;
+}
+
+.mainVisual h1 {
+  color: var(--secondary-color-700);
+  font-size: var(--font-size-big);
+  font-weight: var(--font-weight-big);
+
+  font-size: 2.5rem;
+  line-height: 140%;
+  margin-bottom: 40px;
+  padding-right: 5rem;
+}
+
+.searchBtn {
+  color: var(--secondary-color-50);
+  background-color: var(--primary-color-100);
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  height: 3.5rem;
+  padding: 1rem 7.75rem;
+}
+.inner2 .main-visual-img {
+  width: 46rem;
+  height: 21rem;
+}
+
+/* Section */
+.inner3 {
+  margin: 15rem auto;
+  width: 62rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+
+  & span {
+    display: block;
+  }
+}
+
+.inner3first {
+  justify-content: flex-start;
+
+  & .content {
+    margin-left: 2.7rem;
+  }
+}
+
+.inner3 img {
+  width: 36.75rem;
+  height: 27.75rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contentTitle {
+  margin-top: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color-700);
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-big);
+  line-height: 140%;
+  letter-spacing: 0.05rem;
+}
+
+.hotItem {
+  color: var(--primary-color-100);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-big);
+}
+
+.description {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-small);
+  line-height: 2rem;
+  color: var(--secondary-color-700);
+}
+
+/* Reverse */
+.reverseContent {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Bottom */
+
+.bottom {
+  background-color: var(--bg-color);
+  display: flex;
+}
+
+.bottom .inner2 {
+  margin: 0 auto;
+}
+.bottom img {
+  width: 46.625rem;
+  height: 24.8125rem;
+}
+
+.bottom h1 {
+  align-self: center;
+  padding-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .inner2 {
+    flex-direction: column;
+    width: 100%;
+    height: 48.1875rem;
+    justify-content: space-between;
+  }
+
+  .mainVisual {
+    margin-top: 5px;
+    justify-content: center;
+
+    & img {
+      width: 100%;
+      /* height: 21.25rem; */
+    }
+  }
+
+  .mainTitle h1 {
+    padding-right: 0;
+  }
+
+  .searchBtn {
+    width: 24rem;
+    margin: auto;
+  }
+
+  .inner3 {
+    flex-direction: column;
+    margin: 1.5rem;
+    max-width: 62rem;
+    width: auto;
+
+    & .content {
+      margin-top: 2rem;
+      margin-left: 0;
+    }
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  .bottom > .inner2 {
+    min-height: 49rem;
+    height: auto;
+
+    & span {
+      display: block;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .reverseContent {
+    flex-direction: column;
+  }
+
+  .inner2 span {
+    display: inline;
+  }
+  .inner3 span {
+    display: inline;
+  }
+
+  .inner2 .contentTitle {
+    margin: 0;
+    padding-top: 14rem;
+    padding-bottom: 19rem;
+    text-align: center;
+  }
+
+  .description span {
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  .inner2 {
+    height: 41rem;
+    & img {
+      width: 23.4375rem;
+      height: 13.75rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .bottom > .inner2 {
+    min-height: 33rem;
+  }
+
+  .mainVisual {
+    justify-content: center;
+  }
+
+  .mainTitle {
+    width: 15rem;
+    top: 60px;
+
+    & h1 {
+      font-size: 2rem;
+      text-align: center;
+      padding: 0;
+    }
+    & span {
+      display: block;
+    }
+    & a {
+      padding: 1.1rem;
+    }
+  }
+
+  .contentTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.625rem;
+  }
+  .inner3 {
+    padding: 0;
+    margin: 3rem 1rem;
+
+    & img {
+      height: 16.1875rem;
+      align-self: stretch;
+    }
+  }
+}
