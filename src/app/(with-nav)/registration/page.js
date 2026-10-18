@@ -57,9 +57,9 @@ function Registration() {
     };
 
     try {
-      const res = await productApi.post(productData);
+      const { data } = await productApi.post(productData);
 
-      if (res?.id) router.push(`/items/${res.id}`);
+      if (data?.id) router.push(`/items/${data.id}`);
       else {
         setErrorMessage("상품 등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
         setIsSubmitting(false);
