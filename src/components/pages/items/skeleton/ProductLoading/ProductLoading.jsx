@@ -3,7 +3,7 @@ import styles from "./ProductLoading.module.css";
 export default function ProductLoading({ productsPerPage }) {
   return (
     <ul
-      className={`${styles.cardList} ${variant ? styles[variant] : ""}`}
+      className={`${styles.cardList}`}
       aria-busy="true"
       aria-label="상품 목록 불러오는 중"
     >

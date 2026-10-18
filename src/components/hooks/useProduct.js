@@ -5,7 +5,7 @@ import usePagination from "./usePagination.js";
 export default function useProduct() {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
-  const [sort, setSort] = useState("desc");
+  const [sort, setSort] = useState("createdAt");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 

@@ -32,10 +32,6 @@ function Items() {
     }
   };
 
-  if (isLoading) return <ProductLoading count={productsPerPage} />;
-
-  if (error) return <div>에러</div>;
-
   return (
     <main className={styles.main}>
       <div id="productsTitle" className={styles.productsHeader}>
@@ -69,7 +65,14 @@ function Items() {
         </div>
       </div>
 
-      <ProductsCardList products={products} />
+      {isLoading ? (
+        <ProductLoading count={productsPerPage} />
+      ) : error ? (
+        <p role="alert">상품을 불러오지 못했어요. 잠시 후 다시 시도해주세요.</p>
+      ) : (
+        <ProductsCardList products={products} />
+      )}
+
       <PaginationButton
         totalPages={totalPages}
         currentPage={currentPage}
