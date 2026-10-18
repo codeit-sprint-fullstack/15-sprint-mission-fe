@@ -1,0 +1,115 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 13.75rem;
+  height: 20rem;
+  background-color: var(--secondary-color-100);
+}
+
+.image {
+  width: 13.75rem;
+  height: 13.75rem;
+  background-color: var(--secondary-color-300);
+  border-radius: 0.8rem;
+  object-fit: cover;
+  padding-bottom: 0.5rem;
+}
+.description {
+  background-color: var(--secondary-color-300);
+  width: 100%;
+  width: 4rem;
+  height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price {
+  background-color: var(--secondary-color-300);
+  width: 100%;
+  width: 5.75rem;
+  height: 1.6rem;
+}
+
+.favoriteCount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--secondary-color-300);
+  width: 2.6rem;
+  height: 1.1rem;
+}
+
+/* 스켈레톤 애니메이션 */
+.image,
+.description,
+.price,
+.favoriteCount {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondary-color-300);
+  border-radius: 6px;
+}
+.image::after,
+.description::after,
+.price::after,
+.favoriteCount::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: sweep 1.4s linear infinite;
+}
+@keyframes sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block,
+  .block::after {
+    animation: none;
+  }
+}
+/* 베스트 상품 스타일 */
+.best {
+  width: 17.6rem;
+  height: 23.6rem;
+}
+
+/* 반응형 타블렛 사이즈 */
+@media (max-width: 768px) {
+  .card {
+    width: 13.8rem;
+    height: 19.8rem;
+  }
+  .best {
+    width: 20.5rem;
+    height: 26rem;
+  }
+}
+
+/* 반응형 모바일 사이즈 */
+@media (max-width: 375px) {
+  .card {
+    width: 10.3rem;
+    height: 16.5rem;
+  }
+  .image {
+    width: 100%;
+    object-fit: contain;
+    height: 10.5rem;
+  }
+  .best {
+    width: 100%;
+  }
+}

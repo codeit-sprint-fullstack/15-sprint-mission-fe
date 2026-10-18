@@ -1,0 +1,80 @@
+.createPostForm {
+  margin: 3rem auto 16rem;
+  width: 75rem;
+  position: relative;
+}
+.writeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.headerTitle {
+  color: var(--secondary-color-800);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2rem; /* 160% */
+}
+.submitButton {
+  height: 2.625rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--secondary-color-400);
+  color: var(--secondary-color-100);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+  border-radius: 0.5rem;
+}
+.submitButton[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.titleField,
+.contentField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.titleLabel,
+.contentLabel {
+  color: var(--secondary-color-800);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.625rem; /* 144.444% */
+}
+.titleInput,
+.contentInput {
+  border: none;
+  outline: none;
+}
+.titleInput {
+  height: 3.5rem;
+  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  color: var(--secondary-color-400);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem; /* 162.5% */
+  background: var(--secondary-color-100);
+  border-radius: 0.75rem;
+}
+.contentInput {
+  display: flex;
+  width: 75rem;
+  height: 17.625rem;
+  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  background: var(--secondary-color-100);
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem; /* 162.5% */
+}
