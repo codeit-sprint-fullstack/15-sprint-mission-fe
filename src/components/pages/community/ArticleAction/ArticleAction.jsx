@@ -1,0 +1,21 @@
+"use client";
+
+import { ActionMenu } from "@/components/pages/community/ActionMenu";
+import { articleApi } from "@/components/api/articleApi";
+import { useRouter } from "next/navigation";
+
+export default function ArticleAction({ id }) {
+  const router = useRouter();
+  const articleEdit = async (id) => router.push(`/community/${id}/edit`);
+
+  const articleDelete = async (id) => {
+    await articleApi.remove(id);
+    router.push("/community");
+  };
+
+  return (
+    <>
+      <ActionMenu id={id} onEdit={articleEdit} onDelete={articleDelete} />
+    </>
+  );
+}
